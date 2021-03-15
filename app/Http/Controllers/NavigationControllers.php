@@ -15,4 +15,14 @@ class NavigationControllers extends Controller
 
 		}
 
+		// 
+		public function contact(){
+			return view('pages.contact');
+		}
+
+		// 
+		public function partners(){
+			return view('pages.partners');
+		}
+
 }

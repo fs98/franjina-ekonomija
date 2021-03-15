@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'NavigationControllers@index');
 
+Route::get('/contact', 'NavigationControllers@contact');
+
+Route::get('/partners', 'NavigationControllers@partners');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

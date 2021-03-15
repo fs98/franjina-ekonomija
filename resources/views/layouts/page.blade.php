@@ -8,6 +8,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -27,7 +28,7 @@
 <header class="my-auto">
 
   <!-- Topbar -->
-  <div class="topbar-navbar">
+  <div class="topbar-navbar d-none d-lg-block">
 
     <!-- Container -->
     <div class="container">
@@ -74,7 +75,7 @@
 
   <!-- Navbar -->
 
-  <nav class="navbar navbar-expand-xl navbar-light py-2">
+  <nav class="navbar navbar-expand-xl navbar-light py-2" style="position: relative; z-index: 2">
     <div class="container">
       <a class="navbar-brand bg-white p-3" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,7 +84,7 @@
       <div class="collapse navbar-collapse justify-content-sm-end" id="navbarText">
         <ul class="navbar-nav text-right">
           <li class="nav-item mr-3">
-            <a class="nav-link active p-0" href="#"><span>Početna</span></a>
+            <a class="nav-link p-0" href="#" id="home"><span>Početna</span></a>
           </li>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle p-0 mr-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -121,7 +122,7 @@
           </a>
         </li>
         <li class="nav-item mr-3 mr-lg-0">
-          <a class="nav-link p-0" href="#">
+          <a class="nav-link p-0" href="{{ url('/contact') }}" id="contact">
             <span>Kontakt</span>
           </a>
         </li>
@@ -148,7 +149,121 @@
 <!-- Footer -->
 
 <footer>
-  
+
+  <!-- Container -->
+
+  <div class="container">
+
+    <!-- Row -->
+
+    <div class="row footer-top">
+      
+      <div class="col-xl-8">
+          
+          <div class="row">
+            
+            <div class="col-12 col-sm-5 mt-5 d-flex align-items-center">
+              <img src="{{ asset('images/components/Group-730.svg') }}" class="footer-logo mb-0 mb-sm-5">
+            </div>
+
+            <div class="col-12 col-sm-7 mt-3 mt-sm-5">
+              <h4 class="text-white ml-5 mt-5 mt-lg-0">Naš ured</h4>
+
+              <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
+                <div class="">
+                  <img src="{{ asset('icons/Icon-metro-location.svg') }}" class="footer-icon">
+                </div>
+
+                <div class="ml-4">
+                  <h5 class="text-white">Adresa</h5>
+                  <h6 class="mt-2 text-white">Lorem Ipsum</h6>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
+                <div>
+                  <img src="{{ asset('icons/Phone.svg') }}" class="footer-icon">
+                </div>
+
+                <div class="ml-4">
+                  <h5 class="text-white">Broj telefona</h5>
+                  <h6 class="mt-2 text-white">+387 95 123 456</h6>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mt-3 mt-sm-5">
+                <div>
+                  <img src="{{ asset('icons/Email.svg') }}" class="footer-icon">
+                </div>
+
+                <div class="ml-4">
+                  <h5 class="text-white">Adresa</h5>
+                  <h6 class="mt-2"><a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white">financial.education.eof@gmail.com</a></h6>
+                </div>
+              </div>
+            </div>
+
+          </div> 
+
+      </div>
+
+      <div class="col-xl-4 text-center newsletter">
+        
+        <h4 class="text-white mt-5">Newsletter</h4>
+
+        <p class="mt-4 text-white text-left">Prijavite se na naš newsletter da dobijete više besplatnih savjeta. 
+          <br>Bez neželjene pošte. Obećavamo! 
+        </p>
+
+        <div>
+          <form>
+            <div class="form-group w-100">
+              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" placeholder="Email">
+            </div>
+            <button class="btn text-uppercase w-auto px-5 py-2 rounded-0 text-white">Pošalji</button>
+          </form>
+        </div>
+
+        <div class="social-networks">
+          <h3 class="mt-5 text-white">Pratite nas i na:</h3>
+          <div class="mt-3">
+            <a href=""><img src="{{ asset('icons/Footer - instagram.svg') }}" class="mx-1"></a>
+            <a href=""><img src="{{ asset('icons/Footer - facebook.svg') }}" class="mx-1"></a>
+            <a href=""><img src="{{ asset('icons/Footer - youtube.svg') }}" class="mx-1"></a>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <!-- /.Row -->
+
+  </div>
+
+  <!-- /.Container -->
+
+  <!-- Container-fluid -->
+
+  <div class="container-fluid">
+
+    <!-- Row -->
+
+    <div class="row bg-white text-center">
+
+      <div class="col-12 py-4">
+        2021 &copy; Udruga Ekonomije zajedništva
+      </div>
+
+    </div>
+
+    <!-- /.Row -->
+
+  </div>
+
+  <!-- /.Container-fluid -->
+
 </footer>
 
 <!-- /.Footer) -->
