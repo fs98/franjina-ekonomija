@@ -13,7 +13,8 @@ textarea:focus{
 
 header input:focus{
 	box-shadow: none !important;
-	outline: none;
+	outline: none !important;
+	border: transparent !important;
 }
 
 ::selection{
@@ -41,7 +42,8 @@ header input:focus{
 		color: #1C1B19;
 	}
 
-	.topbar-navbar form img{
+	.topbar-navbar form img,
+	.navbar form img{
 		height: 14px;
 	}
 
@@ -144,7 +146,8 @@ footer .social-networks h3{
 /* Contact Section */
 
 .contact-section{
-	margin: 150px 150px;
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
 
 .contact-section .contact-info{

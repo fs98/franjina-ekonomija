@@ -121,12 +121,20 @@
             <span>Blog</span>
           </a>
         </li>
-        <li class="nav-item mr-3 mr-lg-0">
+        <li class="nav-item mr-3 mr-xl-0">
           <a class="nav-link p-0" href="{{ url('/contact') }}" id="contact">
             <span>Kontakt</span>
           </a>
         </li>
         </ul>
+        <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none">
+          <div class="input-group">
+            <input type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append bg-danger"> 
+              <span class="input-group-text bg-white rounded-0 border-0" id="basic-addon2"><img src="{{ asset('icons/search.svg') }}"></span>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </nav> 
