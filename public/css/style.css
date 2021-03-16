@@ -190,7 +190,7 @@ footer .social-networks h3{
 
 .partners-section{
 	margin-top: 50px;
-	margin-bottom: 150px;
+	margin-bottom: 50px;
 }
 
 .partners-section h1 span{
@@ -199,14 +199,22 @@ footer .social-networks h3{
 
 .partners-section .partners-text{
 	margin-top: 80px;
+	font-size: 18px;
 }
 
 .partners-section img{
-	max-height: 100%;
+	max-height: 300px;
 	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	overflow: hidden !important;
+	filter: grayscale(100%); 
+	vertical-align: bottom;
 }
+
+	/* Medium devices (tablets, less than 992px) */
+	@media (max-width: 991.98px) {
+		.partners-section img{
+			max-height: 200px;
+		}
+	}
 
 .partners-section img:hover{
 	-webkit-filter: none;
@@ -215,7 +223,12 @@ footer .social-networks h3{
 	cursor: pointer;
 }
 
-.partners-section .partners-logos div a{
+.partners-section .partners-logos .col-4{
 	height: 300px;
 	width: auto;
+}
+
+
+.partners-section .partners-logos div a{
+	cursor: context-menu;
 }
