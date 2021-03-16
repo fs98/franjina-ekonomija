@@ -22,6 +22,12 @@ header input:focus{
 	color: white;
 }
 
+.sticky{
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
 /*** Header ***/
 
 	/*** Topbar ***/
@@ -49,6 +55,8 @@ header input:focus{
 
 	nav{
 		box-shadow: 0px 1px 7px 0px rgba(112, 112, 112, 0.5);
+		position: relative; 
+		z-index: 2;
 	}
 
 	nav .nav-link{
@@ -67,6 +75,10 @@ header input:focus{
 		transition: 0.3s;
 	}
 
+	nav .dropdown-item:focus{
+		background-color: rgba(187, 28, 46, 1);
+	}
+
 	nav .active span{
 		border-bottom: 2px solid #BB1C2E;
 	}
@@ -74,8 +86,8 @@ header input:focus{
 	nav .navbar-brand{
 		background-image: url('../images/components/EoF-Croatia-logo.svg'); 
 		background-size: cover; 
-		height: 220px;
-		width: 220px; 
+		height: 200px;
+		width: 200px; 
 		border-radius: 50%;  
 		border: 6px solid white; 
 		margin-bottom: -120px
@@ -159,6 +171,14 @@ footer .social-networks h3{
 	height: 30px;
 }
 
+.contact-section textarea{
+	resize: none;
+}
+
+.contact-section p{
+	font-size: 18px;
+}
+
 .contact-section input,
 .contact-section textarea{
 	background-color: #F3F3F3
@@ -235,3 +255,150 @@ footer .social-networks h3{
 .partners-section .partners-logos div a{
 	cursor: context-menu;
 }
+
+/* About us section */
+
+.about-section{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.about-section .yellow-border-heading{
+	border-bottom: 3px solid #ffde59; 
+}
+
+.about-section p{
+	font-size: 18px;
+}
+
+.about-section .transparent-logo{
+	height: 200px;
+}
+
+.about-section .about-section-image{
+	position: absolute; 
+	z-index: -2; 
+	top: 0; 
+	left: 0; 
+	width: 100px;
+	height: 90px;
+	margin-top: 65px;
+}
+
+	/*Large devices (tablets, less than 992px)*/
+	@media (max-width: 1199.98px) {
+		.about-section .about-section-image{
+			width: 100px;
+			height: 90px;
+			margin-top: 10px;
+		}
+	}
+
+	/* Medium devices (tablets, less than 992px)*/
+	@media (max-width: 991.98px) { 
+		.about-section .about-section-image{
+			width: 100px;
+			height: 90px;
+			margin-top: -20px;
+			margin-left: 10px;
+		} 
+	}
+
+.about-page-image-container-fluid{
+	height: 350px;
+	background-image: url('../images/duy-pham-Cecb0_8Hx-o-unsplash.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 70%;
+}
+
+	/*Large devices (tablets, less than 992px)*/
+	@media (max-width: 1199.98px) {
+		.about-page-image-container-fluid{
+		height: 250px;
+		background-position: 50% 70%;
+	}
+	}
+
+	/* Medium devices (tablets, less than 992px)*/
+	@media (max-width: 991.98px) { 
+		.about-page-image-container-fluid{
+		height: 200px;
+		background-position: 50% 70%;
+	}
+	}	
+
+	/*Small devices (landscape phones, less than 768px)*/
+	@media (max-width: 767.98px) { 
+		.about-page-image-container-fluid{
+		height: 150px;
+		background-position: 50% 70%;
+	}	
+	}	
+
+	/* Who are We? */
+
+	.about-section .hub-croatia-section-image{
+		position: absolute; 
+		z-index: -2; 
+		top: 0; 
+		left: 0; 
+		width: 100px;
+		height: 90px;
+		margin-top: 100px;
+		margin-left: 10px;
+	}
+
+		/*Large devices (tablets, less than 992px)*/
+		@media (max-width: 1199.98px) {
+			.about-section .hub-croatia-section-image{
+				width: 100px;
+				height: 90px;
+				margin-top: 20px;
+				margin-left: 10px;
+			}
+		}
+
+		/* Medium devices (tablets, less than 992px)*/
+		@media (max-width: 991.98px) { 
+			.about-section .hub-croatia-section-image{
+				width: 80px;
+				height: 90px;
+				margin-top: -40px;
+				margin-left: 10px;
+			} 
+		}	
+
+	.hub-croatia-section-p{
+		font-size: 18px;
+	}		
+
+	.hub-croatia-section-iframe{
+		max-height: 450px;
+	}
+
+	.team-images{
+		height: 80px;
+	}
+
+	.team p{
+		font-size: 16px;
+	}
+
+	.team .team-group{
+		border-bottom: 2px solid rgba(28,27,25,0.5)
+	}
+
+	/* Carousel */
+
+	.villages-carousel .carousel-item{
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+	}
+
+	.villages-carousel .carousel-caption{
+		top: 50%; 
+		transform: translateY(-50%); 
+		bottom: initial;
+	}

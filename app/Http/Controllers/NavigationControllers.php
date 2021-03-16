@@ -25,4 +25,10 @@ class NavigationControllers extends Controller
 			return view('pages.partners');
 		}
 
+		// 
+		public function about(){
+			return view('pages.about');
+		}
+
+
 }

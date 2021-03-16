@@ -75,7 +75,7 @@
 
   <!-- Navbar -->
 
-  <nav class="navbar navbar-expand-xl navbar-light py-2" style="position: relative; z-index: 2">
+  <nav class="navbar navbar-expand-xl navbar-light py-2" id="navbar" style="background-color:white">
     <div class="container">
       <a class="navbar-brand bg-white p-3" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,46 +86,50 @@
           <li class="nav-item mr-3">
             <a class="nav-link p-0" href="#" id="home"><span>Početna</span></a>
           </li>
+          @if (Route::has('about'))
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle p-0 mr-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle p-0 mr-2" href="#" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>O nama</span>
           </a> 
           <div class="dropdown-menu mt-3 border-0 rounded-0 shadow" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item pb-2" href="#"><span class="border-bottom pb-1">HUB Croatia</span></a>
-            <a class="dropdown-item pb-2" href="#"><span class="border-bottom pb-1">Economy of Francesko</span></a>
-            <a class="dropdown-item" href="#">EoF budi i Ti</a>
+            <a class="dropdown-item pb-2" href="{{ __('about') }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
+            <a class="dropdown-item pb-2" href="{{ __('about') }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
+            <a class="dropdown-item" href="{{ __('about') }}">EoF budi i Ti</a>
           </div>
-        </li>        
-        <li class="nav-item mr-3">
-          <a class="nav-link p-0" href="#">
-            <span>Projekti</span>
-          </a> 
-        </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link p-0" href="#">
-            <span>Aktivnosti</span>
-          </a>
-        </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link p-0" href="#">
-            <span>Podrška</span>
-          </a>
-        </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link p-0" href="#">
-            <span>Partneri</span>
-          </a>
-        </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link p-0" href="#">
-            <span>Blog</span>
-          </a>
-        </li>
-        <li class="nav-item mr-3 mr-xl-0">
-          <a class="nav-link p-0" href="{{ url('/contact') }}" id="contact">
-            <span>Kontakt</span>
-          </a>
-        </li>
+          </li>        
+          @endif
+          <li class="nav-item mr-3">
+            <a class="nav-link p-0" href="#">
+              <span>Projekti</span>
+            </a> 
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link p-0" href="#">
+              <span>Aktivnosti</span>
+            </a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link p-0" href="#">
+              <span>Podrška</span>
+            </a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link p-0" href="{{ url('/partners') }}" id="partners">
+              <span>Partneri</span>
+            </a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link p-0" href="#">
+              <span>Blog</span>
+            </a>
+          </li>
+          @if (Route::has('contact'))
+          <li class="nav-item mr-3 mr-xl-0">
+            <a class="nav-link p-0" href="{{ __('contact') }}" id="contact">
+              <span>Kontakt</span>
+            </a>
+          </li>
+          @endif
         </ul>
         <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none">
           <div class="input-group">
@@ -226,9 +230,9 @@
         <div>
           <form>
             <div class="form-group w-100">
-              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" placeholder="Email">
+              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" placeholder="Email" required="">
             </div>
-            <button class="btn text-uppercase w-auto px-5 py-2 rounded-0 text-white">Pošalji</button>
+            <button class="btn text-uppercase w-auto px-5 py-2 rounded-0 text-white" type="submit">Pošalji</button>
           </form>
         </div>
 
@@ -275,6 +279,19 @@
 </footer>
 
 <!-- /.Footer) -->
+<script>
+window.onscroll = function() {myFunction()};
 
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
 </body>
 </html>
