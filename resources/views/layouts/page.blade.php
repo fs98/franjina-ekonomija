@@ -35,19 +35,19 @@
       <div class="row py-2">
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-2 align-self-center d-flex py-1">
-          <img src="{{ asset('icons/Phone.svg') }}" class="img-fluid topbar-icons">
+          <img src="{{ asset('icons/common/phone.svg') }}" class="img-fluid topbar-icons">
           <span class="text-white topbar-text ml-2">+ 385 95 123 456</span>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-5 align-self-center d-flex justify-content-start justify-content-md-end justify-content-xl-start py-1">
-          <img src="{{ asset('icons/Email.svg') }}" class="img-fluid topbar-icons my-0 py-0">
+          <img src="{{ asset('icons/common/email.svg') }}" class="img-fluid topbar-icons my-0 py-0">
           <span class="text-white topbar-text ml-2">financial.education.eof@gmail.com</span>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-2 align-self-center d-flex float-right py-1">
-          <a href="" class="" ><img src="{{ asset('icons/instagram.svg') }}" class="img-fluid topbar-icons"></a>
-          <a href="" class="ml-3"><img src="{{ asset('icons/facebook.svg') }}" class="img-fluid topbar-icons"></a>
-          <a href="" class="ml-3"><img src="{{ asset('icons/youtube.svg') }}" class="img-fluid topbar-icons"></a>
+          <a href="" class="" ><img src="{{ asset('icons/header/instagram.svg') }}" class="img-fluid topbar-icons"></a>
+          <a href="" class="ml-3"><img src="{{ asset('icons/header/facebook.svg') }}" class="img-fluid topbar-icons"></a>
+          <a href="" class="ml-3"><img src="{{ asset('icons/header/youtube.svg') }}" class="img-fluid topbar-icons"></a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-3 align-self-center py-1">
@@ -57,7 +57,7 @@
               <div class="input-group">
                 <input type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append bg-danger"> 
-                  <span class="input-group-text bg-white rounded-0 border-0" id="basic-addon2"><img src="{{ asset('icons/search.svg') }}"></span>
+                  <span class="input-group-text bg-white rounded-0 border-0" id="basic-addon2"><img src="{{ asset('icons/header/search.svg') }}"></span>
                 </div>
               </div>
             </form>
@@ -75,7 +75,7 @@
 
   <!-- Navbar -->
 
-  <nav class="navbar navbar-expand-xl navbar-light py-2" id="navbar" style="background-color:white">
+  <nav class="navbar navbar-expand-xl navbar-light bg-white py-2" id="navbar">
     <div class="container">
       <a class="navbar-brand bg-white p-3" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -135,7 +135,7 @@
           <div class="input-group">
             <input type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <div class="input-group-append bg-danger"> 
-              <span class="input-group-text bg-white rounded-0 border-0" id="basic-addon2"><img src="{{ asset('icons/search.svg') }}"></span>
+              <span class="input-group-text bg-white rounded-0 border-0" id="basic-addon2"><img src="{{ asset('icons/header/search.svg') }}"></span>
             </div>
           </div>
         </form>
@@ -175,7 +175,7 @@
           <div class="row">
             
             <div class="col-12 col-sm-5 mt-5 d-flex align-items-center">
-              <img src="{{ asset('images/components/Group-730.svg') }}" class="footer-logo mb-0 mb-sm-5">
+              <img src="{{ asset('images/logo/main-logo.svg') }}" class="footer-logo mb-0 mb-sm-5">
             </div>
 
             <div class="col-12 col-sm-7 mt-3 mt-sm-5">
@@ -183,7 +183,7 @@
 
               <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
                 <div class="">
-                  <img src="{{ asset('icons/Icon-metro-location.svg') }}" class="footer-icon">
+                  <img src="{{ asset('icons/footer/location.svg') }}" class="footer-icon">
                 </div>
 
                 <div class="ml-4">
@@ -194,7 +194,7 @@
 
               <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
                 <div>
-                  <img src="{{ asset('icons/Phone.svg') }}" class="footer-icon">
+                  <img src="{{ asset('icons/common/phone.svg') }}" class="footer-icon">
                 </div>
 
                 <div class="ml-4">
@@ -205,7 +205,7 @@
 
               <div class="d-flex align-items-center mt-3 mt-sm-5">
                 <div>
-                  <img src="{{ asset('icons/Email.svg') }}" class="footer-icon">
+                  <img src="{{ asset('icons/common/email.svg') }}" class="footer-icon">
                 </div>
 
                 <div class="ml-4">
@@ -239,9 +239,9 @@
         <div class="social-networks">
           <h3 class="mt-5 text-white">Pratite nas i na:</h3>
           <div class="mt-3">
-            <a href=""><img src="{{ asset('icons/Footer - instagram.svg') }}" class="mx-1"></a>
-            <a href=""><img src="{{ asset('icons/Footer - facebook.svg') }}" class="mx-1"></a>
-            <a href=""><img src="{{ asset('icons/Footer - youtube.svg') }}" class="mx-1"></a>
+            <a href=""><img src="{{ asset('icons/footer/instagram.svg') }}" class="mx-1"></a>
+            <a href=""><img src="{{ asset('icons/footer/facebook.svg') }}" class="mx-1"></a>
+            <a href=""><img src="{{ asset('icons/footer/youtube.svg') }}" class="mx-1"></a>
           </div>
         </div>
 

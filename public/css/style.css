@@ -33,7 +33,7 @@ header input:focus{
 	/*** Topbar ***/
 
 	header .topbar-navbar {
-		background-image: url('../images/components/header-background.svg');
+		background-image: url('../images/header/background.svg');
 		background-size: contain;
 		background-color: #414141;
 	}
@@ -84,7 +84,7 @@ header input:focus{
 	}
 
 	nav .navbar-brand{
-		background-image: url('../images/components/EoF-Croatia-logo.svg'); 
+		background-image: url('../images/logo/header-logo.svg'); 
 		background-size: cover; 
 		height: 200px;
 		width: 200px; 
@@ -306,7 +306,7 @@ footer .social-networks h3{
 
 .about-page-image-container-fluid{
 	height: 350px;
-	background-image: url('../images/duy-pham-Cecb0_8Hx-o-unsplash.jpg');
+	background-image: url('../images/about/image-1.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 70%;

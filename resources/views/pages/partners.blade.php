@@ -18,7 +18,7 @@
 				<span>Partneri</span>
 			</h1>
 
-			<p class="partners-text">
+			<p class="partners-text text-center">
 
 			Kako bismo osjetili punu snagu radosti, moramo imati nekoga s kim ćemo je podijeliti. S toga ponosna i radosna srca ovim putem iskreno zahvaljujemo svim našim partnerima koji marljivo pomažu poboljšati naš pokret "Franjina ekonomija". Njihova profesionalnost, odgovornost, požrtvovanost i odanost vrlo su važne kvalitete za nas
 
@@ -40,43 +40,43 @@
 		
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="http://www.astrotechworld.com/" target="_blank">
-				<img src="{{ asset('images/partners/astrotech_logo.png') }}" class="img-fluid">
+				<img src="{{ asset('images/partners/astrotech-logo.png') }}" class="img-fluid">
 			</a>
 		</div>
 
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="http://fokolar.hr/" target="_blank">
-				<img src="{{ asset('images/partners/fokolar logo.png') }}" class="img-fluid">
+				<img src="{{ asset('images/partners/fokolar-logo.png') }}" class="img-fluid">
 			</a>
 		</div>
 
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="http://potrosacica.hr/" target="_blank">
-				<img src="{{ asset('images/partners/potrosacica.jpeg') }}" class="img-fluid">
+				<img src="{{ asset('images/partners/potrosacica-logo.jpeg') }}" class="img-fluid">
 			</a>
 		</div>
 
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="https://scu-bih.ba/" target="_blank">
-				<img src="{{ asset('images/partners/scu.png') }}" class="img-fluid">
+				<img src="{{ asset('images/partners/scu-logo.png') }}" class="img-fluid">
 			</a>
 		</div>
 
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="http://www.unicath.hr/" target="_blank">
-				<img src="{{ asset('images/partners/hks.jpg') }}" class="img-fluid">
+				<img src="{{ asset('images/partners/hks-logo.jpg') }}" class="img-fluid">
 			</a>
 		</div>
 
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="http://uez.hr/" target="_blank">
-				<img src="{{ asset('images/partners/Logo (2).png') }}" class="img-fluid">
+				<img src="{{ asset('images/partners/uez-logo.png') }}" class="img-fluid">
 			</a>
 		</div>
 
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="http://uez.hr/" target="_blank"> 
-				<img src="{{ asset('images/partners/UEZ_logo.png') }}" class="img-fluid">
+				<img src="{{ asset('images/partners/uez-logo-2.png') }}" class="img-fluid">
 			</a>
 		</div>
 
