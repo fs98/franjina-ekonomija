@@ -19,6 +19,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
@@ -77,27 +80,32 @@
 
   <nav class="navbar navbar-expand-xl navbar-light bg-white py-2" id="navbar">
     <div class="container">
-      <a class="navbar-brand bg-white p-3" href="#"></a>
+      <a class="navbar-brand bg-white p-3" href="{{ __('/')}}"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-sm-end" id="navbarText">
         <ul class="navbar-nav text-right">
+
+          @if (Route::has('index'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="#" id="home"><span>Početna</span></a>
+            <a class="nav-link p-0" href="{{ __('/')}}" id="home"><span>Početna</span></a>
           </li>
+          @endif
+
           @if (Route::has('about'))
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle p-0 mr-2" href="#" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>O nama</span>
           </a> 
           <div class="dropdown-menu mt-3 border-0 rounded-0 shadow" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item pb-2" href="{{ __('about') }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
-            <a class="dropdown-item pb-2" href="{{ __('about') }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
-            <a class="dropdown-item" href="{{ __('about') }}">EoF budi i Ti</a>
+            <a class="dropdown-item pb-2" href="{{ __('about#1') }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
+            <a class="dropdown-item pb-2" href="{{ __('about#2') }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
+            <a class="dropdown-item" href="{{ __('about#3') }}">EoF budi i Ti</a>
           </div>
           </li>        
           @endif
+
           <li class="nav-item mr-3">
             <a class="nav-link p-0" href="#">
               <span>Projekti</span>
@@ -123,6 +131,7 @@
               <span>Blog</span>
             </a>
           </li>
+
           @if (Route::has('contact'))
           <li class="nav-item mr-3 mr-xl-0">
             <a class="nav-link p-0" href="{{ __('contact') }}" id="contact">
@@ -130,6 +139,7 @@
             </a>
           </li>
           @endif
+
         </ul>
         <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none">
           <div class="input-group">
@@ -280,18 +290,49 @@
 
 <!-- /.Footer) -->
 <script>
-window.onscroll = function() {myFunction()};
+  jQuery( document ).ready(function() {
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
 
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    window.onscroll = function() {myFunction()};
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  });
 </script>
+
+<!-- Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 40,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+      }
+    });
+  </script>
 </body>
 </html>

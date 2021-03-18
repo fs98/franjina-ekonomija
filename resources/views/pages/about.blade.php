@@ -1,10 +1,10 @@
 @extends ('layouts.page')
 
-@section ('content')
+@section ('content')  
 
-<section class="about-section">
+<section class="about-section position-relative">
 	
-	<section id="economyOfFrancesko">
+	<section id="1">
 		
 		<!-- Container -->
 		<div class="container">
@@ -124,7 +124,7 @@
 
 	</section>
 
-	<section id="HubCroatia">
+	<section id="2">
 		
 		<!-- Container -->
 		<div class="container mt-5">
@@ -237,11 +237,6 @@
 		<!-- Carousel Container -->
 
 		<div id="carouselExampleCaptions" class="carousel slide villages-carousel" data-ride="carousel">
-		  <ol class="carousel-indicators">
-		    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-		    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-		    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-		  </ol>
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
 		      <img src="{{ asset('images/about/image-3.jpg') }}" class="d-block w-100" alt="..." >
@@ -266,10 +261,93 @@
 
 	</section>
 
+	<section id="3">
+
+		<!-- Container -->
+		<div class="container">
+			
+			<!-- Row -->
+			<div class="row">
+				
+				<div class="col-12 w-100 text-center my-5">
+					
+					<h1>
+						<span class="yellow-border-heading pb-1">EoF budi i ti</span>
+					</h1>
+
+				</div>
+
+				<div class="col-12 col-lg-6 d-flex align-items-center">
+					
+					<p class="pr-lg-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </p>
+
+				</div>
+				<div class="col-12 col-lg-6 d-flex align-items-center">
+					
+					<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid">
+
+				</div>
+
+			</div>
+			<!-- /.Row -->
+
+			<!-- Form -->
+			<form class="mt-5">
+			  <div class="form-row">
+			    <div class="form-group col-md-6 pr-md-3">
+			      <label for="inputName" class="mb-1">Ime*</label>
+			      <input type="text" required="" class="form-control rounded-0" id="inputName" placeholder="Vaše ime">
+			    </div>
+			    <div class="form-group col-md-6 pl-md-3">
+			      <label for="inputLastName" class="mb-1">Password*</label>
+			      <input type="text" required="" class="form-control rounded-0" id="inputLastName" placeholder="Vaše prezime">
+			    </div>
+			  </div>
+			  <div class="form-row">
+			  	<div class="form-group col-md-6 pr-md-3">
+				    <label for="inputPhoneNumber" class="mb-1">Broj telefona*</label>
+				    <input type="text" required="" class="form-control rounded-0" id="inputPhoneNumber" placeholder="Vaš broj telefona">
+				  </div>
+				  <div class="form-group col-md-6 pl-md-3">
+				    <label for="inputEmail" class="mb-1">Email adresa*</label>
+				    <input type="email" required="" class="form-control rounded-0" id="inputEmail" placeholder="Vaša email adresa">
+				  </div>
+			  </div>
+			  <div class="form-row">
+			    <div class="form-group col-md-6 pr-md-3">
+			      <label for="inputBirthDate" class="mb-1">Datum rođenja*</label>
+			      <input type="date" required="" class="form-control rounded-0" id="inputBirthDate">
+			    </div>
+			    <div class="form-group col-md-6 pl-md-3">
+			      <label for="inputPlaceOfBirth" class="mb-1">Mjesto rođenja*</label>
+						<input type="text" required="" class="form-control rounded-0" id="inputPlaceOfBirth" placeholder="Vaše mjesto rođenja">
+			    </div>
+			  </div>
+			  <div class="form-group mt-2">
+			  	<label for="exampleFormControlTextarea1">Napišite nam nešto o sebi</label>
+   				<textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder="Napišite nam nešto o sebi, šta radite, čime se bavite.. "></textarea>
+			  </div>
+			  <div class="form-group">
+			  	<label for="exampleFormControlTextarea2">Poruka</label>
+   				<textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Ukoliko imate nešto da nas pitate ili dodate možete napisati ovdje.."></textarea>
+			  </div>
+			  <small>* Obavezna polja</small>
+			  <div class="text-center mt-5">
+				  <button type="submit" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
+				</div>
+			</form>				
+			<!-- /.Form -->
+
+		</div>
+		<!-- /.Container -->
+		
+	</section>
+
 </section>
 
 <script type="text/javascript">
 	document.getElementById('about').classList.add("active")
 </script>
+<script src="{{ asset('js/scrollspy.js') }}" defer></script>
 
 @endsection ('content')

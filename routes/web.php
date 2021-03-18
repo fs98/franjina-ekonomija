@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'NavigationControllers@index');
+Route::get('/', 'NavigationControllers@index')->name('index');
 Route::get('/contact', 'NavigationControllers@contact')->name('contact');
 Route::get('/partners', 'NavigationControllers@partners')->name('partners');
 Route::get('/about', 'NavigationControllers@about')->name('about');

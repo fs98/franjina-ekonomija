@@ -22,6 +22,10 @@ header input:focus{
 	color: white;
 }
 
+.yellow-border-heading{
+	border-bottom: 3px solid #ffde59; 
+}
+
 .sticky{
 	position: fixed;
 	top: 0;
@@ -268,7 +272,7 @@ footer .social-networks h3{
 }
 
 .about-section p{
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .about-section .transparent-logo{
@@ -425,3 +429,79 @@ footer .social-networks h3{
 			width: 100%; 
 			background-color: rgba(0,0,0,0.44);
 		}
+
+/* Home Page */
+
+	/* Swiper 1 */
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-container .swiper-button-prev,
+  .swiper-container .swiper-button-next{
+  	color: #3C3C3C !important;
+  	font-size: 5px !important;
+  }
+
+  /* Card */
+
+  .card{
+  	width: 18rem
+  }
+
+  .card a{
+  	background-color: #3C3C3C;
+  	font-size: 18px;
+  }
+
+  .card a:hover{
+  	background-color: rgba(60, 60, 60, 0.7);
+  	transition: 0.3s;
+  }
+
+  .about-section form input,
+  .about-section form textarea{
+  	border: 1px solid rgba(65, 65, 65, 0.5);
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  }
+
+  .about-section input::placeholder,
+	.about-section textarea::placeholder{
+		font-size: 13px;
+		color: #414141;
+		opacity: 68%;
+		margin-top: 13px;
+	}
+
+	.about-section textarea{
+		resize: none;
+	}
+
+	.about-section button{
+		background-color: #BB1C2E;
+	}
+
+
