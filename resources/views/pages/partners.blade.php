@@ -14,9 +14,9 @@
 		
 		<div class="offset-lg-2 col-lg-8">
 
-			<h1 class="w-100 text-center mb-5">
-				<span>Partneri</span>
-			</h1>
+			<h1 class="w-100 text-center mb-5 mt-5 mt-lg-0">
+				<span class="yellow-border-heading">Partneri</span>
+			</h1>		
 
 			<p class="partners-text text-center">
 

@@ -30,5 +30,10 @@ class NavigationControllers extends Controller
 			return view('pages.about');
 		}
 
+		//
+		public function activities(){
+			return view('pages.activities');
+		}
+
 
 }

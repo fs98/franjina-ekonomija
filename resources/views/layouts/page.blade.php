@@ -99,9 +99,9 @@
             <span>O nama</span>
           </a> 
           <div class="dropdown-menu mt-3 border-0 rounded-0 shadow" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item pb-2" href="{{ __('about#1') }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
-            <a class="dropdown-item pb-2" href="{{ __('about#2') }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
-            <a class="dropdown-item" href="{{ __('about#3') }}">EoF budi i Ti</a>
+            <a class="dropdown-item pb-2" href="{{ __('onama#1') }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
+            <a class="dropdown-item pb-2" href="{{ __('onama#2') }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
+            <a class="dropdown-item" href="{{ __('onama#3') }}">EoF budi i Ti</a>
           </div>
           </li>        
           @endif
@@ -111,21 +111,25 @@
               <span>Projekti</span>
             </a> 
           </li>
+          @if (Route::has('activities'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="#">
+            <a class="nav-link p-0" href="{{ __('aktivnosti') }}">
               <span>Aktivnosti</span>
             </a>
           </li>
+          @endif
           <li class="nav-item mr-3">
             <a class="nav-link p-0" href="#">
               <span>Podrška</span>
             </a>
           </li>
+          @if (Route::has('partners'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="{{ url('/partners') }}" id="partners">
+            <a class="nav-link p-0" href="{{ __('partneri') }}" id="partners">
               <span>Partneri</span>
             </a>
           </li>
+          @endif
           <li class="nav-item mr-3">
             <a class="nav-link p-0" href="#">
               <span>Blog</span>
@@ -134,7 +138,7 @@
 
           @if (Route::has('contact'))
           <li class="nav-item mr-3 mr-xl-0">
-            <a class="nav-link p-0" href="{{ __('contact') }}" id="contact">
+            <a class="nav-link p-0" href="{{ __('kontakt') }}" id="contact">
               <span>Kontakt</span>
             </a>
           </li>
@@ -161,7 +165,7 @@
 <!-- /.Header -->
 
 
-<main>
+<main class="mobile-margin">
   
   @yield('content')
 

@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'NavigationControllers@index')->name('index');
-Route::get('/contact', 'NavigationControllers@contact')->name('contact');
-Route::get('/partners', 'NavigationControllers@partners')->name('partners');
-Route::get('/about', 'NavigationControllers@about')->name('about');
+Route::get('/kontakt', 'NavigationControllers@contact')->name('contact');
+Route::get('/partneri', 'NavigationControllers@partners')->name('partners');
+Route::get('/onama', 'NavigationControllers@about')->name('about');
+Route::get('/aktivnosti', 'NavigationControllers@activities')->name('activities');
+
 
 
 Auth::routes();
