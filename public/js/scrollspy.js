@@ -1,10 +1,9 @@
-jQuery("a").on('click', function(event) {
-  jQuery('.navbar-nav>li>a').on('click', function(){
-    jQuery('.navbar-collapse').collapse('hide');
-  });
-  if ((String(this.pathname).includes("about")) && (this.hash !== '') && (String(this.hash).includes("#"))) {
+jQuery("#navbar a").on('click', function(event) {
+
+  if ((String(this.pathname).includes("onama")) && (this.hash !== '') && (String(this.hash).includes("#"))) {
     event.preventDefault();
     var hash = this.hash;
+    jQuery('.collapse').collapse('toggle');
     jQuery('html, body').animate({
       scrollTop: jQuery(hash).offset().top - 150
     }, 1500, function(){

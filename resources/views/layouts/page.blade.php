@@ -39,12 +39,12 @@
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-2 align-self-center d-flex py-1">
           <img src="{{ asset('icons/common/phone.svg') }}" class="img-fluid topbar-icons">
-          <span class="text-white topbar-text ml-2">+ 385 95 123 456</span>
+          <a class="text-white topbar-text ml-2 text-decoration-none" href="tel:+38595123456">+ 385 95 123 456</a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-5 align-self-center d-flex justify-content-start justify-content-md-end justify-content-xl-start py-1">
           <img src="{{ asset('icons/common/email.svg') }}" class="img-fluid topbar-icons my-0 py-0">
-          <span class="text-white topbar-text ml-2">financial.education.eof@gmail.com</span>
+          <span><a href="mailto:financial.education.eof@gmail.com" class="text-white topbar-text ml-2 text-decoration-none">financial.education.eof@gmail.com</a></span>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-2 align-self-center d-flex float-right py-1">
@@ -198,12 +198,9 @@
           
           <div class="row">
             
-            <div class="col-12 col-sm-5 mt-5 d-flex align-items-center">
-              <img src="{{ asset('images/logo/main-logo.svg') }}" class="footer-logo mb-0 mb-sm-5">
-            </div>
 
             <div class="col-12 col-sm-7 mt-3 mt-sm-5">
-              <h4 class="text-white ml-5 mt-5 mt-lg-0">Naš ured</h4>
+              <h3 class="text-white ml-5 mt-5 mt-lg-0">Naš ured</h2>
 
               <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
                 <div class="">
@@ -211,8 +208,8 @@
                 </div>
 
                 <div class="ml-4">
-                  <h5 class="text-white">Adresa</h5>
-                  <h6 class="mt-2 text-white">Lorem Ipsum</h6>
+                  <h4 class="text-white">Adresa</h4>
+                  <a class="mt-2 text-white h5 text-decoration-none" href="https://www.google.com/maps/dir/44.2000496,17.7129374/44.19402,17.73267/@44.198107,17.7053723,14z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0" target="_blank">Donje Putićevo 106 Nova Bila 72276 Travnik, Bosnia and Herzegovina</a>
                 </div>
               </div>
 
@@ -222,8 +219,8 @@
                 </div>
 
                 <div class="ml-4">
-                  <h5 class="text-white">Broj telefona</h5>
-                  <h6 class="mt-2 text-white">+387 95 123 456</h6>
+                  <h4 class="text-white">Broj telefona</h4>
+                  <a href="tel:+38795123456" class="text-decoration-none h5 mt-2 text-white">+387 95 123 456</a>
                 </div>
               </div>
 
@@ -233,10 +230,14 @@
                 </div>
 
                 <div class="ml-4">
-                  <h5 class="text-white">Adresa</h5>
-                  <h6 class="mt-2"><a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white">financial.education.eof@gmail.com</a></h6>
+                  <h4 class="text-white">Email</h4>
+                  <a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white mt-2 h5">financial.education.eof@gmail.com</a>
                 </div>
               </div>
+            </div>
+
+            <div class="col-12 col-sm-5 mt-5 d-flex align-items-center">
+              <img src="{{ asset('images/logo/main-logo.svg') }}" class="footer-logo mb-0 mb-sm-5">
             </div>
 
           </div> 
@@ -245,7 +246,7 @@
 
       <div class="col-xl-4 text-center newsletter">
         
-        <h4 class="text-white mt-5">Newsletter</h4>
+        <h4 class="text-white mt-5 font-weight-bold">Newsletter</h4>
 
         <p class="mt-4 text-white text-left">Prijavite se na naš newsletter da dobijete više besplatnih savjeta. 
           <br>Bez neželjene pošte. Obećavamo! 
@@ -261,7 +262,7 @@
         </div>
 
         <div class="social-networks">
-          <h3 class="mt-5 text-white">Pratite nas i na:</h3>
+          <h5 class="mt-5 text-white">Pratite nas i na:</h5>
           <div class="mt-3">
             <a href=""><img src="{{ asset('icons/footer/instagram.svg') }}" class="mx-1"></a>
             <a href=""><img src="{{ asset('icons/footer/facebook.svg') }}" class="mx-1"></a>

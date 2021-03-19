@@ -22,10 +22,10 @@
 				    <div class="carousel-item active">
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -40,10 +40,10 @@
 							</div>
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -58,10 +58,10 @@
 							</div>
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -76,10 +76,10 @@
 							</div>
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -96,10 +96,10 @@
 				    <div class="carousel-item">
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -114,10 +114,10 @@
 							</div>
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -132,10 +132,10 @@
 							</div>
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -150,10 +150,10 @@
 							</div>
 							<div class="card mb-5 w-100 border-0">
 							  <div class="row no-gutters">
-							    <div class="col-4">
+							    <div class="col-sm-4 col-12">
 							      <img src="https://via.placeholder.com/300x700" class="img-fluid py-0 my-0">
 							    </div>
-							    <div class="col-8">
+							    <div class="col-sm-8 col-12">
 							      <div class="card-body d-flex flex-column justify-content-between h-100">
 							        <div>
 							        	<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
@@ -168,7 +168,8 @@
 							</div>
 				    </div>
 				  </div>
-				  <nav aria-label="Page navigation example" class="bg-transparent shadow-none text-center mb-5 position-static">
+				  <nav aria-label="Page navigation example" class="bg-transparent shadow-none text-center mb-5 positi
+				  n-static">
 					  <ul class="pagination justify-content-center">
 					    <li class="page-item mx-1"><a class="page-link h-100 rounded" href="#"><img src="{{ asset('icons/blog/back.svg') }}" class="img-fluid"></a></li>
 					    <li class="page-item mx-1"><a class="page-link h-100 rounded active" data-target="#carouselExampleSlidesOnly" data-slide-to="0">1</a></li>

@@ -24,7 +24,7 @@
 					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy </p>
 				</div>
 
-				<div class="col-md-3 col-12 d-flex mt-3 mt-mt-0 align-items-center justify-content-md-end justify-content-start">
+				<div class="col-md-3 col-12 d-flex mt-4 mt-mt-0 align-items-center justify-content-md-end justify-content-center">
 					<img src="{{ asset('images/logo/transparent-logo.svg') }}" class="transparent-logo img-fluid">
 				</div>
 
@@ -34,7 +34,7 @@
 			<!-- Row -->
 			<div class="row mt-5">
 				
-			<div class="col-12 w-100 text-left my-4 mb-2">
+			<div class="col-12 w-100 text-center text-md-left my-4 mb-2">
 				
 				<h2 class="mb-4 mt-2">
 					<span class="yellow-border-heading pb-1">Poruka pape Franje</span>
@@ -76,8 +76,8 @@
 			<!-- Row -->
 			<div class="row">
 				
-				<div class="col-12 w-100 text-left my-4">
-					<h2 class="mb-4">
+				<div class="col-12 w-100 text-center text-md-left my-4">
+					<h2 class="mb-2 mb-md-4">
 						<span class="yellow-border-heading pb-1">World Family</span>
 					</h2>
 				</div>
@@ -98,7 +98,7 @@
 			
 			<div class="row">
 					
-				<div class="col-12 w-100 text-left my-4">
+				<div class="col-12 w-100 text-center text-md-left my-4">
 					<h2 class="mt-4 mb-0">
 						<span class="yellow-border-heading pb-1">12 Sela</span>
 					</h2>
@@ -127,7 +127,7 @@
 	<section id="2">
 		
 		<!-- Container -->
-		<div class="container mt-5">
+		<div class="container mt-0 mt-md-5">
 			
 			<!-- Row -->
 			<div class="row">
@@ -172,7 +172,7 @@
 			<!-- Row -->
 			<div class="row team">
 				
-				<div class="col-12 w-100 text-left mt-3 mb-4">
+				<div class="col-12 w-100 text-md-left text-center mt-3 mb-md-4 mb-2">
 					<h2 class="mb-lg-2 mb-5 mt-5">
 						<span class="yellow-border-heading pb-1">Naš tim</span>
 					</h2>
@@ -222,8 +222,8 @@
 					</p>
 				</div>
 
-				<div class="col-12 w-100 text-left my-4">
-					<h1 class="mb-lg-2 mb-5 mt-5">
+				<div class="col-12 w-100 text-md-left text-center my-4">
+					<h1 class="mb-lg-2 mb-md-5 mb-3 mt-0 mt-md-5">
 						<span class="yellow-border-heading pb-1">12 Sela</span>
 					</h1>
 				</div>					
@@ -237,9 +237,17 @@
 		<!-- Carousel Container -->
 
 		<div id="carouselExampleCaptions" class="carousel slide villages-carousel" data-ride="carousel">
-		  <div class="carousel-inner">
-		    <div class="carousel-item active">
-		      <img src="{{ asset('images/about/image-3.jpg') }}" class="d-block w-100" alt="..." >
+		  <div class="carousel-inner h-100 w-100">
+		    <div class="carousel-item h-100 w-100 active">
+		      <img src="{{ asset('images/about/image-3.jpg') }}" class="d-block w-100 h-100" alt="..." >
+		      <div class="black-overlay"></div>
+		      <div class="carousel-caption d-none d-md-block">
+		        <h2 class="mb-5">Naziv sela</h2>
+		        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+		      </div>
+		    </div>
+		    <div class="carousel-item h-100 w-100">
+		      <img src="{{ asset('images/about/image-3.jpg') }}" class="d-block w-100 h-100" alt="..." >
 		      <div class="black-overlay"></div>
 		      <div class="carousel-caption d-none d-md-block">
 		        <h2 class="mb-5">Naziv sela</h2>
@@ -269,7 +277,7 @@
 			<!-- Row -->
 			<div class="row">
 				
-				<div class="col-12 w-100 text-center my-5">
+				<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
 					
 					<h1>
 						<span class="yellow-border-heading pb-1">EoF budi i ti</span>

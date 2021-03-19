@@ -310,6 +310,13 @@ footer .social-networks h3{
 			margin-top: -20px;
 			margin-left: 10px;
 		} 
+		h1{
+			font-size: 25px;
+			margin-top: 40px;
+		}
+		h2{
+			font-size: 23px;
+		}
 	}
 
 .about-page-image-container-fluid{
@@ -404,6 +411,13 @@ footer .social-networks h3{
 			}
 		}	
 
+		/* Medium devices (tablets, less than 992px)*/
+		@media (max-width: 991.98px) { 
+			.team p{
+				font-size: 14px;
+			}
+		}
+
 	/* Carousel */
 
 	.villages-carousel .carousel-item{
@@ -433,6 +447,17 @@ footer .social-networks h3{
 			background-color: rgba(0,0,0,0.44);
 		}
 
+		/* Medium devices (tablets, less than 992px)*/
+		@media (max-width: 991.98px) { 
+			.villages-carousel{
+				height: 500px;
+			}
+			.villages-carousel img{
+				object-position: center;
+				object-fit: cover;
+			}
+		}
+
 /* Home Page */
 
 	/* Swiper 1 */
@@ -440,6 +465,13 @@ footer .social-networks h3{
   .swiper-container {
     width: 100%;
     height: 100%;
+  }
+
+  .swiper-container img{
+  	height: 340px; 
+  	width: 290px; 
+  	object-fit: cover; 
+  	object-position: center;
   }
 
   .swiper-slide {
@@ -563,7 +595,7 @@ footer .social-networks h3{
 		background-color: #FFDE59 !important;
 	}
 
-	.carousel .card .no-gutters .col-4{
+	.carousel .card .no-gutters .col-sm-4{
 		height: 280px; 
 		width: auto;
 	}
@@ -572,6 +604,6 @@ footer .social-networks h3{
 		object-fit: cover; 
 		height: 100%; 
 		width: 100%; 
-		object-position: center center;
+		object-position: center;
 	}
 
