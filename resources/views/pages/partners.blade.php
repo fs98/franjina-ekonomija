@@ -88,10 +88,6 @@
 
 <!-- /.Container -->
 
-<script type="text/javascript">
-	document.getElementById('partners').classList.add("active")
-</script>
-
 </section>
 
 @endsection('content')

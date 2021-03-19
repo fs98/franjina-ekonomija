@@ -525,3 +525,53 @@ footer .social-networks h3{
 	height: 500px;
 	width: 500px !important;
 }
+
+/* Blog Page */
+
+.blog-section .card-body{
+	background-color: #FFDE59;
+}
+
+.blog-section .card-body p{
+	font-size: 16px;
+}
+
+.blog-section .bloggers img{
+	height: 190px;
+}
+
+	/* Carousel */
+
+	.carousel nav img{
+		height: 18px;
+	}
+
+	.carousel nav .page-link{
+		border: 1px solid #414141;
+		font-weight: bold;
+		color: #414141;
+		padding: 10px 12px;
+	}
+
+	.carousel nav .page-link:hover{
+		cursor: pointer;
+		background-color: rgba(255, 222, 89, 0.5);
+		transition: 0.3s;
+	}
+
+	.carousel nav .active{
+		background-color: #FFDE59 !important;
+	}
+
+	.carousel .card .no-gutters .col-4{
+		height: 280px; 
+		width: auto;
+	}
+
+	.carousel .card .no-gutters img{
+		object-fit: cover; 
+		height: 100%; 
+		width: 100%; 
+		object-position: center center;
+	}
+

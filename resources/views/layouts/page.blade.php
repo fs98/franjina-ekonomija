@@ -89,13 +89,13 @@
 
           @if (Route::has('index'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="{{ __('/')}}" id="home"><span>Početna</span></a>
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('index') ? 'active' : '' }}" href="{{ __('/')}}" id="home"><span>Početna</span></a>
           </li>
           @endif
 
           @if (Route::has('about'))
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle p-0 mr-2" href="#" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle p-0 mr-2 {{ Route::currentRouteNamed('about') ? 'active' : '' }}" href="#" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>O nama</span>
           </a> 
           <div class="dropdown-menu mt-3 border-0 rounded-0 shadow" aria-labelledby="navbarDropdown">
@@ -106,39 +106,49 @@
           </li>        
           @endif
 
+          @if (Route::has('projects'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="#">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('projects') ? 'active' : '' }}" href="{{ __('projekti') }}">
               <span>Projekti</span>
             </a> 
           </li>
+          @endif
+
           @if (Route::has('activities'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="{{ __('aktivnosti') }}">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('activities') ? 'active' : '' }}" href="{{ __('aktivnosti') }}">
               <span>Aktivnosti</span>
             </a>
           </li>
           @endif
+
+          @if (Route::has('support'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="#">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('support') ? 'active' : '' }}" href="{{ __('podrška')}}">
               <span>Podrška</span>
             </a>
           </li>
+          @endif
+
           @if (Route::has('partners'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="{{ __('partneri') }}" id="partners">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('partners') ? 'active' : '' }}" href="{{ __('partneri') }}" id="partners">
               <span>Partneri</span>
             </a>
           </li>
           @endif
+
+          @if (Route::has('blog'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0" href="#">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('blog') ? 'active' : '' }}" href="{{ __('blog') }}">
               <span>Blog</span>
             </a>
           </li>
+          @endif
 
           @if (Route::has('contact'))
           <li class="nav-item mr-3 mr-xl-0">
-            <a class="nav-link p-0" href="{{ __('kontakt') }}" id="contact">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('contact') ? 'active' : '' }}" href="{{ __('kontakt') }}" id="contact">
               <span>Kontakt</span>
             </a>
           </li>
@@ -337,6 +347,6 @@
         },
       }
     });
-  </script>
+  </script>   
 </body>
 </html>

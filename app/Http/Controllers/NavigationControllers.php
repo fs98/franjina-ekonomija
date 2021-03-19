@@ -10,9 +10,7 @@ class NavigationControllers extends Controller
     //
 		public function index()
 		{
-
 			return view('pages.home');
-
 		}
 
 		// 
@@ -35,5 +33,29 @@ class NavigationControllers extends Controller
 			return view('pages.activities');
 		}
 
+		//
+		public function blogpost(){
+			return view('pages.blogpost');
+		}
+
+		//
+		public function blog(){
+			return view('pages.blog');
+		}
+
+		//
+		public function support(){
+			return view('pages.support');
+		}
+
+		//
+		public function projectlist(){
+			return view('pages.projectlist');
+		}
+
+		//
+		public function project(){
+			return view('pages.project');
+		}
 
 }

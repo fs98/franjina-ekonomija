@@ -345,9 +345,6 @@
 
 </section>
 
-<script type="text/javascript">
-	document.getElementById('about').classList.add("active")
-</script>
 <script src="{{ asset('js/scrollspy.js') }}" defer></script>
 
 @endsection ('content')

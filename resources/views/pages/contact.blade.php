@@ -101,10 +101,6 @@
 
 <!-- /.Container -->
 
-<script type="text/javascript">
-	document.getElementById('contact').classList.add("active")
-</script>
-
 </section>
 
 @endsection
