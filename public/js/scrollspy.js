@@ -3,7 +3,12 @@ jQuery("#navbar a").on('click', function(event) {
   if ((String(this.pathname).includes("onama")) && (this.hash !== '') && (String(this.hash).includes("#"))) {
     event.preventDefault();
     var hash = this.hash;
-    jQuery('.collapse').collapse('toggle');
+
+    // Collapse navbar after click on screens smaller then lg
+    if($(window).width() <= 992) {
+      jQuery('.collapse').collapse('toggle');
+    }
+    
     jQuery('html, body').animate({
       scrollTop: jQuery(hash).offset().top - 150
     }, 1500, function(){

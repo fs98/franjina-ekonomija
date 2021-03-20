@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name', 'Franjina ekonomija') }}</title>
+    <link rel="icon" type="image/svg" sizes="16x16" href="{{ asset('images/logo/main-logo.svg') }}">
+
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,7 +23,12 @@
 
     <!-- Swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Fancybox Gallery -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}">    
 
 </head>
 <body>
@@ -327,35 +334,76 @@
 
 <!-- Swiper -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-        dynamicBullets: true,
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        },
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 40,
       },
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 40,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 0,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-      }
-    });
-  </script>   
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    }
+  });
+</script> 
+ <script>
+  var swiper = new Swiper('.support-page-partners-slider', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },  
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 0,
+      },
+    }
+  });
+</script>  
+
+<!-- [Fancybox Image Gallery] -->
+<script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
+<script type="text/javascript">
+$().fancybox({
+    selector : '.imglist a:visible'
+});
+
+$('[data-fancybox="gallery"]').fancybox({
+   buttons: [
+    "close"
+  ],
+  loop: false,
+  keyboard: true,
+  infobar: true,
+
+});
+    
+</script>    
 </body>
 </html>

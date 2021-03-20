@@ -1,5 +1,9 @@
 @extends('layouts.page')
 
+@section ('title')
+	Franjina ekonomija
+@endsection ('title')
+
 @section('content')
 
 <section id="home">

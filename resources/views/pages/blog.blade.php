@@ -1,5 +1,9 @@
 @extends ('layouts.page')
 
+@section ('title')
+	Blog
+@endsection ('title')
+
 @section ('content')
 
 <section class="blog-section">

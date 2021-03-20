@@ -1,5 +1,9 @@
 @extends('layouts.page')
 
+@section ('title')
+	Kontakt
+@endsection ('title')
+
 @section('content')
 
 <section class="contact-section">

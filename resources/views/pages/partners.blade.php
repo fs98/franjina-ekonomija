@@ -1,5 +1,9 @@
 @extends('layouts.page')
 
+@section ('title')
+	Partneri
+@endsection ('title')
+
 @section('content')
 
 <section class="partners-section">

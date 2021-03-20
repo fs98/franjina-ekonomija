@@ -1,5 +1,9 @@
 @extends ('layouts.page')
 
+@section ('title')
+	O nama
+@endsection ('title')
+
 @section ('content')  
 
 <section class="about-section position-relative">

@@ -189,7 +189,7 @@ footer .social-networks h3{
 /* Contact Page */
 
 .contact-section{
-	margin-top: 150px;
+	margin-top: 100px;
 	margin-bottom: 100px;
 }
 
@@ -536,7 +536,7 @@ footer .social-networks h3{
   }
 
   .card a:hover{
-  	background-color: rgba(60, 60, 60, 0.7);
+  	background-color: #BB1C2E;
   	transition: 0.3s;
   }
 
@@ -705,36 +705,51 @@ footer .social-networks h3{
 	  	transition: 0.3s;
 	  }
 
+  /* Gallery */
+  .gallery img{
+  	object-fit: cover;
+  	object-position: center;
+  	height: 180px;
+  	width: 100%;
+  }
+
 /* Support Page */
 
-.support-section .card-donate{
+.support-section .card-donate,
+.support-section .bank-donate{
 	background-color: #f3f3f3
 }
 
-.support-section .card-donate img{
+.support-section .card-donate img,
+.support-section .bank-donate img{
 	height: 100px;
 }
 
 	/* Medium devices (tablets, less than 992px) */
 	@media (max-width: 991.98px) {
-		.support-section .card-donate img{
+		.support-section .card-donate img,
+		.support-section .bank-donate img{
 			height: 60px;
 		}
-		.support-section .card-donate h3{
+		.support-section .card-donate h3,
+		.support-section .bank-donate h3{
 			font-size: 20px;
 		}
 	}
 
 	/* Extra small devices (portrait phones, less than 576px) */
 	@media (max-width: 575.98px) {
-		.support-section .card-donate img{
+		.support-section .card-donate img,
+		.support-section .bank-donate img{
 			height: 30px;
 		}
-		.support-section .card-donate h3{
+		.support-section .card-donate h3,
+		.support-section .bank-donate h3{
 			font-size: 18px;
 		}
 	}
 
+.support-section .card-donate a,
 .support-section .card-donate button{
 	padding: 15px 50px;
 	width: 150px;
@@ -745,11 +760,13 @@ footer .social-networks h3{
 	color: #1C1B19;
 }
 
+.support-section .card-donate a:hover,
 .support-section .card-donate button:hover{
 	background-color: rgba(243, 243, 243, 0.8); 
 	transition: 0.3s;
 }
 
+.support-section .card-donate a:focus,
 .support-section .card-donate button:focus,
 .support-section .card-donate input:focus{
 	box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
@@ -768,6 +785,7 @@ footer .social-networks h3{
 
 .support-section .card-donate input::placeholder{
 	font-weight: 200;
+	text-align: center;
 }
 
 .support-section .donate-button{
@@ -781,3 +799,16 @@ footer .social-networks h3{
 	background-color: rgba(187, 28, 46, 0.8) !important;
 	transition: 0.3s;
 }
+
+	/* Slider */
+	.support-section .support-page-partners-slider img{
+		object-fit: contain;
+	}
+
+	.support-page-partners-slider-section{
+		background-image: url(../images/support/slider-background-2.png);
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
