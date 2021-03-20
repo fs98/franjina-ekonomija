@@ -236,7 +236,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-sm-5 mt-5 d-flex align-items-center">
+            <div class="col-12 col-sm-5 mt-5 d-flex align-items-center justify-content-center">
               <img src="{{ asset('images/logo/main-logo.svg') }}" class="footer-logo mb-0 mb-sm-5">
             </div>
 
@@ -329,6 +329,13 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
