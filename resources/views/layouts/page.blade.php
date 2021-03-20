@@ -200,7 +200,7 @@
             
 
             <div class="col-12 col-sm-7 mt-3 mt-sm-5">
-              <h3 class="text-white ml-5 mt-5 mt-lg-0">Naš ured</h2>
+              <h3 class="text-white ml-5 mt-5 mt-lg-0 font-weight-bold">Naš ured</h2>
 
               <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
                 <div class="">

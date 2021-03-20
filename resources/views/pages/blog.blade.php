@@ -168,14 +168,13 @@
 							</div>
 				    </div>
 				  </div>
-				  <nav aria-label="Page navigation example" class="bg-transparent shadow-none text-center mb-5 positi
-				  n-static">
+				  <nav aria-label="Page navigation example" class="bg-transparent shadow-none text-center mb-5">
 					  <ul class="pagination justify-content-center">
-					    <li class="page-item mx-1"><a class="page-link h-100 rounded" href="#"><img src="{{ asset('icons/blog/back.svg') }}" class="img-fluid"></a></li>
-					    <li class="page-item mx-1"><a class="page-link h-100 rounded active" data-target="#carouselExampleSlidesOnly" data-slide-to="0">1</a></li>
-					    <li class="page-item mx-1"><a class="page-link h-100 rounded" data-target="#carouselExampleSlidesOnly" data-slide-to="1">2</a></li>
-					    <li class="page-item mx-1"><a class="page-link h-100 rounded" data-target="#carouselExampleSlidesOnly" data-slide-to="2">3</a></li>
-					    <li class="page-item mx-1"><a class="page-link h-100 rounded" href="#"><img src="{{ asset('icons/blog/forth.svg') }}" class="img-fluid"></a></li>
+					    <li class="page-item"><a class="page-link h-100" href="#"><img src="{{ asset('icons/blog/back.svg') }}" class="img-fluid"></a></li>
+					    <li class="page-item"><a class="page-link h-100 active" data-target="#carouselExampleSlidesOnly" data-slide-to="0">1</a></li>
+					    <li class="page-item"><a class="page-link h-100" data-target="#carouselExampleSlidesOnly" data-slide-to="1">2</a></li>
+					    <li class="page-item"><a class="page-link h-100" data-target="#carouselExampleSlidesOnly" data-slide-to="2">3</a></li>
+					    <li class="page-item"><a class="page-link h-100" href="#"><img src="{{ asset('icons/blog/forth.svg') }}" class="img-fluid"></a></li>
 					  </ul>
 					</nav>	
 				</div>		

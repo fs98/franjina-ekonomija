@@ -40,6 +40,7 @@ header input:focus{
 		background-image: url('../images/header/background.svg');
 		background-size: contain;
 		background-color: #414141;
+		font-weight: 200;
 	}
 
 	.topbar-icons{
@@ -50,6 +51,7 @@ header input:focus{
 	.topbar-navbar form input::placeholder {
 		font-size: 14px;
 		color: #1C1B19;
+		font-weight: 200;
 	}
 
 	.topbar-navbar form img,
@@ -64,7 +66,7 @@ header input:focus{
 	}
 
 	nav .nav-link{
-		font-weight: bold;
+		font-weight: 700;
 		text-transform: uppercase;
 		color: #1C1B19 !important;
 		font-size: 16px;
@@ -90,11 +92,11 @@ header input:focus{
 	nav .navbar-brand{
 		background-image: url('../images/logo/header-logo.svg'); 
 		background-size: cover; 
-		height: 200px;
-		width: 200px; 
+		height: 160px;
+		width: 160px; 
 		border-radius: 50%;  
 		border: 6px solid white; 
-		margin-bottom: -120px
+		margin-bottom: -70px
 	}
 
 
@@ -117,14 +119,30 @@ footer {
 	background-color: #3C3C3C;
 }
 
+footer h4{
+	font-weight: 500;
+}
+
+footer a{
+	font-weight: 200 !important;
+}
+
 footer .footer-top{
 	padding-top: 100px !important;
 	padding-bottom: 130px;
 }
 
 footer .footer-logo{
-	height: 180px;
+	height: 160px;
 }
+
+/* Medium devices (tablets, less than 992px) */
+	@media (max-width: 991.98px) {
+		footer .footer-logo{
+			height: 120px;
+		}
+	}
+
 
 footer .footer-icon{
 	width: 30px;
@@ -476,8 +494,8 @@ footer .social-networks h3{
 
   .swiper-slide {
     text-align: center;
-    font-size: 18px;
-    background: #fff;
+    font-size: 16px; 
+    background-color: transparent;
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -496,14 +514,14 @@ footer .social-networks h3{
 
   .swiper-container .swiper-button-prev,
   .swiper-container .swiper-button-next{
-  	color: #3C3C3C !important;
-  	font-size: 5px !important;
+  	color: #3C3C3C !important; 
   }
 
   /* Card */
 
   .card{
-  	width: 18rem
+  	width: 18rem;
+  	background-color: transparent;
   }
 
   .card a{
@@ -550,7 +568,7 @@ footer .social-networks h3{
 }
 
 .activities-section .activity-icon{
-	height: 150px !important;
+	height: 100px !important;
 }
 
 .activities-section .meetings-img{
@@ -578,11 +596,15 @@ footer .social-networks h3{
 		height: 18px;
 	}
 
+	.carousel nav{
+		z-index: -1;
+	}
+
 	.carousel nav .page-link{
-		border: 1px solid #414141;
-		font-weight: bold;
+		/*border: 1px solid #414141;
+		font-weight: bold;*/
 		color: #414141;
-		padding: 10px 12px;
+		/*padding: 10px 12px;*/
 	}
 
 	.carousel nav .page-link:hover{
@@ -606,4 +628,15 @@ footer .social-networks h3{
 		width: 100%; 
 		object-position: center;
 	}
+
+/* Projects Page */
+
+.projects-section .card .projects-card-icon {
+	height: 20px;
+}
+
+.projects-section .card p{
+	font-size: 12px;
+	font-weight: 200
+}
 

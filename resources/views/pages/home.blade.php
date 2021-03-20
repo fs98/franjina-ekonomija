@@ -63,11 +63,13 @@
 	</div>
 	<!-- /.Container -->	
 
+<section class="bg-light">	
+
 	<!-- Container -->
-	<div class="container my-5">
+	<div class="container py-5">
 		
 		<!-- Row -->
-		<div class="row">
+		<div class="row my-5">
 
 		<div class="col-12 w-100 text-center mb-5">
 			<h1>
@@ -86,7 +88,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -96,7 +98,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -106,7 +108,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -116,7 +118,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -126,7 +128,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -134,9 +136,9 @@
 			      <div class="swiper-slide">
 			      	<div class="card border-0">
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
+							  <div class="card-bodypx-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -154,6 +156,8 @@
 
 	</div>
 	<!-- /.Container -->
+
+</section>
 
 
 	<!-- Container -->
@@ -178,7 +182,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -188,7 +192,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -198,7 +202,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -208,7 +212,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -218,7 +222,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
@@ -228,7 +232,7 @@
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
 							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-left mt-5 ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
