@@ -10,7 +10,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,14 +20,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
 
-    <!-- Fancybox Gallery -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}">    
+    @yield('links')
 
 </head>
 <body>
@@ -190,15 +185,12 @@
 
 
 <!-- Footer -->
-
 <footer>
 
   <!-- Container -->
-
   <div class="container">
 
     <!-- Row -->
-
     <div class="row footer-top">
       
       <div class="col-xl-8">
@@ -281,19 +273,15 @@
       </div>
 
     </div>
-
     <!-- /.Row -->
 
   </div>
-
   <!-- /.Container -->
 
   <!-- Container-fluid -->
-
   <div class="container-fluid">
 
     <!-- Row -->
-
     <div class="row bg-white text-center">
 
       <div class="col-12 py-4">
@@ -301,16 +289,16 @@
       </div>
 
     </div>
-
     <!-- /.Row -->
 
   </div>
-
   <!-- /.Container-fluid -->
 
 </footer>
 
 <!-- /.Footer) -->
+
+<!-- Sticky Navbar -->
 <script>
   jQuery( document ).ready(function() {
     var navbar = document.getElementById("navbar");
@@ -332,78 +320,7 @@
   });
 </script>
 
-<!-- Swiper -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: true,
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + '</span>';
-      },
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 1,
-        spaceBetween: 40,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 0,
-      },
-    }
-  });
-</script> 
- <script>
-  var swiper = new Swiper('.support-page-partners-slider', {
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },  
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 0,
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 0,
-      },
-    }
-  });
-</script>  
+@yield('scripts')
 
-<!-- [Fancybox Image Gallery] -->
-<script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
-<script type="text/javascript">
-$().fancybox({
-    selector : '.imglist a:visible'
-});
-
-$('[data-fancybox="gallery"]').fancybox({
-   buttons: [
-    "close"
-  ],
-  loop: false,
-  keyboard: true,
-  infobar: true,
-
-});
-    
-</script>    
 </body>
 </html>

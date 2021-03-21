@@ -4,6 +4,13 @@
 	Projekat
 @endsection ('title')
 
+@section('links')
+
+<!-- Fancybox Gallery -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}">
+
+@endsection('links')
+
 @section ('content')
 
 <section class="blog-post-section">
@@ -138,5 +145,27 @@
 </section>
 
 
-
 @endsection ('content')
+
+@section('scripts')
+
+<!-- [Fancybox Image Gallery] -->
+<script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
+<script type="text/javascript">
+$().fancybox({
+    selector : '.imglist a:visible'
+});
+
+$('[data-fancybox="gallery"]').fancybox({
+   buttons: [
+    "close"
+  ],
+  loop: false,
+  keyboard: true,
+  infobar: true,
+
+});
+    
+</script>  
+
+@endsection('scripts')

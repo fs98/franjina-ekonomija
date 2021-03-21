@@ -24,7 +24,6 @@ Route::get('/podrška','NavigationControllers@Support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blogpost','NavigationControllers@blogpost')->name('blogPost');
 
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

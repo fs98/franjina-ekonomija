@@ -4,6 +4,13 @@
 	Projekti
 @endsection ('title')
 
+@section('links')
+
+ <!-- Swiper -->
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+@endsection('links')
+
 @section ('content')
 	
 <section class="projects-section">
@@ -71,7 +78,9 @@
 							<!-- /.Card -->
 
 			      </div>
-			      <!-- /.Slide -->			    	<!-- Slide -->
+			      <!-- /.Slide -->		
+
+			      <!-- Slide -->
 			      <div class="swiper-slide">
 
 			      	<!-- Card -->
@@ -118,7 +127,9 @@
 							<!-- /.Card -->
 
 			      </div>
-			      <!-- /.Slide -->			    	<!-- Slide -->
+			      <!-- /.Slide -->		
+
+			      <!-- Slide -->
 			      <div class="swiper-slide">
 
 			      	<!-- Card -->
@@ -728,3 +739,40 @@
 </section>
 
 @endsection ('content')
+
+@section('scripts')
+
+<!-- Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    }
+  });
+</script> 
+
+@endsection('scripts')

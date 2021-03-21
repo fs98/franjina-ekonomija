@@ -4,6 +4,13 @@
 	Podrška
 @endsection ('title')
 
+@section('links')
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> 
+
+@endsection('links')
+
 @section ('content')
 
 <section class="support-section">
@@ -101,17 +108,11 @@
 		<!-- Row -->
 		<div class="row">
 			
-			<div class="col-12 text-center my-5">
+			<div class="col-12 text-center mt-5">
 				<h1>
 					<span class="yellow-border-heading pb-1">Partneri</span>
 				</h1>				
-			</div>
-
-			<div class="offset-lg-1 col-lg-10 px-3">
-				<p class="partners-text text-left">
-				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
-				</p>
-			</div>		
+			</div>	
 
 		</div>
 		<!-- /.Row -->	
@@ -119,7 +120,37 @@
 	</div>
 	<!-- /.Container -->
 
-	<section class="mb-5 py-5 support-page-partners-slider-section">
+	<section class="support-background-section">
+
+		<div class="support-background-section-overlay">
+			
+			<!-- Container -->
+			<div class="container py-5">
+				
+				<!-- Row -->
+				<div class="row my-5">
+					
+					<div class="col-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+
+						<h5 class="text-white font-weight-normal text-center">
+							Svatko se od nas barem jednom u životu našao u situaciji gdje je htio nešto pitati, ali nije imao ni znao koga. Međutim, nekada i znamo koga bi pitali, ali nam je neugodno, nesigurni smo ili se bojimo. S druge strane, možda imaš super ideju, ali ne znaš kako je započeti, ne želiš raditi sam/a, nedostaju ti resursi za provedbu... 
+								<br><br>
+							Zato smo mi tu, rado ćemo ti pokušati pomoći. <strong>Kontaktiraj nas!</strong>
+						</h5>
+
+					</div>
+
+				</div>
+				<!-- /.Row -->
+			
+			<!-- /.Container -->
+			</div>
+
+		</div>
+		
+	</section>
+
+	<section class="mb-5 support-page-partners-slider-section">
 				
 		<!-- Swiper -->
 		  <div class="swiper-container support-page-partners-slider">
@@ -173,3 +204,32 @@
 </section>
 
 @endsection ('content')
+
+@section('scripts')
+
+<!-- Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.support-page-partners-slider', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },  
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    }
+  });
+</script> 
+
+@endsection('scripts')

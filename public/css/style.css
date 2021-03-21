@@ -563,6 +563,19 @@ footer .social-networks h3{
 		background-color: #BB1C2E;
 	}
 
+	/* Calendar */
+
+	.yellow-border-month{
+		border-top: 3px solid #FFDE59;
+		border-bottom: 3px solid #FFDE59;
+	}
+
+	.fc .fc-event{
+		background-color: white;
+		border-radius: 0;
+		border-color: transparent; 
+	}
+
 /* Activities Page */
 
 .activities-section h4{
@@ -805,10 +818,14 @@ footer .social-networks h3{
 		object-fit: contain;
 	}
 
-	.support-page-partners-slider-section{
+	.support-background-section{
 		background-image: url(../images/support/slider-background-2.png);
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
+	}
+
+	.support-background-section-overlay{
+		background-color: rgba(0, 0, 0, 0.2)
 	}
 

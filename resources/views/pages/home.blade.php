@@ -4,6 +4,16 @@
 	Franjina ekonomija
 @endsection ('title')
 
+@section('links')
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Calendar -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/calendar/main.min.css') }}">
+
+@endsection('links')
+
 @section('content')
 
 <section id="home">
@@ -50,6 +60,60 @@
 			</div>
 
 		<!-- /.Carousel -->
+
+	</section>	
+
+	<section class="calendar-sectionr" style="margin-top: 100px;">
+		
+		<!-- Container -->
+		<div class="container">
+		
+				<!-- Row -->
+			<div class="row">
+				
+				<div class="col-7">
+
+					<div class="text-center mb-4">
+
+						<h5 class="mb-3">{{ date('d') }}</h5>
+						<h2>
+							<span class="yellow-border-month text-uppercase py-1 px-5">{{ date('F') }}</span>
+						</h2>
+						<h5 class="mt-3">{{ date('Y') }}</h5>
+
+					</div>
+
+					 <div id='calendar' class="my-5"></div>
+				</div>
+
+				<div class="col-5 d-flex align-items-end my-5 pb-2">
+					
+					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <img src="{{ asset('images/home/slider-2/image-1.jpg') }}" class="d-block w-100" alt="...">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="{{ asset('images/home/slider-2/image-2.jpg') }}" class="d-block w-100" alt="...">
+					    </div>
+					  </div>
+					  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
+					
+				</div>
+
+			</div>
+			<!-- /.Row -->
+
+		</div>
+		<!-- /.Container -->
 
 	</section>	
 
@@ -259,3 +323,78 @@
 </section>
 
 @endsection
+
+@section('scripts')
+
+<!-- Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    }
+  });
+</script> 
+
+<!-- Calendar -->
+<script type="text/javascript" src="{{ asset('js/calendar/main.min.js') }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+        themeSystem: 'bootstrap',
+        locale: 'hr',
+        weekNumberCalculation: 'ISO',
+        headerToolbar: false,
+        events: [
+	   	 {
+		      id: '1',
+		      title: '1',
+		      start: '2021-03-21',
+		      end: '2021-03-24',
+		    },
+		    {
+		      id: '2',
+		      title: '2',
+		      start: '2021-03-03',
+		    }
+		  ],
+		  eventTextColor: '#000',
+	    eventClick: function(info) {
+		    alert('Event: ' + info.event.title);   
+		  }
+
+    });
+    calendar.render();
+
+  });
+
+</script>
+
+@endsection('scripts')

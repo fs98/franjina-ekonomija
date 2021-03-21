@@ -4,6 +4,12 @@
 	O nama
 @endsection ('title')
 
+@section('links')
+
+
+
+@endsection('links')
+
 @section ('content')  
 
 <section class="about-section position-relative">
@@ -357,6 +363,11 @@
 
 </section>
 
+@endsection ('content')
+
+@section('scripts')
+
+<!-- Smooth Scroll -->
 <script src="{{ asset('js/scrollspy.js') }}" defer></script>
 
-@endsection ('content')
+@endsection('scripts')
