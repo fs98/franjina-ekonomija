@@ -343,6 +343,24 @@ footer .social-networks h3{
 		}
 	}
 
+
+.about-section textarea{
+	resize: none;
+}
+
+.about-section button{
+	background-color: #BB1C2E;
+}
+
+.about-section button:hover{
+	background-color: rgba(187, 28, 46, 0.8) !important;
+	transition: 0.3s;
+}
+
+.about-section button:focus{
+	box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
+}
+
 .about-page-image-container-fluid{
 	height: 350px;
 	background-image: url('../images/about/image-1.jpg');
@@ -440,7 +458,7 @@ footer .social-networks h3{
 			.team p{
 				font-size: 14px;
 			}
-		}
+		}	
 
 	/* Carousel */
 
@@ -555,14 +573,6 @@ footer .social-networks h3{
 		margin-top: 13px;
 	}
 
-	.about-section textarea{
-		resize: none;
-	}
-
-	.about-section button{
-		background-color: #BB1C2E;
-	}
-
 	/* Calendar */
 
 	.yellow-border-month{
@@ -586,6 +596,7 @@ footer .social-networks h3{
 	.fc-col-header-cell.fc-day-sun,
 	.fc-col-header-cell.fc-day-sat{
 		background-color: #FFDE59 !important; 
+		color: black;
 	}
 
 	.fc-col-header{
@@ -607,6 +618,12 @@ footer .social-networks h3{
 
 	.fc-day-sun .fc-daygrid-day-number{
 		color: #FFDE59 !important;
+	}
+
+	/* Modal */
+
+	.modal h4{
+		font-weight: 200 !important;
 	}
 
 /* Activities Page */
@@ -856,9 +873,10 @@ footer .social-networks h3{
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
+		background-attachment: fixed;
 	}
 
 	.support-background-section-overlay{
-		background-color: rgba(0, 0, 0, 0.2)
+		background-color: rgba(0, 0, 0, 0.4)
 	}
 

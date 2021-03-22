@@ -29,14 +29,14 @@
 				<p class="mt-4 text-center">je dobrovoljna socijalna kohezija, spremnost da se pomogne i dodijeli međusobna podrška unutar grupe.</p>
 			</div>
 			<div class="col-12 col-md-6 col-xl-3 px-4 text-center">
-				<img src="{{ asset('icons/activities/cjelozivotno-ucenje.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
-				<h4 class="text-uppercase text-center font-weight-bold mt-5">Cjeloživotno učenje</h4>
-				<p class="mt-4 text-center">definira se kao aktivnost učenja tijekom cijelog života s ciljem unapređenja znanja, vještina i sposobnosti unutar osobne, društvene i poslovne perspektive</p>
-			</div>
-			<div class="col-12 col-md-6 col-xl-3 px-4 text-center">
 				<img src="{{ asset('icons/activities/ekologija.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
 				<h4 class="text-uppercase text-center font-weight-bold mt-5">Ekologija</h4>
 				<p class="mt-4 text-center"> znanost koja proučava odnose među živim organizmima, kao i njihov utjecaj na okoliš u kojem obitavaju, te utjecaj tog okoliša na njih.</p>
+			</div>
+			<div class="col-12 col-md-6 col-xl-3 px-4 text-center">
+				<img src="{{ asset('icons/activities/cjelozivotno-ucenje.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
+				<h4 class="text-uppercase text-center font-weight-bold mt-5">Cjeloživotno učenje</h4>
+				<p class="mt-4 text-center">definira se kao aktivnost učenja tijekom cijelog života s ciljem unapređenja znanja, vještina i sposobnosti unutar osobne, društvene i poslovne perspektive</p>
 			</div>
 
 		</div>

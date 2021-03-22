@@ -35,7 +35,7 @@
 				</div>
 
 				<div class="col-md-3 col-12 d-flex mt-4 mt-mt-0 align-items-center justify-content-md-end justify-content-center">
-					<img src="{{ asset('images/logo/transparent-logo.svg') }}" class="transparent-logo img-fluid">
+					<a href="https://francescoeconomy.org/" target="_blank" class="text-decoration-none"><img src="{{ asset('images/logo/transparent-logo.svg') }}" class="transparent-logo img-fluid"></a>
 				</div>
 
 			</div>

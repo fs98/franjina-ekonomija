@@ -149,8 +149,10 @@
 			<!-- Swiper News -->
 
 			<!-- Swiper -->
-			  <div class="swiper-container">
+			  <div class="swiper-container px-4">
 			    <div class="swiper-wrapper">
+
+			    	<!-- Slide -->
 			      <div class="swiper-slide">
 			      	<div class="card border-0">
 							  <img src="{{ asset('images/home/400x450.png') }}" alt="...">
@@ -161,56 +163,8 @@
 							  </div>
 							</div>
 			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-bodypx-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
+			      <!-- /.Slide -->
+			      
 			    </div>
 			    <!-- Add Arrows -->
 			    <div class="swiper-button-next"></div>
@@ -243,8 +197,10 @@
 			<!-- Swiper Projects -->
 
 			<!-- Swiper -->
-			  <div class="swiper-container">
-			    <div class="swiper-wrapper">
+			  <div class="swiper-container px-4">
+			    <div class="swiper-wrapper"> 
+			      
+			      <!-- Slide -->
 			      <div class="swiper-slide">
 			      	<div class="card border-0">
 							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
@@ -255,56 +211,8 @@
 							  </div>
 							</div>
 			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
-							</div>
-			      </div>
+			      <!-- /.Slide -->
+
 			    </div>
 			    <!-- Add Arrows -->
 			    <div class="swiper-button-next"></div>
@@ -324,8 +232,29 @@
 
 	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-	      ...
+	    <div class="modal-content p-5 border-0 rounded-0">
+	      <img src="https://via.placeholder.com/1000x350">
+	      <div class="row">
+	      	<div class="col-12">
+	      		<h4 class="mt-5 w-100">Naziv događaja: <span class="w-100 border-bottom text-muted ml-3">Lorem ipsum</span> </h4>
+	      	</div>
+	      	<div class="col-lg-5 col-12">
+	      		<h4 class="mt-4 w-100">Datum: <span class="w-100 border-bottom text-muted ml-3">Datum</span></h4>
+	      	</div>
+	      	<div class="col-lg-7 col-12 text-lg-right text-left">
+	      		<h4 class="mt-4 w-100">Satnica od<span class="w-100 border-bottom text-muted ml-3">13:00 h</span> do <span class="w-100 border-bottom text-muted">14:00 h</span></h4>
+	      	</div>
+	      	<div class="col-12">
+	      		<h4 class="mt-4 w-100 border p-3">Zoom link: <span></span></h4>
+	      	</div>
+	      	<div class="col-lg-3 col-12">
+	      		<h4 class="mt-4">Osnovne informacije</h4>
+	      	</div>
+	      	<div class="col-lg-9 col-12 mt-4">
+	      		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd </p>
+	      	</div>
+	      </div> 
+	      
 	    </div>
 	  </div>
 	</div>
@@ -382,7 +311,7 @@
 
     	var firstEvent = {
 		      id: '1',
-		      title: '1',
+		      title: 'Test',
 		      start: '2021-03-19',
 		      end: '2021-03-18', 
 		      backgroundColor: '#FFD403'
