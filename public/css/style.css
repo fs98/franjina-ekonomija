@@ -570,10 +570,43 @@ footer .social-networks h3{
 		border-bottom: 3px solid #FFDE59;
 	}
 
-	.fc .fc-event{
-		background-color: white;
+	.fc .fc-event{ 
 		border-radius: 0;
 		border-color: transparent; 
+	}
+
+	.fc .fc-event:hover{ 
+		cursor: pointer !important;
+	}
+
+	.fc-day-today {
+		background-color: transparent !important;
+	}
+
+	.fc-col-header-cell.fc-day-sun,
+	.fc-col-header-cell.fc-day-sat{
+		background-color: #FFDE59 !important; 
+	}
+
+	.fc-col-header{
+		background-color: #3c3c3c;
+		color: white;
+		margin-bottom: 10px;
+	}
+
+	.fc-col-header-cell-cushion{
+		font-weight: normal;
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
+	}
+
+	.fc-day-other{
+		background-color: #ABADAC !important;
+		color: white !important; 
+	}
+
+	.fc-day-sun .fc-daygrid-day-number{
+		color: #FFDE59 !important;
 	}
 
 /* Activities Page */

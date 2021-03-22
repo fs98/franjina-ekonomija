@@ -97,7 +97,7 @@
 
           @if (Route::has('about'))
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle p-0 mr-2 {{ Route::currentRouteNamed('about') ? 'active' : '' }}" href="#" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle p-0 mr-2 {{ Route::currentRouteNamed('about') ? 'active' : '' }}" href="{{ __('onama#1') }}" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>O nama</span>
           </a> 
           <div class="dropdown-menu mt-3 border-0 rounded-0 shadow" aria-labelledby="navbarDropdown">

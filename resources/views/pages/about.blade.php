@@ -25,7 +25,7 @@
 				<div class="col-12 w-100 text-center mb-4">
 					
 					<h1>
-						<span class="yellow-border-heading pb-1">Economy of Francesko</span>
+						<span class="yellow-border-heading pb-1">Economy of Francesco</span>
 					</h1>
 
 				</div>

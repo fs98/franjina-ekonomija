@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Date;
 
 class NavigationControllers extends Controller
 {
@@ -10,6 +11,8 @@ class NavigationControllers extends Controller
     //
 		public function index()
 		{
+			// echo Date::now()->format('l j F Y H:i:s');
+			// die();
 			return view('pages.home');
 		}
 

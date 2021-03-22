@@ -71,13 +71,13 @@
 				<!-- Row -->
 			<div class="row">
 				
-				<div class="col-7">
+				<div class="col-12 col-xl-7">
 
 					<div class="text-center mb-4">
 
 						<h5 class="mb-3">{{ date('d') }}</h5>
 						<h2>
-							<span class="yellow-border-month text-uppercase py-1 px-5">{{ date('F') }}</span>
+							<span class="yellow-border-month text-uppercase py-1 px-5">{{ Helper::enToHrMonth(date('m')) }}</span>
 						</h2>
 						<h5 class="mt-3">{{ date('Y') }}</h5>
 
@@ -86,7 +86,7 @@
 					 <div id='calendar' class="my-5"></div>
 				</div>
 
-				<div class="col-5 d-flex align-items-end my-5 pb-2">
+				<div class="col-12 col-xl-5 d-flex align-items-end my-5 pb-2">
 					
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 					  <div class="carousel-inner">
@@ -137,7 +137,7 @@
 	<div class="container py-5">
 		
 		<!-- Row -->
-		<div class="row my-5">
+		<div class="row mb-5">
 
 		<div class="col-12 w-100 text-center mb-5">
 			<h1>
@@ -319,6 +319,17 @@
 	</div>
 	<!-- /.Container -->
 
+	<!-- Modal -->
+	<!-- Large modal -->
+
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      ...
+	    </div>
+	  </div>
+	</div>
+
 
 </section>
 
@@ -366,6 +377,45 @@
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
+		var date = new Date();
+    var formattedDate = date.getFullYear() + "-" + ("0" + (date.getMonth()+1)) + "-" + date.getDate();
+
+    	var firstEvent = {
+		      id: '1',
+		      title: '1',
+		      start: '2021-03-19',
+		      end: '2021-03-18', 
+		      backgroundColor: '#FFD403'
+		    };
+
+		  var secondEvent =  {
+		      id: '2',
+		      title: '2',
+		      start: '2021-03-23',
+		      end: '2021-03-23', 
+		    }  
+
+		    console.log(firstEvent.end + formattedDate);
+
+		    if(firstEvent.end <= formattedDate) {
+		    	firstEvent.backgroundColor = '#BB1C2E',
+		    	firstEvent.textColor = '#fff';
+		    }
+		    else {
+		    	firstEvent.backgroundColor = '#FFD403',
+		    	firstEvent.textColor = '#000';
+		    };
+
+		    if(secondEvent.end <= formattedDate) {
+		    	secondEvent.backgroundColor = '#BB1C2E',
+		    	secondEvent.textColor = '#fff';
+		    }
+		    else {
+		    	secondEvent.backgroundColor = '#FFD403';
+		    	secondEvent.textColor = '#000';
+		    }
+
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
         themeSystem: 'bootstrap',
@@ -373,23 +423,12 @@
         weekNumberCalculation: 'ISO',
         headerToolbar: false,
         events: [
-	   	 {
-		      id: '1',
-		      title: '1',
-		      start: '2021-03-21',
-		      end: '2021-03-24',
-		    },
-		    {
-		      id: '2',
-		      title: '2',
-		      start: '2021-03-03',
-		    }
+		   	 	firstEvent,
+		  		secondEvent  
 		  ],
-		  eventTextColor: '#000',
 	    eventClick: function(info) {
-		    alert('Event: ' + info.event.title);   
-		  }
-
+		    $('.bd-example-modal-lg').modal('show')  
+		  }, 
     });
     calendar.render();
 

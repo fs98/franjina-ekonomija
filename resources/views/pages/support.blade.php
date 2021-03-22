@@ -150,7 +150,7 @@
 		
 	</section>
 
-	<section class="mb-5 support-page-partners-slider-section">
+	<section class="py-5 support-page-partners-slider-section">
 				
 		<!-- Swiper -->
 		  <div class="swiper-container support-page-partners-slider">
