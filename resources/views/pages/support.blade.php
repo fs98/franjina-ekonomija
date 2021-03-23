@@ -184,7 +184,7 @@
 		      </div>
 		      <div class="swiper-slide">
 		      	<a href="http://uez.hr/" target="_blank">
-							<img src="{{ asset('images/partners/uez-logo.png') }}" class="img-fluid">
+							<img src="{{ asset('images/partners/uez-logo-3.png') }}" class="img-fluid">
 						</a>
 		      </div>
 		      <div class="swiper-slide">

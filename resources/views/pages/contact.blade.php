@@ -47,7 +47,7 @@
 
         <div class="ml-4">
           <h5 class="text-white">Broj telefona</h5>
-          <h6 class="mt-2 text-white">+387 95 123 456</h6>
+          <h6 class="mt-2 text-white"><a href="tel:+38795123456" class="text-decoration-none text-white">+387 95 123 456</a></h6>
         </div>
       </div>
 
@@ -57,13 +57,13 @@
         </div>
 
         <div class="ml-4">
-          <h5 class="text-white">Adresa</h5>
+          <h5 class="text-white">Email</h5>
           <h6 class="mt-2"><a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white">financial.education.eof@gmail.com</a></h6>
         </div>
       </div>
 
-      <div class="my-5">
-      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944131.3864600165!2d15.4299034003914!3d43.89460926270403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134ba215c737a9d7%3A0x6df7e20343b7e90c!2sBosnia%20and%20Herzegovina!5e0!3m2!1sen!2sba!4v1615803253917!5m2!1sen!2sba" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <div class="my-5"> 
+      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.074185873584!2d16.542290615825472!3d46.02966837911176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47661658ac32c181%3A0x284666b99e25dd46!2sUEZ%20-%20udruga%20za%20ekonomiju%20zajedni%C5%A1tva!5e0!3m2!1sen!2sba!4v1616488642259!5m2!1sen!2sba" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
 		</div>
