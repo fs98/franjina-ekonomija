@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,49 @@ Route::get('/podrška','NavigationControllers@Support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blogpost','NavigationControllers@blogpost')->name('blogPost');
 
-Auth::routes();
+
+Auth::routes(['register' => false, 'reset' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Admin Panel Routes
+
+// Route::group(['middleware' => 'auth'], function() {
+
+// 	Route::get('/admin' , function() {
+// 		return view('admin.blank-page');
+// 	});
+// });
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
+	Route::get('/', function() {
+		return view('admin.blank-page');
+	})->name('index');
+
+	Route::resource('users', 'UserController');
+	// Route::resource('categories', 'CategoryController');
+	// Route::resource('regions', 'RegionController');
+	// Route::resource('places', 'PlaceController');
+	// Route::resource('products', 'ProductController');
+	// Route::resource('daily-offers', 'DailyOfferController');
+	// Route::resource('sale-types', 'SaleTypeController');
+	// Route::resource('roles', 'RoleController');
+	// Route::resource('user-types', 'UserTypeController');
+});
+
+
+// Route::get('admin' , function() {
+// 	dd(1);
+// 	return view('admin.blank-page');
+// });
+
+
+// Route::get('admin-login' , function() {
+// 	return view('concept-auth.login');
+// });
+
+// Route::get('forgot-password' , function() {
+// 	return view('concept-auth.forgot-password');
+// });
+

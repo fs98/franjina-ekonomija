@@ -231,8 +231,13 @@
 	<!-- Large modal -->
 
 	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
+	  <div class="modal-dialog modal-lg"> 
 	    <div class="modal-content p-5 border-0 rounded-0">
+	    	<span>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+        </span>
 	      <img src="https://via.placeholder.com/1000x350">
 	      <div class="row">
 	      	<div class="col-12">

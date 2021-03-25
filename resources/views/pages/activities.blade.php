@@ -12,7 +12,7 @@
 	<div class="container">
 		
 		<!-- Row -->
-		<div class="row">
+		<div class="row activities">
 
 			<h1 class="w-100 text-center my-5 pb-5">
 				<span class="yellow-border-heading">Aktivnosti</span>

@@ -24,6 +24,7 @@ header input:focus{
 
 .yellow-border-heading{
 	border-bottom: 3px solid #ffde59; 
+	line-height: 1.6;
 }
 
 .sticky{
@@ -197,6 +198,13 @@ footer .social-networks h3{
 	background-color: #3C3C3C;
 }
 
+/* Medium devices (tablets, less than 992px) */
+	@media (max-width: 991.98px) {
+		.contact-info h6{
+			font-size: 12px
+		}
+	}
+
 .contact-section .contact-icon{
 	width: 30px;
 	height: 30px;
@@ -238,6 +246,7 @@ footer .social-networks h3{
 
 .contact-section .yellow-border-heading{
 	border-bottom: 3px solid #ffde59; 
+	line-height: 1.6;
 }
 
 /* Partners page */
@@ -296,14 +305,16 @@ footer .social-networks h3{
 
 .about-section .yellow-border-heading{
 	border-bottom: 3px solid #ffde59; 
+	line-height: 1.6,
 }
 
 .about-section p{
 	font-size: 16px;
 }
 
-.about-section .transparent-logo{
-	height: 200px;
+.about-section .yellow-heading{
+	color: #FFDE59;
+	font-weight: bold;
 }
 
 .about-section .about-section-image{
@@ -360,38 +371,6 @@ footer .social-networks h3{
 .about-section button:focus{
 	box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
 }
-
-.about-page-image-container-fluid{
-	height: 350px;
-	background-image: url('../images/about/image-1.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 70%;
-}
-
-	/*Large devices (tablets, less than 992px)*/
-	@media (max-width: 1199.98px) {
-		.about-page-image-container-fluid{
-		height: 250px;
-		background-position: 50% 70%;
-	}
-	}
-
-	/* Medium devices (tablets, less than 992px)*/
-	@media (max-width: 991.98px) { 
-		.about-page-image-container-fluid{
-		height: 200px;
-		background-position: 50% 70%;
-	}
-	}	
-
-	/*Small devices (landscape phones, less than 768px)*/
-	@media (max-width: 767.98px) { 
-		.about-page-image-container-fluid{
-		height: 150px;
-		background-position: 50% 70%;
-	}	
-	}	
 
 	/* Who are We? */
 
@@ -459,46 +438,6 @@ footer .social-networks h3{
 				font-size: 14px;
 			}
 		}	
-
-	/* Carousel */
-
-	.villages-carousel .carousel-item{
-		-webkit-transform-style: preserve-3d;
-		-moz-transform-style: preserve-3d;
-		transform-style: preserve-3d;
-	}
-
-	.villages-carousel .carousel-caption{
-		top: 50%; 
-		transform: translateY(-50%); 
-		bottom: initial;
-	}
-
-		/* Black overlay over carousel image */
-
-		.villages-carousel .carousel-item{
-			position: relative;
-		}
-
-		.villages-carousel .black-overlay{
-			position: absolute; 
-			top: 0; 
-			left: 0; 
-			height: 100%; 
-			width: 100%; 
-			background-color: rgba(0,0,0,0.44);
-		}
-
-		/* Medium devices (tablets, less than 992px)*/
-		@media (max-width: 991.98px) { 
-			.villages-carousel{
-				height: 500px;
-			}
-			.villages-carousel img{
-				object-position: center;
-				object-fit: cover;
-			}
-		}
 
 /* Home Page */
 
@@ -645,6 +584,10 @@ footer .social-networks h3{
 	width: 500px !important;
 }
 
+.activities p{
+	font-size: 16px;
+}
+
 /* Blog Page */
 
 .blog-section .card-body{
@@ -778,6 +721,11 @@ footer .social-networks h3{
 
 /* Support Page */
 
+.support-section .bank-donate .qr-code{
+	height: auto;
+	width: auto;
+}
+
 .support-section .card-donate,
 .support-section .bank-donate{
 	background-color: #f3f3f3
@@ -867,16 +815,3 @@ footer .social-networks h3{
 	.support-section .support-page-partners-slider img{
 		object-fit: contain;
 	}
-
-	.support-background-section{
-		background-image: url(../images/support/slider-background-2.png);
-		background-size: cover;
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-	}
-
-	.support-background-section-overlay{
-		background-color: rgba(0, 0, 0, 0.4)
-	}
-
