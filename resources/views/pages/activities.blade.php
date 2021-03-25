@@ -107,7 +107,7 @@
 				<h1 class="my-4 mb-0">
 					<span class="yellow-border-heading pb-1 mb-5">Molitva</span>
 				</h1>
-				<p class="mt-3 text-left">Molitveni susret održava se svakog trećeg četvrtka u mjesecu. Ovim susretima čuvamo i jačamo karizmu "Franjine ekonomije" i duh zajedništva. Kao i na svim ostalim područjima djelovanjima, tako i ovdje pokušavamo biti što kreativniji te svaki susret obilježimo na drugačiji način. Možeš nam se priključiti i podržati nas svojim molitvama iako možda još nisi službeni član EoF-a.</p>
+				<p class="mt-3 text-left">Molitveni susret održava se svakog trećeg četvrtka u mjesecu. Ovim susretima čuvamo i jačamo karizmu "Franjine ekonomije" i duh zajedništva. Kao i na svim ostalim područjima djelovanjima, tako i ovdje pokušavamo biti što kreativniji te svaki susret obilježimo na drugačiji način. Možeš nam se priključiti i podržati nas svojim molitvama iako možda još nisi član EoF-a.</p>
 			</div>
 			<div class="col-lg-6 col-12 order-1 order-lg-12 mb-5 mb-lg-0 mt-3 mt-lg-0 text-lg-right text-left">
 				<img src="{{ asset('images/activities/3.png') }}" class="img-fluid meetings-img">

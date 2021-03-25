@@ -59,7 +59,7 @@ $("#submit-button").on("click", function(event) {
               });
               Swal.hideLoading();
 
-              var html_error_segment = '<div class="form-group p-4 form-error-box"><h2 id="errors-title">Folgende Fehler sind aufgetreten:</h2></div>';
+              var html_error_segment = '<div class="form-group p-4 form-error-box"><h2 id="errors-title">Nastupile su sljedeće greške:</h2></div>';
               var error_title_element = $("#errors-top").append(html_error_segment);
 
               if(data.responseJSON.errors != undefined) {

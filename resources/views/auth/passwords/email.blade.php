@@ -1,47 +1,45 @@
-@extends('layouts.app')
+@extends('layouts.auth-layout')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
 
+<!-- ============================================================== -->
+    <!-- forgot password  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card">
+          @if (session('status'))
+              <div class="alert alert-success" role="alert">
+                  {{ session('status') }}
+              </div>
+          @endif
+            <form method="POST" action="{{ route('password.email') }}">
+              @csrf
+              
+              <div class="card-header text-center"><img class="logo-img" src="{{ asset('images/logo/main-logo.svg') }}" alt="logo"><span class="splash-description">Molimo unesite tražene informacije</span></div>
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                    <form>
+                        <p>Poslat ćemo Vam email kako biste oporavili svoju lozinku.</p>
+                        <div class="form-group"> 
+                            <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off" autofocus placeholder="Email">
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
+                        <div class="form-group pt-1">
+                            <button type="submit" class="btn btn-block btn-dark btn-xl">
+                                {{ __('Pošalji') }}
+                            </button>
                         </div>
                     </form>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-</div>
-@endsection
+    <!-- ============================================================== -->
+    <!-- end forgot password  -->
+    <!-- ============================================================== -->
+
+@endsection('content')

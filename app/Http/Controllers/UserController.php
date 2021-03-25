@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use App\Models\Swal;
@@ -18,8 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userAll = User::all();
-
+        $userAll = User::select('id','name','email','created_at','status')->get();
         return view('admin.users.list')->with(['userAll' => $userAll]);
     }
 
@@ -45,19 +45,24 @@ class UserController extends Controller
         if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
 
         $httpRequest->validate([
-            'post_title' => 'required|max:512',
-            'post_title_slug' => 'required|max:512',
-            'post_headline' => 'required|max:1024',
-            'post_keywords' => 'required|max:256',
-            'post_publish_date' => 'required|date',
-            'post_header_image' => 'required|image|mimes:jpg,jpeg,png|max:16384',
-            'post_header_image_description' => 'nullable|max:256',
-            'post_header_image_url' => 'nullable',
-            'post_status' => 'required|max:8',
-            'post_content' => 'nullable'
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required'
         ]);
 
-        // $postSingle = new Post;
+        $userSingle = new User();
+        $userSingle->name = $httpRequest->name;
+        $userSingle->email = $httpRequest->email;
+        $userSingle->status = 'active';
+        $rawPassword = $httpRequest->password;
+        $userSingle->password = Hash::make($rawPassword);
+        
+        try {
+            $userSingle->save();
+        } catch (Exception $e) {}
+
+        //$userSingle = new Post;
         // $postSingle->title = $httpRequest->post_title;
         // $postSingle->title_slug = $httpRequest->post_title_slug;
         // $postSingle->headline = $httpRequest->post_headline;
@@ -88,9 +93,6 @@ class UserController extends Controller
         // $postSingle->created_at = $currentDateTime;
         // $postSingle->updated_at = NULL;
 
-        try {
-            // $postSingle->save();
-        } catch (Exception $e) {}
 
         $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Success!", "User added.");
         return response()->json($swal->get());
@@ -104,7 +106,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $userSingle = User::find($id);
+        return view('admin.users.show')->with(['userSingle' => $userSingle]);
     }
 
     /**

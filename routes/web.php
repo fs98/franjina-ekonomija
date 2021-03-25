@@ -27,9 +27,9 @@ Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blogpost','NavigationControllers@blogpost')->name('blogPost');
 
 
-Auth::routes(['register' => false, 'reset' => false]);
+Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 // Admin Panel Routes
@@ -43,10 +43,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	Route::get('/', function() {
-		return view('admin.blank-page');
+		// $userAll = App\Models\User::all();
+
+		// return view('admin.users.list')->with(['userAll' => $userAll]);
+		return redirect(Route('admin.users.index'));
 	})->name('index');
 
-	Route::resource('users', 'UserController');
+	Route::resource('users', 'UserController', [
+    'except' => [ 'show' ]
+	]);
 	// Route::resource('categories', 'CategoryController');
 	// Route::resource('regions', 'RegionController');
 	// Route::resource('places', 'PlaceController');
