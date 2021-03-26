@@ -52,6 +52,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	Route::resource('users', 'UserController', [
     'except' => [ 'show' ]
 	]);
+
+	Route::resource('posts','PostsController');
 	// Route::resource('categories', 'CategoryController');
 	// Route::resource('regions', 'RegionController');
 	// Route::resource('places', 'PlaceController');

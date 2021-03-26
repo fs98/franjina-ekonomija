@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Post;
+use App\Models\Swal;
+
+use Helper;
+
 class PostsController extends Controller
 {
     /**
@@ -13,7 +18,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $postAll = Post::all();
+        return view('admin.posts.list')->with(['postAll' => $postAll]);
     }
 
     /**
@@ -24,6 +30,7 @@ class PostsController extends Controller
     public function create()
     {
         //
+        return view('admin.posts.create');
     }
 
     /**
@@ -56,7 +63,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $postSingle = Post::find($id);
+        return view('admin.posts.edit')->with(['postSingle' => $postSingle]);
     }
 
     /**
