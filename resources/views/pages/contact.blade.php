@@ -34,7 +34,7 @@
 
 	<div class="row mx-0 mx-lg-5">
 		
-		<div class="col-12 col-xl-6 px-5 contact-info">
+		<div class="col-12 col-xl-6 px-2 px-lg-5 contact-info">
 			
 			<h2 class="my-5 text-white text-center">
 				<span class="yellow-border-heading pb-1">Kontakt</span>

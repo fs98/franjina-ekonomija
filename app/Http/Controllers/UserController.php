@@ -62,38 +62,6 @@ class UserController extends Controller
             $userSingle->save();
         } catch (Exception $e) {}
 
-        //$userSingle = new Post;
-        // $postSingle->title = $httpRequest->post_title;
-        // $postSingle->title_slug = $httpRequest->post_title_slug;
-        // $postSingle->headline = $httpRequest->post_headline;
-        // $postSingle->keywords = $httpRequest->post_keywords;
-        // $postSingle->publish_date = $post_publish_date;
-        // $directory = FileStorageController::makeDirectory($postSingle->base_storage_path);
-        // if($headerImageSet) {
-        //     $file = FileStorageController::store($httpRequest->file('post_header_image'), $directory->getFullPath());
-        //     $postSingle->header_image = $file;
-        //     $postSingle->header_image_alt = $httpRequest->post_header_image_description;
-        // } else {
-        //     $postSingle->header_image = NULL;
-        //     $postSingle->header_image_alt = NULL;
-        // }
-        // if(Helper::isSet($httpRequest->post_header_image_url)) {
-        //     $postSingle->link = $httpRequest->post_header_image_url;
-        // } else {
-        //     $postSingle->link = NULL;
-        // }
-        // if(Helper::isSet($httpRequest->post_content)) {
-        //     $postSingle->content = $httpRequest->post_content;
-        // } else {
-        //     $postSingle->content = NULL;
-        // }
-        // $postSingle->status = $httpRequest->post_status;
-        // $postSingle->user_id = $user->id;
-        // $postSingle->folder_id = $directory->getDirectoryId();
-        // $postSingle->created_at = $currentDateTime;
-        // $postSingle->updated_at = NULL;
-
-
         $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Success!", "User added.");
         return response()->json($swal->get());
     }
@@ -141,6 +109,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        $userSignleDel = User::where('id', $id)->delete();
+
         $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Success!", "User deleted.");
         return response()->json($swal->get());
     }

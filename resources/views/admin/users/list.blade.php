@@ -3,8 +3,7 @@
 @section('links')
 
 <title>Alle Beiträge</title>
-<meta name="csrf-token" content="{{ csrf_token() }}" />
-<script src="{{ asset('assets/jquery/jquery-3.3.1.min.js')}}"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}" /> 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 @endsection('links')
@@ -49,6 +48,7 @@
                         <th>Status</th>
                         <th>Upravljanje</th> 
                       </tr>
+                    </thead>  
                     <tbody>
                       @foreach($userAll as $index => $userSingleRow)
                       <tr>
@@ -84,7 +84,7 @@
                           <a href="{{ Route('admin.users.edit', ['user' => $userSingleRow->id]) }}" class="btn btn-primary pointer mr-2">
                             <span>Uredi</span>
                           </a>
-                          <form action="{{ Route('admin.users.destroy', ['user' => $userSingleRow->id]) }}" method="user" class="d-inline-block">
+                          <form action="{{ Route('admin.users.destroy', ['user' => $userSingleRow->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             <button class="btn btn-danger pointer" type="button" onclick="deleteSingleItem(this)">
                               <span>Izbriši</span>
@@ -105,13 +105,6 @@
                       </tr>
                     </tfoot>
                   </table>
-                </div>
-                <div class="w-100 d-flex justify-content-center align-items-center mt-4">
-                  <style>
-                    dl, ol, ul {
-                      margin-bottom: 0;
-                    }
-                  </style> 
                 </div>
               </div>
             </div>

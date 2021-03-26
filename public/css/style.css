@@ -441,6 +441,13 @@ footer .social-networks h3{
 
 /* Home Page */
 
+	/*Large devices (desktops, less than 1200px)*/
+		@media (min-width: 1200px) {
+			#sliderSection img{
+				height: calc(100vh - 167px);
+			}
+		}	
+	
 	/* Swiper 1 */
 
   .swiper-container {
