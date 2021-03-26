@@ -34,7 +34,7 @@
         <!-- ============================================================== -->
        <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="{{ __('/') }}"></a>
+                <a class="navbar-brand" href="{{ __('/') }}"><img src="{{ asset('images/logo/transparent-logo.png')}}" class="img-fluid"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -168,7 +168,7 @@ John Abraham</h5>
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active {{ Route::currentRouteNamed('index') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Korisnici <span class="badge badge-success">6</span></a>
+                                <a class="nav-link active {{ Route::currentRouteNamed('index') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-plus"></i>Korisnici <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -178,199 +178,21 @@ John Abraham</h5>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-blogger-b"></i>Blog</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/cards') }}">Cards <span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="{{ __('/general') }}">Postovi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/general') }}">General</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/carousel') }}">Carousel</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/listgroup') }}">List Group</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/typography') }}">Typography</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/accordions') }}">Accordions</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/tabs') }}">Tabs</a>
-                                        </li>
+                                            <a class="nav-link" href="{{ __('/carousel') }}">Novi post</a>
+                                        </li> 
                                     </ul>
                                 </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Chart</a>
-                                <div id="submenu-3" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/chart-c3') }}">C3 Charts</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/chart-chartist') }}">Chartist Charts</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/chart-charts') }}">Chart</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/chart-morris') }}">Morris</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/chart-sparkline') }}">Sparkline</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/chart-gauge') }}">Guage</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Forms</a>
-                                <div id="submenu-4" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/form-elements') }}">Form Elements</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/form-validation') }}">Parsely Validations</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/multiselect') }}">Multiselect</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
-                                <div id="submenu-5" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/general-table') }}">General Tables</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/data-tables') }}">Data Tables</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                            </li> 
                             <li class="nav-divider">
                                 Features
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Pages</a>
-                                <div id="submenu-6" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/invoice') }}">Invoice</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/blank-page') }}">Blank Page</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/blank-page-header') }}">Blank Page Header</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/login') }}">Login</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/404-not-found') }}">404 page</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/sign-up') }}">Sign up Page</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/forgot-password') }}">Forgot Password</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/pricing') }}">Pricing Tables</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/timeline') }}">Timeline</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/calendar') }}">Calendar</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/sortable-nestable-lists') }}">Sortable/Nestable List</a>
-                                        </li>
-                                       <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/widgets') }}">Widgets</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/media-object') }}">Media Objects</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/cropper-image') }}">Cropper</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/color-picker') }}">Color Picker</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>Apps <span class="badge badge-secondary">New</span></a>
-                                <div id="submenu-7" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/inbox') }}">Inbox</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/email-details') }}">Email Detail</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/email-compose') }}">Email Compose</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/message-chat') }}">Message Chat</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-columns"></i>Icons</a>
-                                <div id="submenu-8" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/icon-fontawesome') }}">FontAwesome Icons</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/icon-material') }}">Material Icons</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/icon-simple-lineicon') }}">Simpleline Icon</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/icon-themify') }}">Themify Icon</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/icon-flag') }}">Flag Icons</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/icon-weather') }}">Weather Icon</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                                <div id="submenu-9" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/map-google') }}">Google Maps</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/map-vector') }}">Vector Maps</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                            </li>  
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Menu Level</a>
                                 <div id="submenu-10" class="collapse submenu" style="">

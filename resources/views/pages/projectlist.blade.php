@@ -139,7 +139,7 @@
 
 </section>
 
-@endsection ('content')
+@endsection
 
 @section('scripts')
 
