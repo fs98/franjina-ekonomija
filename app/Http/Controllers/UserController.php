@@ -86,7 +86,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $userSingle = User::find($id);
+        return view('admin.users.edit')->with(['userSingle' => $userSingle]);
     }
 
     /**
@@ -96,9 +97,31 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $httpRequest, $id)
     {
-        //
+        $user = auth()->user();
+        if(empty($user)) abort(404);
+        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+
+        $userEdit = User::find($id);
+
+        $userEdit->name = $httpRequest->name;
+        $userEdit->status = $httpRequest->status;
+        $userEdit->email = $httpRequest->email;
+
+        if (isset($httpRequest->password)) {
+            $httpRequest->validate([
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required'
+        ]);
+
+            $userEdit->password=Hash::make($httpRequest->password);
+        }
+
+        $userEdit->save();
+
+        $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Success!", "User edited.");
+        return response()->json($swal->get());
     }
 
     /**
