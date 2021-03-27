@@ -39,9 +39,30 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $httpRequest)
     {
-        //
+        $user = auth()->user();
+        if(empty($user)) abort(404);
+        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+
+        $httpRequest->validate([
+            'title' => 'required',
+            'post_header_image' => 'required|mimes:jpeg,png|max:1014',
+            'editordata' => 'required'
+        ]);
+        
+        $postSingle = new Post();
+        $postSingle->title = $httpRequest->title;
+        $postSingle->cover = $httpRequest->post_header_image;
+        $postSingle->content = $httpRequest->editordata;
+
+        try {
+            $postSingle->save();
+        } catch (Exception $e) {
+        }
+
+        $swal = new Swal("Success", 200, Route('admin.posts.index'), "success", "Success!", "Post dodan.");
+        return response()->json($swal->get());
     }
 
     /**

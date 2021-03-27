@@ -8,7 +8,6 @@
 
 @endsection('links')
 
-
 @section('main-content')
   
   <div class="container-fluid dashboard-content">

@@ -26,6 +26,10 @@ Route::get('/podrška','NavigationControllers@Support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blogpost','NavigationControllers@blogpost')->name('blogPost');
 
+Route::get('/test', function() {
+	return view('admin.blank-page');
+});
+
 
 Auth::routes(['register' => false]);
 

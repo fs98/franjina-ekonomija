@@ -1942,7 +1942,7 @@ Container / Wrapper
     position: relative;
     left: 0;
     margin-left: 264px;
-    min-height: 870px !important;
+    min-height: 100vh !important;
 }
 
 .dashboard-content {
@@ -2062,7 +2062,7 @@ Pageheader
     color: #71748d;
     background-color: #fff;
     width: 100%;
-    /*position: absolute; bottom: 0;*/
+    position: absolute; bottom: 0;
 }
 
 .footer-links {}
