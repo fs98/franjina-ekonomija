@@ -58,6 +58,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	]);
 
 	Route::resource('posts','PostsController');
+	Route::resource('events','EventsController');
+	Route::resource('projects','ProjectsController');
+
+
 	// Route::resource('categories', 'CategoryController');
 	// Route::resource('regions', 'RegionController');
 	// Route::resource('places', 'PlaceController');

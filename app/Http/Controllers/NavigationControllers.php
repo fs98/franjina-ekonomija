@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use Date;
 
+use App\Models\Post;
+use Helper;
+
 class NavigationControllers extends Controller
 {
 
@@ -13,7 +16,8 @@ class NavigationControllers extends Controller
 		{
 			// echo Date::now()->format('l j F Y H:i:s');
 			// die();
-			return view('pages.home');
+			$postAll = Post::select('title','cover','content')->limit(10)->get();
+			return view('pages.home')->with(['postAll' => $postAll]);
 		}
 
 		// 

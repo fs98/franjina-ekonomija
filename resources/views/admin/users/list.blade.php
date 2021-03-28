@@ -2,7 +2,7 @@
 
 @section('links')
 
-<title>Alle Beiträge</title>
+<title>Svi korisnici</title>
 <meta name="csrf-token" content="{{ csrf_token() }}" /> 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 

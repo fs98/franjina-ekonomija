@@ -14,7 +14,7 @@ $("#submit-button").on("click", function(event) {
 
     var form_children = $(form).find(".editor");
 
-    if(form_children.length > 0) {
+    if(form_children.length > 0) { 
       var editorData = editor.getData();
       if(form_children[0] != undefined) {
         if(form_children[0].name != undefined) {

@@ -21,7 +21,7 @@
       <!-- pageheader -->
       <!-- ============================================================== -->
       <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="col-xl-12 col-lg-12 col-md-12 col- -12 col-12">
           <div class="page-header" id="top">
             <h2 class="pageheader-title">Novi post</h2>
             <div class="page-breadcrumb">
@@ -41,16 +41,27 @@
 
 
       <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="col-xl-12 col-lg-12 col-md-12 col- -12 col-12">
           <form action="{{ Route('admin.posts.store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
             <div class="card">
               <h5 class="card-header">Novi post - kreiranje</h5>
               <div class="card-body" id="card-body">
                 <div class="row px-3" id="errors-top" style="display: none;"></div>
                 <div class="form-group">
-                  <label class="col-form-label" for="title">Naslov</label> 
-                  <label class="label-required" for="title">(obavezno)</label>
-                  <input id="title" type="text" class="form-control" name="title" autocomplete="title" autofocus autocomplete="off">
+                  <label class="col-form-label" for="post_title">Naslov</label> 
+                  <label class="label-required" for="post_title">(obavezno)</label>
+                  <input id="post_title" type="text" class="form-control" name="post_title" autocomplete="title" autofocus autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <label for="post_title_slug" class="col-form-label">Naslov u URL-u</label>
+                  <label for="post_title_slug" class="label-required">(automatski generisano)</label>
+                  <input type="text" id="post_title_slug" class="form-control" name="post_title_slug" max-length="512" readonly="" tabindex="-1">
+                </div>
+                <div class="form-group">
+                  <label for="col-form-label" for="post_keywords">Ključne riječi</label>
+                  <label for="post_keywords" class="label-required">(obavezno)</label>
+                  <input type="text" id="post_keywords" name="post_keywords" class="form-control" max-length="256">
+                  <label for="post_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
                 </div>
                 <div class="form-group">
                   <label class="col-form-label" for="post_header_image">Slika</label>
@@ -65,11 +76,16 @@
                     <img class="img-fluid" id="thumbnail_image">
                   </div>
                 </div> 
+                <div class="form-group mt-3">
+                  <label for="post_header_image_alt" class="col-form-label">Opis slike (prikazuje se ako se slika nije učitala)</label>
+                  <label for="post_header_image_alt" class="label-not-required">(neobavezno)</label>
+                  <input type="text" id="post_header_image_alt" class="form-control" name="post_header_image_alt" value="" maxlength="256">
+                </div>
                 
                 <div class="form-group">
-                  <label class="col-form-label" for="content">Sadržaj</label>
-                  <label class="label-required" for="content">(obavezno)</label>
-                  <textarea id="summernote" name="editordata"></textarea>
+                  <label class="col-form-label" for="post_content">Sadržaj</label>
+                  <label class="label-required" for="post_content">(obavezno)</label>
+                  <textarea id="summernote" name="post_content"></textarea>
                 </div>  
                  
                 <button type="button" id="submit-button" form="create-form" class="btn btn-lg btn-secondary float-right">Potvrdi</button>
@@ -87,53 +103,66 @@
 
 @section('scripts')
 
+
+{{-- Post request --}}
 <script src="{{ asset('back/post-request.js')}}"></script>
 
+{{-- Summernote --}}
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> 
 
   <!-- Summernote Language -->
   <script src="{{ asset('js/summernote-hr-HR.js') }}"></script>
 
+  {{-- Summernote button list --}}
   <script type="text/javascript">
    $('#summernote').summernote({
         lang: 'hr-HR',
         tabsize: 2,
         height: 500, 
         toolbar: [
-    // [groupName, [list of button]]
-    ['style', ['style']],
-    ['style', ['bold', 'italic', 'underline', 'clear']],
-    ['font', ['strikethrough', 'superscript', 'subscript']],
-    ['fontsize', ['fontsize']],
-    ['color', ['color']],
-    ['para', ['ul', 'ol', 'paragraph']],
-    ['height', ['height']],
-    ['table', ['table']],
-    ['insert',['link','picture']],
-    ['view', ['fullscreen']]
-  ]
+      // [groupName, [list of button]]
+      ['style', ['style']],
+      ['style', ['bold', 'italic', 'underline', 'clear']],
+      ['font', ['strikethrough', 'superscript', 'subscript']],
+      ['fontsize', ['fontsize']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['height', ['height']],
+      ['table', ['table']],
+      ['insert',['link','picture']],
+      ['view', ['fullscreen']]
+    ]
+        });
+  </script>
+
+  {{-- Show image title and preview when selected --}}
+  <script>
+  $('#post_header_image').on('change',function(e){
+        //get the file name
+        var fileName = e.target.files[0].name;
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+        var image = document.getElementById('thumbnail_image');
+        image.src = URL.createObjectURL(event.target.files[0]);
+        $("#thumbnail_preview_wrapper").css('display', 'inherit');
       });
-</script>
+  </script>
 
-<script>
-  function readUrl(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    
-    reader.onload = function(e) {
-      $('#thumbnail_image').attr('src', e.target.result);
-      $("#thumbnail_preview_wrapper").css('display','block');
-      $(".custom-file-label").html(input.files[0].name);
-    }
-    reader.readAsDataURL(input.files[0]); // convert to base64 string
-  }
-}
+  {{-- Create url with title --}}
+  <script src="{{ asset('back/replaceChars.js')}}"></script>
 
+  <script>
+    $(document).ready(function() {
+      $("#post_title_slug").val(replaceChars($("#post_title").val()));
+    });
 
-  $("#post_header_image").change(function() {
-    readUrl(this);
-  })
+    var titleField = $("#post_title");
+    var titleSlugField = $("#post_title_slug");
 
-</script>
+    titleField.on('input', function() {
+      titleSlugField.val(replaceChars(titleField.val()));
+    });
+  </script>
+
 
 @endsection

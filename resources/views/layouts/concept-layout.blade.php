@@ -80,9 +80,7 @@
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://via.placeholder.com/128x128" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">
-John Abraham</h5>
-                                    <span class="status"></span><span class="ml-2">Available</span>
+                                    <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->name }} </h5>
                                 </div> 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -107,7 +105,7 @@ John Abraham</h5>
       <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="d-xl-none d-lg-none" href="#">Korisnici</a>
+                    <a class="d-xl-none d-lg-none" href="#"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -131,16 +129,42 @@ John Abraham</h5>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/general') }}">Postovi</a>
+                                            <a class="nav-link" href="{{ __('/admin/posts') }}">Postovi</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/carousel') }}">Novi post</a>
+                                            <a class="nav-link" href="{{ __('/admin/posts/create') }}">Novi post</a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-hand-rock"></i>Projekti</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ __('/admin/posts') }}">Projekti</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ __('/admin/posts/create') }}">Novi projekat</a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-fw fa-calendar-alt"></i>Kalendar</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ __('/admin/posts') }}">Pregled</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ __('/admin/posts/create') }}">Novi event</a>
                                         </li> 
                                     </ul>
                                 </div>
                             </li> 
                             <li class="nav-divider">
-                                Features
+                                OSTALI SADRŽAJ
                             </li>  
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Menu Level</a>

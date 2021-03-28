@@ -152,18 +152,32 @@
 			  <div class="swiper-container px-4">
 			    <div class="swiper-wrapper">
 
+						@foreach ($postAll as $index => $postSingleRow)
+								
 			    	<!-- Slide -->
 			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" alt="...">
+							<div class="card border-0">
+								@if (Helper::isset($postSingleRow->title)) 
+								<img src="{{ $postSingleRow->cover }}" alt="...">
+								@else
+									<img src="{{ asset('images/home/400x450.png') }}" alt="...">
+								@endif
 							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
+									<h4 class="card-title font-weight-bold mt-4">
+										@if (Helper::isset($postSingleRow->title)) 
+											{{ $postSingleRow->title }}
+										 @else 
+											{{ 'Ime nije dostupno '}}
+										@endif
+									</h4>
 							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
 							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
 			      </div>
 			      <!-- /.Slide -->
+					
+						@endforeach
 			      
 			    </div>
 			    <!-- Add Arrows -->

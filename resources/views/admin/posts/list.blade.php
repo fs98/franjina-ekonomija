@@ -5,6 +5,7 @@
 <title>Svi postovi</title>
 <meta name="csrf-token" content="{{ csrf_token() }}" /> 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.css"/>
 
 @endsection('links')
 
@@ -33,15 +34,15 @@
             <div class="card">
               <h5 class="card-header">Postovi</h5>
               <div class="card-body">
+                <a class="float-right" href="{{ Route('admin.posts.create') }}">
+                  <button class="btn btn-sm btn-warning mb-3">Kreiranje novog posta</button>
+                </a>
                 <div class="table-responsive">
-                  <a class="float-right" href="{{ Route('admin.posts.create') }}">
-                    <button class="btn btn-sm btn-warning mb-3">Kreiranje novog posta</button>
-                  </a>
-                  <table class="table table-striped table-bordered">
+                  <table class="table table-striped table-bordered first" id="allPostsTable">
                     <thead>
                       <tr>
-                        <th>Naslov</th>
                         <th>Slika</th>
+                        <th>Naslov</th>
                         <th>Kreiran</th>
                         <th>Upravljanje</th> 
                       </tr>
@@ -49,18 +50,18 @@
                     <tbody>
                       @foreach($postAll as $index => $postSingleRow)
                       <tr>
+                        <td class="text-truncate">
+                          @if(Helper::isSet($postSingleRow->cover))
+                            <img src="{{ $postSingleRow->cover }}" alt="" width="50">
+                          @else
+                            <span>N/A</span>
+                          @endif
+                        </td>
                         <td>
                           @if(Helper::isSet($postSingleRow->title))
                             <span>{{ $postSingleRow->title }}</span>
                           @else
                             <span>Ime nije dostupno</span>
-                          @endif
-                        </td>
-                        <td>
-                          @if(Helper::isSet($postSingleRow->cover))
-                            <span>{{ $postSingleRow->cover }}</span>
-                          @else
-                            <span>N/A</span>
                           @endif
                         </td>
                         <td>
@@ -87,8 +88,8 @@
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th>Naslov</th>
                         <th>Slika</th>
+                        <th>Naslov</th>
                         <th>Kreiran</th>
                         <th>Upravljanje</th> 
                       </tr>
@@ -108,5 +109,18 @@
 @section('scripts')
 
 @include('admin.include.delete-single-element')
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#allPostsTable').dataTable({
+      "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Croatian.json"
+          }
+    });
+  })
+</script>
+
 
 @endsection('scripts')

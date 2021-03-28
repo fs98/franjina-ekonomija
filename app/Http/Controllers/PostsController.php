@@ -18,7 +18,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $postAll = Post::all();
+        $postAll = Post::select('id','title','cover','created_at')->get();
         return view('admin.posts.list')->with(['postAll' => $postAll]);
     }
 
@@ -46,20 +46,46 @@ class PostsController extends Controller
         if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
 
         $httpRequest->validate([
-            'title' => 'required',
-            'post_header_image' => 'required|mimes:jpeg,png|max:1014',
-            'editordata' => 'required'
+            'post_title' => 'required',
+            'post_title_slug' => 'required|max:512',
+            'post_keywords' => 'required|max:256',
+            'post_header_image' => 'required|image|mimes:jpg,jpeg,png|max:16384',
+            'post_header_image_alt' => 'nullable',
+            'post_content' => 'required'
         ]);
-        
-        $postSingle = new Post();
-        $postSingle->title = $httpRequest->title;
-        $postSingle->cover = $httpRequest->post_header_image;
-        $postSingle->content = $httpRequest->editordata;
+
+        if ($httpRequest->hasFile('post_header_image')) {
+            $headerImageSet = true;
+        } else {
+            $headerImageSet = false;
+        }
+
+        $postSingle = new Post;
+        $postSingle->title = $httpRequest->post_title;
+        $postSingle->title_slug = $httpRequest->post_title_slug;
+        $postSingle->keywords = $httpRequest->post_keywords;
+
+        $directory = FileStorageController::makeDirectory($postSingle->base_storage_path);
+
+        if($headerImageSet) {
+            $file = FileStorageController::store($httpRequest->file('post_header_image'), $directory->getFullPath());
+
+            $postSingle->cover = $file;
+            $postSingle->cover_image_description = $httpRequest->post_header_image_alt;
+        } else {
+            $postSingle->cover = NULL;
+            $postSingle->cover_image_description = NULL;
+        }
+
+        if (Helper::isSet($httpRequest->post_content)) {
+            $postSingle->content = $httpRequest->post_content;
+        } else {
+            $postSingle->content = NULL;
+        }
 
         try {
             $postSingle->save();
-        } catch (Exception $e) {
-        }
+        } catch (Exception $e) {}
 
         $swal = new Swal("Success", 200, Route('admin.posts.index'), "success", "Success!", "Post dodan.");
         return response()->json($swal->get());
