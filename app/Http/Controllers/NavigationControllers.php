@@ -16,8 +16,14 @@ class NavigationControllers extends Controller
 		{
 			// echo Date::now()->format('l j F Y H:i:s');
 			// die();
-			$postAll = Post::select('title','cover','content')->limit(10)->get();
+			$postAll = Post::select('title','title_slug','cover','directory_id')->limit(10)->get();
 			return view('pages.home')->with(['postAll' => $postAll]);
+		}
+
+		public function show($title_slug) 
+		{
+			$postSingle = Post::where('title_slug', $title_slug)->firstOrFail(); 
+			return view('pages.blogPost')->with(['postSingle' => $postSingle]);
 		}
 
 		// 
@@ -38,11 +44,6 @@ class NavigationControllers extends Controller
 		//
 		public function activities(){
 			return view('pages.activities');
-		}
-
-		//
-		public function blogpost(){
-			return view('pages.blogpost');
 		}
 
 		//

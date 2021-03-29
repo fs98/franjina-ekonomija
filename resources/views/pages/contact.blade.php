@@ -75,11 +75,11 @@
 
 			<form class="mt-4 pt-3">
 			  <div class="form-group">
-			    <label>Ime i prezime</label>
+			    <label>Ime i prezime*</label>
 			    <input type="text" class="form-control rounded-0 border-0 py-4" placeholder="Jane Doe">
 			  </div>
 			  <div class="form-group mt-4">
-			    <label>Email</label>
+			    <label>Email*</label>
 			    <input type="email" class="form-control rounded-0 border-0 py-4" placeholder="janedoe@gmail.com">
 			  </div>
 			  <div class="form-group mt-4">
@@ -87,8 +87,9 @@
 			    <input type="email" class="form-control rounded-0 border-0 py-4" placeholder="+38761234569">
 			  </div>
 			  <div class="form-group mt-4">
-			    <label for="exampleFormControlTextarea1">Example textarea</label>
-			    <textarea class="form-control border-0 py-4 rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. at vero eos et."></textarea>
+			    <label for="exampleFormControlTextarea1">Vaše pitanje, prijedlog ili ideja*</label>
+			    <textarea class="form-control border-0 py-4 rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder="Vaše pitanje, prijedlog ili ideja"></textarea>
+					<small>* obavezna polja</small>
 			  </div>
 			  <div class="text-center">
 			  	<button type="submit" class="btn rounded-0 text-white px-5 py-2 text-uppercase mt-4">Pošalji</button>

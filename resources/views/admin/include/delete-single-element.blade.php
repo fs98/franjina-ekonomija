@@ -10,13 +10,13 @@
 
     Swal.fire({
       icon: 'warning',
-      text: 'Are you sure you want to delete?',
-      title: 'Are you sure?',
+      text: 'Jeste li sigurni da želite izbrisati?',
+      title: 'Jeste li sigurni?',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, I\'m sure!',
-      cancelButtonText : 'Cancel',
+      confirmButtonText: 'Da, siguran/a sam!',
+      cancelButtonText : 'Odustani',
       allowEscapeKey : false,
       allowOutsideClick: false
     }).then((result) => {

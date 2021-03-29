@@ -19,7 +19,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userAll = User::select('id','name','email','created_at','status')->get();
+        $userAll = User::select('id','name','email','created_at','status', 'password')->get();
+
         return view('admin.users.list')->with(['userAll' => $userAll]);
     }
 

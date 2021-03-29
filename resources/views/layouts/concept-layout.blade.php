@@ -44,38 +44,6 @@
                                 <input class="form-control" type="text" placeholder="Pretraži..">
                             </div>
                         </li> 
-                        <li class="nav-item dropdown connection">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
-                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-                                <li class="connection-list">
-                                    <div class="row">
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="https://via.placeholder.com/256x256" alt="" > <span>Github</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="https://via.placeholder.com/256x256" alt="" > <span>Dribbble</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="https://via.placeholder.com/256x256" alt="" > <span>Dropbox</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="https://via.placeholder.com/256x256" alt=""> <span>Bitbucket</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="https://via.placeholder.com/256x256" alt="" ><span>Mail chimp</span></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                            <a href="#" class="connection-item"><img src="https://via.placeholder.com/256x256" alt="" > <span>Slack</span></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="conntection-footer"><a href="#">More</a></div>
-                                </li>
-                            </ul>
-                        </li>
                         <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://via.placeholder.com/128x128" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
@@ -142,10 +110,10 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/admin/posts') }}">Projekti</a>
+                                            <a class="nav-link" href="{{ __('/admin/projects') }}">Projekti</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/admin/posts/create') }}">Novi projekat</a>
+                                            <a class="nav-link" href="{{ __('/admin/projects/create') }}">Novi projekat</a>
                                         </li> 
                                     </ul>
                                 </div>
@@ -155,10 +123,10 @@
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/admin/posts') }}">Pregled</a>
+                                            <a class="nav-link" href="{{ __('/admin/events') }}">Pregled</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ __('/admin/posts/create') }}">Novi event</a>
+                                            <a class="nav-link" href="{{ __('/admin/events/create') }}">Novi event</a>
                                         </li> 
                                     </ul>
                                 </div>
@@ -167,15 +135,28 @@
                                 OSTALI SADRŽAJ
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Menu Level</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Ostalo</a>
                                 <div id="submenu-10" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
+                                    <ul class="nav flex-column"> 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Level 1</a>
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Slajderi</a>
+                                            <div id="submenu-11" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Glavni slajder</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">kalendar slajder</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Sela slajder</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Level 2</a>
-                                            <div id="submenu-11" class="collapse submenu" style="">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-12" aria-controls="submenu-12">Tekst</a>
+                                            <div id="submenu-12" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="#">Level 1</a>
@@ -187,7 +168,10 @@
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Level 3</a>
+                                            <a class="nav-link" href="#">Partneri</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Donacije</a>
                                         </li>
                                     </ul>
                                 </div>

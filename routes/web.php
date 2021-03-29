@@ -24,7 +24,7 @@ Route::get('/projekti','NavigationControllers@projectlist')->name('projects');
 Route::get('/nekiprojekat','NavigationControllers@project')->name('specificProject');
 Route::get('/podrška','NavigationControllers@Support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
-Route::get('/blogpost','NavigationControllers@blogpost')->name('blogPost');
+Route::get('/blog/{post}','NavigationControllers@show')->name('blogPost');
 
 Route::get('/test', function() {
 	return view('admin.blank-page');

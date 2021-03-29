@@ -374,38 +374,24 @@
 			      <input type="text" required="" class="form-control rounded-0" id="inputName" placeholder="Vaše ime">
 			    </div>
 			    <div class="form-group col-md-6 pl-md-3">
-			      <label for="inputLastName" class="mb-1">Password*</label>
+			      <label for="inputLastName" class="mb-1">Prezime*</label>
 			      <input type="text" required="" class="form-control rounded-0" id="inputLastName" placeholder="Vaše prezime">
 			    </div>
 			  </div>
 			  <div class="form-row">
 			  	<div class="form-group col-md-6 pr-md-3">
-				    <label for="inputPhoneNumber" class="mb-1">Broj telefona*</label>
-				    <input type="text" required="" class="form-control rounded-0" id="inputPhoneNumber" placeholder="Vaš broj telefona">
+				    <label for="inputPhoneNumber" class="mb-1">Broj telefona</label>
+				    <input type="text" class="form-control rounded-0" id="inputPhoneNumber" placeholder="Vaš broj telefona">
 				  </div>
 				  <div class="form-group col-md-6 pl-md-3">
 				    <label for="inputEmail" class="mb-1">Email adresa*</label>
-				    <input type="email" required="" class="form-control rounded-0" id="inputEmail" placeholder="Vaša email adresa">
+				    <input type="email" class="form-control rounded-0" id="inputEmail" placeholder="Vaša email adresa">
 				  </div>
-			  </div>
-			  <div class="form-row">
-			    <div class="form-group col-md-6 pr-md-3">
-			      <label for="inputBirthDate" class="mb-1">Datum rođenja*</label>
-			      <input type="date" required="" class="form-control rounded-0" id="inputBirthDate">
-			    </div>
-			    <div class="form-group col-md-6 pl-md-3">
-			      <label for="inputPlaceOfBirth" class="mb-1">Mjesto rođenja*</label>
-						<input type="text" required="" class="form-control rounded-0" id="inputPlaceOfBirth" placeholder="Vaše mjesto rođenja">
-			    </div>
-			  </div>
+			  </div> 
 			  <div class="form-group mt-2">
-			  	<label for="exampleFormControlTextarea1">Napišite nam nešto o sebi</label>
-   				<textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder="Napišite nam nešto o sebi, šta radite, čime se bavite.. "></textarea>
-			  </div>
-			  <div class="form-group">
-			  	<label for="exampleFormControlTextarea2">Poruka</label>
-   				<textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Ukoliko imate nešto da nas pitate ili dodate možete napisati ovdje.."></textarea>
-			  </div>
+			  	<label for="exampleFormControlTextarea1">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
+   				<textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder=""></textarea>
+			  </div> 
 			  <small>* Obavezna polja</small>
 			  <div class="text-center mt-3">
 				  <button type="submit" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>

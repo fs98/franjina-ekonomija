@@ -18,7 +18,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $postAll = Post::select('id','title','cover','created_at')->get();
+        $postAll = Post::select('id','title','cover','directory_id','created_at')->get();
+
         return view('admin.posts.list')->with(['postAll' => $postAll]);
     }
 
@@ -65,6 +66,8 @@ class PostsController extends Controller
         $postSingle->title_slug = $httpRequest->post_title_slug;
         $postSingle->keywords = $httpRequest->post_keywords;
 
+        $postSingle->directory_id = NULL;
+
         $directory = FileStorageController::makeDirectory($postSingle->base_storage_path);
 
         if($headerImageSet) {
@@ -76,6 +79,8 @@ class PostsController extends Controller
             $postSingle->cover = NULL;
             $postSingle->cover_image_description = NULL;
         }
+
+        $postSingle->directory_id = $directory->getDirectoryId();
 
         if (Helper::isSet($httpRequest->post_content)) {
             $postSingle->content = $httpRequest->post_content;
@@ -121,9 +126,62 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $httpRequest, $id)
     {
-        //
+        $user = auth()->user();
+        if(empty($user)) abort(404);
+        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+
+        $postEdit = Post::find($id);
+
+        $httpRequest->validate([
+            'post_title' => 'required',
+            'post_title_slug' => 'required|max:512',
+            'post_keywords' => 'required|max:256',
+            'post_header_image' => 'image|mimes:jpg,jpeg,png|max:16384',
+            'post_header_image_alt' => 'nullable',
+            'post_content' => 'required'
+        ]);
+
+        if ($httpRequest->hasFile('post_header_image')) {
+            $headerImageSet = true;
+        } else {
+            $headerImageSet = false;
+        }
+ 
+        $postEdit->title = $httpRequest->post_title;
+        $postEdit->title_slug = $httpRequest->post_title_slug;
+        $postEdit->keywords = $httpRequest->post_keywords;
+
+
+        $directory = FileStorageController::makeDirectory($postEdit->base_storage_path);
+
+        if($headerImageSet) {
+            $file = FileStorageController::store($httpRequest->file('post_header_image'), $directory->getFullPath());
+
+            $postEdit->cover = $file;
+            $postEdit->directory_id = $directory->getDirectoryId();
+        } else {
+            $postEdit->cover = $postEdit->cover;
+            $postEdit->directory_id = $postEdit->directory_id;
+        }
+
+        $postEdit->cover_image_description = $httpRequest->post_header_image_alt;
+
+
+        if (Helper::isSet($httpRequest->post_content)) {
+            $postEdit->content = $httpRequest->post_content;
+        } else {
+            $postEdit->content = NULL;
+        }
+
+        try {
+            $postEdit->save();
+        } catch (Exception $e) {}
+
+        $swal = new Swal("Success", 200, Route('admin.posts.index'), "success", "Gotovo!", "Post ažuriran.");
+        return response()->json($swal->get());
+        
     }
 
     /**
@@ -134,6 +192,9 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $postSingleDel = Post::where('id', $id)->delete();
+
+        $swal = new Swal("Success", 200, Route('admin.posts.index'), "success", "Gotovo!", "Post izbrisan.");
+        return response()->json($swal->get());
     }
 }

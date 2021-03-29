@@ -51,22 +51,12 @@
                       @foreach($postAll as $index => $postSingleRow)
                       <tr>
                         <td class="text-truncate">
-                          @if(Helper::isSet($postSingleRow->cover))
-                            <img src="{{ $postSingleRow->cover }}" alt="" width="50">
-                          @else
-                            <span>N/A</span>
-                          @endif
+                          <img src="{{ $postSingleRow->header_image_url }}" alt="" width="50">
                         </td>
+                        <td>{{ $postSingleRow->title }}</td>
                         <td>
-                          @if(Helper::isSet($postSingleRow->title))
-                            <span>{{ $postSingleRow->title }}</span>
-                          @else
-                            <span>Ime nije dostupno</span>
-                          @endif
-                        </td>
-                        <td>
-                          @if(Helper::isSet($postSingleRow->created_at))
-                            <span>{{ $postSingleRow->created_at }}</span>
+                          @if(Helper::isSet($postSingleRow->formatted_publish_date))
+                            <span>{{ $postSingleRow->formatted_publish_date }}</span>
                           @else
                             <span>N/A</span>
                           @endif
