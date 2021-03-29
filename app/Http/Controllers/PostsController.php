@@ -18,7 +18,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $postAll = Post::select('id','title','cover','directory_id','created_at')->get();
+        $postAll = Post::select('id','title','short_description','cover','directory_id','created_at')->get();
 
         return view('admin.posts.list')->with(['postAll' => $postAll]);
     }
@@ -49,6 +49,7 @@ class PostsController extends Controller
         $httpRequest->validate([
             'post_title' => 'required',
             'post_title_slug' => 'required|max:512',
+            'post_short_description' => 'required|max:256',
             'post_keywords' => 'required|max:256',
             'post_header_image' => 'required|image|mimes:jpg,jpeg,png|max:16384',
             'post_header_image_alt' => 'nullable',
@@ -64,6 +65,7 @@ class PostsController extends Controller
         $postSingle = new Post;
         $postSingle->title = $httpRequest->post_title;
         $postSingle->title_slug = $httpRequest->post_title_slug;
+        $postSingle->short_description = $httpRequest->post_short_description;
         $postSingle->keywords = $httpRequest->post_keywords;
 
         $postSingle->directory_id = NULL;
@@ -137,6 +139,7 @@ class PostsController extends Controller
         $httpRequest->validate([
             'post_title' => 'required',
             'post_title_slug' => 'required|max:512',
+            'post_short_description' => 'required|max:256',
             'post_keywords' => 'required|max:256',
             'post_header_image' => 'image|mimes:jpg,jpeg,png|max:16384',
             'post_header_image_alt' => 'nullable',
@@ -151,6 +154,7 @@ class PostsController extends Controller
  
         $postEdit->title = $httpRequest->post_title;
         $postEdit->title_slug = $httpRequest->post_title_slug;
+        $postEdit->short_description = $httpRequest->post_short_description;
         $postEdit->keywords = $httpRequest->post_keywords;
 
 

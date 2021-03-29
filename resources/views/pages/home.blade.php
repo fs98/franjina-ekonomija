@@ -170,7 +170,7 @@
 											{{ 'Ime nije dostupno '}}
 										@endif
 									</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
+							    <p class="card-text text-center mt-5 px-3">{{ $postSingleRow->short_description }}</p>
 							    <a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>

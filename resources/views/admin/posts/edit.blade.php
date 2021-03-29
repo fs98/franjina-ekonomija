@@ -52,6 +52,12 @@
                   <input type="text" id="post_title_slug" class="form-control" name="post_title_slug" max-length="512" readonly="" tabindex="-1" value="{{ $postSingle->title_slug }}">
                 </div>
                 <div class="form-group">
+                  <label for="col-form-label" for="post_short_description">Kratki opis</label>
+                  <label for="post_short_description" class="label-required">(obavezno)</label>
+                  <input type="text" id="post_short_description" name="post_short_description" class="form-control" max-length="256" value="{{ $postSingle->short_description }}">
+                  <label for="post_short_description" class="label-not-required">Napišite kratak opis koji će se nalazi na slajderu na početnoj stranici ispod naslova posta.</label>
+                </div>
+                <div class="form-group">
                   <label for="col-form-label" for="post_keywords">Ključne riječi</label>
                   <label for="post_keywords" class="label-required">(obavezno)</label>
                   <input type="text" id="post_keywords" name="post_keywords" class="form-control" max-length="256" value="{{ $postSingle->keywords }}">
@@ -67,6 +73,7 @@
                     </div> 
                   </div> 
                   <div class="form-group mt-4" id="thumbnail_preview_wrapper">
+                    <small>Trenutna slika</small><br>
                     <img src="{{ $postSingle->header_image_url }}" class="img-fluid" id="thumbnail_image">
                   </div>
                 </div> 

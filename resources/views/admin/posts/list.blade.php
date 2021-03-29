@@ -38,11 +38,12 @@
                   <button class="btn btn-sm btn-warning mb-3">Kreiranje novog posta</button>
                 </a>
                 <div class="table-responsive">
-                  <table class="table table-striped table-bordered first" id="allPostsTable">
+                  <table class="table table-striped table-bordered first" id="allPostsTable" style="table-layout: fixed">
                     <thead>
                       <tr>
                         <th>Slika</th>
                         <th>Naslov</th>
+                        <th>Kratki opis</th>
                         <th>Kreiran</th>
                         <th>Upravljanje</th> 
                       </tr>
@@ -54,6 +55,7 @@
                           <img src="{{ $postSingleRow->header_image_url }}" alt="" width="50">
                         </td>
                         <td>{{ $postSingleRow->title }}</td>
+                        <td class="text-truncate">{{ $postSingleRow->short_description }}</td>
                         <td>
                           @if(Helper::isSet($postSingleRow->formatted_publish_date))
                             <span>{{ $postSingleRow->formatted_publish_date }}</span>
@@ -80,6 +82,7 @@
                       <tr>
                         <th>Slika</th>
                         <th>Naslov</th>
+                        <th>Kratki opis</th>
                         <th>Kreiran</th>
                         <th>Upravljanje</th> 
                       </tr>

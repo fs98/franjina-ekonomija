@@ -23,6 +23,7 @@ class Post extends BaseModel
     	'cover',
         'cover_image_description',
     	'title',
+        'short_description',
         'title_slug',
         'keywords',
     	'content'

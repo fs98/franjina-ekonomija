@@ -64,6 +64,12 @@
                   <label for="post_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
                 </div>
                 <div class="form-group">
+                  <label for="col-form-label" for="post_short_description">Kratki opis</label>
+                  <label for="post_short_description" class="label-required">(obavezno)</label>
+                  <input type="text" id="post_short_description" name="post_short_description" class="form-control" max-length="256">
+                  <label for="post_short_description" class="label-not-required">Napišite kratak opis koji će se nalazi na slajderu na početnoj stranici ispod naslova posta.</label>
+                </div>
+                <div class="form-group">
                   <label class="col-form-label" for="post_header_image">Slika</label>
                   <label class="label-required" for="post_header_image">(obavezno)</label>
                   <div class="input-group">

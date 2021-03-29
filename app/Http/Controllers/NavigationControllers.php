@@ -16,7 +16,7 @@ class NavigationControllers extends Controller
 		{
 			// echo Date::now()->format('l j F Y H:i:s');
 			// die();
-			$postAll = Post::select('title','title_slug','cover','directory_id')->limit(10)->get();
+			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
 			return view('pages.home')->with(['postAll' => $postAll]);
 		}
 

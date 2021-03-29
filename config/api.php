@@ -6,11 +6,11 @@ return [
     ],
     'storage_paths' => [
         'users' => 'public/users/',
-        'posts' => 'public/posts/'
+        'posts' => 'public/posts/', 
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
-        'posts' => 'storage/posts/'
+        'posts' => 'storage/posts/', 
     ],
     'route-paths' => [
         'store' => 'store',

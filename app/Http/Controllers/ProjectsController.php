@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Projects;
+use App\Models\Project;
 use App\Models\Swal;
+
+use Helper;
 
 class ProjectsController extends Controller
 {
@@ -16,7 +18,9 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        //
+        $projectAll = Project::all();
+
+        return view('admin.projects.list')->with(['projectAll' => $projectAll]);
     }
 
     /**
@@ -26,7 +30,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -35,9 +39,90 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $httpRequest)
     {
-        //
+        $user = auth()->user();
+        if(empty($user)) abort(404);
+        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+    
+        $httpRequest->validate([
+            'project_title' => 'required',
+            'project_title_slug' => 'required|max:512',
+            'project_short_description' => 'required|max:256',
+            'project_keywords' => 'required|max:256',
+            'project_header_image' => 'required|image|mimes:jpg,jpeg,png|max:16384',
+            'project_header_image_alt' => 'nullable',
+            'project_start_date' => 'required',
+            'project_end_date' => 'required',
+            'project_content' => 'required'
+        ]);
+
+        if ($httpRequest->hasFile('project_header_image')) {
+            $headerImageSet = true;
+        } else {
+            $headerImageSet = false;
+        }
+
+        $projectSingle = new Project;
+        $projectSingle->title = $httpRequest->project_title;
+        $projectSingle->title_slug = $httpRequest->project_title_slug;
+        $projectSingle->short_description = $httpRequest->project_short_description;
+        $projectSingle->keywords = $httpRequest->project_keywords;
+        $projectSingle->start = $httpRequest->project_start_date;
+        $projectSingle->end = $httpRequest->project_end_date;
+
+        if (Helper::isSet($httpRequest->project_donations)) {
+            $projectSingle->donations = true;
+        } else {
+            $projectSingle->donations = false;
+        }
+
+        if (Helper::isSet($httpRequest->project_money_goal)) {
+            $projectSingle->money_goal = $httpRequest->project_money_goal;
+        } else {
+            $projectSingle->money_goal = NULL;
+        }
+
+        if (Helper::isSet($httpRequest->project_money_collected)) {
+            $projectSingle->money_collected = $httpRequest->project_money_collected;
+        } else {
+            $projectSingle->money_collected = NULL;
+        }
+
+        if (Helper::isSet($httpRequest->project_money_investors)) {
+            $projectSingle->investors = $httpRequest->project_money_investors;
+        } else {
+            $projectSingle->investors = NULL;
+        }
+
+        $projectSingle->directory_id = NULL;
+
+        $directory = FileStorageController::makeDirectory($projectSingle->base_storage_path);
+
+        if($headerImageSet) {
+            $file = FileStorageController::store($httpRequest->file('project_header_image'), $directory->getFullPath());
+
+            $projectSingle->cover = $file;
+            $projectSingle->cover_image_description = $httpRequest->project_header_image_alt;
+        } else {
+            $projectSingle->cover = NULL;
+            $projectSingle->cover_image_description = NULL;
+        }
+
+        $projectSingle->directory_id = $directory->getDirectoryId();
+
+        if (Helper::isSet($httpRequest->project_content)) {
+            $projectSingle->content = $httpRequest->project_content;
+        } else {
+            $projectSingle->content = NULL;
+        }
+
+        try {
+            $projectSingle->save();
+        } catch (Exception $e) {}
+        
+        $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Projekat dodan.");
+        return response()->json($swal->get());
     }
 
     /**
@@ -59,7 +144,8 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $projectSingle = Project::find($id);
+        return view('admin.projects.edit')->with(['projectSingle' => $projectSingle]);
     }
 
     /**
@@ -82,6 +168,9 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $projectSingleDel = Project::where('id', $id)->delete();
+
+        $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Post izbrisan.");
+        return response()->json($swal->get());
     }
 }
