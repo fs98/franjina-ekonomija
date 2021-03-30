@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-              <h5 class="card-header">Uređivanje posta</h5>
+              <h5 class="card-header">Uređivanje projekta</h5>
               <div class="card-body" id="card-body">
                 <div class="row px-3" id="errors-top" style="display: none;"></div>
                 <div class="form-group">
@@ -103,31 +103,31 @@
 
                 <div class="form-group">
                   <label for="project_donations">Pirkazivanje donacija</label>
-                  <input type="checkbox" value="{{ $projectSingle->donations }}" data-toggle="toggle" data-on="Da" data-off="Ne" data-size="sm" name="project_donations" id="project_donations">
+                  <input type="checkbox" {{ $projectSingle->donations == true ? "checked" : "" }} data-toggle="toggle" data-on="Da" data-off="Ne" data-size="sm" name="project_donations" id="project_donations">
                 </div>
 
                 <div class="form-row">
                   <div class="form-group col-md-4">
                     <label for="project_money_goal">Novčani cilj</label>
-                    <input type="number" min="1" class="form-control" name="project_money_goal" id="project_money_goal" value="">
+                    <input type="number" min="1" class="form-control" name="project_money_goal" id="project_money_goal" value="{{ $projectSingle->money_goal }}">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="project_money_collected">Prikupljena novčana sredstva</label>
-                    <input type="number" min="1" class="form-control" name="project_money_collected" id="project_money_collected" value="">
+                    <input type="number" min="1" class="form-control" name="project_money_collected" id="project_money_collected" value="{{ $projectSingle->money_collected }}">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="project_money_investors">Broj ulagača</label>
-                    <input type="number" min="1" class="form-control" name="project_money_investors" id="project_money_investors" value="">
+                    <input type="number" min="1" class="form-control" name="project_money_investors" id="project_money_investors" value="{{ $projectSingle->investors }}">
                   </div>
                 </div>
                 
                 <div class="form-group">
                   <label class="col-form-label" for="project_content">Sadržaj</label>
                   <label class="label-required" for="project_content">(obavezno)</label>
-                  <textarea id="summernote" name="project_content"></textarea>
+                  <textarea id="summernote" name="project_content">{{ $projectSingle->content }}</textarea>
                 </div>  
                  
-                <button type="button" id="submit-button" form="create-form" class="btn btn-lg btn-secondary float-right">Potvrdi</button>
+                <button type="button" id="submit-button" form="update-form" class="btn btn-lg btn-secondary float-right">Potvrdi</button>
               </div>
             </div>
           </div>

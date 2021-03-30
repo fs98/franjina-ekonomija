@@ -101,16 +101,16 @@
             <span>O nama</span>
           </a> 
           <div class="dropdown-menu mt-3 border-0 rounded-0 shadow" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item pb-2" href="{{ __('onama#1') }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
-            <a class="dropdown-item pb-2" href="{{ __('onama#2') }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
-            <a class="dropdown-item" href="{{ __('onama#3') }}">EoF budi i Ti</a>
+            <a class="dropdown-item pb-2" href="{{ route('about',['#1']) }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
+            <a class="dropdown-item pb-2" href="{{ route('about',['#2']) }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
+            <a class="dropdown-item" href="{{ route('about',['#3']) }}">EoF budi i Ti</a>
           </div>
           </li>        
           @endif
 
           @if (Route::has('projects'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0 {{ Route::currentRouteNamed('projects') ? 'active' : '' }}" href="{{ __('projekti') }}">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('projects') ? 'active' : '' }}" href="{{ route('projects') }}">
               <span>Projekti</span>
             </a> 
           </li>
@@ -118,7 +118,7 @@
 
           @if (Route::has('activities'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0 {{ Route::currentRouteNamed('activities') ? 'active' : '' }}" href="{{ __('aktivnosti') }}">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('activities') ? 'active' : '' }}" href="{{ route('activities') }}">
               <span>Aktivnosti</span>
             </a>
           </li>
@@ -126,7 +126,7 @@
 
           @if (Route::has('support'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0 {{ Route::currentRouteNamed('support') ? 'active' : '' }}" href="{{ __('podrška')}}">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('support') ? 'active' : '' }}" href="{{ route('support')}}">
               <span>Podrška</span>
             </a>
           </li>
@@ -134,7 +134,7 @@
 
           @if (Route::has('partners'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0 {{ Route::currentRouteNamed('partners') ? 'active' : '' }}" href="{{ __('partneri') }}" id="partners">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('partners') ? 'active' : '' }}" href="{{ route('partners') }}" id="partners">
               <span>Partneri</span>
             </a>
           </li>
@@ -142,7 +142,7 @@
 
           @if (Route::has('blog'))
           <li class="nav-item mr-3">
-            <a class="nav-link p-0 {{ Route::currentRouteNamed('blog') ? 'active' : '' }}" href="{{ __('blog') }}">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('blog') ? 'active' : '' }}" href="{{ route('blog') }}">
               <span>Blog</span>
             </a>
           </li>
@@ -150,7 +150,7 @@
 
           @if (Route::has('contact'))
           <li class="nav-item mr-3 mr-xl-0">
-            <a class="nav-link p-0 {{ Route::currentRouteNamed('contact') ? 'active' : '' }}" href="{{ __('kontakt') }}" id="contact">
+            <a class="nav-link p-0 {{ Route::currentRouteNamed('contact') ? 'active' : '' }}" href="{{ route('contact') }}" id="contact">
               <span>Kontakt</span>
             </a>
           </li>

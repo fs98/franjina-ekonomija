@@ -7,10 +7,14 @@ return [
     'storage_paths' => [
         'users' => 'public/users/',
         'posts' => 'public/posts/', 
+        'projects' => 'public/projects/', 
+        'events' => 'public/events/',
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
         'posts' => 'storage/posts/', 
+        'projects' => 'storage/projects/', 
+        'events' => 'storage/events/',
     ],
     'route-paths' => [
         'store' => 'store',

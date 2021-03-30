@@ -214,18 +214,22 @@
 			  <div class="swiper-container px-4">
 			    <div class="swiper-wrapper"> 
 			      
+						@foreach ($projectAll as $index => $projectSingleRow)
+								
 			      <!-- Slide -->
 			      <div class="swiper-slide">
 			      	<div class="card border-0">
-							  <img src="{{ asset('images/home/400x450.png') }}" class="card-img-top rounded-0" alt="...">
+							  <img src="{{ $projectSingleRow->header_image_url }}" class="card-img-top rounded-0" alt="...">
 							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">Lorem ipsum</h4>
-							    <p class="card-text text-center mt-5 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed </p>
-							    <a href="#" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
+							    <h4 class="card-title font-weight-bold mt-4">{{ $projectSingleRow->title }}</h4>
+							    <p class="card-text text-center mt-5 px-3">{{ $projectSingleRow->short_description }}</p>
+							    <a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 							  </div>
 							</div>
 			      </div>
 			      <!-- /.Slide -->
+
+						@endforeach
 
 			    </div>
 			    <!-- Add Arrows -->

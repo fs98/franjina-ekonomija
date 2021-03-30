@@ -21,8 +21,8 @@ Route::get('/partneri', 'NavigationControllers@partners')->name('partners');
 Route::get('/onama', 'NavigationControllers@about')->name('about');
 Route::get('/aktivnosti', 'NavigationControllers@activities')->name('activities');
 Route::get('/projekti','NavigationControllers@projectlist')->name('projects');
-Route::get('/nekiprojekat','NavigationControllers@project')->name('specificProject');
-Route::get('/podrška','NavigationControllers@Support')->name('support');
+Route::get('/projekti/{project}','NavigationControllers@showProject')->name('specificProject');
+Route::get('/podrška','NavigationControllers@support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blog/{post}','NavigationControllers@show')->name('blogPost');
 

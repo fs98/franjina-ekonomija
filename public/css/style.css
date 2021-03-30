@@ -648,6 +648,16 @@ footer .social-networks h3{
 		object-position: center;
 	}
 
+	/* Single blog  */
+
+	.blog-post-section img{
+		padding: 0px 15px;
+	}
+
+	.blog-post_section{
+		font-family: Poppins !important;
+	}
+
 /* Projects Page */
 
 .projects-section .swiper-slide .card .projects-card-icon {
@@ -673,16 +683,16 @@ footer .social-networks h3{
 	background-color: #BB1C2E;
 }
 
-.project-card-box button{
+.project-card-box .button{
 	background-color: #BB1C2E;
 	font-size: 12px;
 }
 
-.project-card-box button:focus{
+.project-card-box .button:focus{
 	box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
 }
 
-.project-card-box button:hover{
+.project-card-box .button:hover{
 	background-color: transparent;
 	color: #BB1C2E !important;
 	border: 1px solid #BB1C2E; 

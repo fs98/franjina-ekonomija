@@ -155,9 +155,90 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $httpRequest, $id)
     {
-        //
+        $user = auth()->user();
+        if(empty($user)) abort(404);
+        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+
+        $projectEdit = Project::find($id);
+
+        $httpRequest->validate([
+            'project_title' => 'required',
+            'project_title_slug' => 'required|max:512',
+            'project_short_description' => 'required|max:256',
+            'project_keywords' => 'required|max:256',
+            'project_header_image' => 'image|mimes:jpg,jpeg,png|max:16384',
+            'project_header_image_alt' => 'nullable',
+            'project_start_date' => 'required',
+            'project_end_date' => 'required',
+            'project_content' => 'required'
+        ]);
+        
+        
+        if ($httpRequest->hasFile('project_header_image')) {
+            $headerImageSet = true;
+        } else {
+            $headerImageSet = false;
+        }
+
+        $projectEdit->title = $httpRequest->project_title;
+        $projectEdit->title_slug = $httpRequest->project_title_slug;
+        $projectEdit->short_description = $httpRequest->project_short_description;
+        $projectEdit->keywords = $httpRequest->project_keywords;
+        $projectEdit->start = $httpRequest->project_start_date;
+        $projectEdit->end = $httpRequest->project_end_date;
+
+        if (Helper::isSet($httpRequest->project_donations)) {
+            $projectEdit->donations = true;
+        } else {
+            $projectEdit->donations = false;
+        }
+
+        if (Helper::isSet($httpRequest->project_money_goal)) {
+            $projectEdit->money_goal = $httpRequest->project_money_goal;
+        } else {
+            $projectEdit->money_goal = NULL;
+        }
+
+        if (Helper::isSet($httpRequest->project_money_collected)) {
+            $projectEdit->money_collected = $httpRequest->project_money_collected;
+        } else {
+            $projectEdit->money_collected = NULL;
+        }
+
+        if (Helper::isSet($httpRequest->project_money_investors)) {
+            $projectEdit->investors = $httpRequest->project_money_investors;
+        } else {
+            $projectEdit->investors = NULL;
+        }
+
+        $directory = FileStorageController::makeDirectory($projectEdit->base_storage_path);
+
+        if($headerImageSet) {
+            $file = FileStorageController::store($httpRequest->file('project_header_image'), $directory->getFullPath());
+
+            $projectEdit->cover = $file;
+            $projectEdit->directory_id = $directory->getDirectoryId();
+        } else {
+            $projectEdit->cover = $projectEdit->cover;
+            $projectEdit->directory_id = $projectEdit->directory_id;
+        }
+
+        $projectEdit->cover_image_description = $httpRequest->project_header_image_alt;
+
+        if (Helper::isSet($httpRequest->project_content)) {
+            $projectEdit->content = $httpRequest->project_content;
+        } else {
+            $projectEdit->content = NULL;
+        }   
+
+        try {
+            $projectEdit->save();
+        } catch (Exception $e) {}
+
+        $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Projekat ažuriran.");
+        return response()->json($swal->get());
     }
 
     /**
@@ -168,7 +249,7 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        $projectSingleDel = Project::where('id', $id)->delete();
+        $projectEditDel = Project::where('id', $id)->delete();
 
         $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Post izbrisan.");
         return response()->json($swal->get());

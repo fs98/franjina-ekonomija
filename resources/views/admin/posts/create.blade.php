@@ -125,6 +125,7 @@
         lang: 'hr-HR',
         tabsize: 2,
         height: 500, 
+        fontName: 'Poppins',
         toolbar: [
       // [groupName, [list of button]]
       ['style', ['style']],
@@ -168,7 +169,6 @@
     titleField.on('input', function() {
       titleSlugField.val(replaceChars(titleField.val()));
     });
-  </script>
-
+  </script> 
 
 @endsection

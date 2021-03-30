@@ -10,11 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 <!-- include summernote css/js -->
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-
-{{-- Bootstrap Toggle Switch --}}
-<link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap4-toggle.min.css') }}">
-
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> 
 @endsection
 @section('main-content')
 
@@ -59,13 +55,7 @@
                   <label for="project_title_slug" class="col-form-label">Naslov u URL-u</label>
                   <label for="project_title_slug" class="label-required">(automatski generisano)</label>
                   <input type="text" id="project_title_slug" class="form-control" name="project_title_slug" max-length="512" readonly="" tabindex="-1">
-                </div>
-                <div class="form-group">
-                  <label for="col-form-label" for="project_keywords">Ključne riječi</label>
-                  <label for="project_keywords" class="label-required">(obavezno)</label>
-                  <input type="text" id="project_keywords" name="project_keywords" class="form-control" max-length="256">
-                  <label for="project_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
-                </div>
+                </div> 
                 <div class="form-group">
                   <label for="col-form-label" for="project_short_description">Kratki opis</label>
                   <label for="project_short_description" class="label-required">(obavezno)</label>
@@ -107,7 +97,7 @@
                 <h4 class="mt-3">Sljedeći podaci se odnose na donacije. Ukoliko ne želite da se donacije prikažu posjetiocima stranice, potrebno je da to odredite funkcijom on/off, a tražene informacije ne morate unijeti osim ako one nisu važne za vašu osobnu evidenciju.</h4>
 
                 <div class="form-group">
-                  <label for="project_donations">Pirkazivanje donacija</label>
+                  <label for="project_donations">Prikazivanje donacija</label>
                   <input type="checkbox" checked data-toggle="toggle" data-on="Da" data-off="Ne" data-size="sm" name="project_donations" id="project_donations">
                 </div>
 
@@ -190,26 +180,7 @@
         image.src = URL.createObjectURL(event.target.files[0]);
         $("#thumbnail_preview_wrapper").css('display', 'inherit');
       });
-  </script>
-
-  {{-- Create url with title --}}
-  <script src="{{ asset('back/replaceChars.js')}}"></script>
-
-  <script>
-    $(document).ready(function() {
-      $("#project_title_slug").val(replaceChars($("#project_title").val()));
-    });
-
-    var titleField = $("#project_title");
-    var titleSlugField = $("#project_title_slug");
-
-    titleField.on('input', function() {
-      titleSlugField.val(replaceChars(titleField.val()));
-    });
-  </script>
-
-  {{-- Bootstrap Toggle Switch --}}
-  <script src="{{ asset('vendor/bootstrap/js/bootstrap4-toggle.min.js') }}"></script>
+  </script> 
 
 
 @endsection

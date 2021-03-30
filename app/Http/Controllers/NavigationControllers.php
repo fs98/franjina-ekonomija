@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 // use Date;
 
 use App\Models\Post;
+use App\Models\Project;
 use Helper;
 
 class NavigationControllers extends Controller
@@ -17,13 +18,22 @@ class NavigationControllers extends Controller
 			// echo Date::now()->format('l j F Y H:i:s');
 			// die();
 			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
-			return view('pages.home')->with(['postAll' => $postAll]);
+			$projectAll = Project::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
+			return view('pages.home')
+				->with(['postAll' => $postAll])
+				->with(['projectAll' => $projectAll]);
 		}
 
 		public function show($title_slug) 
 		{
 			$postSingle = Post::where('title_slug', $title_slug)->firstOrFail(); 
 			return view('pages.blogPost')->with(['postSingle' => $postSingle]);
+		}
+
+		public function showProject($title_slug) 
+		{
+			$projectSingle = Project::where('title_slug', $title_slug)->firstOrFail();
+			return view('pages.project')->with(['projectSingle' => $projectSingle]);
 		}
 
 		// 
@@ -60,10 +70,6 @@ class NavigationControllers extends Controller
 		public function projectlist(){
 			return view('pages.projectlist');
 		}
-
-		//
-		public function project(){
-			return view('pages.project');
-		}
+ 
 
 }

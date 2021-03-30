@@ -23,14 +23,14 @@
 			
 			<div class="col-12 text-center mb-5">
 				<h1>
-					<span class="yellow-border-heading pb-1">Lorem ipsum</span>
+					<span class="yellow-border-heading pb-1">{{ $projectSingle->title }}</span>
 				</h1>				
 			</div>
 
 			<!-- Project Description -->
 			<div class="col-12">
 				
-				...
+				{!! $projectSingle->content !!}
 
 			</div>
 			<!-- /.Project Description -->		
@@ -41,8 +41,11 @@
 	</div>
 	<!-- /.Container -->
 
+	
 	<!-- Container -->
 	<div class="container">
+		
+		@if ($projectSingle->donations == true)
 		
 		<!-- Row -->
 		<div class="row">
@@ -53,11 +56,11 @@
 					<span class="d-flex flex-row justify-content-between px-2 mt-1">
 						<span class="d-flex justify-content-start">
 							<img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">
-							<p class="my-auto pl-1">1000 ulagača</p>
+							<p class="my-auto">{{ $projectSingle->investors }} ulagača</p>
 						</span>
 						<span class="d-flex justify-content-end px-0 mr-0">
 							<img src="{{ asset('icons/projects/heart.svg') }}" class="img-fluid projects-card-icon">
-							<p class="my-auto pl-1">10 Sviđa mi se</p>
+							<p class="my-auto">{{ $projectSingle->likes }} Sviđa mi se</p>
 						</span> 
 					</span>
 					<span class="d-flex flex-column px-2 mt-2">
@@ -67,25 +70,27 @@
 						</div>	
 						<div class="mt-4 mx-4 d-flex justify-content-between align-items-start">
 							<span class="text-left">
-								<span class="p-2 money-amount">300,00</span>
+								<span class="p-2 money-amount"><span>{{ $projectSingle->money_collected }} €</span></span>
 							</span>
 							<span>&mdash;</span>
 							<span>
-								<span class="p-2 money-amount">101.00,00</span>
+								<span class="p-2 money-amount"><span>{{ $projectSingle->money_goal}} €</span></span>
 							</span>
 						</div>	 	    		
 					</span>
 						<p class="d-flex flex-row justify-content-between mt-3 px-2 mx-4">
-							<small>10 dana do završetka</small>
-							<small>100% prikupljeno</small>
+							<small>{{ $projectSingle->days_left}} dana do završetka</small>
+							<small>{{ $projectSingle->percentage}} % prikupljeno</small>
 						</p>
-					<button class="btn rounded-0 mb-2 text-white px-4">Podržite kampanju</button>
+					<a class="btn rounded-0 mb-2 text-white px-4 button" href="">Podržite kampanju</a>
 				</div>
 
 			</div>
 
 		</div>
 		<!-- /.Row -->
+
+		@endif
 
 		<!-- Row -->
 		<div class="row mb-5">

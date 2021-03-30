@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Swal;
 
+use Helper;
+
 class EventsController extends Controller
 {
     /**
@@ -26,7 +28,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.events.create');
     }
 
     /**
@@ -35,9 +37,71 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $httpRequest)
     {
-        //
+        $user = auth()->user();
+        if(empty($user)) abort(404);
+        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+        
+        $httpRequest->validate([
+            'event_title' => 'required',
+            'event_header_image' => 'image|mimes:jpg,jpeg,png|max:16384',
+            'event_header_image_alt' => 'nullable',
+            'event_date' => 'required',  
+        ]);
+
+        if ($httpRequest->hasFile('event_header_image')) {
+            $headerImageSet = true;
+        } else {
+            $headerImageSet = false;
+        }
+
+        $eventSingle = new Event;
+        $eventSingle->title = $httpRequest->event_title; 
+
+        $eventSingle->directory_id = NULL;
+
+        $directory = FileStorageController::makeDirectory($eventSingle->base_storage_path);
+
+        if($headerImageSet) {
+            $file = FileStorageController::store($httpRequest->file('event_header_image'), $directory->getFullPath());
+
+            $eventSingle->cover = $file;
+            $eventSingle->cover_image_description = $httpRequest->event_header_image_alt;
+            $eventSingle->directory_id = $directory->getDirectoryId();
+
+        } else {
+            $eventSingle->cover = NULL;
+            $eventSingle->cover_image_description = NULL;
+            $eventSingle->directory_id = NULL;
+        }
+
+        $eventSingle->date = $httpRequest->event_date;
+
+        if (Helper::isSet($httpRequest->event_start)) {
+            $eventSingle->start = $httpRequest->event_start;
+        } else {
+            $eventSingle->start = NULL;
+        }
+
+        if (Helper::isSet($httpRequest->event_end)) {
+            $eventSingle->end = $httpRequest->event_end;
+        } else {
+            $eventSingle->end = NULL;
+        }        
+
+        if (Helper::isSet($httpRequest->event_zoom_link)) {
+            $eventSingle->zoom_link = $httpRequest->event_zoom_link;
+        } else {
+            $eventSingle->zoom_link = NULL;
+        }
+
+        try {
+            $eventSingle->save();
+        } catch (Exception $e) {}
+
+        $swal = new Swal("Success", 200, Route('admin.events.index'), "success", "Gotovo!", "Event dodan.");
+        return response()->json($swal->get());
     }
 
     /**
