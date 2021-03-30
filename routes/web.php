@@ -61,6 +61,11 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	Route::resource('events','EventsController');
 	Route::resource('projects','ProjectsController');
 
+	Route::prefix('questions')->name('questions')->group(function() {
+		Route::resource('/', 'QuestionsController', ['except' => ['update', 'edit']]);
+		Route::post('send-emails','MailController@sendMail')->name('send-emails');
+	});
+
 
 	// Route::resource('categories', 'CategoryController');
 	// Route::resource('regions', 'RegionController');
@@ -86,4 +91,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 // Route::get('forgot-password' , function() {
 // 	return view('concept-auth.forgot-password');
 // });
+
+Route::get('/blog/{post}','NavigationControllers@show')->name('blogPost');
 
