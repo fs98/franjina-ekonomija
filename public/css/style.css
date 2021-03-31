@@ -2,7 +2,7 @@
 
 body {
 	font-family: Poppins;
-	background-color: #ffffff;
+	background-color: #ffffff; 
 }
 
 input:focus,
@@ -185,6 +185,20 @@ footer .social-networks img:hover{
 
 footer .social-networks h3{
 	font-size: 24px;
+}
+
+/* Fixed footer */
+
+.fixed-footer{
+	position: fixed; 
+	width: 100%; 
+	bottom: 0; 
+	z-index: 20; 
+	overflow: hidden;
+}
+
+.left-fixed-footer{
+	background-color: #bb1c2e;
 }
 
 /* Contact Page */

@@ -298,8 +298,45 @@
   <!-- /.Container-fluid -->
 
 </footer>
+{{-- /.Footer --}}
 
-<!-- /.Footer) -->
+{{-- Fixed footer --}}
+<footer class="fixed-footer d-md-none">
+
+  <div class="container-fluid">
+    
+    {{-- Row --}}
+    <div class="row">
+      <div class="col-6 left-fixed-footer d-flex align-items-center justify-content-center">
+        <a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white mt-2 h5"><img src="{{ asset('icons/common/email.svg') }}" class="footer-icon"></a>
+      </div>
+      <div class="col-6 left-fixed-footer d-flex align-items-center justify-content-center bg-white">
+        <span id="share" class="btn"><img src="{{ asset('icons/footer/share.svg') }}" class="footer-icon"></span>
+        <p class="result"></p>
+      </div>
+    </div>
+    {{-- /.Row --}}
+
+  </div>
+
+</footer>
+{{-- /.Fixed footer --}}
+
+{{-- Share --}}
+<script>
+  let shareData = {
+    title: 'Franjina ekonomija',
+    text: 'Franjina ekonomija',
+    url: 'https://developer.mozilla.org',
+  }
+
+  const btn = document.querySelector('#share');
+  const resultPara = document.querySelector('.result');
+
+  btn.addEventListener('click', () => {
+    navigator.share(shareData)
+  });
+</script>
 
 <!-- Sticky Navbar -->
 <script>
