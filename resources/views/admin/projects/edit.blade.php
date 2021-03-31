@@ -77,7 +77,7 @@
                   </div> 
                   <div class="form-group mt-4" id="thumbnail_preview_wrapper">
                     <small>Trenutna slika</small><br>
-                    <img src="{{ $projectSingle->header_image_url }}" class="img-fluid" id="thumbnail_image">
+                    <img src="{{ $projectSingle->header_image_url }}" class="img-fluid" id="thumbnail_image" width="300">
                   </div>
                 </div> 
                 <div class="form-group mt-3">

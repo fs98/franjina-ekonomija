@@ -196,8 +196,74 @@
 </section>
 
 
+<!-- Container -->
+<div class="container">
+	
+	<!-- Row -->
+	<div class="row">
+		
+		<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
+			
+			<h1>
+				<span class="yellow-border-heading pb-1">EoF budi i ti</span>
+			</h1>
+
+		</div>
+
+		<div class="col-12 col-lg-6 d-flex align-items-center">
+			
+			<p class="pr-lg-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </p>
+
+		</div>
+		<div class="col-12 col-lg-6 d-flex align-items-center">
+			
+			<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid w-100 h-100">
+
+		</div>
+
+	</div>
+	<!-- /.Row -->
+
+	<!-- Form -->
+	<form class="mt-5">
+		<div class="form-row">
+			<div class="form-group col-md-6 pr-md-3">
+				<label for="inputName" class="mb-1">Ime*</label>
+				<input type="text" required="" class="form-control rounded-0" id="inputName" placeholder="Vaše ime">
+			</div>
+			<div class="form-group col-md-6 pl-md-3">
+				<label for="inputLastName" class="mb-1">Prezime*</label>
+				<input type="text" required="" class="form-control rounded-0" id="inputLastName" placeholder="Vaše prezime">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6 pr-md-3">
+				<label for="inputPhoneNumber" class="mb-1">Broj telefona</label>
+				<input type="text" class="form-control rounded-0" id="inputPhoneNumber" placeholder="Vaš broj telefona">
+			</div>
+			<div class="form-group col-md-6 pl-md-3">
+				<label for="inputEmail" class="mb-1">Email adresa*</label>
+				<input type="email" class="form-control rounded-0" id="inputEmail" placeholder="Vaša email adresa">
+			</div>
+		</div> 
+		<div class="form-group mt-2">
+			<label for="exampleFormControlTextarea1">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
+			<textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder=""></textarea>
+		</div> 
+		<small>* Obavezna polja</small>
+		<div class="text-center mt-3">
+			<button type="submit" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
+		</div>
+	</form>				
+	<!-- /.Form -->
+
+</div>
+<!-- /.Container -->
+	
+<section class="bg-light">
+
 	<!-- Container -->
-	<div class="container mb-5">
+	<div class="container pb-4">
 		
 		<!-- Row -->
 		<div class="row">
@@ -211,31 +277,31 @@
 			<!-- Swiper Projects -->
 
 			<!-- Swiper -->
-			  <div class="swiper-container px-4">
-			    <div class="swiper-wrapper"> 
-			      
+				<div class="swiper-container px-4">
+					<div class="swiper-wrapper"> 
+						
 						@foreach ($projectAll as $index => $projectSingleRow)
 								
-			      <!-- Slide -->
-			      <div class="swiper-slide">
-			      	<div class="card border-0">
-							  <img src="{{ $projectSingleRow->header_image_url }}" class="card-img-top rounded-0" alt="...">
-							  <div class="card-body px-0">
-							    <h4 class="card-title font-weight-bold mt-4">{{ $projectSingleRow->title }}</h4>
-							    <p class="card-text text-center mt-5 px-3">{{ $projectSingleRow->short_description }}</p>
-							    <a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
+						<!-- Slide -->
+						<div class="swiper-slide">
+							<div class="card border-0">
+								<img src="{{ $projectSingleRow->header_image_url }}" class="card-img-top rounded-0" alt="...">
+								<div class="card-body px-0">
+									<h4 class="card-title font-weight-bold mt-4">{{ $projectSingleRow->title }}</h4>
+									<p class="card-text text-center mt-5 px-3">{{ $projectSingleRow->short_description }}</p>
+									<a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
+								</div>
 							</div>
-			      </div>
-			      <!-- /.Slide -->
+						</div>
+						<!-- /.Slide -->
 
 						@endforeach
 
-			    </div>
-			    <!-- Add Arrows -->
-			    <div class="swiper-button-next"></div>
-			    <div class="swiper-button-prev"></div>
-			  </div>
+					</div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
 
 			<!-- /.Swiper News -->
 
@@ -244,6 +310,10 @@
 
 	</div>
 	<!-- /.Container -->
+
+</section>
+
+
 
 	<!-- Modal -->
 	<!-- Large modal -->

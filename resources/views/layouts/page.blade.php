@@ -306,12 +306,12 @@
   <div class="container-fluid">
     
     {{-- Row --}}
-    <div class="row">
-      <div class="col-6 left-fixed-footer d-flex align-items-center justify-content-center">
+    <div class="row my-2 no-gutters">
+      <div class="col-6 d-flex align-items-center justify-content-center">
         <a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white mt-2 h5"><img src="{{ asset('icons/common/email.svg') }}" class="footer-icon"></a>
       </div>
-      <div class="col-6 left-fixed-footer d-flex align-items-center justify-content-center bg-white">
-        <span id="share" class="btn"><img src="{{ asset('icons/footer/share.svg') }}" class="footer-icon"></span>
+      <div class="col-6 d-flex align-items-center justify-content-center">
+        <span id="share" class="btn"><img src="{{ asset('icons/footer/share-2.svg') }}" class="footer-icon"></span>
         <p class="result"></p>
       </div>
     </div>
