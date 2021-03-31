@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 use \DateTime;
 use Helper;
 
-class EmailController extends Controller
+class MailController extends Controller
 {
     public static function sendVerificationEmail($userSingle = NULL) {
     	$user = auth()->user();

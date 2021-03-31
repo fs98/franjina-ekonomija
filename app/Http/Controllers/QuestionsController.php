@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Question;
+use App\Models\Swal;
+use Helper;
 
 class QuestionsController extends Controller
 {
@@ -26,9 +28,33 @@ class QuestionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $httpRequest)
+    {   
+
+        $httpRequest->validate([
+            'full_name' => 'required',
+            'email' => 'required',
+            'question' => 'required'
+        ]);
+
+        $questionSingle = new Question;
+        $questionSingle->full_name = $httpRequest->full_name;
+        $questionSingle->email = $httpRequest->email;
+        
+        if (Helper::isSet($httpRequest->phone_number)) {
+            $questionSingle->telephone = $httpRequest->phone_number;
+        } else {
+            $questionSingle->telephone = NULL;
+        }
+
+        $questionSingle->message = $httpRequest->question;
+
+        try {
+            $questionSingle->save();
+        } catch (Exception $e) {}
+
+        $swal = new Swal("Success", 200, Route('contact'), "success", "Gotovo!", "Vaše pitanje je sačuvano, ubrzo ćemo Vas kontaktirati.");
+        return response()->json($swal->get());
     }
 
     /**

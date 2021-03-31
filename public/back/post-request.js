@@ -54,8 +54,8 @@ $("#submit-button").on("click", function(event) {
                 allowEscapeKey : false,
                 allowOutsideClick: false,
                 icon: 'error',
-                text: 'An error has occurred. Please try again or contact support.',
-                title: 'An error has occurred!',
+                text: 'Došlo je do greške. Molimo pokušajte ponovo!',
+                title: 'Greška!',
               });
               Swal.hideLoading();
 

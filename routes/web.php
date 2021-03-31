@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'NavigationControllers@index')->name('index');
 Route::get('/kontakt', 'NavigationControllers@contact')->name('contact');
+Route::post('/kontakt', 'QuestionsController@store')->name('contact_store');
 Route::get('/partneri', 'NavigationControllers@partners')->name('partners');
 Route::get('/onama', 'NavigationControllers@about')->name('about');
 Route::get('/aktivnosti', 'NavigationControllers@activities')->name('activities');
@@ -32,18 +33,6 @@ Route::get('/test', function() {
 
 
 Auth::routes(['register' => false]);
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-// Admin Panel Routes
-
-// Route::group(['middleware' => 'auth'], function() {
-
-// 	Route::get('/admin' , function() {
-// 		return view('admin.blank-page');
-// 	});
-// });
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	Route::get('/', function() {

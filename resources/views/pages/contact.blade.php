@@ -4,6 +4,14 @@
 	Kontakt
 @endsection ('title')
 
+@section('links')
+<meta name="csrf-token" content="{{ csrf_token() }}" /> 
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+	
+@endsection
+
 @section('content')
 
 <section class="contact-section">
@@ -69,40 +77,38 @@
 		</div>
 
 		<div class="col-12 col-xl-6 bg-white px-0 pl-xl-5 pr-xl-0">
-			
-<!-- 			<h4 class="my-4 pt-5 pt-xl-0 text-center">Imate neko pitanje, 
-			<br>slobodno nas kontaktirajte! </h4> -->
 
-			<form class="mt-4 pt-3">
+			<form class="mt-2 pt-3" action="{{ Route('contact_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+				@csrf
 			  <div class="form-group">
 			    <label>Ime i prezime*</label>
-			    <input type="text" class="form-control rounded-0 border-0 py-4" placeholder="Jane Doe">
+			    <input type="text" name="full_name" id="full_name" class="form-control rounded-0 border-0 py-4" placeholder="Jane Doe">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label>Email*</label>
-			    <input type="email" class="form-control rounded-0 border-0 py-4" placeholder="janedoe@gmail.com">
+			    <input type="email" name="email" id="email" class="form-control rounded-0 border-0 py-4" placeholder="janedoe@gmail.com">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label>Broj telefona</label>
-			    <input type="email" class="form-control rounded-0 border-0 py-4" placeholder="+38761234569">
+			    <input type="text" id="phone_number" name="phone_number" class="form-control rounded-0 border-0 py-4" placeholder="+38761234569">
 			  </div>
 			  <div class="form-group mt-4">
-			    <label for="exampleFormControlTextarea1">Vaše pitanje, prijedlog ili ideja*</label>
-			    <textarea class="form-control border-0 py-4 rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder="Vaše pitanje, prijedlog ili ideja"></textarea>
+			    <label for="question">Vaše pitanje, prijedlog ili ideja*</label> 
+			    <textarea class="form-control border-0 py-4 rounded-0" rows="3" id="question" name="question" placeholder="Vaše pitanje, prijedlog ili ideja"></textarea>
 					<small>* obavezna polja</small>
 			  </div>
 				<div class="form-group">
 					<div class="form-group">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-							<label class="form-check-label" for="invalidCheck">
-								Prihvatam uvjete korištenja stranice i <a href="">politiku zaštite privatnosti</a>
+							<input class="form-check-input" type="checkbox" required>
+							<label class="form-check-label">
+								Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="">politiku zaštite privatnosti</a>
 							</label> 
 						</div>
 					</div>
 				</div>
 			  <div class="text-center">
-			  	<button type="submit" class="btn rounded-0 text-white px-5 py-2 text-uppercase mt-4">Pošalji</button>
+			  	<button type="button" id="submit-button" form="create-form" class="btn rounded-0 text-white px-5 py-2 text-uppercase mt-4">Pošalji</button>
 			  </div>
 			</form>
 
@@ -117,5 +123,12 @@
 <!-- /.Container -->
 
 </section>
+
+@endsection
+
+@section('scripts')
+
+{{-- Post request --}}
+<script src="{{ asset('back/post-request.js')}}"></script>
 
 @endsection

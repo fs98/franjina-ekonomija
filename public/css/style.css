@@ -106,10 +106,13 @@ header input:focus{
 	/* Medium devices (tablets, less than 992px) */
 	@media (max-width: 991.98px) {
 		nav .navbar-brand {
-			height: 120px;
-			width: 120px;
-			border: 4px solid white;
-			margin-bottom: -40px;
+			padding: 3px; 
+			margin-bottom: -50px;
+		}
+		nav .navbar-brand img{
+			height: 130px;
+			width: 130px;
+			padding: 0px 5px;
 		}
 		.mobile-margin {
 		margin-top: 96px;
