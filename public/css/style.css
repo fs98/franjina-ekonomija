@@ -92,7 +92,7 @@ header input:focus{
 
 	nav .navbar-brand{  
 		border-radius: 50%; 
-		padding: 5px;  
+		padding: 0px;  
 		margin-bottom: -60px;
 	}
 
