@@ -639,29 +639,30 @@ footer .social-networks h3{
 
 	/* Carousel */
 
-	.carousel nav img{
-		height: 18px;
+	.blog-section nav{
+		position: static;
+		background-color: transparent !important;
+		box-shadow: none;
 	}
 
-	.carousel nav{
-		position: static; 
-	}
-
-	.carousel nav .page-link{
-		/*border: 1px solid #414141;
-		font-weight: bold;*/
-		color: #414141;
-		/*padding: 10px 12px;*/
-	}
-
-	.carousel nav .page-link:hover{
+	.blog-section nav .page-item{
 		cursor: pointer;
 		background-color: rgba(255, 222, 89, 0.5);
 		transition: 0.3s;
 	}
 
-	.carousel nav .active{
+	.blog-section nav .active .page-link{
 		background-color: #FFDE59 !important;
+		border-color: #FFDE59;
+		color: #414141;
+	}
+	
+	.blog-section nav .page-link{
+		color: #414141;
+	}
+
+	.blog-section nav .page-link:focus{
+		box-shadow: 0 0 0 3px rgba(255, 222, 89, 0.4);
 	}
 
 	.carousel .card .no-gutters .col-sm-4{

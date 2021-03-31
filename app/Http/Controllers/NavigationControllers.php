@@ -58,7 +58,8 @@ class NavigationControllers extends Controller
 
 		//
 		public function blog(){
-			return view('pages.blog');
+			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->paginate(4);
+			return view('pages.blog')->with(['postAll' => $postAll]);
 		}
 
 		//

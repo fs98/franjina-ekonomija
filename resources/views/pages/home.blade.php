@@ -298,6 +298,7 @@
 						<!-- /.Slide -->
 
 						@endforeach
+					
 
 					</div>
 					<!-- Add Arrows -->
