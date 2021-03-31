@@ -82,7 +82,7 @@
 
   <nav class="navbar navbar-expand-xl navbar-light bg-white py-2" id="navbar">
     <div class="container">
-      <a class="navbar-brand bg-white p-3" href="{{ __('/')}}"></a>
+      <a class="navbar-brand bg-white" href="{{ __('/')}}"><img src="{{ asset('images/logo/header-logo.svg') }}" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
