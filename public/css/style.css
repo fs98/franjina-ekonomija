@@ -519,6 +519,19 @@ footer .social-networks h3{
   	transition: 0.3s;
   }
 
+	.question-form button{
+		background-color: #BB1C2E;
+	}
+	
+	.question-form button:hover{
+		background-color: rgba(187, 28, 46, 0.8) !important;
+		transition: 0.3s;
+	}
+	
+	.question-form button:focus{
+		box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
+	}
+
   .about-section form input,
   .about-section form textarea{
   	border: 1px solid rgba(65, 65, 65, 0.5);

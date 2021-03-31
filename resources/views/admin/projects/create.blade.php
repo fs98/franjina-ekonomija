@@ -72,7 +72,7 @@
                     </div> 
                   </div> 
                   <div class="form-group mt-4" id="thumbnail_preview_wrapper" style="display: none;">
-                    <img class="img-fluid" id="thumbnail_image">
+                    <img class="img-fluid" id="thumbnail_image" width="300">
                   </div>
                 </div> 
                 <div class="form-group mt-3">

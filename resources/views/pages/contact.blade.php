@@ -9,7 +9,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-	
 @endsection
 
 @section('content')
@@ -107,6 +106,7 @@
 						</div>
 					</div>
 				</div>
+				<input type="hidden" id="route" name="route" value="contact">
 			  <div class="text-center">
 			  	<button type="button" id="submit-button" form="create-form" class="btn rounded-0 text-white px-5 py-2 text-uppercase mt-4">Pošalji</button>
 			  </div>

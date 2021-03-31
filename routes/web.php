@@ -17,9 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'NavigationControllers@index')->name('index');
 Route::get('/kontakt', 'NavigationControllers@contact')->name('contact');
+
+// Submit form from contact page
 Route::post('/kontakt', 'QuestionsController@store')->name('contact_store');
+
 Route::get('/partneri', 'NavigationControllers@partners')->name('partners');
 Route::get('/onama', 'NavigationControllers@about')->name('about');
+
+// Submit form from about us page
+Route::post('/onama', 'QuestionsController@store')->name('about_store');
+
 Route::get('/aktivnosti', 'NavigationControllers@activities')->name('activities');
 Route::get('/projekti','NavigationControllers@projectlist')->name('projects');
 Route::get('/projekti/{project}','NavigationControllers@showProject')->name('specificProject');

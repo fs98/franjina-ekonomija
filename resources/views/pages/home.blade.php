@@ -6,6 +6,10 @@
 
 @section('links')
 
+<meta name="csrf-token" content="{{ csrf_token() }}" /> 
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 <!-- Swiper -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -117,87 +121,73 @@
 
 	</section>	
 
-	<!-- Container -->
-	<div class="container">
-		
-		<!-- Row -->
-		<div class="row">
+	<section class="bg-light">	
+
+		<!-- Container -->
+		<div class="container py-5">
 			
+			<!-- Row -->
+			<div class="row mb-5">
 
+			<div class="col-12 w-100 text-center mb-5">
+				<h1>
+					<span class="yellow-border-heading pb-1">Novosti</span>
+				</h1>
+			</div>
 
-		</div>
-		<!-- /.Row -->
+						
+				<!-- Swiper News -->
 
-	</div>
-	<!-- /.Container -->	
+				<!-- Swiper -->
+					<div class="swiper-container px-4">
+						<div class="swiper-wrapper">
 
-<section class="bg-light">	
-
-	<!-- Container -->
-	<div class="container py-5">
-		
-		<!-- Row -->
-		<div class="row mb-5">
-
-		<div class="col-12 w-100 text-center mb-5">
-			<h1>
-				<span class="yellow-border-heading pb-1">Novosti</span>
-			</h1>
-		</div>
-
-					
-			<!-- Swiper News -->
-
-			<!-- Swiper -->
-			  <div class="swiper-container px-4">
-			    <div class="swiper-wrapper">
-
-						@foreach ($postAll as $index => $postSingleRow)
-								
-			    	<!-- Slide -->
-			      <div class="swiper-slide">
-							<div class="card border-0">
-								@if (Helper::isset($postSingleRow->title)) 
-								<img src="{{ $postSingleRow->header_image_url }}" alt="...">
-								@else
-									<img src="{{ asset('images/home/400x450.png') }}" alt="...">
-								@endif
-							  <div class="card-body px-0">
-									<h4 class="card-title font-weight-bold mt-4">
-										@if (Helper::isset($postSingleRow->title)) 
-											{{ $postSingleRow->title }}
-										 @else 
-											{{ 'Ime nije dostupno '}}
-										@endif
-									</h4>
-							    <p class="card-text text-center mt-5 px-3">{{ $postSingleRow->short_description }}</p>
-							    <a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-							  </div>
+							@foreach ($postAll as $index => $postSingleRow)
+									
+							<!-- Slide -->
+							<div class="swiper-slide">
+								<div class="card border-0">
+									@if (Helper::isset($postSingleRow->title)) 
+									<img src="{{ $postSingleRow->header_image_url }}" alt="...">
+									@else
+										<img src="{{ asset('images/home/400x450.png') }}" alt="...">
+									@endif
+									<div class="card-body px-0">
+										<h4 class="card-title font-weight-bold mt-4">
+											@if (Helper::isset($postSingleRow->title)) 
+												{{ $postSingleRow->title }}
+											@else 
+												{{ 'Ime nije dostupno '}}
+											@endif
+										</h4>
+										<p class="card-text text-center mt-5 px-3">{{ $postSingleRow->short_description }}</p>
+										<a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
+									</div>
+								</div>
 							</div>
-			      </div>
-			      <!-- /.Slide -->
-					
-						@endforeach
-			      
-			    </div>
-			    <!-- Add Arrows -->
-			    <div class="swiper-button-next"></div>
-			    <div class="swiper-button-prev"></div>
-			  </div>
+							<!-- /.Slide -->
+						
+							@endforeach
+							
+						</div>
+						<!-- Add Arrows -->
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
 
-			<!-- /.Swiper News -->
+				<!-- /.Swiper News -->
+
+			</div>
+			<!-- /.Row -->
 
 		</div>
-		<!-- /.Row -->
+		<!-- /.Container -->
 
-	</div>
-	<!-- /.Container -->
-
-</section>
+	</section>
 
 
 <!-- Container -->
-<div class="container">
+<div class="container question-form pb-5">
 	
 	<!-- Row -->
 	<div class="row">
@@ -225,34 +215,46 @@
 	<!-- /.Row -->
 
 	<!-- Form -->
-	<form class="mt-5">
+	<form class="mt-5" action="{{ Route('about_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+		@csrf
 		<div class="form-row">
 			<div class="form-group col-md-6 pr-md-3">
-				<label for="inputName" class="mb-1">Ime*</label>
-				<input type="text" required="" class="form-control rounded-0" id="inputName" placeholder="Vaše ime">
+				<label for="first_name" class="mb-1">Ime*</label>
+				<input type="text" class="form-control rounded-0" id="first_name" name="first_name" placeholder="Vaše ime">
 			</div>
 			<div class="form-group col-md-6 pl-md-3">
-				<label for="inputLastName" class="mb-1">Prezime*</label>
-				<input type="text" required="" class="form-control rounded-0" id="inputLastName" placeholder="Vaše prezime">
+				<label for="last_name" class="mb-1">Prezime*</label>
+				<input type="text" class="form-control rounded-0" name="last_name" id="last_name" placeholder="Vaše prezime">
 			</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-6 pr-md-3">
-				<label for="inputPhoneNumber" class="mb-1">Broj telefona</label>
-				<input type="text" class="form-control rounded-0" id="inputPhoneNumber" placeholder="Vaš broj telefona">
+				<label for="phone_number" class="mb-1">Broj telefona</label>
+				<input type="text" class="form-control rounded-0" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
 			</div>
 			<div class="form-group col-md-6 pl-md-3">
-				<label for="inputEmail" class="mb-1">Email adresa*</label>
-				<input type="email" class="form-control rounded-0" id="inputEmail" placeholder="Vaša email adresa">
+				<label for="email" class="mb-1">Email adresa*</label>
+				<input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Vaša email adresa">
 			</div>
 		</div> 
 		<div class="form-group mt-2">
-			<label for="exampleFormControlTextarea1">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
-			<textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder=""></textarea>
+			<label for="question">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
+			 <textarea class="form-control rounded-0" id="question" name="question" rows="3" placeholder=""></textarea>
 		</div> 
 		<small>* Obavezna polja</small>
+		<div class="form-group mt-2">
+			<div class="form-group">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" required>
+					<label class="form-check-label">
+						Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="">politiku zaštite privatnosti</a>
+					</label> 
+				</div>
+			</div>
+		</div>
+		<input type="hidden" id="route" name="route" value="home">
 		<div class="text-center mt-3">
-			<button type="submit" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
+			<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
 		</div>
 	</form>				
 	<!-- /.Form -->
@@ -457,5 +459,8 @@
   });
 
 </script>
+
+{{-- Post request --}}
+<script src="{{ asset('back/post-request.js')}}"></script>
 
 @endsection('scripts')
