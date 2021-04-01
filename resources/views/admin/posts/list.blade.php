@@ -51,11 +51,11 @@
                     <tbody>
                       @foreach($postAll as $index => $postSingleRow)
                       <tr>
-                        <td class="text-truncate">
+                        <td>
                           <img src="{{ $postSingleRow->header_image_url }}" alt="" width="50">
                         </td>
-                        <td>{{ $postSingleRow->title }}</td>
-                        <td class="text-truncate">{{ $postSingleRow->short_description }}</td>
+                        <td class="text-truncate" title="{{ $postSingleRow->title }}">{{ $postSingleRow->title }}</td>
+                        <td class="text-truncate" title="{{ $postSingleRow->short_description }}">{{ $postSingleRow->short_description }}</td>
                         <td>
                           @if(Helper::isSet($postSingleRow->formatted_publish_date))
                             <span>{{ $postSingleRow->formatted_publish_date }}</span>
@@ -114,6 +114,5 @@
     });
   })
 </script>
-
 
 @endsection('scripts')

@@ -632,46 +632,26 @@ footer .social-networks h3{
 .blog-section .card-body p{
 	font-size: 16px;
 }
- 
-.blog-section .card{
-	height: 250px !important;
-}
-
-.blog-section .card .row{
-	height: 250px;
-}
-
-.blog-section .card a{
-	font-size: 14px;
-}
 
 /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 575.98px) {
-	.blog-section .card{
-		height: 100% !important;	
-	}
-	.blog-section .card .row{
-		height: 100% !important;
-	}
+@media (max-width: 768px) { 
 	.blog-section .card h5{
 		font-size: 15px;
 	}
 	.blog-section .card p{
 		font-size: 12px;
 	}
-}
+} 
 
-.blog-section .card .col-sm-4{
-	height: 100%;
-}
-
-.blog-section .card .col-sm-4 img{
-	height: 100% !important;
+.blog-section .card .col-sm-4 img{ 
+	max-height: 250px;
 	object-position: center; 
-	object-fit: cover;
+	object-fit: cover;  
+	height: 100%;
+	width: 100%;
 }
 
-	/* Carousel */
+	/* Blog Paginated List */
 
 	.blog-section nav{
 		position: static;
@@ -684,6 +664,7 @@ footer .social-networks h3{
 		cursor: pointer;
 		background-color: rgba(255, 222, 89, 0.5);
 		transition: 0.3s;
+		margin: 0px 2px;
 	}
 
 	.blog-section nav .active .page-link{
@@ -708,6 +689,15 @@ footer .social-networks h3{
 
 	.blog-post_section{
 		font-family: Poppins !important;
+	}
+
+	/* Bloggers image  */
+
+	.blog-section .bloggers img{
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center;
+		height: 220px;
 	}
 
 /* Projects Page */

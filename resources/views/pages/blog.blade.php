@@ -27,11 +27,11 @@
 					
 					@foreach ($postAll as $index => $postSingle)
 						
-					<div class="col-12 h-100">
+					<div class="col-12">
 						<div class="card mb-5 w-100 border-0">
 							<div class="row no-gutters">
 								<div class="col-sm-4 col-12">
-									<img src="{{ $postSingle->header_image_url }}" class="img-fluid py-0 my-0 w-100 h-100">
+									<img src="{{ $postSingle->header_image_url }}" class="img-fluid">
 								</div>
 								<div class="col-sm-8 col-12">
 									<div class="card-body d-flex flex-column justify-content-between h-100">
@@ -66,26 +66,34 @@
 				<span class="yellow-border-heading">Blogeri</span>
 			</h1>	
 
-			<div class="mb-5">
+			<div class="row mb-5">
 				
-				<div class="text-center">
-					<img src="{{ asset('images/blog/260x260-circle.png') }}" class="img-fluid mt-4">
-					<h5 class="mt-2">Jane Doe</h5>
+				<div class="col-12 col-md-6 col-lg-12 mb-4">
+					<div class="text-center">
+						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
+						<h5 class="mt-2">Jane Doe</h5>
+					</div>
 				</div>
 
-				<div class="text-center mt-5">
-					<img src="{{ asset('images/blog/260x260-circle.png') }}" class="img-fluid mt-3">
-					<h5 class="mt-2">Jane Doe</h5>
+				<div class="col-12 col-md-6 col-lg-12 mb-4">
+					<div class="text-center">
+						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
+						<h5 class="mt-2">Jane Doe</h5>
+					</div>
 				</div>
 
-				<div class="text-center mt-5">
-					<img src="{{ asset('images/blog/260x260-circle.png') }}" class="img-fluid mt-3">
-					<h5 class="mt-2">Jane Doe</h5>
+				<div class="col-12 col-md-6 col-lg-12 mb-4">
+					<div class="text-center">
+						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
+						<h5 class="mt-2">Jane Doe</h5>
+					</div>
 				</div>
 
-				<div class="text-center mt-5">
-					<img src="{{ asset('images/blog/260x260-circle.png') }}" class="img-fluid mt-3">
-					<h5 class="mt-2">Jane Doe</h5>
+				<div class="col-12 col-md-6 col-lg-12 mb-4">
+					<div class="text-center">
+						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
+						<h5 class="mt-2">Jane Doe</h5>
+					</div>
 				</div>
 
 			</div>
@@ -101,3 +109,13 @@
 </section>
 
 @endsection ('content')
+
+@section('scripts')
+	
+
+<script>
+	var previous = document.querySelector('[aria-label="« Previous"] span').innerHTML = "Nazad";
+	var previous = document.querySelector('[aria-label="Next »"]').innerHTML = "Naprijed";
+</script>
+
+@endsection
