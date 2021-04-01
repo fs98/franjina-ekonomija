@@ -632,15 +632,50 @@ footer .social-networks h3{
 .blog-section .card-body p{
 	font-size: 16px;
 }
+ 
+.blog-section .card{
+	height: 250px !important;
+}
 
-.blog-section .bloggers img{
-	height: 190px;
+.blog-section .card .row{
+	height: 250px;
+}
+
+.blog-section .card a{
+	font-size: 14px;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 575.98px) {
+	.blog-section .card{
+		height: 100% !important;	
+	}
+	.blog-section .card .row{
+		height: 100% !important;
+	}
+	.blog-section .card h5{
+		font-size: 15px;
+	}
+	.blog-section .card p{
+		font-size: 12px;
+	}
+}
+
+.blog-section .card .col-sm-4{
+	height: 100%;
+}
+
+.blog-section .card .col-sm-4 img{
+	height: 100% !important;
+	object-position: center; 
+	object-fit: cover;
 }
 
 	/* Carousel */
 
 	.blog-section nav{
 		position: static;
+		z-index: 0;
 		background-color: transparent !important;
 		box-shadow: none;
 	}
@@ -663,19 +698,7 @@ footer .social-networks h3{
 
 	.blog-section nav .page-link:focus{
 		box-shadow: 0 0 0 3px rgba(255, 222, 89, 0.4);
-	}
-
-	.carousel .card .no-gutters .col-sm-4{
-		height: 280px; 
-		width: auto;
-	}
-
-	.carousel .card .no-gutters img{
-		object-fit: cover; 
-		height: 100%; 
-		width: 100%; 
-		object-position: center;
-	}
+	}  
 
 	/* Single blog  */
 

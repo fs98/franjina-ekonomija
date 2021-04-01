@@ -233,7 +233,7 @@
 
                 <div class="ml-4">
                   <h4 class="text-white">Email</h4>
-                  <a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white mt-2 h5">financial.education.eof@gmail.com</a>
+                  <a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-break text-white mt-2 h5">financial.education.eof@gmail.com</a>
                 </div>
               </div>
             </div>

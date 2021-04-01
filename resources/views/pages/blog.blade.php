@@ -15,39 +15,48 @@
 		<div class="row">
 			
 
-			<div class="col-lg-8">
+			<div class="col-12 col-lg-8">
 
-				<h1 class="w-100 text-center my-5 pb-2">
-					<span class="yellow-border-heading">Blog</span>
-				</h1>	
+				<div class="row">
+					<h1 class="w-100 text-center my-5 pb-2">
+						<span class="yellow-border-heading">Blog</span>
+					</h1>	
+				</div>
 
-				@foreach ($postAll as $index => $postSingle)
+				<div class="row">
+					
+					@foreach ($postAll as $index => $postSingle)
 						
-						<div class="card mb-5 w-100 border-0" style="height: 250px !important;">
+					<div class="col-12 h-100">
+						<div class="card mb-5 w-100 border-0">
 							<div class="row no-gutters">
-								<div class="col-sm-4 col-12" style="height: 250px;">
-									<img src="https://via.placeholder.com/300x300" class="img-fluid py-0 my-0 w-100 h-100" style="object-position: center; object-fit: cover">
+								<div class="col-sm-4 col-12">
+									<img src="{{ $postSingle->header_image_url }}" class="img-fluid py-0 my-0 w-100 h-100">
 								</div>
 								<div class="col-sm-8 col-12">
 									<div class="card-body d-flex flex-column justify-content-between h-100">
 										<div>
-											<h5 class="card-title font-weight-bold">Lorem ipsum</h5>
-											<p class="card-text my-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+											<h5 class="card-title font-weight-bold">{{ $postSingle->title }}</h5>
+											<p class="card-text my-0">{{ $postSingle->short_description }}</p>
 										</div>
-										<div class="text-right">
-											<button class="btn bg-white font-weight-bold px-3 py-2 rounded-0">Saznaj više</button>
+										<div class="text-right mt-3 mt-md-0">
+											<a href="{{ Route('blogPost', ['post' => $postSingle->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-dark font-weight-bold bg-light">Saznaj više</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+					</div>
 
-				@endforeach
-
-				<div class="d-flex justify-content-center">
-					{{ $postAll->links() }}
+					@endforeach
+	
+					<div class="d-flex w-100 justify-content-center">
+						{{ $postAll->links() }}
+					</div>
+					
 				</div>
-		
+
+				 
 
 			</div>
 			
