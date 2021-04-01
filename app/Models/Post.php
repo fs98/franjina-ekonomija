@@ -46,6 +46,6 @@ class Post extends BaseModel
     }
 
     public function getTitleAttribute($value) {
-        return $this->checkIfEmpty($value);
+        return $this->checkIfEmpty($value, "N\A");
     }
 }

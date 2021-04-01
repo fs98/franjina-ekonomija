@@ -21,7 +21,9 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet"> 
 
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     @yield('links')
 
@@ -358,6 +360,11 @@
       navbar.classList.remove("sticky");
     }
   });
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
 </script>
 
 @yield('scripts')

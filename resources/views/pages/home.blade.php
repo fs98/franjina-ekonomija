@@ -67,13 +67,13 @@
 
 	</section>	
 
-	<section class="calendar-sectionr" style="margin-top: 100px;">
+	<section class="calendar-section" style="margin-top: 50px;">
 		
 		<!-- Container -->
-		<div class="container">
+		<div class="container" data-aos="fade-in" data-aos-duration="4000">
 		
 				<!-- Row -->
-			<div class="row">
+			<div class="row d-flex">
 				
 				<div class="col-12 col-xl-7">
 
@@ -87,10 +87,10 @@
 
 					</div>
 
-					 <div id='calendar' class="my-5"></div>
+					 <div id='calendar' class="mb-5"></div>
 				</div>
 
-				<div class="col-12 col-xl-5 d-flex align-items-end my-5 pb-2">
+				<div class="col-12 col-xl-5 align-items-end mb-5 d-flex">
 					
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 					  <div class="carousel-inner">
@@ -119,150 +119,156 @@
 		</div>
 		<!-- /.Container -->
 
-	</section>	
+	</section>
+		
+<section class="bg-light" data-aos="fade-in" data-aos-duration="4000">	
 
-	<section class="bg-light">	
+	<!-- Container -->
+	<div class="container py-5">
+		
+		<!-- Row -->
+		<div class="row mb-5">
 
-		<!-- Container -->
-		<div class="container py-5">
-			
-			<!-- Row -->
-			<div class="row mb-5">
+		<div class="col-12 w-100 text-center mb-5">
+			<h1>
+				<span class="yellow-border-heading pb-1">Novosti</span>
+			</h1>
+		</div>
 
-			<div class="col-12 w-100 text-center mb-5">
-				<h1>
-					<span class="yellow-border-heading pb-1">Novosti</span>
-				</h1>
-			</div>
+					
+			<!-- Swiper News -->
 
-						
-				<!-- Swiper News -->
+			<!-- Swiper -->
+				<div class="swiper-container px-4">
+					<div class="swiper-wrapper">
 
-				<!-- Swiper -->
-					<div class="swiper-container px-4">
-						<div class="swiper-wrapper">
-
-							@foreach ($postAll as $index => $postSingleRow)
-									
-							<!-- Slide -->
-							<div class="swiper-slide">
-								<div class="card border-0">
-									@if (Helper::isset($postSingleRow->title)) 
-									<img src="{{ $postSingleRow->header_image_url }}" alt="...">
-									@else
-										<img src="{{ asset('images/home/400x450.png') }}" alt="...">
-									@endif
-									<div class="card-body px-0">
-										<h4 class="card-title font-weight-bold mt-4">
-											@if (Helper::isset($postSingleRow->title)) 
-												{{ $postSingleRow->title }}
-											@else 
-												{{ 'Ime nije dostupno '}}
-											@endif
-										</h4>
-										<p class="card-text text-center mt-5 px-3">{{ $postSingleRow->short_description }}</p>
-										<a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-									</div>
+						@foreach ($postAll as $index => $postSingleRow)
+								
+						<!-- Slide -->
+						<div class="swiper-slide">
+							<div class="card border-0">
+								@if (Helper::isset($postSingleRow->title)) 
+								<img src="{{ $postSingleRow->header_image_url }}" alt="...">
+								@else
+									<img src="{{ asset('images/home/400x450.png') }}" alt="...">
+								@endif
+								<div class="card-body px-0">
+									<h4 class="card-title font-weight-bold mt-4">
+										@if (Helper::isset($postSingleRow->title)) 
+											{{ $postSingleRow->title }}
+										@else 
+											{{ 'Ime nije dostupno '}}
+										@endif
+									</h4>
+									<p class="card-text text-center mt-5 px-3">{{ $postSingleRow->short_description }}</p>
+									<a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 								</div>
 							</div>
-							<!-- /.Slide -->
-						
-							@endforeach
-							
 						</div>
-						<!-- Add Arrows -->
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
+						<!-- /.Slide -->
+					
+						@endforeach
+						
 					</div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
 
-				<!-- /.Swiper News -->
-
-			</div>
-			<!-- /.Row -->
-
-		</div>
-		<!-- /.Container -->
-
-	</section>
-
-
-<!-- Container -->
-<div class="container question-form pb-5">
-	
-	<!-- Row -->
-	<div class="row">
-		
-		<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
-			
-			<h1>
-				<span class="yellow-border-heading pb-1">EoF budi i ti</span>
-			</h1>
+			<!-- /.Swiper News -->
 
 		</div>
-
-		<div class="col-12 col-lg-6 d-flex align-items-center">
-			
-			<p class="pr-lg-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </p>
-
-		</div>
-		<div class="col-12 col-lg-6 d-flex align-items-center">
-			
-			<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid w-100 h-100">
-
-		</div>
+		<!-- /.Row -->
 
 	</div>
-	<!-- /.Row -->
+	<!-- /.Container -->
 
-	<!-- Form -->
-	<form class="mt-5" action="{{ Route('about_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
-		@csrf
-		<div class="form-row">
-			<div class="form-group col-md-6 pr-md-3">
-				<label for="first_name" class="mb-1">Ime*</label>
-				<input type="text" class="form-control rounded-0" id="first_name" name="first_name" placeholder="Vaše ime">
+</section>
+
+
+<section data-aos="fade-in" data-aos-duration="4000">
+
+	{{-- Container --}}
+	<div class="container question-form pb-5">
+		
+		<!-- Row -->
+		<div class="row">
+			
+			<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
+				
+				<h1>
+					<span class="yellow-border-heading pb-1">EoF budi i ti</span>
+				</h1>
+
 			</div>
-			<div class="form-group col-md-6 pl-md-3">
-				<label for="last_name" class="mb-1">Prezime*</label>
-				<input type="text" class="form-control rounded-0" name="last_name" id="last_name" placeholder="Vaše prezime">
+
+			<div class="col-12 col-lg-6 d-flex align-items-center">
+				
+				<p class="pr-lg-5">Osjetljiv si na siromašne? Voliš prirodu? Brineš o ekologiji? Želiš bolju ekonomiju? Osjećaš li i ti poziv nakon poruke pape Franje? Budi i ti dio velike obitelji. Sigurni smo da imaš super ideja koje možeš i želiš podijeliti s nama. Učinimo zajedno korak naprijed. Budi promjena koju želiš vidjeti u svijetu! Nemoj čekati da drugi nešto učine, učini ti nešto za sebe i druge.</p>
+
 			</div>
+			<div class="col-12 col-lg-6 d-flex align-items-center">
+				
+				<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid w-100 h-100">
+
+			</div>
+
 		</div>
-		<div class="form-row">
-			<div class="form-group col-md-6 pr-md-3">
-				<label for="phone_number" class="mb-1">Broj telefona</label>
-				<input type="text" class="form-control rounded-0" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
-			</div>
-			<div class="form-group col-md-6 pl-md-3">
-				<label for="email" class="mb-1">Email adresa*</label>
-				<input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Vaša email adresa">
-			</div>
-		</div> 
-		<div class="form-group mt-2">
-			<label for="question">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
-			 <textarea class="form-control rounded-0" id="question" name="question" rows="3" placeholder=""></textarea>
-		</div> 
-		<small>* Obavezna polja</small>
-		<div class="form-group mt-2">
-			<div class="form-group">
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" required>
-					<label class="form-check-label">
-						Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="">politiku zaštite privatnosti</a>
-					</label> 
+		<!-- /.Row -->
+
+		<!-- Form -->
+		<form class="mt-5" action="{{ Route('about_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+			@csrf
+			<div class="form-row">
+				<div class="form-group col-md-6 pr-md-3">
+					<label for="first_name" class="mb-1">Ime*</label>
+					<input type="text" class="form-control rounded-0" id="first_name" name="first_name" placeholder="Vaše ime">
+				</div>
+				<div class="form-group col-md-6 pl-md-3">
+					<label for="last_name" class="mb-1">Prezime*</label>
+					<input type="text" class="form-control rounded-0" name="last_name" id="last_name" placeholder="Vaše prezime">
 				</div>
 			</div>
-		</div>
-		<input type="hidden" id="route" name="route" value="home">
-		<div class="text-center mt-3">
-			<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
-		</div>
-	</form>				
-	<!-- /.Form -->
+			<div class="form-row">
+				<div class="form-group col-md-6 pr-md-3">
+					<label for="phone_number" class="mb-1">Broj telefona</label>
+					<input type="text" class="form-control rounded-0" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
+				</div>
+				<div class="form-group col-md-6 pl-md-3">
+					<label for="email" class="mb-1">Email adresa*</label>
+					<input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Vaša email adresa">
+				</div>
+			</div> 
+			<div class="form-group mt-2">
+				<label for="question">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
+				<textarea class="form-control rounded-0" id="question" name="question" rows="3" placeholder=""></textarea>
+			</div> 
+			<small>* Obavezna polja</small>
+			<div class="form-group mt-2">
+				<div class="form-group">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" required>
+						<label class="form-check-label">
+							Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="">politiku zaštite privatnosti</a>
+						</label> 
+					</div>
+				</div>
+			</div>
+			<input type="hidden" id="route" name="route" value="home">
+			<div class="text-center mt-3">
+				<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
+			</div>
+		</form>				
+		<!-- /.Form -->
 
-</div>
-<!-- /.Container -->
+	</div>
+	{{-- /.Container --}}
+
+</section>
 	
-<section class="bg-light">
+@if ($projectAll->isNotEmpty())
+
+<section data-aos="fade-in" class="bg-light" data-aos-duration="4000">
 
 	<!-- Container -->
 	<div class="container pb-4">
@@ -316,6 +322,7 @@
 
 </section>
 
+@endif
 
 
 	<!-- Modal -->

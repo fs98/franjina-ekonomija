@@ -9,6 +9,8 @@
 <!-- Fancybox Gallery -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}">
 
+<link rel="stylesheet" href="{{ asset('vendor/fonts/fontawesome/css/fontawesome-all.css')}}"> 
+
 @endsection('links')
 
 @section ('content')
@@ -66,7 +68,7 @@
 					<span class="d-flex flex-column px-2 mt-2">
 						<p class="font-weight-bold text-left mt-2">Cilj</p>
 						<div class="progress mx-4 mt-n2">
-						  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
+						  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{  $projectSingle->percentage . '%' }}" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
 						</div>	
 						<div class="mt-4 mx-4 d-flex justify-content-between align-items-start">
 							<span class="text-left">

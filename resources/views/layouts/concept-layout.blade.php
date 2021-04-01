@@ -11,6 +11,15 @@
     <link href="{{ asset('vendor/fonts/circular-std/style.css' )}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('libs/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('vendor/fonts/fontawesome/css/fontawesome-all.css')}}"> 
+    <link href="{{ asset('css/fonts.css') }}" rel="stylesheet">
+
+        <!-- Fonts and icons -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+        <!-- CSS Files -->
+        <link href="{{ asset('vendor/material-kit/css/material-kit.css')}}" rel="stylesheet" />
+
 
     @yield('links')
 
@@ -228,6 +237,14 @@
     <script src="{{ asset('libs/js/main-js.js') }}"></script>
 
     @yield('scripts')
+
+    <script src="{{ asset('vendor/material-kit/js/core/popper.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('vendor/material-kit/js/core/bootstrap-material-design.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('vendor/material-kit/js/plugins/moment.min.js')}}"></script> 
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="{{ asset('vendor/material-kit/js/material-kit.js')}}" type="text/javascript"></script>
 </body>
  
 </html>

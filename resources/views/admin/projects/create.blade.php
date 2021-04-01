@@ -6,11 +6,14 @@
 <title>Dodajte korisnika</title>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> 
+
+{{-- Bootstrap Toggle Switch --}}
+<link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap4-toggle.min.css') }}">
+
 @endsection
 @section('main-content')
 
@@ -56,6 +59,12 @@
                   <label for="project_title_slug" class="label-required">(automatski generisano)</label>
                   <input type="text" id="project_title_slug" class="form-control" name="project_title_slug" max-length="512" readonly="" tabindex="-1">
                 </div> 
+                <div class="form-group">
+                  <label for="col-form-label" for="project_keywords">Ključne riječi</label>
+                  <label for="project_keywords" class="label-required">(obavezno)</label>
+                  <input type="text" id="project_keywords" name="project_keywords" class="form-control" max-length="256">
+                  <label for="project_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
+                </div>
                 <div class="form-group">
                   <label for="col-form-label" for="project_short_description">Kratki opis</label>
                   <label for="project_short_description" class="label-required">(obavezno)</label>
@@ -182,5 +191,25 @@
       });
   </script> 
 
+    {{-- Create url with title --}}
+    <script src="{{ asset('back/replaceChars.js')}}"></script>
+
+    <script>
+      $(document).ready(function() {
+        $("#project_title_slug").val(replaceChars($("#project_title").val()));
+      });
+  
+      var titleField = $("#project_title");
+      var titleSlugField = $("#project_title_slug");
+  
+      titleField.on('input', function() {
+        titleSlugField.val(replaceChars(titleField.val()));
+      });
+    </script> 
+
+      
+    {{-- Bootstrap Toggle Switch --}}
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap4-toggle.min.js') }}"></script>  
+  
 
 @endsection

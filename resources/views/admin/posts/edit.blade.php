@@ -118,14 +118,19 @@
   <script type="text/javascript">
    $('#summernote').summernote({
         lang: 'hr-HR',
+        fontNames: [ 
+          'Poppins'
+        ],
+        fontNamesIgnoreCheck: [
+          'Poppins'
+        ],
         tabsize: 2,
         height: 500, 
         toolbar: [
-      // [groupName, [list of button]]
-      ['style', ['style']],
+      // [groupName, [list of button]] 
+      ['fontname', ['fontname']],
       ['style', ['bold', 'italic', 'underline', 'clear']],
-      ['font', ['strikethrough', 'superscript', 'subscript']],
-      ['fontsize', ['fontsize']],
+      ['font', ['strikethrough', 'superscript', 'subscript']], 
       ['color', ['color']],
       ['para', ['ul', 'ol', 'paragraph']],
       ['height', ['height']],

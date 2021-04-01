@@ -4,6 +4,16 @@
 	Blog post
 @endsection ('title')
 
+@section('links')
+
+<style>
+	.MsoNormal span{
+		font-family: Poppins !important;
+	}
+</style>
+
+@endsection
+
 @section ('content')
 
 <section class="blog-post-section">

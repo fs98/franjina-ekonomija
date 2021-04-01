@@ -51,11 +51,11 @@
                     <tbody>
                       @foreach($projectAll as $index => $projectSingleRow)
                       <tr>
-                        <td class="text-truncate">
+                        <td>
                           <img src="{{ $projectSingleRow->header_image_url }}" alt="" width="50">
                         </td>
-                        <td>{{ $projectSingleRow->title }}</td>
-                        <td class="text-truncate">{{ $projectSingleRow->short_description }}</td>
+                        <td  class="text-truncate" title="{{ $projectSingleRow->title }}">{{ $projectSingleRow->title }}</td>
+                        <td class="text-truncate" title="{{ $projectSingleRow->short_description }}">{{ $projectSingleRow->short_description }}</td>
                         <td>
                           @if(Helper::isSet($projectSingleRow->formatted_publish_date))
                             <span>{{ $projectSingleRow->formatted_publish_date }}</span>

@@ -69,7 +69,8 @@ class NavigationControllers extends Controller
 
 		//
 		public function projectlist(){
-			return view('pages.projectlist');
+			$projectAll = Project::all();
+			return view('pages.projectlist')->with(['projectAll' => $projectAll]);;
 		}
  
 

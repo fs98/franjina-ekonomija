@@ -12,6 +12,7 @@
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
+
 @endsection
 @section('main-content')
 
@@ -124,11 +125,17 @@
    $('#summernote').summernote({
         lang: 'hr-HR',
         tabsize: 2,
-        height: 500, 
-        fontName: 'Poppins',
+        height: 500,  
+        fontNames: [ 
+          'Poppins'
+        ],
+        fontNamesIgnoreCheck: [
+          'Poppins'
+        ],
         toolbar: [
       // [groupName, [list of button]]
       ['style', ['style']],
+      ['fontname', ['fontname']],
       ['style', ['bold', 'italic', 'underline', 'clear']],
       ['font', ['strikethrough', 'superscript', 'subscript']],
       ['fontsize', ['fontsize']],
@@ -139,7 +146,7 @@
       ['insert',['link','picture']],
       ['view', ['fullscreen']]
     ]
-        });
+    });  
   </script>
 
   {{-- Show image title and preview when selected --}}
@@ -170,5 +177,6 @@
       titleSlugField.val(replaceChars(titleField.val()));
     });
   </script> 
+
 
 @endsection

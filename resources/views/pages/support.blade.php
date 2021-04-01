@@ -138,7 +138,7 @@
 		      </div>
 		      <div class="swiper-slide">
 		      	<a href="https://scu-bih.ba/" target="_blank">
-							<img src="{{ asset('images/partners/scu-logo.png') }}" class="img-fluid">
+							<img src="{{ asset('images/partners/scu-logo-2.png') }}" class="img-fluid">
 						</a>
 		      </div>
 		      <div class="swiper-slide">

@@ -358,7 +358,7 @@
 
 				<div class="col-12 col-lg-6 d-flex align-items-center">
 					
-					<p class="pr-lg-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </p>
+					<p class="pr-lg-5">Osjetljiv si na siromašne? Voliš prirodu? Brineš o ekologiji? Želiš bolju ekonomiju? Osjećaš li i ti poziv nakon poruke pape Franje? Budi i ti dio velike obitelji. Sigurni smo da imaš super ideja koje možeš i želiš podijeliti s nama. Učinimo zajedno korak naprijed. Budi promjena koju želiš vidjeti u svijetu! Nemoj čekati da drugi nešto učine, učini ti nešto za sebe i druge.</p>
 
 				</div>
 				<div class="col-12 col-lg-6 d-flex align-items-center">

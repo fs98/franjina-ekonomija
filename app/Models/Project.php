@@ -69,4 +69,8 @@ class Project extends BaseModel
 
     }
 
+    public function getInvestorsAttribute($value) {
+        return $this->checkIfEmpty($value);
+    }
+
 }
