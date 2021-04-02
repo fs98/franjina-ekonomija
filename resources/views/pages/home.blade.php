@@ -70,7 +70,7 @@
 	<section class="calendar-section" style="margin-top: 50px;">
 		
 		<!-- Container -->
-		<div class="container" data-aos="fade-in" data-aos-duration="4000">
+		<div class="container" data-aos-duration="4000">
 		
 				<!-- Row -->
 			<div class="row d-flex">
@@ -121,7 +121,7 @@
 
 	</section>
 		
-<section class="bg-light" data-aos="fade-in" data-aos-duration="4000">	
+<section class="bg-light" data-aos-duration="4000">	
 
 	<!-- Container -->
 	<div class="container py-5">
@@ -186,7 +186,7 @@
 </section>
 
 
-<section data-aos="fade-in" data-aos-duration="4000">
+<section data-aos-duration="4000">
 
 	{{-- Container --}}
 	<div class="container question-form pb-5">
@@ -268,7 +268,7 @@
 	
 @if ($projectAll->isNotEmpty())
 
-<section data-aos="fade-in" class="bg-light" data-aos-duration="4000">
+<section class="bg-light" data-aos-duration="4000">
 
 	<!-- Container -->
 	<div class="container pb-4">
@@ -447,21 +447,41 @@
 		    	secondEvent.textColor = '#000';
 		    }
 
+		var w = window.innerWidth;
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-        themeSystem: 'bootstrap',
-        locale: 'hr',
-        weekNumberCalculation: 'ISO',
-        headerToolbar: false,
-        events: [
-		   	 	firstEvent,
-		  		secondEvent  
-		  ],
-	    eventClick: function(info) {
-		    $('.bd-example-modal-lg').modal('show')  
-		  }, 
-    });
+		if(768 >= w) {
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				initialView: 'dayGridMonth',
+					themeSystem: 'bootstrap',
+					locale: 'hr',
+					weekNumberCalculation: 'ISO',
+					contentHeight: 'auto',
+					headerToolbar: false,
+					events: [
+						firstEvent,
+						secondEvent  
+				],
+				eventClick: function(info) {
+					$('.bd-example-modal-lg').modal('show')  
+				}, 
+			});
+		} else {
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				initialView: 'dayGridMonth',
+					themeSystem: 'bootstrap',
+					locale: 'hr',
+					weekNumberCalculation: 'ISO',
+					headerToolbar: false,
+					events: [
+						firstEvent,
+						secondEvent  
+				],
+				eventClick: function(info) {
+					$('.bd-example-modal-lg').modal('show')  
+				}, 
+			});
+		}
+    
     calendar.render();
 
   });

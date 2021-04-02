@@ -27,64 +27,62 @@
 				</h1>				
 			</div>
 
-			<!-- Swiper -->
+			@if ($projectsActive->isNotEmpty())
+
+				<!-- Swiper -->
 			  <div class="swiper-container px-4">
 			    <div class="swiper-wrapper">
 
-					@foreach ($projectAll as $index => $projectSingleRow)
-					
-						@if ($projectSingleRow->days_left >= 0)
+					@foreach ($projectsActive as $index => $projectsActiveSignleRow)
 							
 							<!-- Slide -->
 							<div class="swiper-slide">
 
 								<!-- Card -->
 							  <div class="card border-0 text-center">
-								  <img src="{{ $projectSingleRow->header_image_url }}" alt="...">
+								  <img src="{{ $projectsActiveSignleRow->header_image_url }}" alt="...">
 								  <div class="card-body px-0">
-								  <h4 class="card-title font-weight-bold mt-2">{{ $projectSingleRow->title }}</h4>
-								  <p class="card-text text-center mt-2 px-3">{{ $projectSingleRow->short_description }}</p>
+								  <h4 class="card-title font-weight-bold mt-2">{{ $projectsActiveSignleRow->title }}</h4>
+								  <p class="card-text text-center mt-2 px-3">{{ $projectsActiveSignleRow->short_description }}</p>
 								  <div class="border project-card-box p-2">
 									  <span class="d-flex flex-row justify-content-between px-2 mt-1">
 										  <span class="d-flex justify-content-start">
 											  <img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">
-											  <p class="my-auto pl-1">{{ $projectSingleRow->investors }}</p>
+											  <p class="my-auto pl-1">{{ $projectsActiveSignleRow->investors }}</p>
 										  </span>
 										  <span class="d-flex justify-content-end px-0 mr-0">
 											  <img src="{{ asset('icons/projects/heart.svg') }}" class="img-fluid projects-card-icon">
-											  <p class="my-auto pl-1">{{ $projectSingleRow->likes }}</p>
+											  <p class="my-auto pl-1">{{ $projectsActiveSignleRow->likes }}</p>
 										  </span> 
 									  </span>
 									  <span class="d-flex flex-column px-2 mt-2">
 										  <p class="font-weight-bold text-left mt-2">Cilj</p>
 											  <div class="progress mx-4 mt-n2">
-												  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{  $projectSingleRow->percentage . '%' }}" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
+												  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{  $projectsActiveSignleRow->percentage . '%' }}" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
 											  </div>	
 											  <div class="mt-4 mx-4 d-flex justify-content-between align-items-start">
 												  <span class="text-left">
-													  <span class="p-2 money-amount">{{ $projectSingleRow->money_collected }}</span>
+													  <span class="p-2 money-amount">{{ $projectsActiveSignleRow->money_collected }}</span>
 												  </span>
 												  <span>&mdash;</span>
 												  <span>
-													  <span class="p-2 money-amount">{{ $projectSingleRow->money_goal }}</span>
+													  <span class="p-2 money-amount">{{ $projectsActiveSignleRow->money_goal }}</span>
 												  </span>
 											  </div>	 	    		
 									  </span>
 										  <p class="d-flex flex-row justify-content-between mt-3 px-2 mx-4">
-											  <small>{{ $projectSingleRow->days_left }} dana do završetka</small>
-											  <small>{{ $projectSingleRow->percentage }} % prikupljeno</small>
+											  <small>{{ $projectsActiveSignleRow->days_left }} dana do završetka</small>
+											  <small>{{ $projectsActiveSignleRow->percentage }} % prikupljeno</small>
 										  </p>
 										  <a class="btn rounded-0 mb-2 text-white px-4 button" href="">Podržite kampanju</a>
 								  </div>
-								  <a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
+								  <a href="{{ Route('specificProject', ['project' => $projectsActiveSignleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 								  </div>
 							  </div>
 							  <!-- /.Card -->
 	  
 						</div>
-						<!-- /.Slide -->
-
-						@endif	
+						<!-- /.Slide --> 
 				  
 					@endforeach  
 
@@ -96,6 +94,14 @@
 			    <!-- Add Pagination -->
     			<div class="swiper-pagination"></div>
 			  </div>
+
+			@else 
+			
+				<div class="col-12 text-center">
+					<h5 class="font-weight-normal">Trenutno nema aktivnih projekata</h5>	
+				</div>
+
+			@endif
 
 		</div>
 		<!-- /.Row -->
@@ -109,30 +115,32 @@
 				</h1>				
 			</div>
 
-			<!-- Swiper -->
+			@if ($projectsPassed->isNotEmpty())
+
+				<!-- Swiper -->
 			  <div class="swiper-container px-4">
 			    <div class="swiper-wrapper">
 				
-				@foreach ($projectAll as $index => $projectSingleRow)
+					@foreach ($projectsPassed as $index => $projectsPassedSingleRow)
+								
+							<!-- Slide -->
+							<div class="swiper-slide">
 
-						<!-- Slide -->
-						<div class="swiper-slide">
+								<!-- Card -->
+								<div class="card border-0 text-center">
+									<img src="{{ $projectsPassedSingleRow->header_image_url }}" alt="...">
+									<div class="card-body px-0">
+										<h4 class="card-title font-weight-bold mt-2">{{ $projectsPassedSingleRow->title }}</h4>
+										<p class="card-text text-center mt-2 px-3">{{ $projectsPassedSingleRow->short_description }}</p>
+										<a href="{{ Route('specificProject', ['project' => $projectsPassedSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
+									</div>
+									</div>
+									<!-- /.Card -->
 
-							<!-- Card -->
-							<div class="card border-0 text-center">
-								<img src="{{ $projectSingleRow->header_image_url }}" alt="...">
-								<div class="card-body px-0">
-									<h4 class="card-title font-weight-bold mt-2">{{ $projectSingleRow->title }}</h4>
-									<p class="card-text text-center mt-2 px-3">{{ $projectSingleRow->short_description }}</p>
-									<a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
-								</div>
-								</div>
-								<!-- /.Card -->
+							</div>
+							<!-- /.Slide -->
 
-						</div>
-						<!-- /.Slide -->
-
-				@endforeach	
+					@endforeach	
 
 			    </div>
 			    <!-- Add Arrows -->
@@ -142,6 +150,14 @@
 			    <!-- Add Pagination -->
     			<div class="swiper-pagination"></div>
 			  </div>
+
+			@else
+
+			<div class="col-12 text-center">
+				<h5 class="font-weight-normal">Trenutno nema završenih projekata</h5>	
+			</div>
+
+			@endif	
 
 		</div>
 		<!-- /.Row -->		

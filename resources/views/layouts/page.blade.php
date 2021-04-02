@@ -103,7 +103,7 @@
             <span>O nama</span>
           </a> 
           <div class="dropdown-menu mt-3 border-0 rounded-0 shadow" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item pb-2" href="{{ route('about',['#1']) }}"><span class="border-bottom pb-1">Economy of Francesko</span></a>
+            <a class="dropdown-item pb-2" href="{{ route('about',['#1']) }}"><span class="border-bottom pb-1">Economy of Francesco</span></a>
             <a class="dropdown-item pb-2" href="{{ route('about',['#2']) }}"><span class="border-bottom pb-1">HUB Croatia</span></a>
             <a class="dropdown-item" href="{{ route('about',['#3']) }}">EoF budi i Ti</a>
           </div>

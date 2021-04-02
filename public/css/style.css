@@ -245,6 +245,10 @@ footer .social-networks h3{
 	opacity: 68%;
 }
 
+.contact-section label a{
+	color: #BB1C2E
+}
+
 .contact-section button{
 	background-color: #BB1C2E;
 	font-size: 18px;
@@ -532,6 +536,10 @@ footer .social-networks h3{
 		box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
 	}
 
+	.question-form label a{
+		color: #BB1C2E
+	}
+
   .about-section form input,
   .about-section form textarea{
   	border: 1px solid rgba(65, 65, 65, 0.5);
@@ -547,11 +555,21 @@ footer .social-networks h3{
 		margin-top: 13px;
 	}
 
+	.about-section form label a{
+		color: #BB1C2E
+	}
+
 	/* Calendar */
 
 	#calendar{
 		max-height: 445px;
 	}
+
+		@media(max-width: 768px) {
+			#calendar{
+				max-height: unset !important;
+			}
+		}
 
 	.yellow-border-month{
 		border-top: 3px solid #FFDE59;

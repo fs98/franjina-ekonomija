@@ -54,7 +54,7 @@
 
         <div class="ml-4">
           <h5 class="text-white">Broj telefona</h5>
-          <h6 class="mt-2 text-white"><a href="tel:+38795123456" class="text-decoration-none text-white">+387 95 123 456</a></h6>
+          <h6 class="mt-2 text-white"><a href="tel:+38795123456" class="text-decoration-none text-white">+385 486 828 47</a></h6>
         </div>
       </div>
 
@@ -89,7 +89,7 @@
 			  </div>
 			  <div class="form-group mt-4">
 			    <label>Broj telefona</label>
-			    <input type="text" id="phone_number" name="phone_number" class="form-control rounded-0 border-0 py-4" placeholder="+38761234569">
+			    <input type="text" id="phone_number" name="phone_number" class="form-control rounded-0 border-0 py-4" placeholder="+xxx xxx xxx xx">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label for="question">Vaše pitanje, prijedlog ili ideja*</label> 

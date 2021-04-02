@@ -34,8 +34,8 @@ Route::get('/podrška','NavigationControllers@support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blog/{post}','NavigationControllers@show')->name('blogPost');
 
-Route::get('/test', function() {
-	return view('admin.blank-page');
+Route::get('/new-home', function() {
+	return view('pages.new-home');
 });
 
 

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Project;
 use Helper;
+use Carbon\Carbon;
 
 class NavigationControllers extends Controller
 {
@@ -69,8 +70,11 @@ class NavigationControllers extends Controller
 
 		//
 		public function projectlist(){
-			$projectAll = Project::all();
-			return view('pages.projectlist')->with(['projectAll' => $projectAll]);;
+			$now = Carbon::today()->format('Y-m-d'); 
+
+			$projectsActive = Project::where('end', '>=', $now)->get();
+			$projectsPassed = Project::where('end', '<', $now)->get();
+			return view('pages.projectlist')->with(['projectsActive' => $projectsActive, 'projectsPassed' => $projectsPassed]);;
 		}
  
 
