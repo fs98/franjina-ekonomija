@@ -77,23 +77,23 @@
 
 		<div class="col-12 col-xl-6 bg-white px-0 pl-xl-5 pr-xl-0">
 
-			<form class="mt-2 pt-3" action="{{ Route('contact_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+			<form class="mt-2 pt-3" action="{{ Route('question_store') }}" method="POST" id="create-form" autocomplete="off">
 				@csrf
 			  <div class="form-group">
 			    <label>Ime i prezime*</label>
-			    <input type="text" name="full_name" id="full_name" class="form-control rounded-0 border-0 py-4" placeholder="Jane Doe">
+			    <input type="text" name="full_name" id="full_name" class="form-control rounded-0 border-0 py-4" placeholder="Jane Doe" maxlength="128">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label>Email*</label>
-			    <input type="email" name="email" id="email" class="form-control rounded-0 border-0 py-4" placeholder="janedoe@gmail.com">
+			    <input type="email" name="email" id="email" class="form-control rounded-0 border-0 py-4" placeholder="janedoe@gmail.com" maxlength="128">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label>Broj telefona</label>
-			    <input type="text" id="phone_number" name="phone_number" class="form-control rounded-0 border-0 py-4" placeholder="+xxx xxx xxx xx">
+			    <input type="text" id="phone_number" name="phone_number" class="form-control rounded-0 border-0 py-4" placeholder="+xxx xxx xxx xx" maxlength="128">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label for="question">Vaše pitanje, prijedlog ili ideja*</label> 
-			    <textarea class="form-control border-0 py-4 rounded-0" rows="3" id="question" name="question" placeholder="Vaše pitanje, prijedlog ili ideja"></textarea>
+			    <textarea class="form-control border-0 py-4 rounded-0" rows="3" id="question" name="question" placeholder="Vaše pitanje, prijedlog ili ideja" maxlength="4096"></textarea>
 					<small>* obavezna polja</small>
 			  </div>
 				<div class="form-group">

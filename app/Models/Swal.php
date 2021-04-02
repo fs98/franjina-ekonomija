@@ -6,12 +6,12 @@ use Helper;
 
 class Swal
 {
-    private $message = "Failure";
+    private $message = "Neuspjeh";
     private $status_code = 400;
     private $redirect_url = "";
     private $swal_icon = "error";
-    private $swal_title = "Error!";
-    private $swal_message = "Failed to execute action due to an unknown error. For assistance, please contact support.";
+    private $swal_title = "Pogreška!";
+    private $swal_message = "Izvršenje radnje nije uspjelo zbog nepoznate pogreške. Za pomoć kontaktirajte podršku.";
 
     public function __construct($message = NULL, $status_code = NULL, $redirect_url = NULL, $swal_icon = NULL, $swal_title = NULL, $swal_message = NULL) {
     	if(Helper::isSet($message)) {

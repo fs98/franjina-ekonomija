@@ -15,6 +15,10 @@ class QuestionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function __construct() {
+    //   $this->middleware('auth');
+    // }
+
     public function index()
     {
         $questionsAll = Question::orderBy('created_at', 'asc')->get();
@@ -46,16 +50,18 @@ class QuestionsController extends Controller
         }
 
         $questionSingle = new Question;
-
-        if ($httpRequest->has('full_name')) {
+        
+        if($httpRequest->has('full_name')) {
             $questionSingle->full_name = $httpRequest->full_name;
-        } else {
+        } else if($httpRequest->has('first_name') && $httpRequest->has('last_name')){
             $questionSingle->full_name = $httpRequest->first_name . ' ' . $httpRequest->last_name;
         }
 
-        $questionSingle->email = $httpRequest->email;
-        
-        if (Helper::isSet($httpRequest->phone_number)) {
+        if($httpRequest->has('email')) {
+          $questionSingle->email = $httpRequest->email;
+        }
+
+        if(Helper::isSet($httpRequest->phone_number)) {
             $questionSingle->telephone = $httpRequest->phone_number;
         } else {
             $questionSingle->telephone = NULL;
@@ -67,14 +73,24 @@ class QuestionsController extends Controller
             $questionSingle->save();
         } catch (Exception $e) {}
 
+        $json = array();
+        $json['full_name'] = $questionSingle->full_name;
+        $json['email'] = $questionSingle->email;
+        $json['telephone'] = $questionSingle->telephone;
+        $json['message'] = $questionSingle->message;
+
+        try {
+          MailController::sendMail($json);
+        } catch (Exception $e) {}
 
         if ($httpRequest->route == 'home') {
-            $swal = new Swal("Success", 200, Route('index'), "success", "Gotovo!", "Vaše pitanje je sačuvano, ubrzo ćemo Vas kontaktirati.");
+          $swal = new Swal("Success", 200, Route('index'), "success", "Gotovo!", "Vaše pitanje je sačuvano, ubrzo ćemo Vas kontaktirati.");
         } elseif ($httpRequest->route == 'contact') {
-        $swal = new Swal("Success", 200, Route('contact'), "success", "Gotovo!", "Vaše pitanje je sačuvano, ubrzo ćemo Vas kontaktirati.");
+          $swal = new Swal("Success", 200, Route('contact'), "success", "Gotovo!", "Vaše pitanje je sačuvano, ubrzo ćemo Vas kontaktirati.");
         } else {
-        $swal = new Swal("Success", 200, Route('about'), "success", "Gotovo!", "Vaše pitanje je sačuvano, ubrzo ćemo Vas kontaktirati.");
+          $swal = new Swal("Success", 200, Route('about'), "success", "Gotovo!", "Vaše pitanje je sačuvano, ubrzo ćemo Vas kontaktirati.");
         }
+
         return response()->json($swal->get());
     }
 

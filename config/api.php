@@ -1,5 +1,18 @@
 <?php
 return [
+    'mail' => [
+        'settings' => [
+            'mail_server' => 'mail.franjinaekonomija.hr'
+        ],
+        'hub' => [
+            'username' => 'dev@franjinaekonomija.hr',
+            'password' => '88isallyouneed',
+            'fullname' => 'Franjina Ekonomija',
+            'contact_email' => [
+                'subject' => 'Franjina Ekonomija - Kontakt formular'
+            ]
+        ]
+    ],
     'statuses' => [
         'active' => 'active',
         'inactive' => 'inactive'

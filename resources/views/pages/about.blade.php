@@ -371,7 +371,7 @@
 			<!-- /.Row -->
 
 			<!-- Form -->
-			<form class="mt-5" action="{{ Route('about_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+			<form class="mt-5" action="{{ Route('question_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
 			  @csrf
 				<div class="form-row">
 			    <div class="form-group col-md-6 pr-md-3">
