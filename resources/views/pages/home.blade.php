@@ -410,44 +410,34 @@
     var calendarEl = document.getElementById('calendar');
 
 		var date = new Date();
-    var formattedDate = date.getFullYear() + "-" + ("0" + (date.getMonth()+1)) + "-" + date.getDate();
-
-    	var firstEvent = {
-		      id: '1',
-		      title: 'Test',
-		      start: '2021-03-19',
-		      end: '2021-03-18', 
-		      backgroundColor: '#FFD403'
-		    };
-
-		  var secondEvent =  {
-		      id: '2',
-		      title: '2',
-		      start: '2021-03-23',
-		      end: '2021-03-23', 
-		    }  
-
-		    console.log(firstEvent.end + formattedDate);
-
-		    if(firstEvent.end <= formattedDate) {
-		    	firstEvent.backgroundColor = '#BB1C2E',
-		    	firstEvent.textColor = '#fff';
-		    }
-		    else {
-		    	firstEvent.backgroundColor = '#FFD403',
-		    	firstEvent.textColor = '#000';
-		    };
-
-		    if(secondEvent.end <= formattedDate) {
-		    	secondEvent.backgroundColor = '#BB1C2E',
-		    	secondEvent.textColor = '#fff';
-		    }
-		    else {
-		    	secondEvent.backgroundColor = '#FFD403';
-		    	secondEvent.textColor = '#000';
-		    }
+    var formattedDate = date.getFullYear() + "-" + ('0' + (date.getMonth()+1)).slice(-2) + "-" + ('0' + date.getDate()).slice(-2); 
 
 		var w = window.innerWidth;
+
+		var events = [];
+		
+		var first_date = "2021-04-11";
+		var second_date = formattedDate;
+
+		console.log(first_date);
+		console.log(second_date);
+		if (first_date < second_date) {
+			console.log("manji je")
+		}
+
+		{!! $eventList !!}.forEach(element => {
+			if(element.start < formattedDate) {
+				element.backgroundColor = '#BB1C2E';
+				element.textColor = '#fff';
+			} else {
+				element.backgroundColor = '#FFD403';
+				element.textColor = '#000';
+			}
+
+			events.push(element) 
+		});
+
+		console.log(events);
 
 		if(768 >= w) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -457,10 +447,7 @@
 					weekNumberCalculation: 'ISO',
 					contentHeight: 'auto',
 					headerToolbar: false,
-					events: [
-						firstEvent,
-						secondEvent  
-				],
+					events: events,
 				eventClick: function(info) {
 					$('.bd-example-modal-lg').modal('show')  
 				}, 
@@ -472,10 +459,7 @@
 					locale: 'hr',
 					weekNumberCalculation: 'ISO',
 					headerToolbar: false,
-					events: [
-						firstEvent,
-						secondEvent  
-				],
+					events: events,
 				eventClick: function(info) {
 					$('.bd-example-modal-lg').modal('show')  
 				}, 

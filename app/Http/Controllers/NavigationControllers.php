@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Post;
 use App\Models\Project;
+use App\Models\Event;
 use Helper;
 use Carbon\Carbon;
 
@@ -20,9 +21,14 @@ class NavigationControllers extends Controller
 			// die();
 			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
 			$projectAll = Project::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
+
+			
+			$eventList = Event::select(['id','title','date as start'])->get(); 
+
 			return view('pages.home')
 				->with(['postAll' => $postAll])
-				->with(['projectAll' => $projectAll]);
+				->with(['projectAll' => $projectAll])
+				->with(['eventList' => $eventList]);
 		}
 
 		public function show($title_slug) 
@@ -76,6 +82,15 @@ class NavigationControllers extends Controller
 			$projectsPassed = Project::where('end', '<', $now)->get();
 			return view('pages.projectlist')->with(['projectsActive' => $projectsActive, 'projectsPassed' => $projectsPassed]);;
 		}
- 
+
+		public function ajaxGetAllEvents() {
+			$eventAll = array();
+
+			try {
+					$eventAll = Event::all();
+			} catch (Exception $e) {}
+
+			return $eventAll;
+		}
 
 }
