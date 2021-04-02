@@ -339,22 +339,22 @@
 	      <img src="https://via.placeholder.com/1000x350">
 	      <div class="row">
 	      	<div class="col-12">
-	      		<h4 class="mt-5 w-100">Naziv događaja: <span class="w-100 border-bottom text-muted ml-3">Lorem ipsum</span> </h4>
+	      		<h4 class="mt-5 w-100">Naziv događaja: <span class="w-100 border-bottom text-muted ml-3" id="modal_event_title"></span> </h4>
 	      	</div>
 	      	<div class="col-lg-5 col-12">
-	      		<h4 class="mt-4 w-100">Datum: <span class="w-100 border-bottom text-muted ml-3">Datum</span></h4>
+	      		<h4 class="mt-4 w-100">Datum: <span class="w-100 border-bottom text-muted ml-3" id="modal_event_date"></span></h4>
 	      	</div>
 	      	<div class="col-lg-7 col-12 text-lg-right text-left">
-	      		<h4 class="mt-4 w-100">Satnica od<span class="w-100 border-bottom text-muted ml-3">13:00 h</span> do <span class="w-100 border-bottom text-muted">14:00 h</span></h4>
+	      		<h4 class="mt-4 w-100">Satnica od<span class="w-100 border-bottom text-muted ml-3" id="modal_event_start_hour"></span> h do <span class="w-100 border-bottom text-muted" id="modal_event_end_hour"></span> h</h4>
 	      	</div>
 	      	<div class="col-12">
-	      		<h4 class="mt-4 w-100 border p-3">Zoom link: <span></span></h4>
+	      		<h4 class="mt-4 w-100 border p-3">Zoom link: <span id="modal_event_zoom_link"></span></h4>
 	      	</div>
 	      	<div class="col-lg-3 col-12">
 	      		<h4 class="mt-4">Osnovne informacije</h4>
 	      	</div>
 	      	<div class="col-lg-9 col-12 mt-4">
-	      		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd </p>
+	      		<p id="modal_event_basic_info"></p>
 	      	</div>
 	      </div> 
 	      
@@ -415,15 +415,6 @@
 		var w = window.innerWidth;
 
 		var events = [];
-		
-		var first_date = "2021-04-11";
-		var second_date = formattedDate;
-
-		console.log(first_date);
-		console.log(second_date);
-		if (first_date < second_date) {
-			console.log("manji je")
-		}
 
 		{!! $eventList !!}.forEach(element => {
 			if(element.start < formattedDate) {
@@ -449,7 +440,8 @@
 					headerToolbar: false,
 					events: events,
 				eventClick: function(info) {
-					$('.bd-example-modal-lg').modal('show')  
+					$('.bd-example-modal-lg').modal('show');
+					alert(info.event.title);
 				}, 
 			});
 		} else {
@@ -461,7 +453,12 @@
 					headerToolbar: false,
 					events: events,
 				eventClick: function(info) {
-					$('.bd-example-modal-lg').modal('show')  
+					$('.bd-example-modal-lg').modal('show') ;
+					$('#modal_event_title').text(info.event.title); 
+					$('#modal_event_date').text(info.event.start);
+					$('#modal_event_start_hour').text(info.event.start_hour);
+					$('#modal_event_end_hour').text(info.event.end_hour);
+
 				}, 
 			});
 		}

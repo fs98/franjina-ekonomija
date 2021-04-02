@@ -23,7 +23,9 @@ class NavigationControllers extends Controller
 			$projectAll = Project::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
 
 			
-			$eventList = Event::select(['id','title','date as start'])->get(); 
+			$eventList = Event::select(['id','title','directory_id','cover','date as start','start as start_hour','end as end_hour','zoom_link','description'])->get()->toArray(); 
+			
+			dd($eventList);
 
 			return view('pages.home')
 				->with(['postAll' => $postAll])
