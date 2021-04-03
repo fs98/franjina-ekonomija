@@ -80,14 +80,4 @@
 
 </section>
 
-@endsection ('content')
-
-@section('scripts')
-	
-
-<script>
-	var previous = document.querySelector('[aria-label="« Previous"] span').innerHTML = "Nazad";
-	var previous = document.querySelector('[aria-label="Next »"]').innerHTML = "Naprijed";
-</script>
-
-@endsection
+@endsection ('content') 
