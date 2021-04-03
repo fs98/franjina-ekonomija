@@ -28,6 +28,8 @@ Route::get('/podrška','NavigationControllers@support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blog/{post}','NavigationControllers@show')->name('blogPost');
 
+Route::get('/rezultati-pretraživanja/', 'NavigationControllers@search')->name('searchResults');
+
 Route::get('/new-home', function() {
 	return view('pages.new-home');
 });
@@ -49,4 +51,5 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	Route::resource('events','EventsController');
 	Route::resource('projects','ProjectsController');
 	Route::resource('questions', 'QuestionsController', ['except' => ['update', 'edit']]);
+	Route::resource('gallery', 'ProjectImagesController');
 });

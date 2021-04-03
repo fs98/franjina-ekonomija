@@ -22,12 +22,14 @@ return [
         'posts' => 'public/posts/', 
         'projects' => 'public/projects/', 
         'events' => 'public/events/',
+        'gallery' => 'public/gallery/',
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
         'posts' => 'storage/posts/', 
         'projects' => 'storage/projects/', 
         'events' => 'storage/events/',
+        'gallery' => 'storage/gallery/',
     ],
     'route-paths' => [
         'store' => 'store',

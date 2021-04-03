@@ -216,8 +216,10 @@
 		</div>
 		<!-- /.Row -->
 
+
+		{{-- Action is removed {{ Route('about_store') }} --}}
 		<!-- Form -->
-		<form class="mt-5" action="{{ Route('about_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+		<form class="mt-5" action="" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
 			@csrf
 			<div class="form-row">
 				<div class="form-group col-md-6 pr-md-3">
@@ -336,7 +338,7 @@
 	          <span aria-hidden="true">&times;</span>
 	        </button>
         </span>
-	      <img src="https://via.placeholder.com/1000x350">
+	      <img id="event_header_image">
 	      <div class="row">
 	      	<div class="col-12">
 	      		<h4 class="mt-5 w-100">Naziv događaja: <span class="w-100 border-bottom text-muted ml-3" id="modal_event_title"></span> </h4>
@@ -416,7 +418,7 @@
 
 		var events = [];
 
-		{!! $eventList !!}.forEach(element => {
+		{!! $events !!}.forEach(element => {
 			if(element.start < formattedDate) {
 				element.backgroundColor = '#BB1C2E';
 				element.textColor = '#fff';
@@ -453,20 +455,21 @@
 					headerToolbar: false,
 					events: events,
 				eventClick: function(info) {
-					$('.bd-example-modal-lg').modal('show') ;
-					$('#modal_event_title').text(info.event.title); 
-					$('#modal_event_date').text(info.event.start);
+					$('.bd-example-modal-lg').modal('show');
+					eventRender: function(info) {
+						$('#modal_event_title').text(info.event.title); 
+					$('#modal_event_date').text(info.event.date);
+					$('#event_header_image').src(info.event.header_image_url); 
 					$('#modal_event_start_hour').text(info.event.start_hour);
 					$('#modal_event_end_hour').text(info.event.end_hour);
-
+					$('#modal_event_basic_info').text("Sth");
+					}
+					
 				}, 
 			});
 		}
-    
     calendar.render();
-
   });
-
 </script>
 
 {{-- Post request --}}

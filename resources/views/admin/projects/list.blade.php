@@ -67,6 +67,9 @@
                           <a href="{{ Route('admin.projects.edit', ['project' => $projectSingleRow->id]) }}" class="btn btn-primary pointer mr-2">
                             <span>Uredi</span>
                           </a>
+                          <a href="{{ Route('admin.gallery.show', ['gallery' => $projectSingleRow->id]) }}" class="btn btn-primary pointer mr-2">
+                            <span>Galerija</span>
+                          </a>
                           <form action="{{ Route('admin.projects.destroy', ['project' => $projectSingleRow->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             <button class="btn btn-danger pointer" type="button" onclick="deleteSingleItem(this)">

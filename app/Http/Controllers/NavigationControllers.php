@@ -10,6 +10,7 @@ use App\Models\Project;
 use App\Models\Event;
 use Helper;
 use Carbon\Carbon;
+use DateTime;
 
 class NavigationControllers extends Controller
 {
@@ -23,14 +24,29 @@ class NavigationControllers extends Controller
 			$projectAll = Project::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
 
 			
-			$eventList = Event::select(['id','title','directory_id','cover','date as start','start as start_hour','end as end_hour','zoom_link','description'])->get()->toArray(); 
-			
-			dd($eventList);
+			$eventList = Event::select(['id','title','directory_id','cover','date as start','start as start_hour','end as end_hour','zoom_link','description'])->get(); 
+		
+			$eventListArray = $eventList;
+			$eventListArray = $eventListArray->toArray();
+			foreach($eventList as $index => $row) {
+				if(array_key_exists($index, $eventListArray) && $eventListArray[$index]['id'] == $row->id) {
+					if(is_null(end($eventListArray[$index])) || end($eventListArray[$index]) == '') {
+						try {
+							array_pop($eventListArray[$index]);
+						} catch (Exception $e) {}
+					}
+					$eventListArray[$index]['header_image_url'] = $row->header_image_url;
+					$eventListArray[$index]['date'] = (new DateTime($eventListArray[$index]['start']))->format('d.m.Y.');
+					$eventListArray[$index]['start_hour'] = (new DateTime($eventListArray[$index]['start_hour']))->format('H:m');
+					$eventListArray[$index]['end_hour'] = (new DateTime($eventListArray[$index]['end_hour']))->format('H:m'); 
+				}
+			}   
+			$events = json_encode($eventListArray); 
 
 			return view('pages.home')
 				->with(['postAll' => $postAll])
 				->with(['projectAll' => $projectAll])
-				->with(['eventList' => $eventList]);
+				->with(['events' => $events]);
 		}
 
 		public function show($title_slug) 
@@ -85,14 +101,12 @@ class NavigationControllers extends Controller
 			return view('pages.projectlist')->with(['projectsActive' => $projectsActive, 'projectsPassed' => $projectsPassed]);;
 		}
 
-		public function ajaxGetAllEvents() {
-			$eventAll = array();
-
-			try {
-					$eventAll = Event::all();
-			} catch (Exception $e) {}
-
-			return $eventAll;
+		public function search(Request $httpRequest) {
+			$search = $httpRequest->search_text;
+			
+			$searchResults = Post::select(['id','cover','directory_id','title','title_slug','short_description'])->where('title', 'LIKE', "%{$search}%")->orWhere('short_description', 'like', "%{$search}%")->paginate(4);
+			
+			return view('pages.search')->with(['searchResults' => $searchResults]);
 		}
 
 }

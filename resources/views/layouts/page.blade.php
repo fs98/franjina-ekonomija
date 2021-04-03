@@ -60,11 +60,13 @@
         <div class="col-12 col-md-6 col-lg-6 col-xl-3 align-self-center py-1">
  
           <div class="float-left float-md-right">
-            <form class="form-inline">
+            <form class="form-inline" action="{{ Route('searchResults') }}" method="GET">
               <div class="input-group">
-                <input type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input id="search_text" name="search_text" type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon2">
                 <div class="input-group-append bg-danger"> 
-                  <span class="input-group-text bg-white rounded-0 border-0" id="basic-addon2"><img src="{{ asset('icons/header/search.svg') }}"></span>
+                  <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon2">
+                    <span><img src="{{ asset('icons/header/search.svg') }}"></span>
+                  </button>
                 </div>
               </div>
             </form>
@@ -159,7 +161,7 @@
           @endif
 
         </ul>
-        <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none">
+        <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none" action="{{ Route('searchResults') }}">
           <div class="input-group">
             <input type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <div class="input-group-append bg-danger"> 
