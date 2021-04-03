@@ -75,12 +75,12 @@
                     <input type="date" name="event_date" id="event_date" class="form-control" value="">
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="event_start" class="col-form-label">Datum eventa</label>
+                    <label for="event_start" class="col-form-label">Počinje u</label>
                     <label for="event_start" class="label-not-required">(obavezno)</label>
                     <input type="time" name="event_start" id="event_start" class="form-control" value="">
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="event_end" class="col-form-label">Početak</label>
+                    <label for="event_end" class="col-form-label">Završava u</label>
                     <label for="event_end" class="label-not-required">(obavezno)</label>
                     <input type="time" name="event_end" id="event_end" class="form-control" value="">
                   </div>

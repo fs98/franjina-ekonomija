@@ -22,16 +22,6 @@ class EventsController extends Controller
     }
 
     /**
-     * Display all events.
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function calendarEvents(Request $request) 
-    {
-           
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

@@ -79,7 +79,7 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active {{ Route::currentRouteNamed('index') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-plus"></i>Korisnici <span class="badge badge-success">6</span></a>
+                                <a class="nav-link {{ Route::currentRouteNamed('admin.users.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-plus"></i>Korisnici <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -89,7 +89,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-blogger-b"></i>Blog</a>
+                                <a class="nav-link {{ Route::currentRouteNamed('admin.posts.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-blogger-b"></i>Blog</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -102,7 +102,7 @@
                                 </div>
                             </li> 
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-hand-rock"></i>Projekti</a>
+                                <a class="nav-link {{ Route::currentRouteNamed('admin.projects.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-hand-rock"></i>Projekti</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -115,7 +115,7 @@
                                 </div>
                             </li> 
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-fw fa-calendar-alt"></i>Kalendar</a>
+                                <a class="nav-link {{ Route::currentRouteNamed('admin.events.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-fw fa-calendar-alt"></i>Kalendar</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -123,6 +123,19 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ __('/admin/events/create') }}">Novi event</a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link {{ Route::currentRouteNamed('admin.partners.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-fw fa-calendar-alt"></i>Partneri</a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ __('/admin/partners') }}">Pregled</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ __('/admin/partners/create') }}">Novi partner</a>
                                         </li> 
                                     </ul>
                                 </div>

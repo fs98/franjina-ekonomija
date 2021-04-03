@@ -47,9 +47,25 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
     'except' => ['show']
 	]);
 
-	Route::resource('posts','PostsController');
-	Route::resource('events','EventsController');
-	Route::resource('projects','ProjectsController');
-	Route::resource('questions', 'QuestionsController', ['except' => ['update', 'edit']]);
+	Route::resource('posts','PostsController', [
+		'except' => ['show']
+	]);
+
+	Route::resource('events','EventsController', [
+		'except' => ['show']
+	]);
+
+	Route::resource('projects','ProjectsController', [
+		'except' => ['show']
+	]);
+
+	Route::resource('questions', 'QuestionsController', [
+		'except' => ['update', 'edit']
+	]);
+
 	Route::resource('gallery', 'ProjectImagesController');
+
+	Route::resource('partners', 'PartnersController', [
+		'except' => ['show']
+	]);
 });

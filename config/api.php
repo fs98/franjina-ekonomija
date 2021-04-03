@@ -23,6 +23,7 @@ return [
         'projects' => 'public/projects/', 
         'events' => 'public/events/',
         'gallery' => 'public/gallery/',
+        'partners' => 'public/partners/',
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
@@ -30,6 +31,7 @@ return [
         'projects' => 'storage/projects/', 
         'events' => 'storage/events/',
         'gallery' => 'storage/gallery/',
+        'partners' => 'storage/partners/',
     ],
     'route-paths' => [
         'store' => 'store',

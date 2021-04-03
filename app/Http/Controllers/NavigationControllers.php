@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Project;
 use App\Models\Event;
+use App\Models\Partner;
 use Helper;
 use Carbon\Carbon;
 use DateTime;
@@ -68,7 +69,8 @@ class NavigationControllers extends Controller
 
 		// 
 		public function partners(){
-			return view('pages.partners');
+			$partnersAll = Partner::all()->sortBy('name');
+			return view('pages.partners')->with(['partnersAll' => $partnersAll]);
 		}
 
 		// 
@@ -89,7 +91,8 @@ class NavigationControllers extends Controller
 
 		//
 		public function support(){
-			return view('pages.support');
+			$partnersAll = Partner::all()->sortBy('name');
+			return view('pages.support')->with(['partnersAll' => $partnersAll]);
 		}
 
 		//

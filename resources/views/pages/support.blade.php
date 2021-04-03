@@ -120,42 +120,14 @@
 		  <div class="swiper-container support-page-partners-slider">
 		    <div class="swiper-wrapper">
 
-		    	<!-- Slide -->
-		    	<div class="swiper-slide">
-		      	<a href="http://www.astrotechworld.com/" target="_blank">
-							<img src="{{ asset('images/partners/astrotech-logo.png') }}" class="img-fluid">
-						</a>
-		      </div>
-		      <div class="swiper-slide">
-		      	<a href="http://fokolar.hr/" target="_blank">
-							<img src="{{ asset('images/partners/fokolar-logo.png') }}" class="img-fluid">
-						</a>
-		      </div>
-		      <div class="swiper-slide">
-		      	<a href="http://potrosacica.hr/" target="_blank">
-							<img src="{{ asset('images/partners/potrosacica-logo.jpeg') }}" class="img-fluid">
-						</a>
-		      </div>
-		      <div class="swiper-slide">
-		      	<a href="https://scu-bih.ba/" target="_blank">
-							<img src="{{ asset('images/partners/scu-logo-2.png') }}" class="img-fluid">
-						</a>
-		      </div>
-		      <div class="swiper-slide">
-		      	<a href="http://www.unicath.hr/" target="_blank" >
-							<img src="{{ asset('images/partners/hks-logo.jpg') }}" class="img-fluid">
-						</a>
-		      </div>
-		      <div class="swiper-slide">
-		      	<a href="http://uez.hr/" target="_blank">
-							<img src="{{ asset('images/partners/uez-logo-3.png') }}" class="img-fluid">
-						</a>
-		      </div>
-		      <div class="swiper-slide">
-		      	<a href="http://uez.hr/" target="_blank"> 
-							<img src="{{ asset('images/partners/uez-logo-2.png') }}" class="img-fluid">
-						</a>
-		      </div>
+					@foreach ($partnersAll as $index => $partnerSingle)
+						<!-- Slide -->
+						<div class="swiper-slide">
+							<a href="{{ $partnerSingle->website_url }}" target="_blank">
+								<img src="{{ $partnerSingle->header_image_url }}" class="img-fluid" alt="{{ $partnerSingle->cover_image_description }}">
+							</a>
+						</div>
+					@endforeach
 
 	      </div>
 	      <!-- Add Arrows -->
