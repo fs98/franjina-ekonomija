@@ -133,9 +133,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $userSignleDel = User::where('id', $id)->delete();
+        $userDel = User::where('id', $id)->delete();
 
-        $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Success!", "User deleted.");
+        $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Gotovo!", "Korisnik je izbrisan.");
         return response()->json($swal->get());
     }
 }

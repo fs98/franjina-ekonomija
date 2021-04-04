@@ -428,9 +428,7 @@
 			}
 
 			events.push(element) 
-		});
-
-		console.log(events);
+		}); 
 
 		if(768 >= w) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -455,15 +453,13 @@
 					headerToolbar: false,
 					events: events,
 				eventClick: function(info) {
-					$('.bd-example-modal-lg').modal('show');
-					eventRender: function(info) {
+					$('.bd-example-modal-lg').modal('show'); 
 						$('#modal_event_title').text(info.event.title); 
 					$('#modal_event_date').text(info.event.date);
 					$('#event_header_image').src(info.event.header_image_url); 
 					$('#modal_event_start_hour').text(info.event.start_hour);
 					$('#modal_event_end_hour').text(info.event.end_hour);
-					$('#modal_event_basic_info').text("Sth");
-					}
+					$('#modal_event_basic_info').text("Sth"); 
 					
 				}, 
 			});

@@ -148,20 +148,7 @@
                                 <div id="submenu-10" class="collapse submenu" style="">
                                     <ul class="nav flex-column"> 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Slajderi</a>
-                                            <div id="submenu-11" class="collapse submenu" style="">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="#">Glavni slajder</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="#">kalendar slajder</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="#">Sela slajder</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <a class="nav-link" href="{{ Route('admin.sliders.index') }}">Slajderi</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-12" aria-controls="submenu-12">Tekst</a>

@@ -68,4 +68,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	Route::resource('partners', 'PartnersController', [
 		'except' => ['show']
 	]);
+
+	Route::resource('sliders', 'SliderController');
 });

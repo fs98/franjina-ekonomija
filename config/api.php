@@ -24,6 +24,7 @@ return [
         'events' => 'public/events/',
         'gallery' => 'public/gallery/',
         'partners' => 'public/partners/',
+        'sliders' => 'public/sliders/',
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
@@ -32,6 +33,7 @@ return [
         'events' => 'storage/events/',
         'gallery' => 'storage/gallery/',
         'partners' => 'storage/partners/',
+        'sliders' => 'storage/sliders/',
     ],
     'route-paths' => [
         'store' => 'store',
