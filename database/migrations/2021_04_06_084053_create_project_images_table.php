@@ -14,12 +14,12 @@ class CreateProjectImagesTable extends Migration
     public function up()
     {
         Schema::create('project_images', function (Blueprint $table) {
-            $table->id();
-            $table->string('directory_id', 128)->nullable();
-            $table->string('cover')->nullable();
-            $table->string('cover_image_description')->nullable();
-            $table->unsignedBigInteger('project_id')->nullable();
-            $table->foreign('project_id')->references('id')->on('projects');
+          $table->id();
+          $table->string('directory_id', 128)->nullable();
+          $table->string('cover')->nullable(); 
+          $table->unsignedBigInteger('project_id')->nullable();
+          $table->foreign('project_id')->references('id')->on('projects');
+          $table->timestamps();
         });
     }
 

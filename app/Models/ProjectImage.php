@@ -27,10 +27,14 @@ class ProjectImage extends BaseModel
     ];
 
     public function getBaseStoragePathAttribute() {
-        return config('api.storage_paths.posts');
+        return config('api.storage_paths.projects');
     }
 
     public function getHeaderImageUrlAttribute() {
-    	return asset(config('api.storage_paths_v2.posts') . $this->directory_id . '/' . $this->cover);
+    	return asset(config('api.storage_paths_v2.projects') . $this->directory_id . '/' . $this->cover);
+    }
+
+    public function project() {
+    	return $this->belongsTo(Project::class, 'project_id');
     }
 }

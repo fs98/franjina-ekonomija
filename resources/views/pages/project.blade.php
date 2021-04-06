@@ -51,9 +51,7 @@
 		
 		<!-- Row -->
 		<div class="row">
-			
-			<div class="mb-5 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1 col-12 offset-0">
-				
+			<div class="mb-5 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1 col-12 offset-0"> 
 				<div class="border project-card-box p-4 text-center">
 					<span class="d-flex flex-row justify-content-between px-2 mt-1">
 						<span class="d-flex justify-content-start">
@@ -110,36 +108,14 @@
 		<div class="mb-5 row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gallery">
 
 			<!-- Gallery -->
-				
-			<div class="col mb-4">
-        <a href="https://via.placeholder.com/150" data-fancybox="gallery">
-          <img src="https://via.placeholder.com/150" class="img-fluid"  alt="">
-        </a>
-      </div>
 
-      <div class="col mb-4">
-        <a href="https://via.placeholder.com/150x600" data-fancybox="gallery">
-          <img src="https://via.placeholder.com/150x600" class="img-fluid"  alt="">
-        </a>
-      </div>
-
-      <div class="col mb-4">
-        <a href="https://via.placeholder.com/300x60" data-fancybox="gallery">
-          <img src="https://via.placeholder.com/300x60" class="img-fluid"  alt="">
-        </a>
-      </div>
-
-      <div class="col mb-4">
-        <a href="https://via.placeholder.com/700" data-fancybox="gallery">
-          <img src="https://via.placeholder.com/700" class="img-fluid"  alt="">
-        </a>
-      </div>
-
-      <div class="col mb-4">
-        <a href="https://via.placeholder.com/1200x180" data-fancybox="gallery">
-          <img src="https://via.placeholder.com/1200x180" class="img-fluid"  alt="">
-        </a>
-      </div>
+      @foreach($projectSingle->photos as $index => $photo)
+        <div class="col mb-4">
+          <a href="{{ $photo->header_image_url }}" data-fancybox="gallery">
+            <img src="{{ $photo->header_image_url }}" class="img-fluid"  alt="">
+          </a>
+        </div>
+      @endforeach
 
 			<!-- /.Gallery -->		
 

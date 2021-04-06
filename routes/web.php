@@ -63,8 +63,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 		'except' => ['update', 'edit']
 	]);
 
-	Route::resource('gallery', 'ProjectImagesController');
-
 	Route::resource('partners', 'PartnersController', [
 		'except' => ['show']
 	]);

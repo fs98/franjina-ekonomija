@@ -6984,3 +6984,8 @@ Media Query
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width:320px) {}
+
+.gallery img {
+  max-width: 128px;
+  max-height: 128px;
+}

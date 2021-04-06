@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Post;
 use App\Models\Project;
+use App\Models\ProjectImage;
 use App\Models\Event;
 use App\Models\Partner;
 use Helper;
@@ -37,11 +38,12 @@ class NavigationControllers extends Controller
 						} catch (Exception $e) {}
 					}
 					$eventListArray[$index]['header_image_url'] = $row->header_image_url;
-					$eventListArray[$index]['date'] = (new DateTime($eventListArray[$index]['start']))->format('d.m.Y.');
+					$eventListArray[$index]['formatted_date'] = (new DateTime($eventListArray[$index]['start']))->format('d.m.Y.');
 					$eventListArray[$index]['start_hour'] = (new DateTime($eventListArray[$index]['start_hour']))->format('H:m');
 					$eventListArray[$index]['end_hour'] = (new DateTime($eventListArray[$index]['end_hour']))->format('H:m'); 
 				}
-			}   
+			}  
+
 			$events = json_encode($eventListArray); 
 
 			return view('pages.home')

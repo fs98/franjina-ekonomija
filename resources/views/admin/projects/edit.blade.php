@@ -126,6 +126,18 @@
                   <label class="label-required" for="project_content">(obavezno)</label>
                   <textarea id="summernote" name="project_content">{{ $projectSingle->content }}</textarea>
                 </div>  
+
+                <div class="form-group">
+                  <label class="col-form-label" for="gallery_photos">Dodajte nove slike</label>
+                  <label class="label-required" for="gallery_photos">(neobavezno)</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" accept="image/png, image/jpeg, image/jpg" class="custom-file-input form-control-file" id="gallery_photos" name="gallery_photos[]" multiple>
+                      <label class="custom-file-label" for="gallery_photos">Izaberite sliku</label>
+                    </div> 
+                  </div>
+                  <div class="gallery px-2 mt-3 w-100"></div>
+                </div>
                  
                 <button type="button" id="submit-button" form="update-form" class="btn btn-lg btn-secondary float-right">Potvrdi</button>
               </div>
@@ -185,6 +197,39 @@
         image.src = URL.createObjectURL(event.target.files[0]); 
       });
   </script>
+
+<script>
+  $(function() {
+    var imagesPreview = function(input, placeToInsertImagePreview) {
+        if (input.files) {
+            $("div.gallery").html("");
+            var filesAmount = input.files.length;
+            for (i = 0; i < filesAmount; i++) {
+                  if(parseFloat(((input.files[i].size) / 1024)) > parseFloat(8192)) {
+                      $(input).val('');
+                      const MySwalMapAlert = Swal.fire({
+                          icon: 'warning',
+                          text: 'Too big',
+                          title: 'Picture',
+                          confirmButtonText: 'OK',
+                          allowEscapeKey : false,
+                          allowOutsideClick: false
+                        });
+                      throw new Error;
+                  }
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    $($.parseHTML('<img>')).attr('src', event.target.result).addClass('mx-2').appendTo(placeToInsertImagePreview);
+                }
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+    };
+    $('#gallery_photos').on('change', function() {
+        imagesPreview(this, 'div.gallery');
+    });
+});
+</script>
 
   {{-- Create url with title --}}
   <script src="{{ asset('back/replaceChars.js')}}"></script>

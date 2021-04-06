@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Project;
+use App\Models\ProjectImage;
 use App\Models\Swal;
 
 use Helper;
@@ -47,14 +48,16 @@ class ProjectsController extends Controller
     
         $httpRequest->validate([
             'project_title' => 'required',
-            'project_title_slug' => 'required|max:512',
+            'project_title_slug' => 'unique:projects,title_slug|required|max:512',
             'project_short_description' => 'required|max:256',
             'project_keywords' => 'required|max:256',
             'project_header_image' => 'required|image|mimes:jpg,jpeg,png|max:16384',
             'project_header_image_alt' => 'nullable',
             'project_start_date' => 'required',
             'project_end_date' => 'required',
-            'project_content' => 'required'
+            'project_content' => 'required',
+            'gallery_photos' => 'nullable',
+            'gallery_photos.*' => 'nullable|image|mimes:jpg,jpeg,png|max:12288'
         ]);
 
         if ($httpRequest->hasFile('project_header_image')) {
@@ -62,6 +65,13 @@ class ProjectsController extends Controller
         } else {
             $headerImageSet = false;
         }
+
+        if($httpRequest->hasFile('gallery_photos.*')) {
+          $galleryImagesSet = true;
+        } else {
+          $galleryImagesSet = false;
+        }
+
 
         $projectSingle = new Project;
         $projectSingle->title = $httpRequest->project_title;
@@ -120,6 +130,18 @@ class ProjectsController extends Controller
         try {
             $projectSingle->save();
         } catch (Exception $e) {}
+
+        if($galleryImagesSet) {
+          foreach($httpRequest->file('gallery_photos.*') as $photo) {
+            $file = FileStorageController::store($photo, $directory->getFullPath());
+
+            $projectPicture = new ProjectImage;
+            $projectPicture->cover = $file;
+            $projectPicture->directory_id = $directory->getDirectoryId();
+            $projectPicture->project_id = $projectSingle->id;
+            $projectPicture->save();
+          }
+        }
         
         $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Projekat dodan.");
         return response()->json($swal->get());
@@ -172,7 +194,9 @@ class ProjectsController extends Controller
             'project_header_image_alt' => 'nullable',
             'project_start_date' => 'required',
             'project_end_date' => 'required',
-            'project_content' => 'required'
+            'project_content' => 'required',
+            'gallery_photos' => 'nullable',
+            'gallery_photos.*' => 'nullable|image|mimes:jpg,jpeg,png|max:12288'
         ]);
         
         
@@ -180,6 +204,12 @@ class ProjectsController extends Controller
             $headerImageSet = true;
         } else {
             $headerImageSet = false;
+        }
+
+        if($httpRequest->hasFile('gallery_photos.*')) {
+          $galleryImagesSet = true;
+        } else {
+          $galleryImagesSet = false;
         }
 
         $projectEdit->title = $httpRequest->project_title;
@@ -236,6 +266,18 @@ class ProjectsController extends Controller
         try {
             $projectEdit->save();
         } catch (Exception $e) {}
+
+        if($galleryImagesSet) {
+          foreach($httpRequest->file('gallery_photos.*') as $photo) {
+            $file = FileStorageController::store($photo, $directory->getFullPath());
+
+            $projectPicture = new ProjectImage;
+            $projectPicture->cover = $file;
+            $projectPicture->directory_id = $directory->getDirectoryId();
+            $projectPicture->project_id = $projectSingle->id;
+            $projectPicture->save();
+          }
+        }
 
         $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Projekat ažuriran.");
         return response()->json($swal->get());

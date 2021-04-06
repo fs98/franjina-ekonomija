@@ -10,7 +10,6 @@
 @endsection('links')
 
 @section('main-content')
-  
   <div class="container-fluid dashboard-content">
     <div class="row">
       <div class="col-12">

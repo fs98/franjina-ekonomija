@@ -56,8 +56,11 @@ class Project extends BaseModel
 
     // Get percentage of collected money
     public function getPercentageAttribute() {
+      if (!empty($this->money_goal)) {
         $percentage = ($this->money_collected / $this->money_goal ) * 100;
         return round($percentage,2);
+      }
+        return NULL;
     }
 
     // Get number of days left till the end of project
@@ -68,9 +71,12 @@ class Project extends BaseModel
         return $days_left;
 
     }
-
     public function getInvestorsAttribute($value) {
         return $this->checkIfEmpty($value);
+    }
+    
+    public function photos() {
+      return $this->hasMany(ProjectImage::class, 'project_id', 'id');
     }
 
 }

@@ -70,10 +70,10 @@
 	<section class="calendar-section" style="margin-top: 50px;">
 		
 		<!-- Container -->
-		<div class="container" data-aos-duration="4000">
+		<div class="container">
 		
 				<!-- Row -->
-			<div class="row d-flex">
+			<div class="row d-flex fade-medium">
 				
 				<div class="col-12 col-xl-7">
 
@@ -92,12 +92,12 @@
 
 				<div class="col-12 col-xl-5 align-items-end mb-5 d-flex">
 					
-					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+					<div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
 					  <div class="carousel-inner">
-					    <div class="carousel-item active">
+					    <div class="carousel-item active" data-interval="7000">
 					      <img src="{{ asset('images/home/slider-2/image-1.jpg') }}" class="d-block w-100" alt="...">
 					    </div>
-					    <div class="carousel-item">
+					    <div class="carousel-item" data-interval="7000">
 					      <img src="{{ asset('images/home/slider-2/image-2.jpg') }}" class="d-block w-100" alt="...">
 					    </div>
 					  </div>
@@ -127,7 +127,7 @@
 	<div class="container py-5">
 		
 		<!-- Row -->
-		<div class="row mb-5">
+		<div class="row mb-5" data-aos="zoom-in" data-aos-duration="1500">
 
 		<div class="col-12 w-100 text-center mb-5">
 			<h1>
@@ -189,7 +189,7 @@
 <section data-aos-duration="4000">
 
 	{{-- Container --}}
-	<div class="container question-form pb-5">
+	<div class="container question-form pb-5" data-aos="zoom-in" data-aos-duration="1500">
 		
 		<!-- Row -->
 		<div class="row">
@@ -273,7 +273,7 @@
 <section class="bg-light" data-aos-duration="4000">
 
 	<!-- Container -->
-	<div class="container pb-4">
+	<div class="container pb-4" data-aos="zoom-in" data-aos-duration="1500">
 		
 		<!-- Row -->
 		<div class="row">
@@ -350,7 +350,7 @@
 	      		<h4 class="mt-4 w-100">Satnica od<span class="w-100 border-bottom text-muted ml-3" id="modal_event_start_hour"></span> h do <span class="w-100 border-bottom text-muted" id="modal_event_end_hour"></span> h</h4>
 	      	</div>
 	      	<div class="col-12">
-	      		<h4 class="mt-4 w-100 border p-3">Zoom link: <span id="modal_event_zoom_link"></span></h4>
+	      		<h4 class="mt-4 w-100 border p-3">Zoom link: <a id="modal_event_zoom_link" href="" target="_blank" class="h5 font-weight-light"></a></h4>
 	      	</div>
 	      	<div class="col-lg-3 col-12">
 	      		<h4 class="mt-4">Osnovne informacije</h4>
@@ -403,7 +403,7 @@
       },
     }
   });
-</script> 
+</script>
 
 <!-- Calendar -->
 <script type="text/javascript" src="{{ asset('js/calendar/main.min.js') }}"></script>
@@ -428,6 +428,7 @@
 			}
 
 			events.push(element) 
+      console.log(events);
 		}); 
 
 		if(768 >= w) {
@@ -447,22 +448,39 @@
 		} else {
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView: 'dayGridMonth',
-					themeSystem: 'bootstrap',
-					locale: 'hr',
-					weekNumberCalculation: 'ISO',
-					headerToolbar: false,
-					events: events,
+        themeSystem: 'bootstrap',
+        locale: 'hr',
+        weekNumberCalculation: 'ISO',
+        headerToolbar: false,
+        defaultDate: new Date(),
+        displayEventTime : false,
+        eventLimit: true, // allow "more" link when too many events
+        dayMaxEvents: 1, 
+        height: 445,
+        contentHeight: 445,
+        moreLinkContent: (num) => {
+          return "+još " + num.num;
+        },
+        // moreLinkContent: "Something",
+        firstDay: 1,
+        timeFormat: 'H:mm',
+        slotLabelFormat:"HH:mm",
+        events: events, 
 				eventClick: function(info) {
+          console.log(info.event);
+          console.log(info.event.extendedProps.date);
 					$('.bd-example-modal-lg').modal('show'); 
-						$('#modal_event_title').text(info.event.title); 
-					$('#modal_event_date').text(info.event.date);
-					$('#event_header_image').src(info.event.header_image_url); 
-					$('#modal_event_start_hour').text(info.event.start_hour);
-					$('#modal_event_end_hour').text(info.event.end_hour);
-					$('#modal_event_basic_info').text("Sth"); 
-					
+          $('#modal_event_title').text(info.event.title); 
+					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
+					$('#event_header_image').attr("src", info.event.extendedProps.header_image_url); 
+					$('#modal_event_start_hour').text(info.event.extendedProps.start_hour);
+					$('#modal_event_end_hour').text(info.event.extendedProps.end_hour);
+					$('#modal_event_zoom_link').text(info.event.extendedProps.zoom_link); 
+					$('#modal_event_zoom_link').attr("href", info.event.extendedProps.zoom_link); 
+					$('#modal_event_basic_info').text(info.event.extendedProps.description); 
 				}, 
 			});
+
 		}
     calendar.render();
   });
