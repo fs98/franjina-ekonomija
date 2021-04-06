@@ -145,7 +145,28 @@
           </div>
         </div>
         @method('put')
-      </form>
+      </form> 
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="card">
+            <h5 class="card-header">Galerija</h5>
+              <div class="card-body" id="card-body">
+                <div class="row">
+                  @foreach ($projectImages as $item => $projectImage)
+                  <div class="col-xl-2 col-md-4 col-12 mb-4 position-relative">
+                    <form action="{{ Route('admin.project-images.destroy', ['project_image' => $projectImage->id]) }}" method="POST">
+                      @csrf
+                      <img src="{{ $projectImage->header_image_url }}" class="img-thumbnail" alt="...">
+                      <button class="btn btn-danger delete-image-btn rounded-circle btn-sm" type="button" onclick="deleteSingleItem(this)"><i class="fas fa-xs fa-trash-alt"></i></button>
+                      @method('delete')
+                    </form>
+                  </div>
+                  @endforeach
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
@@ -157,6 +178,8 @@
 @section('scripts')
 
 <script src="{{ asset('back/put-request.js')}}"></script>
+<script src="{{ asset('back/confirmDelete.js')}}"></script>
+@include('admin.include.delete-single-element')
 
 {{-- Summernote --}}
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> 

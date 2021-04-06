@@ -167,7 +167,11 @@ class ProjectsController extends Controller
     public function edit($id)
     {
         $projectSingle = Project::find($id);
-        return view('admin.projects.edit')->with(['projectSingle' => $projectSingle]);
+        $projectImages = ProjectImage::where('project_id', $id)->get();
+        return view('admin.projects.edit')->with([
+            'projectSingle' => $projectSingle,
+            'projectImages' => $projectImages
+            ]);
     }
 
     /**
@@ -274,7 +278,7 @@ class ProjectsController extends Controller
             $projectPicture = new ProjectImage;
             $projectPicture->cover = $file;
             $projectPicture->directory_id = $directory->getDirectoryId();
-            $projectPicture->project_id = $projectSingle->id;
+            $projectPicture->project_id = $projectEdit->id;
             $projectPicture->save();
           }
         }

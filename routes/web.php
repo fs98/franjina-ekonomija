@@ -68,4 +68,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	]);
 
 	Route::resource('sliders', 'SliderController');
+
+	Route::resource('project-images', 'ProjectImagesController');
 });

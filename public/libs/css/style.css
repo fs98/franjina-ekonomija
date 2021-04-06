@@ -6989,3 +6989,10 @@ Media Query
   max-width: 128px;
   max-height: 128px;
 }
+
+.delete-image-btn{
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    margin-top: -10px;
+}
