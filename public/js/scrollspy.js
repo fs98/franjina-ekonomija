@@ -1,6 +1,6 @@
 jQuery("#navbar a").on('click', function(event) {
 
-  if ((String(this.pathname).includes("onama")) && (this.hash !== '') && (String(this.hash).includes("#"))) {
+  if ((String(this.pathname).includes("o-nama")) && (this.hash !== '') && (String(this.hash).includes("#"))) {
     event.preventDefault();
     var hash = this.hash;
 
