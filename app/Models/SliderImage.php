@@ -22,7 +22,7 @@ class SliderImage extends BaseModel
         'directory_id',
         'image',
         'image_description',
-        'oder'
+        'order'
     ];
 
     public function getBaseStoragePathAttribute() {
@@ -31,5 +31,9 @@ class SliderImage extends BaseModel
 
     public function getHeaderImageUrlAttribute() {
     	return asset(config('api.storage_paths_v2.sliders') . $this->directory_id . '/' . $this->image);
+    }
+
+    public function slider() {
+    	return $this->belongsTo(Slider::class, 'slider_id');
     }
 }

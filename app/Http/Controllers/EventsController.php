@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Event;
 use App\Models\Swal;
-
+use DateTime;
 use Helper;
 
 class EventsController extends Controller
@@ -18,7 +18,35 @@ class EventsController extends Controller
      */
     public function index(Request $request)
     {
-        return view('admin.events.list');
+      $eventList = Event::select(['id','title','directory_id','cover','date as start','start as start_hour','end as end_hour','zoom_link','description'])->get(); 
+		
+			$eventListArray = $eventList;
+			$eventListArray = $eventListArray->toArray();
+			foreach($eventList as $index => $row) {
+				if(array_key_exists($index, $eventListArray) && $eventListArray[$index]['id'] == $row->id) {
+					if(is_null(end($eventListArray[$index])) || end($eventListArray[$index]) == '') {
+						try {
+							array_pop($eventListArray[$index]);
+						} catch (Exception $e) {}
+					}
+					$eventListArray[$index]['header_image_url'] = $row->header_image_url;
+					$eventListArray[$index]['formatted_date'] = (new DateTime($eventListArray[$index]['start']))->format('d.m.Y.');
+          if (Helper::isset($eventListArray[$index]['start_hour'])) {
+            $eventListArray[$index]['start_hour'] = (new DateTime($eventListArray[$index]['start_hour']))->format('H:m');
+          } else {
+            $eventListArray[$index]['start_hour'] = NULL;
+          }
+          if (Helper::isset($eventListArray[$index]['end_hour'])) {
+            $eventListArray[$index]['end_hour'] = (new DateTime($eventListArray[$index]['end_hour']))->format('H:m'); 
+          } else {
+            $eventListArray[$index]['end_hour'] = NULL;
+          }
+				}
+			}  
+
+			$events = json_encode($eventListArray);
+
+      return view('admin.events.list')->with(['events' => $events]);
     }
 
     /**
@@ -96,6 +124,12 @@ class EventsController extends Controller
             $eventSingle->zoom_link = NULL;
         }
 
+        if (Helper::isSet($httpRequest->event_basic_info)) {
+          $eventSingle->description = $httpRequest->event_basic_info;
+        } else {
+          $eventSingle->description = NULL;
+        }
+
         try {
             $eventSingle->save();
         } catch (Exception $e) {}
@@ -123,7 +157,8 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $eventSingle = Event::find($id);
+        return view('admin.events.edit')->with(['eventSingle' => $eventSingle]);
     }
 
     /**
@@ -133,9 +168,56 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $httpRequest, $id)
     {
-        //
+      $user = auth()->user();
+      if(empty($user)) abort(404);
+      if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+
+      $eventEdit = Event::find($id);
+
+      $httpRequest->validate([
+        'event_title' => 'required',
+        'event_header_image' => 'image|mimes:jpg,jpeg,png|max:16384',
+        'event_header_image_alt' => 'nullable',
+        'event_date' => 'required',  
+      ]);
+
+      if ($httpRequest->hasFile('event_header_image')) {
+        $headerImageSet = true;
+      } else {
+          $headerImageSet = false;
+      }
+
+      $eventEdit->title = $httpRequest->event_title; 
+
+      $directory = FileStorageController::makeDirectory($eventEdit->base_storage_path);
+
+        if($headerImageSet) {
+            $file = FileStorageController::store($httpRequest->file('event_header_image'), $directory->getFullPath());
+
+            $eventEdit->cover = $file;
+            $eventEdit->cover_image_description = $httpRequest->event_header_image_alt;
+            $eventEdit->directory_id = $directory->getDirectoryId();
+
+        } else {
+            $eventEdit->cover = $eventEdit->cover;
+            $eventEdit->cover_image_description = $eventEdit->cover_image_description;
+            $eventEdit->directory_id = $eventEdit->directory_id;
+        }
+
+        $eventEdit->date = $httpRequest->event_date;
+        $eventEdit->start = $httpRequest->event_start;
+        $eventEdit->end = $httpRequest->event_end;     
+        $eventEdit->zoom_link = $httpRequest->event_zoom_link;
+        $eventEdit->description = $httpRequest->event_basic_info;
+
+        try {
+          $eventEdit->save();
+      } catch (Exception $e) {}
+
+      $swal = new Swal("Success", 200, Route('admin.events.index'), "success", "Gotovo!", "Event dodan.");
+      return response()->json($swal->get());
     }
 
     /**
@@ -146,6 +228,9 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $eventDel = Event::where('id', $id)->delete();
+
+      $swal = new Swal("Success", 200, Route('admin.events.index'), "success", "Gotovo!", "Event dodan.");
+      return response()->json($swal->get());
     }
 }

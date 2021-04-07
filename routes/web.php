@@ -68,6 +68,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	]);
 
 	Route::resource('sliders', 'SliderController');
+	Route::resource('slider-images', 'SliderImageController');
 
-	Route::resource('project-images', 'ProjectImagesController');
+	Route::resource('project-images', 'ProjectImagesController', [
+    'only' => ['destroy']
+  ]);
 });

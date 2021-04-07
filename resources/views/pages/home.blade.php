@@ -28,30 +28,11 @@
 
 			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" >
 			  <div class="carousel-inner">
-			    <div class="carousel-item active">
-			      <img src="{{ asset('images/home/slider/1.png') }}" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="{{ asset('images/home/slider/2.png') }}" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="{{ asset('images/home/slider/3.png') }}" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="{{ asset('images/home/slider/4.png') }}" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="{{ asset('images/home/slider/5.png') }}" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="{{ asset('images/home/slider/6.png') }}" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="{{ asset('images/home/slider/7.png') }}" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="{{ asset('images/home/slider/8.jpg') }}" class="d-block w-100" alt="...">
-			    </div>
+          @foreach ($heroSlider as $index => $heroSliderImage)
+            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+              <img src="{{ $heroSliderImage->header_image_url }}" class="d-block w-100" alt="{{ $heroSliderImage->image_description }}">
+            </div>
+          @endforeach
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -94,12 +75,11 @@
 					
 					<div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
 					  <div class="carousel-inner">
-					    <div class="carousel-item active" data-interval="7000">
-					      <img src="{{ asset('images/home/slider-2/image-1.jpg') }}" class="d-block w-100" alt="...">
-					    </div>
-					    <div class="carousel-item" data-interval="7000">
-					      <img src="{{ asset('images/home/slider-2/image-2.jpg') }}" class="d-block w-100" alt="...">
-					    </div>
+              @foreach ($calendarSlider as $item => $calendarSliderImage)
+                <div class="carousel-item {{ $item === 0 ? 'active' : '' }}" data-interval="7000">
+                  <img src="{{ $calendarSliderImage->header_image_url }}" class="d-block w-100" alt="{{ $calendarSliderImage->image_description }}">
+                </div> 
+              @endforeach  
 					  </div>
 					  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -338,21 +318,23 @@
 	          <span aria-hidden="true">&times;</span>
 	        </button>
         </span>
-	      <img id="event_header_image">
+	      <img id="event_header_image" class="img-fluid mb-5">
 	      <div class="row">
 	      	<div class="col-12">
-	      		<h4 class="mt-5 w-100">Naziv događaja: <span class="w-100 border-bottom text-muted ml-3" id="modal_event_title"></span> </h4>
+	      		<h4 class="w-100">Naziv događaja: <span class="w-100 border-bottom text-muted ml-3" id="modal_event_title"></span> </h4>
 	      	</div>
 	      	<div class="col-lg-5 col-12">
 	      		<h4 class="mt-4 w-100">Datum: <span class="w-100 border-bottom text-muted ml-3" id="modal_event_date"></span></h4>
 	      	</div>
-	      	<div class="col-lg-7 col-12 text-lg-right text-left">
-	      		<h4 class="mt-4 w-100">Satnica od<span class="w-100 border-bottom text-muted ml-3" id="modal_event_start_hour"></span> h do <span class="w-100 border-bottom text-muted" id="modal_event_end_hour"></span> h</h4>
+	      	<div class="col-lg-7 col-12">
+	      		<h4 class="mt-4 d-flex justify-content-lg-end justify-content-start">
+              <span id="modal_event_start_hour_parent">Od <span class="border-bottom text-muted" id="modal_event_start_hour"></span> h </span><span id="modal_event_end_hour_parent">do <span class="border-bottom text-muted" id="modal_event_end_hour"></span> h</span>
+            </h4>
 	      	</div>
 	      	<div class="col-12">
-	      		<h4 class="mt-4 w-100 border p-3">Zoom link: <a id="modal_event_zoom_link" href="" target="_blank" class="h5 font-weight-light"></a></h4>
+	      		<h4 class="mt-4 w-100 border p-3" id="modal_event_zoom_link_parent">Zoom link: <a id="modal_event_zoom_link" href="" target="_blank" class="h5 font-weight-light text-wrap"></a></h4>
 	      	</div>
-	      	<div class="col-lg-3 col-12">
+	      	<div class="col-lg-3 col-12" id="modal_event_basic_info_title">
 	      		<h4 class="mt-4">Osnovne informacije</h4>
 	      	</div>
 	      	<div class="col-lg-9 col-12 mt-4">
@@ -427,22 +409,39 @@
 				element.textColor = '#000';
 			}
 
-			events.push(element) 
-      console.log(events);
+			events.push(element)  
 		}); 
 
 		if(768 >= w) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView: 'dayGridMonth',
-					themeSystem: 'bootstrap',
-					locale: 'hr',
-					weekNumberCalculation: 'ISO',
-					contentHeight: 'auto',
-					headerToolbar: false,
-					events: events,
-				eventClick: function(info) {
-					$('.bd-example-modal-lg').modal('show');
-					alert(info.event.title);
+        themeSystem: 'bootstrap',
+        locale: 'hr',
+        weekNumberCalculation: 'ISO',
+        contentHeight: 'auto',
+        headerToolbar: false,
+        displayEventTime : false,
+        eventLimit: true, // allow "more" link when too many events
+        dayMaxEvents: 1, 
+        moreLinkContent: (num) => {
+          return "+još " + num.num;
+        },
+        events: events,
+				eventClick: function(info) { 
+					$('.bd-example-modal-lg').modal('show'); 
+          $('#modal_event_title').text(info.event.title); 
+					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
+					$('#event_header_image').attr("src", info.event.extendedProps.header_image_url); 
+					$('#modal_event_start_hour').text(info.event.extendedProps.start_hour);
+					$('#modal_event_end_hour').text(info.event.extendedProps.end_hour);
+					$('#modal_event_zoom_link').text(info.event.extendedProps.zoom_link); 
+          if (info.event.extendedProps.zoom_link) {
+				  	$('#modal_event_zoom_link').attr("href", info.event.extendedProps.zoom_link); 
+          }
+          else {
+            $('#modal_event_zoom_link').css("display", "none");
+          }
+					$('#modal_event_basic_info').text(info.event.extendedProps.description); 
 				}, 
 			});
 		} else {
@@ -451,8 +450,7 @@
         themeSystem: 'bootstrap',
         locale: 'hr',
         weekNumberCalculation: 'ISO',
-        headerToolbar: false,
-        defaultDate: new Date(),
+        headerToolbar: false, 
         displayEventTime : false,
         eventLimit: true, // allow "more" link when too many events
         dayMaxEvents: 1, 
@@ -460,24 +458,57 @@
         contentHeight: 445,
         moreLinkContent: (num) => {
           return "+još " + num.num;
-        },
-        // moreLinkContent: "Something",
-        firstDay: 1,
-        timeFormat: 'H:mm',
-        slotLabelFormat:"HH:mm",
+        },  
         events: events, 
-				eventClick: function(info) {
-          console.log(info.event);
-          console.log(info.event.extendedProps.date);
+				eventClick: function(info) { 
+          console.log(info.event)
 					$('.bd-example-modal-lg').modal('show'); 
           $('#modal_event_title').text(info.event.title); 
 					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
-					$('#event_header_image').attr("src", info.event.extendedProps.header_image_url); 
-					$('#modal_event_start_hour').text(info.event.extendedProps.start_hour);
-					$('#modal_event_end_hour').text(info.event.extendedProps.end_hour);
-					$('#modal_event_zoom_link').text(info.event.extendedProps.zoom_link); 
-					$('#modal_event_zoom_link').attr("href", info.event.extendedProps.zoom_link); 
-					$('#modal_event_basic_info').text(info.event.extendedProps.description); 
+
+          // Header Image (optional)
+          if (info.event.extendedProps.header_image_url) {
+					  $('#event_header_image').attr("src", info.event.extendedProps.header_image_url).css("display", "block"); 
+            // Do not display img tag if image is not found
+            $('#event_header_image').on("error", function(){
+              $('#event_header_image').css("display", "none");
+            })
+          }
+
+          // Start Hour (Optional)
+          if (info.event.extendedProps.start_hour) {
+            $('#modal_event_start_hour').text(info.event.extendedProps.start_hour);
+            $('#modal_event_start_hour_parent').css("display", "block")
+          } else { 
+            $('#modal_event_start_hour_parent').css("display", "none")
+          }
+
+          // End Hour (Optional)
+          if (info.event.extendedProps.end_hour) {
+            $('#modal_event_end_hour').text(info.event.extendedProps.end_hour);
+            $('#modal_event_end_hour_parent').css("display", "block")
+          } else {
+            $('#modal_event_end_hour_parent').css("display", "none")
+          }
+
+          // Zoom Link (Optional)
+					if (info.event.extendedProps.zoom_link) {
+				  	$('#modal_event_zoom_link').attr("href", info.event.extendedProps.zoom_link); 
+            $('#modal_event_zoom_link').text(info.event.extendedProps.zoom_link);
+            $('#modal_event_zoom_link_parent').css("display", "block")
+          } else {
+            $('#modal_event_zoom_link_parent').css("display", "none")
+          }
+
+          // Description (Optional)
+          if (info.event.extendedProps.description) {
+					  $('#modal_event_basic_info').text(info.event.extendedProps.description); 
+            $('#modal_event_basic_info').css("display", "block")
+            $('#modal_event_basic_info_title').css("display", "block")
+          } else {
+            $('#modal_event_basic_info').css("display", "none")
+            $('#modal_event_basic_info_title').css("display", "none")
+          }            
 				}, 
 			});
 

@@ -236,12 +236,6 @@ a:hover {
     text-decoration: none;
 }
 
-ol,
-ul {}
-
-ol li,
-ul li {}
-
 .lead {
     font-size: 1.25rem;
     font-weight: 300;
@@ -293,10 +287,6 @@ input[type=file] {
     font-size: 15px;
 }
 
-input {}
-
-button {}
-
 button:focus {
     outline: 0;
 }
@@ -335,18 +325,6 @@ input:focus::-webkit-input-placeholder {
 textarea::-webkit-input-placeholder {
     color: #71748d !important;
 }
-
-textarea:focus::-webkit-input-placeholder {
-    color: #5969ff !important;
-}
-
-button.btn {}
-
-button.btn-default {}
-
-button.btn-primary {}
-
-address {}
 
 .form-group {
     margin-bottom: 12px;
@@ -390,8 +368,7 @@ address {}
     color: #fff;
     background-color: #5969ff;
 }
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::after {}
+ 
 
 .custom-control-label::after {
     position: absolute;
@@ -987,10 +964,6 @@ Borders
     color: #ef172c !important;
 }
 
-.text-warning {
-    bcolor: #ffc108 !important;
-}
-
 .text-info {
     color: #25d5f2 !important;
 }
@@ -1044,12 +1017,6 @@ Borders
 /*-----------------------
 Fontawesome size
 -------------------------*/
-
-.fa-xl {}
-
-.fa-lg {}
-
-.fa-md {}
 
 .fa-sm {
     font-size: 24px !important;
@@ -1210,11 +1177,6 @@ Legends
     font-size: 14px;
 }
 
-.legend-title {}
-
-.legend-text {}
-
-
 /* ==========================================================================
    0.2. Type Elements
    ========================================================================== */
@@ -1228,8 +1190,6 @@ Legends
 /*-----------------------
 Top Header
 -------------------------*/
-
-.dashboard-header {}
 
 .dashboard-header .navbar {
     padding: 0px;
@@ -1253,8 +1213,7 @@ Top Header
 }
 .navbar-brand:hover{
     color: #007bff;
-}
-.navbar-right-top {}
+} 
 
 .navbar-right-top .nav-item {
     border-right: 1px solid #e6e6f2;
@@ -1281,8 +1240,7 @@ Top Header
 
 
 /* ------  Notification Dropdown --------  */
-
-.notification {}
+ 
 
 .notification-dropdown {
     min-width: 320px;
@@ -1303,9 +1261,7 @@ Top Header
     border-bottom: 1px solid #e3e3e3;
     line-height: 1.5;
     background-color: #fffffe;
-}
-
-.notification-list {}
+} 
 
 .notification-list .list-group-item {
     border-radius: 0px;
@@ -1327,11 +1283,7 @@ Top Header
     color: #404040;
     text-decoration: none;
     background-color: #f7f7fb;
-}
-
-.notification-list .list-group-item:last-child {}
-
-.notification-info {}
+}  
 
 .notification-info .notification-date {
     display: block;
@@ -1427,10 +1379,6 @@ Top Header
 
 /* ------  Connection --------  */
 
-.connection {}
-
-.connection-dropdown {}
-
 .connection-list {
     width: 300px;
     padding: 20px;
@@ -1466,16 +1414,12 @@ Top Header
 
 /* ----- User Nav Dropdown -----*/
 
-.nav-user {}
-
 .nav-user-dropdown {
     padding: 0px;
     min-width: 230px;
     margin: 0px;
 }
-
-.nav-user-name {}
-
+ 
 .nav-user-info {
     background-color: #5969ff;
     line-height: 1.4;
@@ -1490,8 +1434,6 @@ Top Header
     top: 7px;
     left: 0px;
 }
-
-.nav-user-dropdown {}
 
 .nav-user-dropdown .dropdown-item {
     display: block;
@@ -1568,8 +1510,6 @@ Top Header
     position: relative;
     padding: 0px;
 }
-
-.navigation-horizontal .navbar-nav .nav-item {}
 
 .navigation-horizontal .navbar-nav .nav-link {
    font-size: 13px;
@@ -1695,8 +1635,6 @@ Left Navigation Sidebar
     padding: 14px;
 }
 
-.nav-left-sidebar .navbar-nav .nav-item {}
-
 .nav-left-sidebar .navbar-nav .nav-link {
     font-size: 14px;
     padding: 12px;
@@ -1781,8 +1719,6 @@ Leftsidebar - Primary
     color: #8991d4;
 }
 
-.sidebar-primary.nav-left-sidebar .navbar-nav .nav-item {}
-
 .sidebar-primary.nav-left-sidebar .navbar-nav .nav-link {
     color: #8991d4;
 }
@@ -1829,8 +1765,6 @@ Leftsidebar - dark
     color: #7a80b4;
 }
 
-.sidebar-dark.nav-left-sidebar .navbar-nav .nav-item {}
-
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link {
     color: #7a80b4;
 }
@@ -1871,11 +1805,7 @@ Sidebar Page Navigations
 .sidebar-nav-fixed {
     position: sticky;
     top: 5rem;
-}
-
-.sidebar-nav-fixed ul {}
-
-.sidebar-nav-fixed ul li {}
+} 
 
 .sidebar-nav-fixed ul li a {
     font-size: 14px;
@@ -1923,9 +1853,7 @@ Sidebar Page Navigations
 .dropdown-item:hover {
     color: #5969ff;
     background: #efeff6;
-}
-
-.page-section {}
+} 
 
 .dropdown-item.active,
 .dropdown-item:active {
@@ -2005,13 +1933,7 @@ Pageheader
 
 .page-header {
     margin-bottom: 30px;
-}
-
-.page-breadcrumb {}
-
-.page-breadcrumb .breadcrumb {}
-
-.page-breadcrumb .breadcrumb-item {}
+} 
 
 .page-breadcrumb .breadcrumb-link {
     color: #a6a6b7;
@@ -2075,8 +1997,6 @@ Pageheader
     position: absolute; bottom: 0;
 }
 
-.footer-links {}
-
 .footer .footer-links a {
     color: #71748d;
     margin-left: 1.5rem;
@@ -2112,8 +2032,6 @@ Pageheader
   2. Dashboard Index-Finance
    ========================================================================== */
 
-.dashboard-finance {}
-
 .dashboard-finance .ct-label {
     display: none;
 }
@@ -2122,10 +2040,6 @@ Pageheader
 /* ==========================================================================
   3. Dashboard Influencer
    ========================================================================== */
-
-.dashboard-influence {}
-
-.influencer-profile-data {}
 
 .influencer-profile-data .user-avatar {
     margin-right: 40px;
@@ -2140,10 +2054,6 @@ Pageheader
     float: left;
     padding-right: 20px;
 }
-
-.user-avatar-address {}
-
-.influencer-profile-data .user-avatar-address {}
 
 .influencer-profile-data .user-avatar-email {
     text-decoration: underline;
@@ -2170,8 +2080,6 @@ Pageheader
     background-color: #ededfa;
 }
 
-.campaign-table {}
-
 .campaign-table .dropdown-toggle::after {
     display: none;
 }
@@ -2185,14 +2093,9 @@ Pageheader
     margin-bottom: 25px;
 }
 
-.campaign-info {}
-
-
 /* ==========================================================================
   3. Influencer Finder
    ========================================================================== */
-
-.influence-finder {}
 
 .influence-finder .user-social-media {
     padding: 16px 68px;
@@ -2230,8 +2133,6 @@ Pageheader
  4. Influencer Profile
 ========================================================================== */
 
-.influence-profile {}
-
 .rating-star {
     font-size: 12px;
     padding-top: 8px;
@@ -2262,21 +2163,12 @@ Pageheader
     border-top-left-radius: 0px;
 }
 
-.review-block {}
-
-.review-text {}
-
 
 /* ==========================================================================
   5. Dashboard Ecommerce
    ========================================================================== */
 
-.dashboard-ecommerce {}
-
-
 /* -------------- social sales -------------------*/
-
-.social-sales {}
 
 .social-sales-icon-circle {
     height: 40px;
@@ -2288,10 +2180,6 @@ Pageheader
     display: inline-block;
 }
 
-.social-sales-content {}
-
-.social-sales-name {}
-
 .social-sales-count {
     float: right;
     line-height: 2.9;
@@ -2300,13 +2188,10 @@ Pageheader
 
 /* -------------- traffic sales -------------------*/
 
-.traffic-sales {}
 
 .traffic-sales-content {
     padding: 20px !important;
 }
-
-.traffic-sales-name {}
 
 .traffic-sales-amount {
     float: right;
@@ -2316,7 +2201,6 @@ Pageheader
 
 /* -------------- country sales -------------------*/
 
-.country-sales {}
 
 .country-sales-content {
     padding: 20px !important;
@@ -2369,7 +2253,6 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 
     color: #ffa811;}
 .product-price{ position: absolute; top: 0; right: 0; font-size: 16px; color: #3d405c;font-family: 'Circular Std Medium'; line-height: 1;}
-.product-btn{}
 .product-del{font-size: 14px; color: #71748d;}
 .product-sidebar{ background-color: #fff; border:1px solid #e6e6f2;  }
 .product-sidebar-widget{border-bottom: 1px solid #e6e6f2; padding: 10px 20px; margin-bottom: 10px;}
@@ -2390,7 +2273,6 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 
 
 .product-slider{background-color: #fff;  border-top-left-radius: 4px; border-bottom-left-radius: 4px; padding: 110px;}
-.product-carousel{}
 .product-carousel .carousel-indicators {
     position: absolute;
     right: 0;
@@ -2431,8 +2313,6 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
     padding: 0;
     display: none;
 }
-.product-description{}
-
 
 .product-colors label {
     display: inline-block;
@@ -3222,23 +3102,17 @@ btn-link
     background-color: #fff;
     border-bottom: 1px solid #e6e6f2;
 }
-
-.card-title {}
+ 
 
 .card-subtitle {
     font-size: 14px;
-}
-
-.card-body {}
-
-.card-text {}
+} 
 
 .card-footer {
     border-top: 1px solid #e6e6f2;
     background: #f6f6ff;
 }
-
-.card-link {}
+ 
 
 .toolbar {
     font-size: 18px;
@@ -3247,13 +3121,7 @@ btn-link
 .card-header-title {
     margin: 0;
     line-height: 2;
-}
-
-.card-toolbar-tabs {}
-
-.card-toolbar-tabs .nav.nav-pills {}
-
-.card-toolbar-tabs .nav.nav-pills .nav-item {}
+} 
 
 .card-toolbar-tabs .nav.nav-pills .nav-item .nav-link {
     font-size: 14px;
@@ -3444,10 +3312,6 @@ btn-link
 
 /*------------------------- Card Navigation --------------------------*/
 
-.card-header-tabs {}
-
-.card-header-pills {}
-
 .pills-regular .card-header-pills.nav.nav-pills .nav-item .nav-link.active {
     background-color: #5969ff;
     color: #fff;
@@ -3528,13 +3392,7 @@ btn-link
     font-size: 12px;
     display: inline-block;
     border-radius: 100%;
-}
-
-.icon-box {}
-
-.icon-box-xxl {}
-
-.icon-box-xl {}
+} 
 
 .icon-box-lg {
     height: 68px;
@@ -3544,9 +3402,7 @@ btn-link
 .icon-box-md {
     height: 32px;
     width: 32px;
-}
-
-.icon-box-sm {}
+} 
 
 .icon-box-xs {
     height: 20px;
@@ -3558,13 +3414,9 @@ btn-link
 2.8  Tabs
 -------------------------*/
 
-.tab-regular {}
-
 .tab-regular .nav.nav-tabs {
     border-bottom: transparent;
 }
-
-.tab-regular .nav.nav-tabs .nav-item {}
 
 .tab-regular .nav.nav-tabs .nav-link {
     display: block;
@@ -3573,10 +3425,7 @@ btn-link
     background-color: #dddde8;
     margin-right: 5px;
     border-color: #dddde8;
-}
-
-.tab-regular .nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:hover {}
+} 
 
 .tab-regular .nav-tabs .nav-link.active {
     background-color: #fff;
@@ -3594,8 +3443,6 @@ btn-link
 
 
 /*----- Tabs Vertical CSS ----*/
-
-.tab-vertical {}
 
 .tab-vertical .nav.nav-tabs {
     float: left;
@@ -3645,8 +3492,6 @@ btn-link
 
 /*----- Tabs Outline CSS ----*/
 
-.tab-outline {}
-
 .tab-outline .nav.nav-tabs {
     border-bottom: transparent;
 }
@@ -3659,8 +3504,6 @@ btn-link
     border-color: #c4c4cf #c4c4cf #c4c4cf;
     margin-right: 3px;
 }
-
-.tab-outline .nav.nav-tabs .nav-item {}
 
 .tab-outline .nav-tabs .nav-link.active {
     color: #5969ff !important;
@@ -3683,8 +3526,6 @@ btn-link
 
 
 /*----- Tabs Vertical Outline CSS ----*/
-
-.tab-vertical-outline {}
 
 .tab-vertical-outline .nav.nav-tabs {
     float: left;
@@ -3750,8 +3591,6 @@ btn-link
     border-bottom: 1px solid #e6e6f2;
 }
 
-.simple-card .nav.nav-tabs .nav-item {}
-
 .simple-card .nav.nav-tabs .nav-item .nav-link {
     padding: 17px 49px;
     color: #71748d;
@@ -3784,8 +3623,6 @@ btn-link
     border-bottom: 1px solid #c4c4cf;
 }
 
-.simple-outline-card .nav.nav-tabs .nav-item {}
-
 .simple-outline-card .nav.nav-tabs .nav-item .nav-link {
     padding: 17px 49px;
     color: #71748d;
@@ -3810,12 +3647,6 @@ btn-link
 /* -----------------------
 Pills Regular
 -------------------------*/
-
-.pills-regular {}
-
-.pills-regular .nav.nav-pills {}
-
-.pills-regular .nav.nav-pills .nav-item {}
 
 .pills-regular .nav.nav-pills .nav-item .nav-link {
     background-color: #dddde8;
@@ -3842,12 +3673,6 @@ Pills Regular
 Pills Outline
 -------------------------*/
 
-.pills-outline {}
-
-.pills-outline .nav.nav-pills {}
-
-.pills-outline .nav.nav-pills .nav-item {}
-
 .pills-outline .nav.nav-pills .nav-item .nav-link {
     background-color: transparent;
     padding: 16px 52px;
@@ -3873,10 +3698,6 @@ Pills Outline
 Pills vertical
 -------------------------*/
 
-.pills-vertical {}
-
-.pills-vertical .nav.nav-pills {}
-
 .pills-vertical .nav.nav-pills .nav-link {
     background-color: #dddde8;
     padding: 16px 52px;
@@ -3899,8 +3720,6 @@ Pills vertical
 /* -----------------------
 2.9  Accordions
 -------------------------*/
-
-.accrodion-regular {}
 
 .accrodion-regular .card {
     margin-bottom: 5px;
@@ -3929,8 +3748,6 @@ Pills vertical
     color: #f12357;
     text-decoration: none;
 }
-
-.accrodion-outline {}
 
 .accrodion-outline .card {
     margin-bottom: 5px;
@@ -4106,8 +3923,6 @@ Pills vertical
     background-color: #d7d7df;
     text-decoration: none;
 }
-
-.dashboard-badges {}
 
 .badge-dot {
     border-radius: 100%;
@@ -4431,16 +4246,6 @@ Pills vertical
 /*-----------------------
 3.2 Sprkling.js
 -------------------------*/
-
-.spark-chart {
-    display: inline-block;
-}
-
-.spark-chart-info {
-    display: inline-block;
-    float: right;
-}
-
 
 /*-----------------------
 3.3 Charts.js
@@ -4804,14 +4609,6 @@ Vertical Timeline - by CodyHouse.co
     border-right: 7px solid white;
 }
 
-.cd-timeline__content h2 {}
-
-.cd-timeline__content p,
-.cd-timeline__read-more,
-.cd-timeline__date {}
-
-.cd-timeline__content p {}
-
 .cd-timeline__read-more,
 .cd-timeline__date {
     display: inline-block;
@@ -4833,13 +4630,6 @@ Vertical Timeline - by CodyHouse.co
     float: left;
     padding: .8em 0;
     opacity: .7;
-}
-
-@media only screen and (min-width:768px) {
-    .cd-timeline__content h2 {}
-    .cd-timeline__content p {}
-    .cd-timeline__read-more,
-    .cd-timeline__date {}
 }
 
 @media only screen and (min-width:1170px) {
@@ -4989,50 +4779,54 @@ Vertical Timeline - by CodyHouse.co
 6.9 Calendar
 -------------------------*/
 
-#calendar1 {
-    margin: 0 auto;
+.yellow-border-month{
+  border-top: 3px solid #FFDE59;
+  border-bottom: 3px solid #FFDE59;
 }
 
-#wrap {
-    /* width: 1100px; */
-    margin: 0 auto;
+.fc .fc-event{ 
+  border-radius: 0;
+  border-color: transparent; 
 }
 
-#external-events {
-    float: left;
-    width: 270px;
-    padding: 0 20px;
-    border: 1px solid #e0e4ef;
-    background: #f9f9ff;
-    text-align: left;
-    border-radius: 4px;
+.fc .fc-event:hover{ 
+  cursor: pointer !important;
 }
 
-#external-events h4 {
-    font-size: 16px;
-    margin-top: 0;
-    padding-top: 1em;
+.fc-day-today {
+  background-color: transparent !important;
 }
 
-#external-events .fc-event {
-    margin: 10px 0;
-    cursor: pointer;
+.fc-col-header-cell.fc-day-sun,
+.fc-col-header-cell.fc-day-sat{
+  background-color: #FFDE59 !important; 
+  color: black;
 }
 
-#external-events p {
-    margin: 1.5em 0;
-    font-size: 11px;
-    color: #666;
+.fc-col-header{
+  background-color: #3c3c3c;
+  color: white; 
 }
 
-#external-events p input {
-    margin: 0;
-    vertical-align: middle;
+.fc-col-header-cell-cushion{
+  font-weight: normal;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
 }
 
-#calendar {
-    float: right;
-    width: 1240px;
+.fc-day-other{
+  background-color: #ABADAC !important;
+  color: white !important; 
+}
+
+.fc-day-sun .fc-daygrid-day-number{
+  color: #FFDE59 !important;
+}
+
+/* Modal */
+
+.modal h4{
+  font-weight: 200 !important;
 }
 
 
@@ -5311,8 +5105,6 @@ Vertical Timeline - by CodyHouse.co
 6.12 Shortable / Nesetable
 -------------------------*/
 
-.dashboard-short-list {}
-
 .drag-handle,
 .drag-indicator {
     cursor: move;
@@ -5511,12 +5303,6 @@ Vertical Timeline - by CodyHouse.co
     box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
-
-#nestable2 .dd-handle {}
-
-#nestable2 .dd-handle:hover {}
-
-#nestable2 .dd-item>button:before {}
 
 .dd-hover>.dd-handle {
     background: #5969ff !important;
@@ -5804,8 +5590,6 @@ Vertical Timeline - by CodyHouse.co
     padding: 20px 22px;
     position: relative;
 }
-
-.aside-header {}
 
 .aside-header .navbar-toggle {
     background: 0 0;
@@ -6978,12 +6762,6 @@ Media Query
 .simple-card .nav.nav-tabs .nav-item .nav-link {
     padding: 17px 29px;}
 }
-
-
-
-
-/* Custom, iPhone Retina */
-@media only screen and (max-width:320px) {}
 
 .gallery img {
   max-width: 128px;

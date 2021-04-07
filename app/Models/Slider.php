@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BaseModel;
 
-class Slider extends Model
+class Slider extends BaseModel
 {
     use HasFactory;
 
@@ -13,4 +13,8 @@ class Slider extends Model
         'title',
         'place'
     ];
+
+    public function photos() {
+      return $this->hasMany(SliderImage::class, 'slider_id', 'id');
+    }
 }

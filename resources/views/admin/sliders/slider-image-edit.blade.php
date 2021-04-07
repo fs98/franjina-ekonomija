@@ -20,12 +20,12 @@
       <div class="row">
         <div class="col-12">
           <div class="page-header" id="top">
-            <h2 class="pageheader-title">{{ $title }}</h2>
+            <h2 class="pageheader-title">Slika</h2>
             <div class="page-breadcrumb">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="{{ Route('admin.sliders.index') }}" class="breadcrumb-link disabled">Slajderi</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Uređivanje</li>
+                  <li class="breadcrumb-item"><a href="{{ Route('admin.sliders.index') }}" class="breadcrumb-link disabled">Slajderi</a></li>  
+                  <li class="breadcrumb-item active" aria-current="page">Uređivanje slike</li>
                 </ol>
               </nav>
             </div>
@@ -33,9 +33,9 @@
         </div>
       </div>
         <div class="card">
-          <h5 class="card-header">Slike</h5>
+          <h5 class="card-header">Slika</h5>
           <div class="card-body"> 
-            <form action="{{ Route('admin.slider-images.store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+            <form action="{{ Route('admin.slider-images.update', ['slider_image' => $sliderImage->id]) }}" method="POST" id="update-form" enctype="multipart/u-data" autocomplete="off">
               <div class="form-group">
                 <label class="col-form-label" for="slider_image">Slika</label>
                 <label class="label-required" for="slider_image">(obavezno)</label>
@@ -46,7 +46,8 @@
                   </div> 
                 </div> 
                 <div class="form-group mt-4" id="thumbnail_preview_wrapper"> 
-                  <img src="" class="img-fluid" id="thumbnail_image" width="300">
+                  <small>Trenutna slika</small><br>
+                  <img src="{{ $sliderImage->header_image_url }}" class="img-fluid" id="thumbnail_image" width="300">
                 </div>
               </div> 
               <div class="form-group mt-3">
@@ -57,59 +58,13 @@
               <div class="form-group mt-3">
                 <label for="slider_image_order" class="col-form-label">Redoslijed</label>
                 <label for="slider_image_order" class="label-not-required">(neobavezno, no uzmite u obzir da će one slike kod kojih redoslijed nije definisan biti prve na slajderu)</label>
-                <input type="number" id="slider_image_order" class="form-control" min="1" name="slider_image_order" value="" maxlength="256">
-                <input type="hidden" id="slider_id" name="slider_id" value="{{ $id }}">
+                <input type="number" id="slider_image_order" class="form-control" min="1" name="slider_image_order" value="{{ $sliderImage->order }}" maxlength="256"> 
               </div>
-              <button type="button" id="submit-button" form="create-form" class="btn btn-lg btn-secondary float-right">Potvrdi</button>
+              <button type="button" id="submit-button" form="update-form" class="btn btn-lg btn-secondary float-right">Potvrdi</button>
+              @method('put')
             </form>
           </div>
         </div>
-        <div class="card">
-          <h5 class="card-header">Galerija</h5>
-            <div class="card-body" id="card-body"> 
-              <div class="table-responsive">
-                <table class="table table-striped table-bordered first" id="sliderImages" style="table-layout: fixed">
-                  <thead>
-                    <tr>
-                      <th>Naziv</th> 
-                      <th>Redoslijed</th> 
-                      <th>Opis</th>
-                      <th>Upravljanje</th> 
-                    </tr>
-                  </thead>  
-                  <tbody>
-                    @foreach ($imagesAll as $item => $imageSingle)
-                    <tr>
-                      <td><img src="{{ $imageSingle->header_image_url }}" alt="{{ $imageSingle->image_description }}" height="100"></td>
-                      <td>{{ $imageSingle->order }}</td>
-                      <td>{{ $imageSingle->image_description }}</td>
-                      <td class="text-center table-column-controls">
-                        <a href="{{ Route('admin.slider-images.edit', ['slider_image' => $imageSingle->id]) }}" class="btn btn-primary pointer mr-2">
-                          <span>Uredi</span>
-                        </a>
-                        <form action="{{ Route('admin.slider-images.destroy', ['slider_image' => $imageSingle->id]) }}" method="POST" class="d-inline-block">
-                          @csrf
-                          <button class="btn btn-danger pointer" type="button" onclick="deleteSingleItem(this)">
-                            <span>Izbriši</span>
-                          </button>
-                          @method('delete')
-                        </form>
-                      </td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>Naziv</th> 
-                      <th>Redoslijed</th> 
-                      <th>Opis</th>
-                      <th>Upravljanje</th>  
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
-          </div>
     </div>
   </div>
 </div>
@@ -121,8 +76,7 @@
 @section('scripts')
 
 {{-- Post request --}}
-<script src="{{ asset('back/post-request.js')}}"></script>
-@include('admin.include.delete-single-element')
+<script src="{{ asset('back/put-request.js')}}"></script>  
 
 
 {{-- Data Table --}}

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Swal;
 use App\Models\ProjectImage;
+
 
 class ProjectImagesController extends Controller
 {
@@ -81,9 +81,10 @@ class ProjectImagesController extends Controller
      */
     public function destroy($id)
     {
-        $projectImageDel = ProjectImage::where('id', $id)->delete();
+      $projectId = ProjectImage::select('project_id')->find($id);
+      $projectImageDel = ProjectImage::where('id', $id)->delete();
 
-        $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Slika izbrisana.");
-        return response()->json($swal->get());
+      $swal = new Swal("Success", 200, Route('admin.projects.edit', ['project' => $projectId->project_id]), "success", "Gotovo!", "Slika izbrisana.");
+      return response()->json($swal->get());
     }
 }

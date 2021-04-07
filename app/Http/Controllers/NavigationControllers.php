@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Project;
 use App\Models\ProjectImage;
+use App\Models\Slider;
+use App\Models\SliderImage;
 use App\Models\Event;
 use App\Models\Partner;
 use Helper;
@@ -24,6 +26,8 @@ class NavigationControllers extends Controller
 			// die();
 			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
 			$projectAll = Project::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
+      $heroSlider = SliderImage::where('slider_id', 1)->orderBy('order')->get();
+      $calendarSlider = SliderImage::where('slider_id', 2)->orderBy('order')->get();
 
 			
 			$eventList = Event::select(['id','title','directory_id','cover','date as start','start as start_hour','end as end_hour','zoom_link','description'])->get(); 
@@ -39,8 +43,16 @@ class NavigationControllers extends Controller
 					}
 					$eventListArray[$index]['header_image_url'] = $row->header_image_url;
 					$eventListArray[$index]['formatted_date'] = (new DateTime($eventListArray[$index]['start']))->format('d.m.Y.');
-					$eventListArray[$index]['start_hour'] = (new DateTime($eventListArray[$index]['start_hour']))->format('H:m');
-					$eventListArray[$index]['end_hour'] = (new DateTime($eventListArray[$index]['end_hour']))->format('H:m'); 
+          if (Helper::isset($eventListArray[$index]['start_hour'])) {
+            $eventListArray[$index]['start_hour'] = (new DateTime($eventListArray[$index]['start_hour']))->format('H:m');
+          } else {
+            $eventListArray[$index]['start_hour'] = NULL;
+          }
+          if (Helper::isset($eventListArray[$index]['end_hour'])) {
+            $eventListArray[$index]['end_hour'] = (new DateTime($eventListArray[$index]['end_hour']))->format('H:m'); 
+          } else {
+            $eventListArray[$index]['end_hour'] = NULL;
+          }
 				}
 			}  
 
@@ -49,7 +61,9 @@ class NavigationControllers extends Controller
 			return view('pages.home')
 				->with(['postAll' => $postAll])
 				->with(['projectAll' => $projectAll])
-				->with(['events' => $events]);
+				->with(['events' => $events])
+        ->with(['heroSlider' => $heroSlider])
+        ->with(['calendarSlider' => $calendarSlider]);
 		}
 
 		public function show($title_slug) 
@@ -77,7 +91,8 @@ class NavigationControllers extends Controller
 
 		// 
 		public function about(){
-			return view('pages.about');
+      $sliderImages = SliderImage::where('slider_id', 3)->orderBy('order')->get();
+			return view('pages.about')->with(['sliderImages' => $sliderImages]);
 		}
 
 		//
@@ -93,7 +108,7 @@ class NavigationControllers extends Controller
 
 		//
 		public function support(){
-			$partnersAll = Partner::all()->sortBy('name');
+			$partnersAll = Partner::all()->orderBy('name');
 			return view('pages.support')->with(['partnersAll' => $partnersAll]);
 		}
 

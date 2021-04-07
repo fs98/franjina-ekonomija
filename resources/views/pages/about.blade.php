@@ -204,42 +204,11 @@
 			  <!-- Additional required wrapper -->
 			  <div class="swiper-wrapper">
 			    <!-- Slides -->
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-1.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-2.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-3.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-4.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-5.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-6.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-7.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-8.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-9.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-10.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-11.png')}}" class="img-fluid w-75 h-100">
-			    </div>
-			    <div class="swiper-slide">
-			    	<img src="{{ asset('images/about/villages-slider/selo-12.png')}}" class="img-fluid w-75 h-100">
-			    </div>
+          @foreach ($sliderImages as $item => $sliderImage)
+            <div class="swiper-slide">
+              <img src="{{ $sliderImage->header_image_url }}" alt="{{ $sliderImage->image_description }}" class="img-fluid w-75 h-100">
+            </div>
+          @endforeach
 			  </div> 
 
 			  <!-- If we need navigation buttons -->
