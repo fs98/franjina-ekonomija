@@ -33,7 +33,7 @@
         </div>
       </div>
         <div class="card">
-          <h5 class="card-header">Slike</h5>
+          <h5 class="card-header">Nova slika</h5>
           <div class="card-body"> 
             <form action="{{ Route('admin.slider-images.store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
               <div class="form-group">
@@ -71,8 +71,8 @@
                 <table class="table table-striped table-bordered first" id="sliderImages" style="table-layout: fixed">
                   <thead>
                     <tr>
-                      <th>Naziv</th> 
                       <th>Redoslijed</th> 
+                      <th>Naziv</th> 
                       <th>Opis</th>
                       <th>Upravljanje</th> 
                     </tr>

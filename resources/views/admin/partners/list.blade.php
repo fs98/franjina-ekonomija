@@ -35,7 +35,7 @@
               <h5 class="card-header">Postovi</h5>
               <div class="card-body">
                 <a class="float-right" href="{{ Route('admin.partners.create') }}">
-                  <button class="btn btn-sm btn-warning mb-3">Unos novog partnera</button>
+                  <button class="btn btn-sm btn-warning mb-3">&plus; Unos novog partnera</button>
                 </a>
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered first" id="allPostsTable" style="table-layout: fixed">

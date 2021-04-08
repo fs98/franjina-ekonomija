@@ -1196,7 +1196,7 @@ Top Header
     border-bottom: 1px solid #e6e6f2;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
-    -webkit-transition: all 0.3s ease;
+    /* -webkit-transition: all 0.3s ease; */
     min-height: 60px;
 }
 
@@ -1594,7 +1594,7 @@ Left Navigation Sidebar
     background-color: #fff;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
-    -webkit-transition: all 0.3s ease;
+    /* -webkit-transition: all 0.3s ease; */
 }
 
 .nav-left-sidebar .nav-link[data-toggle="collapse"] {
@@ -1752,7 +1752,7 @@ Leftsidebar - dark
     background-color: #0e0c28;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
-    -webkit-transition: all 0.3s ease;
+    /* -webkit-transition: all 0.3s ease; */
 }
 
 .sidebar-dark .nav-divider {
@@ -4793,10 +4793,6 @@ Vertical Timeline - by CodyHouse.co
   cursor: pointer !important;
 }
 
-.fc-day-today {
-  background-color: transparent !important;
-}
-
 .fc-col-header-cell.fc-day-sun,
 .fc-col-header-cell.fc-day-sat{
   background-color: #FFDE59 !important; 
@@ -6096,10 +6092,7 @@ Vertical Timeline - by CodyHouse.co
 }
 .chat-module {
     height: calc(100vh - 105px);
-}
-.dashboard-main-wrapper .content-container>.chat-module {
-    /*height: 100%;*/
-}
+} 
 
 .dashboard-main-wrapper .content-container>.chat-module {
     overflow: hidden;

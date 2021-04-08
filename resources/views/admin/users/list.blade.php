@@ -37,7 +37,7 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <a class="float-right" href="{{ Route('admin.users.create') }}">
-                    <button class="btn btn-sm btn-warning mb-3">Kreirajte novog korisnika</button>
+                    <button class="btn btn-sm btn-warning mb-3">&plus; Kreirajte novog korisnika</button>
                   </a>
                   <table class="table table-striped table-bordered">
                     <thead>

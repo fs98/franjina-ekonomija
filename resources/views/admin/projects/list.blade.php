@@ -35,7 +35,7 @@
               <h5 class="card-header">Postovi</h5>
               <div class="card-body">
                 <a class="float-right" href="{{ Route('admin.projects.create') }}">
-                  <button class="btn btn-sm btn-warning mb-3">Kreiranje novog posta</button>
+                  <button class="btn btn-sm btn-warning mb-3">&plus; Kreiranje novog posta</button>
                 </a>
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered first" id="allProjectsTable" style="table-layout: fixed">

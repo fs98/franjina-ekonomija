@@ -144,7 +144,7 @@
                                 OSTALI SADRŽAJ
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Ostalo</a>
+                                <a class="nav-link  {{ Route::currentRouteNamed('admin.sliders.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Ostalo</a>
                                 <div id="submenu-10" class="collapse submenu" style="">
                                     <ul class="nav flex-column"> 
                                         <li class="nav-item">
@@ -162,10 +162,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </li> --}}
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Partneri</a>
-                                        </li> 
+                                        </li> --}} 
                                     </ul>
                                 </div>
                             </li>

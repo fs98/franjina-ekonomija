@@ -41,6 +41,13 @@
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="card">
               <div class="card-body">
+                <div class="row">
+                  <div class="col-12">
+                    <a class="float-right" href="{{ Route('admin.events.create') }}">
+                      <button class="btn btn-sm btn-warning mb-3">&plus; Kreiranje novog eventa</button>
+                    </a>
+                  </div>
+                </div>
                   <div id='calendar'></div>
               </div>
           </div>
@@ -131,12 +138,16 @@
 		}); 
 
 			var calendar = new FullCalendar.Calendar(calendarEl, {
-				initialView: 'dayGridMonth',
+				initialView: 'dayGridMonth', 
         themeSystem: 'bootstrap',
         locale: 'hr',
         weekNumberCalculation: 'ISO',
-        contentHeight: 'auto',
-        headerToolbar: false,
+        contentHeight: 'auto', 
+        headerToolbar: {
+          start: 'title', // will normally be on the left. if RTL, will be on the right
+          center: '',
+          end: 'prev,next' // will normally be on the right. if RTL, will be on the left
+        },
         displayEventTime : false,
         eventLimit: true, // allow "more" link when too many events
         dayMaxEvents: 1, 
