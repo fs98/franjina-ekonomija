@@ -128,7 +128,7 @@
                                 </div>
                             </li> 
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteNamed('admin.partners.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-fw fa-calendar-alt"></i>Partneri</a>
+                                <a class="nav-link {{ Route::currentRouteNamed('admin.partners.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-fw fa-user"></i>Partneri</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -149,6 +149,9 @@
                                     <ul class="nav flex-column"> 
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ Route('admin.sliders.index') }}">Slajderi</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="{{ Route('admin.questions.index') }}">Pitanja</a>
                                         </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-12" aria-controls="submenu-12">Tekst</a>

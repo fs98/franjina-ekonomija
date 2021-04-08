@@ -21,9 +21,9 @@
 
 	<!-- Row -->
 
-	<div class="row">
+	<div class="row"  data-aos="zoom-in" data-aos-duration="1000">
  
-		<div class="col-md-8 offset-md-2 col-10 offset-1 mb-5 text-center">
+		<div class="col-md-8 offset-md-2 col-10 offset-1 mb-5 mt-5 mt-md-0 text-center">
 				
 				<p>
 					Svatko se od nas barem jednom u životu našao u situaciji gdje je htio nešto pitati, ali nije imao ni znao koga. Međutim, nekada i znamo koga bi pitali, ali nam je neugodno, nesigurni smo ili se bojimo. S druge strane, možda imaš super ideju, ali ne znaš kako je započeti, ne želiš raditi sam/a, nedostaju ti resursi za provedbu... 
@@ -39,7 +39,7 @@
 	
 	<!-- Row -->
 
-	<div class="row mx-0 mx-lg-5">
+	<div class="row mx-0 mx-lg-5"  data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
 		
 		<div class="col-12 col-xl-6 px-2 px-lg-5 contact-info">
 			
@@ -101,7 +101,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" required>
 							<label class="form-check-label">
-								Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="">politiku zaštite privatnosti</a>
+								Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
 							</label> 
 						</div>
 					</div>

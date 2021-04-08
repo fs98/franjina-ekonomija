@@ -19,7 +19,7 @@
 	<div class="container mt-5">
 		
 		<!-- Row -->
-		<div class="row">
+		<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 			
 			<div class="col-12 text-center mb-5">
 				<h1>
@@ -46,7 +46,7 @@
 		<!-- /.Row -->
 
 		<!-- Row -->
-		<div class="row">
+		<div class="row" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
 			
 			<div class="col-12 col-lg-10 offset-lg-1 p-5 card-donate">
 				<span class="d-flex flex-column flex-lg-row justify-content-between align-items-center ">
@@ -78,7 +78,7 @@
 		<!-- /.Row -->
 
 		<!-- Row -->
-		<div class="row mt-5 text-center">
+		<div class="row mt-5 text-center"  data-aos="zoom-in" data-aos-duration="1000">
 			
 			<div class="col-12 col-lg-10 offset-lg-1 p-5 bank-donate">
 				<span class="d-flex flex-column flex-lg-row justify-content-lg-between align-items-center">
@@ -102,7 +102,7 @@
 		<!-- Row -->
 		<div class="row">
 			
-			<div class="col-12 text-center mt-5">
+			<div class="col-12 text-center mt-5 mb-3">
 				<h1>
 					<span class="yellow-border-heading">Partneri</span>
 				</h1>				
@@ -151,6 +151,11 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },  
+    loop: true,
+    autoplay: {
+      delay: 2000,
+    },
+    speed: 2000,
     breakpoints: {
       640: {
         slidesPerView: 1,

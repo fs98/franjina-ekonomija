@@ -85,7 +85,7 @@ class NavigationControllers extends Controller
 
 		// 
 		public function partners(){
-			$partnersAll = Partner::all()->sortBy('name');
+			$partnersAll = Partner::orderBy('name')->get();
 			return view('pages.partners')->with(['partnersAll' => $partnersAll]);
 		}
 
@@ -100,6 +100,11 @@ class NavigationControllers extends Controller
 			return view('pages.activities');
 		}
 
+    // 
+    public function gdpr(){
+      return view('pages.gdpr');
+    }
+
 		//
 		public function blog(){
 			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->paginate(4);
@@ -108,7 +113,7 @@ class NavigationControllers extends Controller
 
 		//
 		public function support(){
-			$partnersAll = Partner::all()->orderBy('name');
+			$partnersAll = Partner::orderBy('name')->get();
 			return view('pages.support')->with(['partnersAll' => $partnersAll]);
 		}
 
@@ -123,10 +128,9 @@ class NavigationControllers extends Controller
 
 		public function search(Request $httpRequest) {
 			$search = $httpRequest->search_text;
-			
 			$searchResults = Post::select(['id','cover','directory_id','title','title_slug','short_description'])->where('title', 'LIKE', "%{$search}%")->orWhere('short_description', 'like', "%{$search}%")->paginate(4);
-			
-			return view('pages.search')->with(['searchResults' => $searchResults]);
+      $searchResultsCount = $searchResults->count();
+			return view('pages.search')->with(['searchResults' => $searchResults, 'searchResultsCount' => $searchResultsCount]);
 		}
 
 }

@@ -44,7 +44,7 @@
                 <div class="row">
                   <div class="col-12">
                     <a class="float-right" href="{{ Route('admin.events.create') }}">
-                      <button class="btn btn-sm btn-warning mb-3">&plus; Kreiranje novog eventa</button>
+                      <button class="btn btn-sm btn-warning mb-3">Kreiranje novog eventa</button>
                     </a>
                   </div>
                 </div>
@@ -142,7 +142,7 @@
         themeSystem: 'bootstrap',
         locale: 'hr',
         weekNumberCalculation: 'ISO',
-        contentHeight: 'auto', 
+        contentHeight: 'auto',
         headerToolbar: {
           start: 'title', // will normally be on the left. if RTL, will be on the right
           center: '',

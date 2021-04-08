@@ -21,7 +21,7 @@ class QuestionsController extends Controller
 
     public function index()
     {
-        $questionsAll = Question::orderBy('created_at', 'asc')->get();
+        $questionsAll = Question::orderBy('seen')->get();
 
         return view('admin.questions.list')->with(['questionsAll' => $questionsAll]);
     }
@@ -102,8 +102,8 @@ class QuestionsController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+
+    }  
 
     /**
      * Remove the specified resource from storage.
@@ -114,5 +114,9 @@ class QuestionsController extends Controller
     public function destroy($id)
     {
         //
+        $questionSingleDel = Question::where('id', $id)->delete();
+
+        $swal = new Swal("Success", 200, Route('admin.questions.index'), "success", "Gotovo!", "Pitanje izbrisano");
+        return response()->json($swal->get());
     }
 }

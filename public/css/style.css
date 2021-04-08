@@ -890,6 +890,13 @@ footer .social-networks h3{
 		object-fit: contain;
 	}
 
+/* GDPR Page  */
+
+.gdpr-section a{
+  color: #BB1C2E;
+}
+ 
+
  /************************
  ****FADE IN ANIMATION****
  ************************/

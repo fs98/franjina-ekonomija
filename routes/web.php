@@ -22,6 +22,7 @@ Route::get('/o-nama', 'NavigationControllers@about')->name('about');
 // Route::post('/onama', 'QuestionsController@store')->name('about_store');
 
 Route::get('/aktivnosti', 'NavigationControllers@activities')->name('activities');
+Route::get('/gdpr', 'NavigationControllers@gdpr')->name('gdpr');
 Route::get('/projekti','NavigationControllers@projectlist')->name('projects');
 Route::get('/projekti/{project}','NavigationControllers@showProject')->name('specificProject');
 Route::get('/podrška','NavigationControllers@support')->name('support');
@@ -60,7 +61,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	]);
 
 	Route::resource('questions', 'QuestionsController', [
-		'except' => ['update', 'edit']
+		// 'except' => ['update', 'edit']
 	]);
 
 	Route::resource('partners', 'PartnersController', [

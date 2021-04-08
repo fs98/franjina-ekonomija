@@ -27,6 +27,12 @@
 
 					@if ($searchResults->isNotEmpty()) 
 
+          <div class="col-12 text-center"> 
+            <div class="alert alert-warning rounded-0 text-dark" role="alert">
+              Pronađeno <strong>{{ $searchResultsCount }}</strong> rezultata.
+            </div>
+          </div> 
+
 					@foreach ($searchResults as $index => $searchResultSingle)
 						
 					<div class="col-12">
@@ -54,9 +60,11 @@
 
 					@else 
 
-					<div class="col-12 my-5 text-center">
-						Nema rezultata pretraživaja.
-					</div>
+					<div class="col-12 text-center"> 
+            <div class="alert alert-warning rounded-0 text-dark" role="alert">
+              Nema rezultata pretraživanja.
+            </div>
+          </div> 
 							
 					@endif
 					

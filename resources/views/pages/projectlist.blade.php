@@ -44,38 +44,42 @@
 								  <div class="card-body px-0">
 								  <h4 class="card-title font-weight-bold mt-2">{{ $projectsActiveSignleRow->title }}</h4>
 								  <p class="card-text text-center mt-2 px-3">{{ $projectsActiveSignleRow->short_description }}</p>
-								  <div class="border project-card-box p-2">
-									  <span class="d-flex flex-row justify-content-between px-2 mt-1">
-										  <span class="d-flex justify-content-start">
-											  <img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">
-											  <p class="my-auto pl-1">{{ $projectsActiveSignleRow->investors }}</p>
-										  </span>
-										  <span class="d-flex justify-content-end px-0 mr-0">
-											  <img src="{{ asset('icons/projects/heart.svg') }}" class="img-fluid projects-card-icon">
-											  <p class="my-auto pl-1">{{ $projectsActiveSignleRow->likes }}</p>
-										  </span> 
-									  </span>
-									  <span class="d-flex flex-column px-2 mt-2">
-										  <p class="font-weight-bold text-left mt-2">Cilj</p>
-											  <div class="progress mx-4 mt-n2">
-												  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{  $projectsActiveSignleRow->percentage . '%' }}" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
-											  </div>	
-											  <div class="mt-4 mx-4 d-flex justify-content-between align-items-start">
-												  <span class="text-left">
-													  <span class="p-2 money-amount">{{ $projectsActiveSignleRow->money_collected }}</span>
-												  </span>
-												  <span>&mdash;</span>
-												  <span>
-													  <span class="p-2 money-amount">{{ $projectsActiveSignleRow->money_goal }}</span>
-												  </span>
-											  </div>	 	    		
-									  </span>
-										  <p class="d-flex flex-row justify-content-between mt-3 px-2 mx-4">
-											  <small>{{ $projectsActiveSignleRow->days_left }} dana do završetka</small>
-											  <small>{{ $projectsActiveSignleRow->percentage }} % prikupljeno</small>
-										  </p>
-										  <a class="btn rounded-0 mb-2 text-white px-4 button" href="">Podržite kampanju</a>
-								  </div>
+
+								  @if ($projectsActiveSignleRow->donations == true)
+                    <div class="border project-card-box p-2">
+                      <span class="d-flex flex-row justify-content-between px-2 mt-1">
+                        <span class="d-flex justify-content-start">
+                          <img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">
+                          <p class="my-auto pl-1">{{ $projectsActiveSignleRow->investors }}</p>
+                        </span>
+                        <span class="d-flex justify-content-end px-0 mr-0">
+                          <img src="{{ asset('icons/projects/heart.svg') }}" class="img-fluid projects-card-icon">
+                          <p class="my-auto pl-1">{{ $projectsActiveSignleRow->likes }}</p>
+                        </span> 
+                      </span>
+                      <span class="d-flex flex-column px-2 mt-2">
+                        <p class="font-weight-bold text-left mt-2">Cilj</p>
+                          <div class="progress mx-4 mt-n2">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{  $projectsActiveSignleRow->percentage . '%' }}" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
+                          </div>	
+                          <div class="mt-4 mx-4 d-flex justify-content-between align-items-start">
+                            <span class="text-left">
+                              <span class="p-2 money-amount">{{ $projectsActiveSignleRow->money_collected }}</span>
+                            </span>
+                            <span>&mdash;</span>
+                            <span>
+                              <span class="p-2 money-amount">{{ $projectsActiveSignleRow->money_goal }}</span>
+                            </span>
+                          </div>	 	    		
+                      </span>
+                        <p class="d-flex flex-row justify-content-between mt-3 px-2 mx-4">
+                          <small>{{ $projectsActiveSignleRow->days_left }} dana do završetka</small>
+                          <small>{{ $projectsActiveSignleRow->percentage }} % prikupljeno</small>
+                        </p>
+                        <a class="btn rounded-0 mb-2 text-white px-4 button" href="">Podržite kampanju</a>
+                    </div>
+                  @endif
+                  
 								  <a href="{{ Route('specificProject', ['project' => $projectsActiveSignleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 								  </div>
 							  </div>

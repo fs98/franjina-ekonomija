@@ -17,11 +17,11 @@
         <div class="row">
           <div class="col-12">
             <div class="page-header" id="top">
-              <h2 class="pageheader-title">Projekti</h2>
+              <h2 class="pageheader-title">Pitanja</h2>
               <div class="page-breadcrumb">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ Route('admin.projects.index') }}" class="breadcrumb-link disabled">Blogovi</a></li>
+                    <li class="breadcrumb-item"><a href="{{ Route('admin.questions.index') }}" class="breadcrumb-link disabled">Pitanja</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Lista</li>
                   </ol>
                 </nav>
@@ -33,41 +33,33 @@
           <div class="col-12">
             <div class="card">
               <h5 class="card-header">Postovi</h5>
-              <div class="card-body">
-                <a class="float-right" href="{{ Route('admin.projects.create') }}">
-                  <button class="btn btn-sm btn-warning mb-3">&plus; Kreiranje novog posta</button>
-                </a>
+              <div class="card-body"> 
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered first" id="allProjectsTable" style="table-layout: fixed">
                     <thead>
                       <tr>
-                        <th>Slika</th>
-                        <th>Naslov</th>
-                        <th>Kratki opis</th>
-                        <th>Kreiran</th>
+                        <th>Ime</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Poruka</th>
+                        <th>Status</th>
                         <th>Upravljanje</th> 
                       </tr>
                     </thead>  
                     <tbody>
-                      @foreach($projectAll as $index => $projectSingleRow)
+                      @foreach($questionsAll as $index => $questionsSingleRow)
                       <tr>
-                        <td class="text-truncate">
-                          <img src="{{ $projectSingleRow->header_image_url }}" alt="" width="50">
-                        </td>
-                        <td>{{ $projectSingleRow->title }}</td>
-                        <td class="text-truncate">{{ $projectSingleRow->short_description }}</td>
-                        <td>
-                          @if(Helper::isSet($projectSingleRow->formatted_publish_date))
-                            <span>{{ $projectSingleRow->formatted_publish_date }}</span>
-                          @else
-                            <span>N/A</span>
-                          @endif
-                        </td>
-                        <td class="text-center table-column-controls">
-                          <a href="{{ Route('admin.projects.edit', ['project' => $projectSingleRow->id]) }}" class="btn btn-primary pointer mr-2">
-                            <span>Uredi</span>
-                          </a>
-                          <form action="{{ Route('admin.projects.destroy', ['project' => $projectSingleRow->id]) }}" method="POST" class="d-inline-block">
+                        <td>{{ $questionsSingleRow->full_name }}</td>
+                        <td>{{ $questionsSingleRow->email }}</td>
+                        <td>{{ $questionsSingleRow->telephone }}</td>
+                        <td class="text-truncate">{{ $questionsSingleRow->message }}</td>
+                        <td>{!! $questionsSingleRow->status !!}</td> 
+                        <td class="text-center table-column-controls"> 
+                          <!-- Button trigger modal -->
+                          <button type="button" class="btn btn-primary" data-toggle="modal" id="questionModalBtn" data-target="#questionDetails" value="{{ $questionsSingleRow }}">
+                            Detalji
+                          </button>
+                          <form action="{{ Route('admin.questions.destroy', ['question' => $questionsSingleRow->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             <button class="btn btn-danger pointer" type="button" onclick="deleteSingleItem(this)">
                               <span>Izbriši</span>
@@ -80,11 +72,12 @@
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th>Slika</th>
-                        <th>Naslov</th>
-                        <th>Kratki opis</th>
-                        <th>Kreiran</th>
-                        <th>Upravljanje</th> 
+                        <th>Ime</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Poruka</th>
+                        <th>Status</th>
+                        <th>Upravljanje</th>  
                       </tr>
                     </tfoot>
                   </table>
@@ -96,6 +89,47 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="questionDetails" tabindex="-1" aria-labelledby="questionDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="questionDetailsLabel">Detalji pitanja</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body  modal-dialog-scrollable">
+          <div class="row">
+            <div class="col-12 col-lg-6 mb-3">
+              <label for="question_sender_name" class="text-secondary">Ime</label>
+              <p id="question_sender_name"></p>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <label for="question_sender_email" class="text-secondary">Email</label>
+              <p id="question_sender_email"></p>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <label for="question_sender_telephone" class="text-secondary">Telefon</label>
+              <p id="question_sender_telephone"></p>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12">
+              <label for="question_sender_message" class="text-secondary">Poruka</label>
+              <p id="question_sender_message"></p>
+            </div> 
+          </div>
+          <p class="d-none" id="question_sender_id"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 @endsection('main-content')
 
 
@@ -110,10 +144,36 @@
     $('#allProjectsTable').dataTable({
       "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Croatian.json"
-          }
+          },
+      "order" : [
+        [4, "asc"]
+      ],
+      "aoColumnDefs": [
+        { 
+          "bSortable": false, 
+          "aTargets": [ -1 ] // <-- gets last column and turns off sorting
+         } 
+     ] 
     });
   })
 </script>
 
+<script>
+  $(document).on('click', '#questionModalBtn', function(){
+    var questionData = JSON.parse($(this).val());
+    console.log(questionData)
+    $('#question_sender_name').text(questionData.full_name)
+    $('#question_sender_email').text(questionData.email)
+    $('#question_sender_message').text(questionData.message)
+    $('#question_sender_telephone').text(questionData.telephone)
+    $('#question_sender_id').text(questionData.id)
+  })
+  $("#questionDetails").on("hide.bs.modal", function () {
+    // put your default event here
+    var question_id = $('#question_sender_id').text();
+    console.log(question_id) 
+    
+  });
+</script>
 
 @endsection('scripts')

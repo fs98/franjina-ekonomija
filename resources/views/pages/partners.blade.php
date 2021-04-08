@@ -14,7 +14,7 @@
 	
 	<!-- Row -->
 
-	<div class="row">
+	<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 		
 		<div class="offset-lg-2 col-lg-8" data-aos="zoom-in" data-aos-duration="1000">
 
@@ -40,7 +40,7 @@
 
 	<!-- Partners logos row -->
 
-	<div class="row mt-5 partners-logos"  data-aos="zoom-in" data-aos-duration="1000">
+	<div class="row mt-5 partners-logos" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
 		@foreach ($partnersAll as $index => $partnerSingle)
 		<div class="col-lg-4 col-md-6 col-12 mt-0 my-3 d-flex justify-content-center align-items-center">
 			<a href="{{ $partnerSingle->website_url }}" target="_blank">
