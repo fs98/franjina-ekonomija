@@ -3,7 +3,7 @@
 
 @section('links')
 
-<title>Uređivanje korisnika</title>
+<title>Uređivanje posta</title>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

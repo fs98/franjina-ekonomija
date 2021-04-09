@@ -3,7 +3,7 @@
 
 @section('links')
 
-<title>Novi event</title>
+<title>Uređivanje eventa</title>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 

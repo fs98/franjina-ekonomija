@@ -2,7 +2,7 @@
 
 @section('links')
 
-<title>Projekti</title>
+<title>Pitanja</title>
 <meta name="csrf-token" content="{{ csrf_token() }}" /> 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.css"/>
@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <h5 class="card-header">Postovi</h5>
+              <h5 class="card-header">Pitanja</h5>
               <div class="card-body"> 
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered first" id="allProjectsTable" style="table-layout: fixed">

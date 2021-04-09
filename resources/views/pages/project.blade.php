@@ -1,7 +1,7 @@
 @extends ('layouts.page')
 
 @section ('title')
-	Projekat
+{{ $projectSingle->title }}
 @endsection ('title')
 
 @section('links')

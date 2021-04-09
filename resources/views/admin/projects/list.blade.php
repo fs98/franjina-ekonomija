@@ -20,8 +20,7 @@
               <h2 class="pageheader-title">Projekti</h2>
               <div class="page-breadcrumb">
                 <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ Route('admin.projects.index') }}" class="breadcrumb-link disabled">Blogovi</a></li>
+                  <ol class="breadcrumb">Projekti</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Lista</li>
                   </ol>
                 </nav>
@@ -32,7 +31,7 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <h5 class="card-header">Postovi</h5>
+              <h5 class="card-header">Projekti</h5>
               <div class="card-body">
                 <a class="float-right" href="{{ Route('admin.projects.create') }}">
                   <button class="btn btn-sm btn-warning mb-3">&plus; Kreiranje novog projekta</button>

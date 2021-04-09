@@ -1,7 +1,7 @@
 @extends ('layouts.page')
 
 @section ('title')
-	Aktivnosti
+	Pravila privatnosti
 @endsection ('title')
 
 @section ('content')  

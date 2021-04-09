@@ -1,7 +1,7 @@
 @extends ('layouts.page')
 
 @section ('title')
-	Blog post
+{{ $postSingle->title }}
 @endsection ('title')
 
 @section('links')
