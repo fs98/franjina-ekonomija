@@ -427,20 +427,54 @@
         },
         events: events,
 				eventClick: function(info) { 
+          console.log(info.event)
 					$('.bd-example-modal-lg').modal('show'); 
           $('#modal_event_title').text(info.event.title); 
 					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
-					$('#event_header_image').attr("src", info.event.extendedProps.header_image_url); 
-					$('#modal_event_start_hour').text(info.event.extendedProps.start_hour);
-					$('#modal_event_end_hour').text(info.event.extendedProps.end_hour);
-					$('#modal_event_zoom_link').text(info.event.extendedProps.zoom_link); 
-          if (info.event.extendedProps.zoom_link) {
+
+          // Header Image (optional)
+          if (info.event.extendedProps.header_image_url) {
+					  $('#event_header_image').attr("src", info.event.extendedProps.header_image_url).css("display", "block"); 
+            // Do not display img tag if image is not found
+            $('#event_header_image').on("error", function(){
+              $('#event_header_image').css("display", "none");
+            })
+          }
+
+          // Start Hour (Optional)
+          if (info.event.extendedProps.start_hour) {
+            $('#modal_event_start_hour').text(info.event.extendedProps.start_hour);
+            $('#modal_event_start_hour_parent').css("display", "block")
+          } else { 
+            $('#modal_event_start_hour_parent').css("display", "none")
+          }
+
+          // End Hour (Optional)
+          if (info.event.extendedProps.end_hour) {
+            $('#modal_event_end_hour').text(info.event.extendedProps.end_hour);
+            $('#modal_event_end_hour_parent').css("display", "block")
+          } else {
+            $('#modal_event_end_hour_parent').css("display", "none")
+          }
+
+          // Zoom Link (Optional)
+					if (info.event.extendedProps.zoom_link) {
 				  	$('#modal_event_zoom_link').attr("href", info.event.extendedProps.zoom_link); 
+            $('#modal_event_zoom_link').text(info.event.extendedProps.zoom_link);
+            $('#modal_event_zoom_link_parent').css("display", "block")
+          } else {
+            $('#modal_event_zoom_link_parent').css("display", "none")
           }
-          else {
-            $('#modal_event_zoom_link').css("display", "none");
-          }
-					$('#modal_event_basic_info').text(info.event.extendedProps.description); 
+
+          // Description (Optional)
+          if (info.event.extendedProps.description) {
+					  $('#modal_event_basic_info').text(info.event.extendedProps.description); 
+            $('#modal_event_basic_info').css("display", "block")
+            $('#modal_event_basic_info_title').css("display", "block")
+          } else {
+            $('#modal_event_basic_info').css("display", "none")
+            $('#modal_event_basic_info_title').css("display", "none")
+          }            
 				}, 
 			});
 		} else {
