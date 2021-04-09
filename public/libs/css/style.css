@@ -1305,6 +1305,10 @@ Top Header
     border: none;
 }
 
+#navbarSupportedContent > ul > li.nav-item.dropdown.notification.show > ul > li:nth-child(1) > div.slimScrollDiv{
+  height: 60px !important; 
+}
+
 .notification-list-user-img {
     float: left;
 }

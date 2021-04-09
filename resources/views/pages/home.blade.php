@@ -164,93 +164,10 @@
 	<!-- /.Container -->
 
 </section>
-
-
-<section data-aos-duration="4000">
-
-	{{-- Container --}}
-	<div class="container question-form pb-5" data-aos="zoom-in" data-aos-duration="1500">
-		
-		<!-- Row -->
-		<div class="row">
-			
-			<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
-				
-				<h1>
-					<span class="yellow-border-heading pb-1">EoF budi i ti</span>
-				</h1>
-
-			</div>
-
-			<div class="col-12 col-lg-6 d-flex align-items-center">
-				
-				<p class="pr-lg-5">Osjetljiv si na siromašne? Voliš prirodu? Brineš o ekologiji? Želiš bolju ekonomiju? Osjećaš li i ti poziv nakon poruke pape Franje? Budi i ti dio velike obitelji. Sigurni smo da imaš super ideja koje možeš i želiš podijeliti s nama. Učinimo zajedno korak naprijed. Budi promjena koju želiš vidjeti u svijetu! Nemoj čekati da drugi nešto učine, učini ti nešto za sebe i druge.</p>
-
-			</div>
-			<div class="col-12 col-lg-6 d-flex align-items-center">
-				
-				<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid w-100 h-100">
-
-			</div>
-
-		</div>
-		<!-- /.Row -->
-
-
-		{{-- Action is removed {{ Route('about_store') }} --}}
-		<!-- Form -->
-		<form class="mt-5" action="" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
-			@csrf
-			<div class="form-row">
-				<div class="form-group col-md-6 pr-md-3">
-					<label for="first_name" class="mb-1">Ime*</label>
-					<input type="text" class="form-control rounded-0" id="first_name" name="first_name" placeholder="Vaše ime">
-				</div>
-				<div class="form-group col-md-6 pl-md-3">
-					<label for="last_name" class="mb-1">Prezime*</label>
-					<input type="text" class="form-control rounded-0" name="last_name" id="last_name" placeholder="Vaše prezime">
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="form-group col-md-6 pr-md-3">
-					<label for="phone_number" class="mb-1">Broj telefona</label>
-					<input type="text" class="form-control rounded-0" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
-				</div>
-				<div class="form-group col-md-6 pl-md-3">
-					<label for="email" class="mb-1">Email adresa*</label>
-					<input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Vaša email adresa">
-				</div>
-			</div> 
-			<div class="form-group mt-2">
-				<label for="question">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
-				<textarea class="form-control rounded-0" id="question" name="question" rows="3" placeholder=""></textarea>
-			</div> 
-			<small>* Obavezna polja</small>
-			<div class="form-group mt-2">
-				<div class="form-group">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" required>
-						<label class="form-check-label">
-							Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
-						</label> 
-					</div>
-				</div>
-			</div>
-			<input type="hidden" id="route" name="route" value="home">
-			<div class="text-center mt-3">
-				<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
-			</div>
-		</form>				
-		<!-- /.Form -->
-
-	</div>
-	{{-- /.Container --}}
-
-</section>
 	
 @if ($projectAll->isNotEmpty())
 
-<section class="bg-light" data-aos-duration="4000">
+<section data-aos-duration="4000">
 
 	<!-- Container -->
 	<div class="container pb-4" data-aos="zoom-in" data-aos-duration="1500">
@@ -301,6 +218,88 @@
 
 	</div>
 	<!-- /.Container -->
+
+</section>
+
+@else
+
+<section data-aos-duration="4000">
+
+	{{-- Container --}}
+	<div class="container question-form pb-5" data-aos="zoom-in" data-aos-duration="1500">
+		
+		<!-- Row -->
+		<div class="row">
+			
+			<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
+				
+				<h1>
+					<span class="yellow-border-heading pb-1">EoF budi i ti</span>
+				</h1>
+
+			</div>
+
+			<div class="col-12 col-lg-6 d-flex align-items-center">
+				
+				<p class="pr-lg-5">Osjetljiv si na siromašne? Voliš prirodu? Brineš o ekologiji? Želiš bolju ekonomiju? Osjećaš li i ti poziv nakon poruke pape Franje? Budi i ti dio velike obitelji. Sigurni smo da imaš super ideja koje možeš i želiš podijeliti s nama. Učinimo zajedno korak naprijed. Budi promjena koju želiš vidjeti u svijetu! Nemoj čekati da drugi nešto učine, učini ti nešto za sebe i druge.</p>
+
+			</div>
+			<div class="col-12 col-lg-6 d-flex align-items-center">
+				
+				<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid w-100 h-100">
+
+			</div>
+
+		</div>
+		<!-- /.Row -->
+
+		<!-- Form -->
+		<form class="mt-5" action="{{ Route('about_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+			@csrf
+			<div class="form-row">
+				<div class="form-group col-md-6 pr-md-3">
+					<label for="first_name" class="mb-1">Ime*</label>
+					<input type="text" class="form-control rounded-0" id="first_name" name="first_name" placeholder="Vaše ime">
+				</div>
+				<div class="form-group col-md-6 pl-md-3">
+					<label for="last_name" class="mb-1">Prezime*</label>
+					<input type="text" class="form-control rounded-0" name="last_name" id="last_name" placeholder="Vaše prezime">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6 pr-md-3">
+					<label for="phone_number" class="mb-1">Broj telefona</label>
+					<input type="text" class="form-control rounded-0" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
+				</div>
+				<div class="form-group col-md-6 pl-md-3">
+					<label for="email" class="mb-1">Email adresa*</label>
+					<input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Vaša email adresa">
+				</div>
+			</div> 
+			<div class="form-group mt-2">
+				<label for="question">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
+				<textarea class="form-control rounded-0" id="question" name="question" rows="3" placeholder=""></textarea>
+			</div> 
+			<small>* Obavezna polja</small>
+			<div class="form-group mt-2">
+				<div class="form-group">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" required>
+						<label class="form-check-label">
+							Prihvaćam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
+						</label> 
+					</div>
+				</div>
+			</div>
+			<input type="hidden" id="route" name="route" value="home">
+			<div class="text-center mt-3">
+				<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
+			</div>
+		</form>				
+		<!-- /.Form -->
+
+	</div>
+	{{-- /.Container --}}
 
 </section>
 

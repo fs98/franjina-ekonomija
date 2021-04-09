@@ -5,6 +5,7 @@
 @endsection ('title')
 
 @section('links')
+<meta name="keywords" content="{{ $projectSingle->keywords }}">
 
 <!-- Fancybox Gallery -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}">
@@ -92,35 +93,39 @@
 
 		@endif
 
-		<!-- Row -->
-		<div class="row mb-5">
-			
-			<div class="col-12 text-center">
-				<h1>
-					<span class="yellow-border-heading pb-1">Galerija</span>
-				</h1>				
-			</div>
-
-		</div>
-		<!-- /.Row -->
-
-		<!-- Row -->
-		<div class="mb-5 row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gallery">
-
-			<!-- Gallery -->
-
-      @foreach($projectSingle->photos as $index => $photo)
-        <div class="col mb-4">
-          <a href="{{ $photo->header_image_url }}" data-fancybox="gallery">
-            <img src="{{ $photo->header_image_url }}" class="img-fluid"  alt="">
-          </a>
+    @if (($projectSingle->photos)->isNotEmpty())
+        
+      <!-- Row -->
+      <div class="row mb-5">
+        
+        <div class="col-12 text-center">
+          <h1>
+            <span class="yellow-border-heading pb-1">Galerija</span>
+          </h1>				
         </div>
-      @endforeach
 
-			<!-- /.Gallery -->		
+      </div>
+      <!-- /.Row -->
 
-		</div>
-		<!-- /.Row -->		
+      <!-- Row -->
+      <div class="mb-5 row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gallery">
+
+        <!-- Gallery -->
+
+        @foreach($projectSingle->photos as $index => $photo)
+          <div class="col mb-4">
+            <a href="{{ $photo->header_image_url }}" data-fancybox="gallery">
+              <img src="{{ $photo->header_image_url }}" class="img-fluid"  alt="">
+            </a>
+          </div>
+        @endforeach
+
+        <!-- /.Gallery -->		
+
+      </div>
+      <!-- /.Row -->
+
+    @endif		
 
 	</div>
 	<!-- /.Container -->

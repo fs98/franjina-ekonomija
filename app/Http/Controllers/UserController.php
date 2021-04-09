@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 use App\Models\Swal;
@@ -19,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userAll = User::select('id','name','email','created_at','status', 'password')->get();
+        $userAll = User::select('id','name','email','created_at','status', 'password')->where('id', '!=', '1')->get();
 
         return view('admin.users.list')->with(['userAll' => $userAll]);
     }
@@ -87,8 +88,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+      if ($id == 1) {
+        abort(404);
+      } else {
         $userSingle = User::find($id);
         return view('admin.users.edit')->with(['userSingle' => $userSingle]);
+      }
     }
 
     /**
@@ -133,9 +138,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+      if ($id == 1) {
+        abort(404);
+      } else {
         $userDel = User::where('id', $id)->delete();
 
         $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Gotovo!", "Korisnik je izbrisan.");
         return response()->json($swal->get());
+      }
     }
 }

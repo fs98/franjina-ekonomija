@@ -1,9 +1,13 @@
 <?php
 return [
+  'assets' => [
+    'logo' => 'https://franjinaekonomija.hr/images/logo/header-logo.svg'
+  ],
     'mail' => [
         'settings' => [
             'mail_server' => 'mail.franjinaekonomija.hr'
         ],
+        
         'hub' => [
             'username' => 'dev@franjinaekonomija.hr',
             'password' => '88isallyouneed',

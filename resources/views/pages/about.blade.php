@@ -39,7 +39,7 @@
 			<!-- /.Row -->
 
 			<!-- Row -->
-			<div class="row mt-3"> 
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000"> 
 
 			<div class="col-md-12 col-lg-7 pr-lg-5 d-flex align-items-center"> 
 				<img src="{{ asset('images/about/image-5.png') }}" class="img-fluid">
@@ -63,7 +63,7 @@
 			<!-- /.Row -->
 			
 			<!-- Row -->
-			<div class="row mt-3">
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 
 				<div class="col-12 w-100 text-center text-md-left mb-4">
 					<h2 class="mb-2 mb-md-4">
@@ -94,7 +94,7 @@
 			<!-- /.Row -->
 
 			<!-- Row -->
-			<div class="row mt-3">
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 
 				<div class="col-12 w-100 text-center text-md-left my-4">
 					<h2 class="mb-2 mb-md-4">
@@ -116,7 +116,7 @@
 			<!-- /.Row -->			
 
 			<!-- Row -->
-			<div class="row">
+			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 				
 				<div class="col-12 w-100 text-center text-md-left my-4">
 					<h2 class="mb-2 mb-md-4">
@@ -144,7 +144,7 @@
 			<!-- /.Row -->
 
 			<!-- Row -->
-			<div class="row">
+			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 				
 				<div class="col-12 w-100 text-center text-md-left my-4">
 					<h2 class="mb-2 mb-md-4">
@@ -177,7 +177,7 @@
 			<!-- /.Row -->	
 
 			<!-- Row -->
-			<div class="row mt-3">
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 
 				<div class="col-12 w-100 text-center text-md-left my-4">
 					<h2 class="my-2 mb-md-4">
@@ -198,24 +198,24 @@
 			<!-- /.Row -->	
 
 			<!-- Row -->
+      <div class="row" data-aos="zoom-in" data-aos-duration="1000">
+        <!-- Slider main container -->
+        <div class="swiper-container my-5">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            @foreach ($sliderImages as $item => $sliderImage)
+              <div class="swiper-slide">
+                <img src="{{ $sliderImage->header_image_url }}" alt="{{ $sliderImage->image_description }}" class="img-fluid w-75 h-100">
+              </div>
+            @endforeach
+          </div> 
 
-			<!-- Slider main container -->
-			<div class="swiper-container my-5">
-			  <!-- Additional required wrapper -->
-			  <div class="swiper-wrapper">
-			    <!-- Slides -->
-          @foreach ($sliderImages as $item => $sliderImage)
-            <div class="swiper-slide">
-              <img src="{{ $sliderImage->header_image_url }}" alt="{{ $sliderImage->image_description }}" class="img-fluid w-75 h-100">
-            </div>
-          @endforeach
-			  </div> 
-
-			  <!-- If we need navigation buttons -->
-			  <div class="swiper-button-prev"></div>
-			  <div class="swiper-button-next"></div>
-			</div>
-
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
 			<!-- /.Row -->
 
 
@@ -224,13 +224,13 @@
 
 	</section>
 
-	<section id="2">
+	<section id="2" >
 		
 		<!-- Container -->
 		<div class="container mt-0 mt-md-5">
 			
 			<!-- Row -->
-			<div class="row">
+			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 				
 				<div class="col-12 w-100 text-center mb-5">
 					<h1>
@@ -264,7 +264,7 @@
 			<!-- /.Row -->
 
 			<!-- Row -->
-			<div class="row">
+			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 				
 				<div class="col-12 w-100 text-center text-md-left mt-3 mb-4">
 					<h2 class="mb-2 mb-md-4">
@@ -315,7 +315,7 @@
 		<div class="container">
 			
 			<!-- Row -->
-			<div class="row">
+			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 				
 				<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
 					
@@ -340,7 +340,7 @@
 			<!-- /.Row -->
 
 			<!-- Form -->
-			<form class="mt-5" action="{{ Route('question_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off">
+			<form class="mt-5" action="{{ Route('question_store') }}" method="POST" id="create-form" enctype="multipart/u-data" autocomplete="off" data-aos="zoom-in" data-aos-duration="1000">
 			  @csrf
 				<div class="form-row">
 			    <div class="form-group col-md-6 pr-md-3">
@@ -372,7 +372,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" required>
 							<label class="form-check-label">
-								Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
+								Prihvaćam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
 							</label> 
 						</div>
 					</div>
@@ -406,6 +406,10 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    autoplay: {
+      delay: 4000,
+    },
+    speed: 2000,
     slidesPerView: 1,
   });
 </script> 

@@ -102,7 +102,13 @@ class QuestionsController extends Controller
      */
     public function show($id)
     {
+      $question = Question::find($id);
+      $question->seen = 1;
+      try {
+        $question->save();
+      } catch (Exception $e) {}
 
+      return view('admin.questions.show')->with(['question' => $question]);
     }  
 
     /**

@@ -56,9 +56,9 @@
                         <td>{!! $questionsSingleRow->status !!}</td> 
                         <td class="text-center table-column-controls"> 
                           <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-primary" data-toggle="modal" id="questionModalBtn" data-target="#questionDetails" value="{{ $questionsSingleRow }}">
+                          <a type="button" class="btn btn-primary text-white" href="{{ Route('admin.questions.show', ['question' => $questionsSingleRow->id]) }}">
                             Detalji
-                          </button>
+                          </a>
                           <form action="{{ Route('admin.questions.destroy', ['question' => $questionsSingleRow->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             <button class="btn btn-danger pointer" type="button" onclick="deleteSingleItem(this)">
@@ -156,24 +156,6 @@
      ] 
     });
   })
-</script>
-
-<script>
-  $(document).on('click', '#questionModalBtn', function(){
-    var questionData = JSON.parse($(this).val());
-    console.log(questionData)
-    $('#question_sender_name').text(questionData.full_name)
-    $('#question_sender_email').text(questionData.email)
-    $('#question_sender_message').text(questionData.message)
-    $('#question_sender_telephone').text(questionData.telephone)
-    $('#question_sender_id').text(questionData.id)
-  })
-  $("#questionDetails").on("hide.bs.modal", function () {
-    // put your default event here
-    var question_id = $('#question_sender_id').text();
-    console.log(question_id) 
-    
-  });
 </script>
 
 @endsection('scripts')

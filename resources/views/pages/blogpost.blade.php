@@ -5,6 +5,7 @@
 @endsection ('title')
 
 @section('links')
+<meta name="keywords" content="{{ $postSingle->keywords }}">
 
 <style>
 	.MsoNormal span{

@@ -19,7 +19,7 @@ Route::get('/o-nama', 'NavigationControllers@about')->name('about');
 
 // Submit form from about us page
 // This also sends out an e-mail to the website owner
-// Route::post('/onama', 'QuestionsController@store')->name('about_store');
+Route::post('/onama', 'QuestionsController@store')->name('about_store');
 
 Route::get('/aktivnosti', 'NavigationControllers@activities')->name('activities');
 Route::get('/gdpr', 'NavigationControllers@gdpr')->name('gdpr');
@@ -30,10 +30,6 @@ Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blog/{post}','NavigationControllers@show')->name('blogPost');
 
 Route::get('/rezultati-pretraživanja/', 'NavigationControllers@search')->name('searchResults');
-
-Route::get('/new-home', function() {
-	return view('pages.new-home');
-});
 
 // Auth routes
 Auth::routes(['register' => false]);

@@ -40,6 +40,32 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top"> 
+                       <li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i>
+                              @if ($unread_questions>0)
+                                <span class="indicator"></span>
+                              @endif
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Obavijesti</div>
+                                    <div class="notification-list">
+                                      <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action active">
+                                          <div class="notification-info d-flex">
+                                              <div class="notification-list-user-img"><i class="fas fa-question notification-list-user-name" style="font-size: 2rem"></i></div>
+                                              <div class="notification-list-user-block align-self-center">Imate <span class="notification-list-user-name h4 mx-0"> {{ $unread_questions }}</span> nepročitanih pitanja.
+                                              </div>
+                                          </div>
+                                        </a> 
+                                      </div>
+                                    </div>  
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="{{ Route('admin.questions.index') }}">Pogledaj</a></div>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://via.placeholder.com/128x128" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">

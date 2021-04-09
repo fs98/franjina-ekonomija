@@ -25,7 +25,7 @@
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="{{ Route('admin.index') }}" class="breadcrumb-link">Početak</a></li>
                   <li class="breadcrumb-item"><a href="{{ Route('admin.users.index') }}" class="breadcrumb-link">Korisnici</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Novi korisnik</li>
+                  <li class="breadcrumb-item active" aria-current="page">Uređivanje korisnika</li>
                 </ol>
               </nav>
             </div>

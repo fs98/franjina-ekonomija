@@ -133,7 +133,7 @@
 
                 <div class="form-group">
                   <label class="col-form-label" for="gallery_photos">Galerija</label>
-                  <label class="label-required" for="gallery_photos">(obavezno)</label>
+                  <label class="label-required" for="gallery_photos">(neobavezno, ukoliko u galeriji nema niti jedne slike, ista se neće prikazati)</label>
                   <div class="input-group">
                     <div class="custom-file">
                       <input type="file" accept="image/png, image/jpeg, image/jpg" class="custom-file-input form-control-file" id="gallery_photos" name="gallery_photos[]" multiple>

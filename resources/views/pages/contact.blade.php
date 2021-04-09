@@ -54,7 +54,7 @@
 
         <div class="ml-4">
           <h5 class="text-white">Broj telefona</h5>
-          <h6 class="mt-2 text-white"><a href="tel:+38795123456" class="text-decoration-none text-white">+385 486 828 47</a></h6>
+          <h6 class="mt-2 text-white"><a href="tel:+38795123456" class="text-decoration-none text-white">+385 48 682 847</a></h6>
         </div>
       </div>
 
@@ -65,7 +65,7 @@
 
         <div class="ml-4">
           <h5 class="text-white">Email</h5>
-          <h6 class="mt-2"><a href="mailto:financial.education.eof@gmail.com" class="text-decoration-none text-white">financial.education.eof@gmail.com</a></h6>
+          <h6 class="mt-2"><a href="mailto:hub@franjinaekonomija.hr" class="text-decoration-none text-white">hub@franjinaekonomija.hr</a></h6>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" required>
 							<label class="form-check-label">
-								Prihvatam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
+								Prihvaćam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
 							</label> 
 						</div>
 					</div>
