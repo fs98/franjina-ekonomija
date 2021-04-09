@@ -69,7 +69,7 @@ class NavigationControllers extends Controller
 		public function show($title_slug) 
 		{
 			$postSingle = Post::where('title_slug', $title_slug)->firstOrFail(); 
-			return view('pages.blogPost')->with(['postSingle' => $postSingle]);
+			return view('pages.blogpost')->with(['postSingle' => $postSingle]);
 		}
 
 		public function showProject($title_slug) 
