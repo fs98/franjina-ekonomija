@@ -934,3 +934,26 @@ footer .social-networks h3{
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
 }
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(136, 136, 136, 0.4); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
