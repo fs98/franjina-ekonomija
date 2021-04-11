@@ -4,10 +4,7 @@
 	Kontakt
 @endsection ('title')
 
-@section('links')
-<meta name="csrf-token" content="{{ csrf_token() }}" /> 
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+@section('links') 
 
 @endsection
 
@@ -127,8 +124,5 @@
 @endsection
 
 @section('scripts')
-
-{{-- Post request --}}
-<script src="{{ asset('back/post-request.js')}}"></script>
 
 @endsection

@@ -70,4 +70,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 	Route::resource('project-images', 'ProjectImagesController', [
     'only' => ['destroy']
   ]);
+
+	Route::resource('newsletter', 'NewsletterController');
+	Route::post('subscribe', 'NewsletterController@subscribe')->name('newsletter.subscribe');
 });

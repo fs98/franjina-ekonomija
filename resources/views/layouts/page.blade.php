@@ -8,6 +8,10 @@
 
     <title>@yield('title')</title>
 
+    <meta name="csrf-token" content="{{ csrf_token() }}" /> 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -261,11 +265,13 @@
         </p>
 
         <div>
-          <form>
+          <form action="{{ Route('admin.newsletter.subscribe') }}" method="POST" id="subscribe-form" autocomplete="off">
+            @csrf
             <div class="form-group w-100">
-              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" placeholder="Email" required="">
+              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" id="subscriber_email" name="subscriber_email" placeholder="Email">
+              <input type="hidden" value="{{ Route::currentRouteName() }}" name="route" id="route">
             </div>
-            <button class="btn text-uppercase w-auto px-5 py-2 rounded-0 text-white" type="submit">Pošalji</button>
+            <button class="btn text-uppercase w-auto px-5 py-2 rounded-0 text-white" type="button" id="submit-subscription" form="subscribe-form">Pošalji</button>
           </form>
         </div>
 
@@ -343,6 +349,9 @@
     navigator.share(shareData)
   });
 </script>
+
+{{-- Post request --}}
+<script src="{{ asset('back/post-request.js')}}"></script>
 
 <!-- Sticky Navbar -->
 <script>
