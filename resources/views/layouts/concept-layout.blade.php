@@ -48,7 +48,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
                                 <li>
-                                    <div class="notification-title"> Obavijesti</div>
+                                    <div class="notification-title">Obavijesti</div>
                                     <div class="notification-list">
                                       <div class="list-group">
                                         <a href="#" class="list-group-item list-group-item-action active">
