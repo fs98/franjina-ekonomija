@@ -164,7 +164,7 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },  
-    loop: true,
+    loop: true,  
     autoplay: {
       delay: 2000,
     },
@@ -183,7 +183,13 @@
         spaceBetween: 0,
       },
     }
-  });
+  }); 
+  $('.support-page-partners-slider').on('mouseenter', function(){
+    swiper.autoplay.stop();
+  })
+  $('.support-page-partners-slider').on('mouseleave', function(){
+    swiper.autoplay.start();
+  })
 </script> 
 
 @endsection('scripts')

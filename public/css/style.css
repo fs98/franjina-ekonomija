@@ -939,7 +939,7 @@ footer .social-networks h3{
 
 /* width */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 14px;
 }
 
 /* Track */
@@ -950,10 +950,10 @@ footer .social-networks h3{
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888; 
-	border-radius: 10px;
+	border-radius: 2px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #BB1C2E;  
 }

@@ -265,7 +265,7 @@
         </p>
 
         <div>
-          <form action="{{ Route('admin.newsletter.subscribe') }}" method="POST" id="subscribe-form" autocomplete="off">
+          <form action="{{ Route('newsletter.subscribe') }}" method="POST" id="subscribe-form" autocomplete="off">
             @csrf
             <div class="form-group w-100">
               <input type="text" class="form-control rounded-0 border-0 h-auto py-3" id="subscriber_email" name="subscriber_email" placeholder="Email">
@@ -377,7 +377,9 @@
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-  AOS.init();
+  AOS.init({
+    once: true,
+  });
 </script>
 
 @yield('scripts')
