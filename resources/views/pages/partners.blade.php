@@ -18,17 +18,17 @@
 		
 		<div class="offset-lg-2 col-lg-8" data-aos="zoom-in" data-aos-duration="1000">
 
-			<h1 class="w-100 text-center mb-5 mt-5 mt-lg-0">
+			<h1 class="w-100 text-center mb-4 mt-5 mt-lg-0">
 				<span class="yellow-border-heading">Partneri</span>
 			</h1>		
 
 			<p class="partners-text text-center">
 
-			Kako bismo osjetili punu snagu radosti, moramo imati nekoga s kim ćemo je podijeliti. S toga ponosna i radosna srca ovim putem iskreno zahvaljujemo svim našim partnerima koji marljivo pomažu poboljšati naš pokret "Franjina ekonomija". Njihova profesionalnost, odgovornost, požrtvovanost i odanost vrlo su važne kvalitete za nas
+			Kako bismo osjetili punu snagu radosti, moramo imati nekoga s kim ćemo je podijeliti. S toga ponosna i radosna srca ovim putem iskreno zahvaljujemo svim našim partnerima koji marljivo pomažu poboljšati naš pokret "Franjina ekonomija". Njihova profesionalnost, odgovornost, požrtvovanost i odanost vrlo su važne kvalitete za nas.
 
 			<br><br>
 
-			Ukoliko i vi želite pomoći i raditi s mladima, iznijeti svoje ideje.. rado ćemo se susresti s vama, <a href="{{ url('/contact') }}" class="text-decoration-none"><strong class="text-dark">kontaktirajte nas.</strong></a>
+			Ukoliko i vi želite pomoći i raditi s mladima, iznijeti svoje ideje... rado ćemo se susresti s vama, <a href="{{ url('/contact') }}" class="text-decoration-none"><strong class="text-dark">kontaktirajte nas.</strong></a>
 
 			</p>
 		

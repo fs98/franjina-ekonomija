@@ -25,11 +25,11 @@ Route::get('/aktivnosti', 'NavigationControllers@activities')->name('activities'
 Route::get('/gdpr', 'NavigationControllers@gdpr')->name('gdpr');
 Route::get('/projekti','NavigationControllers@projectlist')->name('projects');
 Route::get('/projekti/{project}','NavigationControllers@showProject')->name('specificProject');
-Route::get('/podrška','NavigationControllers@support')->name('support');
+Route::get('/podrska','NavigationControllers@support')->name('support');
 Route::get('/blog','NavigationControllers@blog')->name('blog');
 Route::get('/blog/{post}','NavigationControllers@show')->name('blogPost');
 
-Route::get('/rezultati-pretraživanja/', 'NavigationControllers@search')->name('searchResults');
+Route::get('/rezultati-pretrazivanja/', 'NavigationControllers@search')->name('searchResults');
 
 // Auth routes
 Auth::routes(['register' => false]);
@@ -75,3 +75,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 });
 
 Route::post('subscribe', 'NewsletterController@subscribe')->name('newsletter.subscribe');
+Route::get('unsubscribe/{email}/{token}', 'NewsletterController@unsubscribe')->name('newsletter.unsubscribe');
+Route::post('unsubscribe', 'NewsletterController@unsubscribeLinkPost')->name('newsletter.unsubscribelink');
+Route::get('unsubscribe', 'NewsletterController@unsubscription')->name('newsletter.unsubscription');
+

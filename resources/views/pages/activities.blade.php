@@ -36,7 +36,7 @@
 			<div class="col-12 col-md-6 col-xl-3 px-4 text-center" data-aos-delay="3000">
 				<img src="{{ asset('icons/activities/cjelozivotno-ucenje.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
 				<h4 class="text-uppercase text-center font-weight-bold mt-5">Cjeloživotno učenje</h4>
-				<p class="mt-4 text-center">definira se kao aktivnost učenja tijekom cijelog života s ciljem unapređenja znanja, vještina i sposobnosti unutar osobne, društvene i poslovne perspektive</p>
+				<p class="mt-4 text-center">definira se kao aktivnost učenja tijekom cijelog života s ciljem unapređenja znanja, vještina i sposobnosti unutar osobne, društvene i poslovne perspektive.</p>
 			</div>
 
 		</div>

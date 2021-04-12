@@ -1,4 +1,4 @@
-$("#submit-button, #submit-subscription").on("click", function(event) {
+$("#submit-button, #submit-subscription, #submit-unsubscription").on("click", function(event) {
   if($(event.target.form)[0] != undefined) {
     var form = $(event.target.form)[0];
 

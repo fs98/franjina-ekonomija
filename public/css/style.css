@@ -283,7 +283,7 @@ footer .social-networks h3{
 	border-bottom: 3px solid #ffde59; 
 }
 
-.partners-section .partners-text{
+.partners-text{
 	margin-top: 80px;
 	font-size: 18px;
 }
@@ -956,4 +956,38 @@ footer .social-networks h3{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #BB1C2E;  
+}
+
+/* Unsubscribe */
+
+.go-back-btn{
+	background-color: #BB1C2E;
+	font-size: 18px;
+}
+
+.go-back-btn:hover{
+	background-color: rgba(187, 28, 46, 0.8);
+	transition: 0.3s;
+}
+
+.go-back-btn:focus{
+	box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
+}
+
+.unsubscribe-heading{
+  color: #BB1C2E
+}
+
+.get-unsubscribe-mail-btn{
+  background-color: #BB1C2E;
+	font-size: 18px;
+}
+
+.get-unsubscribe-mail-btn:hover{
+	background-color: rgba(187, 28, 46, 0.8);
+	transition: 0.3s;
+}
+
+.get-unsubscribe-mail-btn:focus{
+	box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
 }

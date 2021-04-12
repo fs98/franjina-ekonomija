@@ -52,10 +52,10 @@
                           <img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">
                           <p class="my-auto pl-1">{{ $projectsActiveSignleRow->investors }}</p>
                         </span>
-                        <span class="d-flex justify-content-end px-0 mr-0">
+                        {{-- <span class="d-flex justify-content-end px-0 mr-0">
                           <img src="{{ asset('icons/projects/heart.svg') }}" class="img-fluid projects-card-icon">
                           <p class="my-auto pl-1">{{ $projectsActiveSignleRow->likes }}</p>
-                        </span> 
+                        </span>  --}}
                       </span>
                       <span class="d-flex flex-column px-2 mt-2">
                         <p class="font-weight-bold text-left mt-2">Cilj</p>
@@ -76,7 +76,7 @@
                           <small>{{ $projectsActiveSignleRow->days_left }} dana do završetka</small>
                           <small>{{ $projectsActiveSignleRow->percentage }} % prikupljeno</small>
                         </p>
-                        <a class="btn rounded-0 mb-2 text-white px-4 button" href="">Podržite kampanju</a>
+                        <a class="btn rounded-0 mb-2 text-white px-4 button" href="{{ Route('support') }}">Podržite kampanju</a>
                     </div>
                   @endif
                   

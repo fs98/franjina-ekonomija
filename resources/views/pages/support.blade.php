@@ -21,22 +21,22 @@
 		<!-- Row -->
 		<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 			
-			<div class="col-12 text-center mb-5">
+			<div class="col-12 text-center">
 				<h1>
 					<span class="yellow-border-heading pb-1">Podrška</span>
 				</h1>				
 			</div>
 
-			<div class="offset-lg-1 col-lg-10 px-3">
+			<div class="offset-lg-1 col-lg-10">
 
 				<p class="partners-text text-left">
 
-				Zahvaljujući vašoj velikodušnosti, podržali smo sudjelovanje više od 200 mladih putem potpora za sudjelovanje i putnih doprinosa, o kojima nećemo izgubiti trag s obzirom na događaj 2021. godine.
+          Zahvaljujemo svim institucijama privatnog, civilnog i javnog sektora na njihovom prepoznavanju pokreta Franjina ekonomija - zajedničko dijeljenje vrijednosti, misije i vizije kroz kvalitetnu umreženost omogućuje nam uspješnost u ostvarivanju ciljeva.
 
-				<br><br>Kandidati koji su se prijavili za potporu predali su obvezu uzajamnosti kako bi zauzvrat pomogli nekoj zajednici ili za opće dobro.
-
-				<br><br>Međutim, još uvijek treba obaviti mnogo posla: i oko postavljanja događaja i potpore cijelom procesu.
-				Ako želite, i dalje nam možete pomoći.
+          <br><br>Želite li i vi podržati razvoj i projekte ovog pokreta?
+          
+          <br><br>Ukoliko nas želite podržati i doprinijeti razvoju ovog pokreta svoje donacije možete uplatiti slijedećim putem:
+          
 
 				</p>
 			
@@ -46,7 +46,7 @@
 		<!-- /.Row -->
 
 		<!-- Row -->
-		<div class="row" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+		<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 			
 			<div class="col-12 col-lg-10 offset-lg-1 p-5 card-donate">
         <div class="row">
@@ -62,19 +62,19 @@
         <div class="row">
           <div class="col-12">
             <h5 class="font-weight-normal ">Banka</h5>
-				  	<h5 class="mt-3 ml-5 font-weight-bold">Naziv banke</h5>
+				  	<h5 class="mt-3 ml-5 font-weight-bold">Zagrebačka banka d.d.</h5>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-12">
             <h5 class="font-weight-normal">Broj žiro računa</h5>					
-            <h5 class="ml-5 mt-3 font-weight-bold">123 456 789 123</h5>
+            <h5 class="ml-5 mt-3 font-weight-bold">HR9423600001101828177</h5>
           </div>
         </div> 
         <div class="row mt-3">
           <div class="col-12">
-            <h5 class="font-weight-normal">SWIFT</h5>				
-            <h5 class="ml-5 mt-3 font-weight-bold">ZABAHR2X</h5>
+            <h5 class="font-weight-normal">Svrha</h5>				
+            <h5 class="ml-5 mt-3 font-weight-bold">donacija za FE</h5>
           </div>
         </div> 
 				<!-- /.Donate -->

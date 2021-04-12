@@ -116,12 +116,12 @@
           </li>        
           @endif
 
-          @if (Route::has('projects'))
-          <li class="nav-item mr-3">
-            <a class="nav-link p-0 {{ Route::currentRouteNamed('projects') ? 'active' : '' }}" href="{{ route('projects') }}">
-              <span>Projekti</span>
-            </a> 
-          </li>
+          @if (Route::has('projects') && $projects_sum > 0)
+            <li class="nav-item mr-3">
+              <a class="nav-link p-0 {{ Route::currentRouteNamed('projects') ? 'active' : '' }}" href="{{ route('projects') }}">
+                <span>Projekti</span>
+              </a> 
+            </li>
           @endif
 
           @if (Route::has('activities'))

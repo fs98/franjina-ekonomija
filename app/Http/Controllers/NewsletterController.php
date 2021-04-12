@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\NewsletterSubscription;
 use App\Models\Swal;
+use Illuminate\Support\Str;
 
 class NewsletterController extends Controller
 {
@@ -27,7 +28,7 @@ class NewsletterController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.newsletter.create');
     }
 
     /**
@@ -38,26 +39,99 @@ class NewsletterController extends Controller
      */
     public function subscribe(Request $httpRequest)
     {
-        $httpRequest->validate([
-            'subscriber_email' => 'required|email'
-        ]);
+        $user = NewsletterSubscription::where('subscriber_email', $httpRequest->subscriber_email)->get();
+        
+        if ($user->isNotEmpty()) {
 
-        $subscription = new NewsletterSubscription;
-        $subscription->subscriber_email = $httpRequest->subscriber_email;
-        $route = $httpRequest->route;
+          if ($user->active == 1) {
+            
+            $swal = new Swal("Error", 200, Route('index'), "error", "Greška!", "Vi ste već prijavljeni na naš newsletter");
+            return response()->json($swal->get());
 
-        try {
+          } else {
+
+            $user->active == 1;
+
+            try {
+              $user->save();
+            } catch (Exception $e) {}
+
+            $swal = new Swal("Success", 200, Route($route), "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
+            return response()->json($swal->get());
+
+          }
+
+        } else {
+
+          $httpRequest->validate([
+            'subscriber_email' => 'required|email|unique'
+         ]);
+
+          $subscription = new NewsletterSubscription;
+          $subscription->subscriber_email = $httpRequest->subscriber_email;
+          $subscription->token = Str::random(64);
+          $route = $httpRequest->route;
+
+          try {
             $subscription->save();
-        } catch (Exception $e) {}
+          } catch (Exception $e) {}
 
+        }
+    }
 
-        $swal = new Swal("Success", 200, Route($route), "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
-        return response()->json($swal->get());
+    public function unsubscribe(Request $httpRequest, $email, $token) {
+
+      $unsubscribeUser = NewsletterSubscription::where('subscriber_email', $email)->where('token', $token)->first();
+      
+      $unsubscribeUser->active = false;
+
+      try {
+        $unsubscribeUser->save();
+      } catch (Exception $e) {}
+
+      return view('pages.unsubscribe');
+    }
+    
+    public function unsubscription() {
+      return view('pages.unsubscription');
+    }
+
+    public function unsubscribeLinkPost(Request $httpRequest) {
+
+      $httpRequest->validate([
+        'unsubscriber_email' => 'required'
+      ]);
+
+      $user = NewsletterSubscription::where('subscriber_email', $httpRequest->unsubscriber_email)->first();
+      
+      $json = array();
+      $json['subscriber_email'] = $user->subscriber_email;
+      $json['token'] = $user->token;
+
+      try {
+        MailController::sendUnsubscribeLink($json);
+      } catch (Exception $e) {}
+
+      $swal = new Swal("Success", 200, Route('index'), "success", "Poslano!", "Email će Vam doći kroz par trenutaka,");
+      return response()->json($swal->get());
     }
 
     public function store(Request $httpRequest)
     {
-    
+      $httpRequest->validate([
+        'newsletter_subject' => 'required',
+        'newsletter_content' => 'required'
+      ]);
+
+      $newsletter_subject = $httpRequest->newsletter_subject;
+      $newsletter_content = $httpRequest->newsletter_content;
+
+      $userAll = NewsletterSubscription::get(['subscriber_email', 'active','token']);
+
+      MailController::sendNewsletterMail($userAll, $newsletter_content, $newsletter_subject);
+
+      $swal = new Swal("Success", 200, Route('admin.newsletter.index'), "success", "Gotovo!", "Newsletter je poslan svim aktivnim korisnicima");
+      return response()->json($swal->get());
     }
 
     /**

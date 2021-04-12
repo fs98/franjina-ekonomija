@@ -98,4 +98,116 @@ class MailController extends Controller
     $mail->send(); 
 
   }
+
+  public static function sendNewsletterMail($userAll, $newsletter_content, $newsletter_subject) {
+    $mail = new PHPMailer(true);
+    $mail->CharSet = "utf-8";
+
+    $mail->isSMTP();
+
+		// SMTP::DEBUG_OFF = off (for production use)
+		// SMTP::DEBUG_CLIENT = client messages
+		// SMTP::DEBUG_SERVER = client and server messages
+		$mail->SMTPDebug = SMTP::DEBUG_OFF;
+		//Set the hostname of the mail server
+		$mail->Host = config('api.mail.settings.mail_server');
+		// Enable this if you are using gmail SMTP, for mandrill app it is not required
+		$mail->SMTPSecure = 'ssl';   
+		//Set the SMTP port number - likely to be 25, 465 or 587
+		$mail->Port = 465;
+		//Whether to use SMTP authentication
+		$mail->SMTPAuth = true;
+		//Username to use for SMTP authentication
+		$mail->Username = config('api.mail.hub.username');
+		//Password to use for SMTP authentication
+		$mail->Password = config('api.mail.hub.password');
+		//Set who the message is to be sent from
+		$mail->setFrom(config('api.mail.hub.username'), 'franjinaekonomija.hr');
+		//Set an alternative reply-to address
+		$mail->addReplyTo(config('api.mail.hub.username')); 
+
+    foreach($userAll as $userSingleIndex => $userSingleRow) {
+			if($userSingleRow->active == 0) {
+				continue;
+			}
+      $mail->addBCC($userSingleRow->subscriber_email);
+		}
+
+    
+		//Set the subject line
+		$mail->Subject = $newsletter_subject;
+
+		// Define html and its basic layout
+		// By practice, this should be the same as the html from the else {} block of the if segment below
+		$html = $newsletter_content;
+ 
+		$mail->msgHTML($html);
+
+		// Always have plain text set as a lot of mail viewers do not show html by default, or at all
+		// So this is the fallback text which gets shown when html is not showable
+		// This should contain no html tags, just plain text
+		// For new line append `\r\n` at the end of the line.
+		// Eg $mail->AltBody = "Hello.\r\nThis is a new line\r\nSo is this.\r\n\r\nThis has an empty row above me."
+		$mail->AltBody = strip_tags($html);
+
+		//send the message, check for errors
+		try {
+			$mail->send();
+		} catch (Exception $e) {}
+
+  }
+
+  public static function sendUnsubscribeLink($user) {
+    $mail = new PHPMailer(true);
+    $mail->CharSet = "utf-8";
+
+    $mail->isSMTP();
+
+		// SMTP::DEBUG_OFF = off (for production use)
+		// SMTP::DEBUG_CLIENT = client messages
+		// SMTP::DEBUG_SERVER = client and server messages
+		$mail->SMTPDebug = SMTP::DEBUG_OFF;
+		//Set the hostname of the mail server
+		$mail->Host = config('api.mail.settings.mail_server');
+		// Enable this if you are using gmail SMTP, for mandrill app it is not required
+		$mail->SMTPSecure = 'ssl';   
+		//Set the SMTP port number - likely to be 25, 465 or 587
+		$mail->Port = 465;
+		//Whether to use SMTP authentication
+		$mail->SMTPAuth = true;
+		//Username to use for SMTP authentication
+		$mail->Username = config('api.mail.hub.username');
+		//Password to use for SMTP authentication
+		$mail->Password = config('api.mail.hub.password');
+		//Set who the message is to be sent from
+		$mail->setFrom($user['subscriber_email']);
+		//Set an alternative reply-to address
+		$mail->addReplyTo($user['subscriber_email']);
+		//Set who the message is to be sent to
+		// Change this to your own e-mail to see the e-mail for debug purposes
+		$mail->addAddress($user['subscriber_email']);
+    
+		//Set the subject line
+		$mail->Subject = "Link za otkazivanje pretplate na Newsletter";
+
+		// Define html and its basic layout
+		// By practice, this should be the same as the html from the else {} block of the if segment below
+		$html = "<h1 style='text-align:center'>Za otkazivanje pretplate kliknite na link:</h1><a href='http://127.0.0.1:8000/unsubscribe/" . $user['subscriber_email'] . "/" . $user['token'] . "'>Otkaži pretplatu</a>";
+
+		$mail->msgHTML($html);
+
+		// Always have plain text set as a lot of mail viewers do not show html by default, or at all
+		// So this is the fallback text which gets shown when html is not showable
+		// This should contain no html tags, just plain text
+		// For new line append `\r\n` at the end of the line.
+		// Eg $mail->AltBody = "Hello.\r\nThis is a new line\r\nSo is this.\r\n\r\nThis has an empty row above me."
+		$mail->AltBody = strip_tags($html);
+
+		//send the message, check for errors
+		try {
+			$mail->send();
+		} catch (Exception $e) {}
+
+  }
+
 }
