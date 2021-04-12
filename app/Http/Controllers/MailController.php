@@ -192,7 +192,7 @@ class MailController extends Controller
 
 		// Define html and its basic layout
 		// By practice, this should be the same as the html from the else {} block of the if segment below
-		$html = "<h1 style='text-align:center'>Za otkazivanje pretplate kliknite na link:</h1><a href='http://127.0.0.1:8000/unsubscribe/" . $user['subscriber_email'] . "/" . $user['token'] . "'>Otkaži pretplatu</a>";
+		$html = "<h1 style='text-align:center'>Za otkazivanje pretplate kliknite na link:</h1><a href='http://127.0.0.1:8000/unsubscribe'>Otkaži pretplatu</a>";
 
 		$mail->msgHTML($html);
 

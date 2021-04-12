@@ -32,31 +32,31 @@ class NewsletterController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Subscribe to newsletter
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function subscribe(Request $httpRequest)
     {
-        $user = NewsletterSubscription::where('subscriber_email', $httpRequest->subscriber_email)->get();
-        
-        if ($user->isNotEmpty()) {
+        $userSubscribe = NewsletterSubscription::where('subscriber_email', $httpRequest->subscriber_email)->first();
 
-          if ($user->active == 1) {
+        if ($userSubscribe) {
+
+          if ($userSubscribe->active == 1) {
             
-            $swal = new Swal("Error", 200, Route('index'), "error", "Greška!", "Vi ste već prijavljeni na naš newsletter");
+            $swal = new Swal("Error", 200, Route('index'), "error", "Greška!", "Vi ste već prijavljeni na naš newsletter.");
             return response()->json($swal->get());
 
           } else {
 
-            $user->active == 1;
+            $userSubscribe->active = 1;
 
             try {
-              $user->save();
+              $userSubscribe->save();
             } catch (Exception $e) {}
 
-            $swal = new Swal("Success", 200, Route($route), "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
+            $swal = new Swal("Success", 200, Route('index'), "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
             return response()->json($swal->get());
 
           }
@@ -64,7 +64,7 @@ class NewsletterController extends Controller
         } else {
 
           $httpRequest->validate([
-            'subscriber_email' => 'required|email|unique'
+            'subscriber_email' => 'required|email|unique:newsletter_subscriptions,subscriber_email',
          ]);
 
           $subscription = new NewsletterSubscription;
@@ -76,9 +76,15 @@ class NewsletterController extends Controller
             $subscription->save();
           } catch (Exception $e) {}
 
+          $swal = new Swal("Success", 200, Route('index'), "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
+          return response()->json($swal->get());
+
         }
     }
 
+    /**
+     * Unsubscribe from newsletter
+    **/
     public function unsubscribe(Request $httpRequest, $email, $token) {
 
       $unsubscribeUser = NewsletterSubscription::where('subscriber_email', $email)->where('token', $token)->first();
@@ -92,10 +98,16 @@ class NewsletterController extends Controller
       return view('pages.unsubscribe');
     }
     
+    /**
+     * Show unsubscribe form
+    **/
     public function unsubscription() {
       return view('pages.unsubscription');
     }
 
+    /**
+     * Send unsubscribe link with token
+    **/
     public function unsubscribeLinkPost(Request $httpRequest) {
 
       $httpRequest->validate([
@@ -116,6 +128,9 @@ class NewsletterController extends Controller
       return response()->json($swal->get());
     }
 
+    /**
+     * Send newsletter email
+    **/
     public function store(Request $httpRequest)
     {
       $httpRequest->validate([

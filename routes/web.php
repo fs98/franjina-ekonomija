@@ -71,7 +71,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
     'only' => ['destroy']
   ]);
 
-	Route::resource('newsletter', 'NewsletterController');
+	Route::resource('newsletter', 'NewsletterController', [
+		'except' => ['show', 'edit', 'update', 'destroy']
+	]);
 });
 
 Route::post('subscribe', 'NewsletterController@subscribe')->name('newsletter.subscribe');
