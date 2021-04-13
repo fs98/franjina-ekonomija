@@ -89,7 +89,7 @@
                         </a>
                         <form action="{{ Route('admin.slider-images.destroy', ['slider_image' => $imageSingle->id]) }}" method="POST" class="d-inline-block">
                           @csrf
-                          <button class="btn btn-danger pointer" type="button" onclick="deleteSingleItem(this)">
+                          <button class="btn btn-secondary pointer" type="button" onclick="deleteSingleItem(this)">
                             <span>Izbriši</span>
                           </button>
                           @method('delete')

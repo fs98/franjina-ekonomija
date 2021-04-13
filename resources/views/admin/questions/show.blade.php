@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <h5 class="card-header">Pitanja</h5>
+              <h5 class="card-header">Pitanja test</h5>
               <div class="card-body"> 
                 <div class="row mb-3">
                   <div class="col-12 col-md-6 col-xl-4 mb-3">
@@ -54,6 +54,7 @@
                     <p id="question_sender_message">{{ $question->message }}</p>
                   </div> 
                 </div>
+                <a href="{{ Route('admin.questions.index') }}" class="btn btn-primary mt-2">&larr; Nazad</a>
               </div>
             </div>
           </div>

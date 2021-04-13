@@ -12,6 +12,7 @@ use App\Models\Slider;
 use App\Models\SliderImage;
 use App\Models\Event;
 use App\Models\Partner;
+use App\Models\Blogger;
 use Helper;
 use Carbon\Carbon;
 use DateTime;
@@ -107,8 +108,11 @@ class NavigationControllers extends Controller
 
 		//
 		public function blog(){
+      $bloggersAll = Blogger::select('name', 'directory_id', 'image', 'image_description')->get();
 			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->paginate(4);
-			return view('pages.blog')->with(['postAll' => $postAll]);
+			return view('pages.blog')
+        ->with(['postAll' => $postAll])
+        ->with(['bloggersAll' => $bloggersAll]);
 		}
 
 		//

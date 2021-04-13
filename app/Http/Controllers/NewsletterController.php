@@ -45,7 +45,7 @@ class NewsletterController extends Controller
 
           if ($userSubscribe->active == 1) {
             
-            $swal = new Swal("Error", 200, Route('index'), "error", "Greška!", "Vi ste već prijavljeni na naš newsletter.");
+            $swal = new Swal("Error", 200, '', "error", "Greška!", "Vi ste već prijavljeni na naš newsletter.");
             return response()->json($swal->get());
 
           } else {
@@ -56,7 +56,7 @@ class NewsletterController extends Controller
               $userSubscribe->save();
             } catch (Exception $e) {}
 
-            $swal = new Swal("Success", 200, Route('index'), "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
+            $swal = new Swal("Success", 200, '', "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
             return response()->json($swal->get());
 
           }
@@ -64,7 +64,7 @@ class NewsletterController extends Controller
         } else {
 
           $httpRequest->validate([
-            'subscriber_email' => 'required|email|unique:newsletter_subscriptions,subscriber_email',
+            'subscriber_email' => 'required|email:rfc,dns|unique:newsletter_subscriptions,subscriber_email',
          ]);
 
           $subscription = new NewsletterSubscription;
@@ -76,7 +76,7 @@ class NewsletterController extends Controller
             $subscription->save();
           } catch (Exception $e) {}
 
-          $swal = new Swal("Success", 200, Route('index'), "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
+          $swal = new Swal("Success", 200, '', "success", "Gotovo!", "Hvala Vam što ste se pretplatili na naš newsletter.");
           return response()->json($swal->get());
 
         }

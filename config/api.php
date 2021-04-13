@@ -29,6 +29,7 @@ return [
         'gallery' => 'public/gallery/',
         'partners' => 'public/partners/',
         'sliders' => 'public/sliders/',
+        'bloggers' => 'public/bloggers/',
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
@@ -38,6 +39,7 @@ return [
         'gallery' => 'storage/gallery/',
         'partners' => 'storage/partners/',
         'sliders' => 'storage/sliders/',
+        'bloggers' => 'storage/bloggers/',
     ],
     'route-paths' => [
         'store' => 'store',

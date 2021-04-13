@@ -268,9 +268,10 @@
           <form action="{{ Route('newsletter.subscribe') }}" method="POST" id="subscribe-form" autocomplete="off">
             @csrf
             <div class="form-group w-100">
-              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" id="subscriber_email" name="subscriber_email" placeholder="Email">
+              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" id="subscriber_email" name="subscriber_email" placeholder="Email" required>
               <input type="hidden" value="{{ Route::currentRouteName() }}" name="route" id="route">
             </div>
+            <button type="submit" disabled style="display: none" aria-hidden="true"></button>
             <button class="btn text-uppercase w-auto px-5 py-2 rounded-0 text-white" type="button" id="submit-subscription" form="subscribe-form">Pošalji</button>
           </form>
         </div>

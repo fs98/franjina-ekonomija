@@ -34,7 +34,7 @@
         <!-- ============================================================== -->
        <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="{{ __('/') }}"><img src="{{ asset('images/logo/transparent-logo.png')}}" class="img-fluid"></a>
+                <a class="navbar-brand" href="{{ __('/admin') }}"><img src="{{ asset('images/logo/transparent-logo.png')}}" class="img-fluid"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,7 +67,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://via.placeholder.com/128x128" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('icons/common/user.png') }}" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->name }} </h5>
@@ -124,6 +124,19 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ __('/admin/posts/create') }}">Novi post</a>
                                         </li> 
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Blogeri</a>
+                                          <div id="submenu-11" class="collapse submenu" style="">
+                                              <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ __('/admin/bloggers') }}">Blogeri</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ __('/admin/bloggers/create') }}">Novi bloger</a>
+                                                </li> 
+                                            </ul>
+                                          </div>
+                                      </li>
                                     </ul>
                                 </div>
                             </li> 
@@ -178,7 +191,7 @@
                                         </li> 
                                     </ul>
                                 </div>
-                            </li> 
+                            </li>  
                             <li class="nav-divider">
                                 OSTALI SADRŽAJ
                             </li>  

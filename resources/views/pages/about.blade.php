@@ -50,7 +50,7 @@
 						<strong>The Economy of Francesco</strong>  međunarodni je događaj koji na poziv i inicijativu Pape Franje okuplja mlade ekonomiste, poduzetnike i pokretače pozitivnih društvenih promjena, a sve u svrhu davanja doprinosa razvoju nove ekonomije kojoj je u središtu čovjek. 
 					</p>
 					<p>
-						Upravo je on u mladima vidio nadu za zaokret postojećeg ekonomskog sustava u smjeru pravednije, manje isključive i moralnije  ekonomije. Papa je uvjeren kako mladi posjeduju želju i gorljivost da svojom osobnošću, idejama, aktivnošću i voljom utječu na sadašnju i daju „dušu'' budućoj ekonomiji. Pismom poslanim u svibnju 2019. godine ukazao je na nedostatke trenutnog ekonomskog sustava te pozvao sve one koji žele kreirati društvo i ekonomiju temeljenu na višim vrijednostima i etičkim načelima da se priključe. Kompletan poziv pape Franje pročitajte na našem blogu: (link).
+						Upravo je on u mladima vidio nadu za zaokret postojećeg ekonomskog sustava u smjeru pravednije, manje isključive i moralnije  ekonomije. Papa je uvjeren kako mladi posjeduju želju i gorljivost da svojom osobnošću, idejama, aktivnošću i voljom utječu na sadašnju i daju „dušu'' budućoj ekonomiji. Pismom poslanim u svibnju 2019. godine ukazao je na nedostatke trenutnog ekonomskog sustava te pozvao sve one koji žele kreirati društvo i ekonomiju temeljenu na višim vrijednostima i etičkim načelima da se priključe. Kompletan poziv pape Franje pročitajte na našem <a href="https://franjinaekonomija.hr/blog/poruka-sv-oca-pape-franje-mladim-ekonomistima-poduzetnicima-poduzetnicima-iz-cijeloga-svijeta">blogu</a>.
 					</p>
 				</span>
 			</div>
@@ -291,9 +291,9 @@
 					</p>
 					
 					<p>
-						<span><span class="yellow-heading">EOF Marathon Croatia</span> - <a href="https://www.youtube.com/watch?v=Ov9zXXYH7h4" class="text-dark text-decoration-none">https://www.youtube.com/watch?v=Ov9zXXYH7h4</a></span><br>
-						<span><span class="yellow-heading">Fra Mario Knezović</span> - poruka mladima povodom Franjine ekonomije - <a href="https://www.youtube.com/watch?v=YCFLXp1E0Xc&t=379s" class="text-dark text-decoration-none">https://www.youtube.com/watch?v=YCFLXp1E0Xc&t=379s</a></span><br>
-						<span><span class="yellow-heading">Prof. dr.sc. Domagoj Sajter</span> - poruka mladima povodom Franjine ekonomije - <a href="https://www.youtube.com/watch?v=jMGta145GxQ&t=7s" class="text-dark text-decoration-none">https://www.youtube.com/watch?v=jMGta145GxQ&t=7s</a></span>
+						<span><span class="yellow-heading">EOF Marathon Croatia</span> - <a href="https://www.youtube.com/watch?v=Ov9zXXYH7h4" class="text-decoration-none">https://www.youtube.com/watch?v=Ov9zXXYH7h4</a></span><br>
+						<span><span class="yellow-heading">Fra Mario Knezović</span> - poruka mladima povodom Franjine ekonomije - <a href="https://www.youtube.com/watch?v=YCFLXp1E0Xc&t=379s" class="text-decoration-none">https://www.youtube.com/watch?v=YCFLXp1E0Xc&t=379s</a></span><br>
+						<span><span class="yellow-heading">Prof. dr.sc. Domagoj Sajter</span> - poruka mladima povodom Franjine ekonomije - <a href="https://www.youtube.com/watch?v=jMGta145GxQ&t=7s" class="text-decoration-none">https://www.youtube.com/watch?v=jMGta145GxQ&t=7s</a></span>
 					</p>	
 				</div>
 
@@ -368,11 +368,18 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" required>
 							<label class="form-check-label">
-								Prihvaćam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
+								Prihvaćam <a href="{{ Route('gdpr') }}">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
 							</label> 
 						</div>
 					</div>
 				</div>
+        <div class="form-group"> 
+          {!! NoCaptcha::renderJs() !!}
+          {!! NoCaptcha::display() !!}
+          @error('g-recaptcha-response')
+              <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+          @enderror
+        </div>
 			  <div class="text-center mt-3">
 				  <button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
 				</div>

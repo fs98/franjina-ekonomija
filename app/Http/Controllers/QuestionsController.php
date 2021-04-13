@@ -37,15 +37,17 @@ class QuestionsController extends Controller
         if ($httpRequest->has('full_name')) {
             $httpRequest->validate([
                 'full_name' => 'required',
-                'email' => 'required',
-                'question' => 'required'
+                'email' => 'required|email:rfc,dns',
+                'question' => 'required',
+                'g-recaptcha-response' => 'required|captcha',
             ]);
         } else {
             $httpRequest->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
-                'email' => 'required',
-                'question' => 'required'
+                'email' => 'required|email:rfc,dns',
+                'question' => 'required',
+                'g-recaptcha-response' => 'required|captcha',
             ]);
         }
 

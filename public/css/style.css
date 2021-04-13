@@ -377,6 +377,9 @@ footer .social-networks h3{
 		}
 	}
 
+.about-section a{
+  color: #BB1C2E;
+}
 
 .about-section textarea{
 	resize: none;
@@ -716,7 +719,8 @@ footer .social-networks h3{
 		border-radius: 50%;
 		object-fit: cover;
 		object-position: center;
-		height: 220px;
+		height: 220px; 
+    width: 220px;
 	}
 
 /* Projects Page */

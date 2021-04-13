@@ -61,7 +61,7 @@
                           </a>
                           <form action="{{ Route('admin.questions.destroy', ['question' => $questionsSingleRow->id]) }}" method="POST" class="d-inline-block">
                             @csrf
-                            <button class="btn btn-danger pointer" type="button" onclick="deleteSingleItem(this)">
+                            <button class="btn btn-secondary pointer" type="button" onclick="deleteSingleItem(this)">
                               <span>Izbriši</span>
                             </button>
                             @method('delete')

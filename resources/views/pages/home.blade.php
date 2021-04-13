@@ -282,11 +282,18 @@
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" required>
 						<label class="form-check-label">
-							Prihvaćam <a href="">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
+							Prihvaćam <a href="{{ Route('gdpr') }}">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
 						</label> 
 					</div>
 				</div>
 			</div>
+      <div class="form-group"> 
+        {!! NoCaptcha::renderJs() !!}
+        {!! NoCaptcha::display() !!}
+        @error('g-recaptcha-response')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
+    </div>
 			<input type="hidden" id="route" name="route" value="home">
 			<div class="text-center mt-3">
 				<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>

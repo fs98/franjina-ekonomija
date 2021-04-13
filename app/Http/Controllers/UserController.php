@@ -64,7 +64,7 @@ class UserController extends Controller
             $userSingle->save();
         } catch (Exception $e) {}
 
-        $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Success!", "User added.");
+        $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Gotovo!", "Novi korisnik je dodan.");
         return response()->json($swal->get());
     }
 

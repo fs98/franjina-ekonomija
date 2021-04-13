@@ -139,7 +139,7 @@ class MailController extends Controller
 
 		// Define html and its basic layout
 		// By practice, this should be the same as the html from the else {} block of the if segment below
-		$html = $newsletter_content;
+		$html = $newsletter_content . "<br><br><a style='width: 100%; text-align: center' href='https://franjinaekonomija.hr/unsubscribe'>Otkaži pretplatu</a>";
  
 		$mail->msgHTML($html);
 
@@ -180,7 +180,7 @@ class MailController extends Controller
 		//Password to use for SMTP authentication
 		$mail->Password = config('api.mail.hub.password');
 		//Set who the message is to be sent from
-		$mail->setFrom($user['subscriber_email']);
+		$mail->setFrom(config('api.mail.hub.username'), 'franjinaekonomija.hr');
 		//Set an alternative reply-to address
 		$mail->addReplyTo($user['subscriber_email']);
 		//Set who the message is to be sent to
@@ -192,7 +192,7 @@ class MailController extends Controller
 
 		// Define html and its basic layout
 		// By practice, this should be the same as the html from the else {} block of the if segment below
-		$html = "<h1 style='text-align:center'>Za otkazivanje pretplate kliknite na link:</h1><a href='http://127.0.0.1:8000/unsubscribe'>Otkaži pretplatu</a>";
+    $html = "<div style='width: 100%; display:block; text-align:center'><h1 style='text-align:center;'>Za otkazivanje pretplate kliknite na link:</h1><a style='text-decoration:none; font-weight:bold; font-size: 18px' href='https://franjinaekonomija.hr/unsubscribe/" . $user['subscriber_email'] . "/" . $user['token'] . "'>Otkaži pretplatu</a></div>";
 
 		$mail->msgHTML($html);
 

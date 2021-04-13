@@ -60,45 +60,32 @@
 
 			</div>
 			
-			<div class="col-lg-4 bloggers">
+			@if ($bloggersAll->isNotEmpty())
+          
+      <div class="col-lg-4 bloggers">
 	
-			<h1 class="w-100 text-center my-5">
-				<span class="yellow-border-heading">Blogeri</span>
-			</h1>	
+        <h1 class="w-100 text-center my-5">
+          <span class="yellow-border-heading">Blogeri</span>
+        </h1>	
+  
+        <div class="row mb-5">
 
-			<div class="row mb-5">
-				
-				<div class="col-12 col-md-6 col-lg-12 mb-4">
-					<div class="text-center">
-						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
-						<h5 class="mt-2">Jane Doe</h5>
-					</div>
-				</div>
+          @foreach ($bloggersAll as $item => $bloggerSingle)
+              
+            <div class="col-12 col-md-6 col-lg-12 mb-4">
+              <div class="text-center">
+                <img src="{{ $bloggerSingle->header_image_url }}" alt="{{ $bloggerSingle->image_description }}" class="img-fluid mt-2">
+                <h5 class="mt-2">{{ $bloggerSingle->name }}</h5>
+              </div>
+            </div> 
 
-				<div class="col-12 col-md-6 col-lg-12 mb-4">
-					<div class="text-center">
-						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
-						<h5 class="mt-2">Jane Doe</h5>
-					</div>
-				</div>
+          @endforeach
+  
+        </div>
+  
+        </div>
 
-				<div class="col-12 col-md-6 col-lg-12 mb-4">
-					<div class="text-center">
-						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
-						<h5 class="mt-2">Jane Doe</h5>
-					</div>
-				</div>
-
-				<div class="col-12 col-md-6 col-lg-12 mb-4">
-					<div class="text-center">
-						<img src="https://via.placeholder.com/260x260" class="img-fluid mt-2">
-						<h5 class="mt-2">Jane Doe</h5>
-					</div>
-				</div>
-
-			</div>
-
-			</div>
+      @endif
 
 		</div>
 		<!-- /.Row -->
