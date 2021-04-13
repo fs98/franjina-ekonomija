@@ -17,27 +17,16 @@
 			<h1 class="w-100 text-center my-5 pb-5">
 				<span class="yellow-border-heading">Aktivnosti</span>
 			</h1>		
-			
-			<div class="col-12 col-md-6 col-xl-3 px-4 text-center">
-				<img src="{{ asset('icons/activities/besplatnost.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
-				<h4 class="text-uppercase text-center font-weight-bold mt-5">Besplatnost</h4>
-				<p class="mt-4 text-center">upućuje na besprijekornost neke usluge ili dobra kada ih oni imaju isplate se izuzimaju bez da korisnik plaća naknadu.</p>
+      
+      @foreach ($activitiesAll as $item => $activitySingle)
+      
+      <div class="col-12 col-md-6 col-xl-3 px-4 text-center">
+				<img src="{{ $activitySingle->header_image_url }}" class="img-fluid activity-icon mt-lg-0 mt-4">
+				<h4 class="text-uppercase text-center font-weight-bold mt-5">{{ $activitySingle->name }}</h4>
+				<p class="mt-4 text-center">{{ $activitySingle->description }}</p>
 			</div>
-			<div class="col-12 col-md-6 col-xl-3 px-4 text-center" data-aos-delay="1000">
-				<img src="{{ asset('icons/activities/solidarnost.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
-				<h4 class="text-uppercase text-center font-weight-bold mt-5">Solidarnost</h4>
-				<p class="mt-4 text-center">je dobrovoljna socijalna kohezija, spremnost da se pomogne i dodijeli međusobna podrška unutar grupe.</p>
-			</div>
-			<div class="col-12 col-md-6 col-xl-3 px-4 text-center" data-aos-delay="2000">
-				<img src="{{ asset('icons/activities/ekologija.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
-				<h4 class="text-uppercase text-center font-weight-bold mt-5">Ekologija</h4>
-				<p class="mt-4 text-center"> znanost koja proučava odnose među živim organizmima, kao i njihov utjecaj na okoliš u kojem obitavaju, te utjecaj tog okoliša na njih.</p>
-			</div>
-			<div class="col-12 col-md-6 col-xl-3 px-4 text-center" data-aos-delay="3000">
-				<img src="{{ asset('icons/activities/cjelozivotno-ucenje.svg') }}" class="img-fluid activity-icon mt-lg-0 mt-4">
-				<h4 class="text-uppercase text-center font-weight-bold mt-5">Cjeloživotno učenje</h4>
-				<p class="mt-4 text-center">definira se kao aktivnost učenja tijekom cijelog života s ciljem unapređenja znanja, vještina i sposobnosti unutar osobne, društvene i poslovne perspektive.</p>
-			</div>
+
+      @endforeach
 
 		</div>
 		<!-- /.Row -->

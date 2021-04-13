@@ -205,19 +205,22 @@
                                         <li class="nav-item">
                                           <a class="nav-link" href="{{ Route('admin.questions.index') }}">Pitanja</a>
                                         </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="{{ Route('admin.activities.index') }}">Aktivnosti</a>
+                                        </li>
                                         {{-- <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-12" aria-controls="submenu-12">Tekst</a>
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-12" aria-controls="submenu-12">Aktivnosti</a>
                                             <div id="submenu-12" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="#">Level 1</a>
+                                                        <a class="nav-link" href="#">Aktivnosti</a>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="#">Level 2</a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </li> --}} 
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </li>

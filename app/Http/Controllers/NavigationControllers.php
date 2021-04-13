@@ -13,6 +13,7 @@ use App\Models\SliderImage;
 use App\Models\Event;
 use App\Models\Partner;
 use App\Models\Blogger;
+use App\Models\Activity;
 use Helper;
 use Carbon\Carbon;
 use DateTime;
@@ -22,9 +23,7 @@ class NavigationControllers extends Controller
 
     //
 		public function index()
-		{
-			// echo Date::now()->format('l j F Y H:i:s');
-			// die();
+		{ 
 			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
 			$projectAll = Project::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
       $heroSlider = SliderImage::where('slider_id', 1)->orderBy('order')->get();
@@ -98,7 +97,8 @@ class NavigationControllers extends Controller
 
 		//
 		public function activities(){
-			return view('pages.activities');
+      $activitiesAll = Activity::select('name','directory_id','image','image_description','description')->get();
+			return view('pages.activities')->with(['activitiesAll' => $activitiesAll]);
 		}
 
     // 

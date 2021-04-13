@@ -78,6 +78,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
   Route::resource('bloggers', 'BloggersController', [
     'except' => ['show']
   ]);
+
+  Route::resource('activities', 'ActivitiesController', [
+    'except' => ['show']
+  ]);
 });
 
 Route::post('subscribe', 'NewsletterController@subscribe')->name('newsletter.subscribe');

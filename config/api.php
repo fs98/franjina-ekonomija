@@ -30,6 +30,7 @@ return [
         'partners' => 'public/partners/',
         'sliders' => 'public/sliders/',
         'bloggers' => 'public/bloggers/',
+        'activities' => 'public/activities/',
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
@@ -40,6 +41,7 @@ return [
         'partners' => 'storage/partners/',
         'sliders' => 'storage/sliders/',
         'bloggers' => 'storage/bloggers/',
+        'activities' => 'storage/activities/',
     ],
     'route-paths' => [
         'store' => 'store',

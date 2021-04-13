@@ -160,7 +160,7 @@ class BloggersController extends Controller
      */
     public function destroy($id)
     {
-        $bloggerDel = BLogger::where('id', $id)->delete();
+        $bloggerDel = Blogger::where('id', $id)->delete();
 
         $swal = new Swal("Success", 200, Route('admin.bloggers.index'), "success", "Gotovo!", "Bloger izbrisan.");
         return response()->json($swal->get());

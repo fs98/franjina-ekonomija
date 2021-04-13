@@ -340,7 +340,7 @@
   let shareData = {
     title: 'Franjina ekonomija',
     text: 'Franjina ekonomija',
-    url: 'https://developer.mozilla.org',
+    url: 'https://franjinaekonomija.hr',
   }
 
   const btn = document.querySelector('#share');
