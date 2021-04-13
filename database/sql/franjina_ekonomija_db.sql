@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2021 at 02:13 PM
+-- Generation Time: Apr 13, 2021 at 03:13 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -119,6 +119,26 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gdpr`
+--
+
+CREATE TABLE `gdpr` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `gdpr`
+--
+
+INSERT INTO `gdpr` (`id`, `content`, `created_at`, `updated_at`) VALUES
+(1, '<p class=\"gdpr-text text-left\" style=\"margin-bottom: 1rem; color: rgb(33, 37, 41); font-size: 14.4px;\">Pokret Franjina Ekonomija Hrvatska (pokret) prikuplja osobne podatke u slijedeće svrhe:</p><ul style=\"color: rgb(33, 37, 41); font-size: 14.4px;\"><li>Informiranje pojedinca o aktivnostima pokreta</li><li>Odgovaranje na upit pojedinca</li><li>Komunikaciju sa sudionikom određene aktivnosti koju provodi pokret</li></ul><span style=\"color: rgb(33, 37, 41); font-size: 14.4px;\">Voditelj obrade podataka je Udruga za ekonomiju zajedništva,&nbsp;</span><a href=\"https://www.google.com/maps/search/Franje+Ra%C4%8Dkog+26,+Kri%C5%BEevci,+48260+-+HR?entry=gmail&amp;source=g\" target=\"_blank\" style=\"color: rgb(187, 28, 46); background-color: rgb(255, 255, 255); font-size: 14.4px;\">Franje Račkog 26, Križevci, 48260 - HR</a>', '2021-04-13 12:36:42', '2021-04-13 11:05:22');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -160,7 +180,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (26, '2021_04_11_100139_create_newsletter_subscriptions_table', 4),
 (27, '2021_04_12_105646_add_token_in_newsletter_subscriptions', 5),
 (28, '2021_04_13_081616_create_bloggers_table', 6),
-(29, '2021_04_13_112107_create_activities_table', 7);
+(29, '2021_04_13_112107_create_activities_table', 7),
+(30, '2021_04_13_123014_create_gdpr_table', 8);
 
 -- --------------------------------------------------------
 
@@ -449,6 +470,12 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `gdpr`
+--
+ALTER TABLE `gdpr`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -546,10 +573,16 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `gdpr`
+--
+ALTER TABLE `gdpr`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `newsletter_subscriptions`

@@ -82,6 +82,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
   Route::resource('activities', 'ActivitiesController', [
     'except' => ['show']
   ]);
+
+  Route::resource('gdpr', 'GdprController', [
+    'only' => ['show', 'update']
+  ]);
 });
 
 Route::post('subscribe', 'NewsletterController@subscribe')->name('newsletter.subscribe');

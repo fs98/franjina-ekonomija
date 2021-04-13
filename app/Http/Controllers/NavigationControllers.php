@@ -14,6 +14,7 @@ use App\Models\Event;
 use App\Models\Partner;
 use App\Models\Blogger;
 use App\Models\Activity;
+use App\Models\Gdpr;
 use Helper;
 use Carbon\Carbon;
 use DateTime;
@@ -103,7 +104,9 @@ class NavigationControllers extends Controller
 
     // 
     public function gdpr(){
-      return view('pages.gdpr');
+      $id = 1;
+      $gdprContent = Gdpr::find($id); 
+      return view('pages.gdpr')->with(['gdprContent' => $gdprContent]);
     }
 
 		//

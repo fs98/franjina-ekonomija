@@ -208,6 +208,9 @@
                                         <li class="nav-item">
                                           <a class="nav-link" href="{{ Route('admin.activities.index') }}">Aktivnosti</a>
                                         </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="{{ Route('admin.gdpr.show', ['gdpr' => '1']) }}">GDPR</a>
+                                        </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-12" aria-controls="submenu-12">Aktivnosti</a>
                                             <div id="submenu-12" class="collapse submenu" style="">
