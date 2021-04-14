@@ -18,7 +18,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $postAll = Post::select('id','title','short_description','cover','directory_id','created_at')->get();
+        $postAll = Post::select('id','title','short_description','cover','directory_id','created_at')->orderByDesc('created_at')->get();
 
         return view('admin.posts.list')->with(['postAll' => $postAll]);
     }
