@@ -196,6 +196,14 @@ footer .social-networks h3{
 	font-size: 24px;
 }
 
+.footer-link{
+  color: #BB1C2E;
+}
+
+.footer-link:hover{
+  color: rgba(187, 28, 46, 0.8);
+}
+
 /* Fixed footer */
 
 .fixed-footer{

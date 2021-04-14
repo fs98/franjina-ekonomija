@@ -301,7 +301,7 @@
     <div class="row bg-white text-center">
 
       <div class="col-12 py-4">
-        2021 &copy; Udruga Ekonomije zajedništva
+        2021 &copy; <a class="text-decoration-none footer-link" href="https://katrieldev.com/">Katriel Dev</a>
       </div>
 
     </div>
