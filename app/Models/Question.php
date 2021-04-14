@@ -22,7 +22,7 @@ class Question extends Model
     ];
 
     public function getStatusAttribute() {
-      if ($this->seen === 1) {
+      if ($this->seen == 1) {
         return '<span class="text-success">Pročitano</span>';
       } else {
         return '<span class="text-danger">Nepročitano</span>';
