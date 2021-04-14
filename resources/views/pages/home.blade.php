@@ -330,7 +330,7 @@
 	      	</div>
 	      	<div class="col-lg-7 col-12">
 	      		<h4 class="mt-4 d-flex justify-content-lg-end justify-content-start">
-              <span id="modal_event_start_hour_parent">Od <span class="border-bottom text-muted" id="modal_event_start_hour"></span> h </span><span id="modal_event_end_hour_parent">do <span class="border-bottom text-muted" id="modal_event_end_hour"></span> h</span>
+              <span id="modal_event_start_hour_parent">Od <span class="border-bottom text-muted" id="modal_event_start_hour"></span> h </span><span id="modal_event_end_hour_parent">&nbsp;do <span class="border-bottom text-muted" id="modal_event_end_hour"></span>h</span>
             </h4>
 	      	</div>
 	      	<div class="col-12">

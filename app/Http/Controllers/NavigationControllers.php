@@ -44,13 +44,13 @@ class NavigationControllers extends Controller
 					}
 					$eventListArray[$index]['header_image_url'] = $row->header_image_url;
 					$eventListArray[$index]['formatted_date'] = (new DateTime($eventListArray[$index]['start']))->format('d.m.Y.');
-          if (Helper::isset($eventListArray[$index]['start_hour'])) {
-            $eventListArray[$index]['start_hour'] = (new DateTime($eventListArray[$index]['start_hour']))->format('H:m');
+          if (Helper::isset($eventListArray[$index]['start_hour'])) { 
+            $eventListArray[$index]['start_hour'] = date('G:i', strtotime($eventListArray[$index]['start_hour']));
           } else {
             $eventListArray[$index]['start_hour'] = NULL;
           }
           if (Helper::isset($eventListArray[$index]['end_hour'])) {
-            $eventListArray[$index]['end_hour'] = (new DateTime($eventListArray[$index]['end_hour']))->format('H:m'); 
+            $eventListArray[$index]['end_hour'] = date('G:i', strtotime($eventListArray[$index]['end_hour'])); 
           } else {
             $eventListArray[$index]['end_hour'] = NULL;
           }
