@@ -36,7 +36,7 @@ class MailController extends Controller
 		//Password to use for SMTP authentication
 		$mail->Password = config('api.mail.hub.password');
 		//Set who the message is to be sent from
-		$mail->setFrom(config('api.mail.hub.username'), 'franjinaekonomija.hr');
+		$mail->setFrom($user['email'], $user['full_name']);
 		//Set an alternative reply-to address
 		$mail->addReplyTo($user['email'], $user['full_name']);
 		//Set who the message is to be sent to
@@ -95,6 +95,8 @@ class MailController extends Controller
     $mail->msgHTML("<div style='width:100%; font-family: Poppins;'> <h1 style='font-size: 40px; margin: 0px; font-weight: 600; width: 100%; text-align: center; padding: 50px 0px 0px 0px;'>Zdravo, <span style='font-weight: normal; color:#BB1C2E'>" . $user['full_name'] . "</span></h1> <h5 style='font-size: 30px; margin: 0px; font-weight: normal; width: 100%; text-align: center; padding: 0px 0px 50px 0px;'> Dobili smo Vašu poruku i uskoro ćemo Vas kontaktirati! Srdačan pozdrav! </h5> </div> <div style='width:100%; font-family: Poppins; background-color: #3C3C3C; padding: 40px 0px;'> <table style='width: 100%; table-layout: fixed;'> <tr> <td style='text-align: center; padding-bottom: 50px'> <h1 style='color: white; text-align: center; font-size: 30px; font-weight: 600; color:#BB1C2E'>Adresa</h1> <a style='color: white; text-decoration: none;' href='https://www.google.com/maps/dir//UEZ+-+udruga+za+ekonomiju+zajedni%C5%A1tva,+Ul.+Franje+Ra%C4%8Dkog+26,+48260,+Kri%C5%BEevci,+Croatia/@46.0297226,16.50946,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47661658ac32c181:0x284666b99e25dd46!2m2!1d16.5444793!2d46.0296684?shorturl=1'>Udruga za ekonomiju zajedništva Franje Račkog 26, 48260 Križevci, Hrvatska</a> </td> </tr> <tr> <td style='text-align: center; padding-bottom: 50px'> <h1 style='color: white; text-align: center; font-size: 30px; font-weight: 600; color:#BB1C2E'>Broj telefona</h1> <a style='color: white; text-decoration: none;' href='tel:+38548682847'>385 48 682 847</a><br> <a style='color: white; text-decoration: none;' href='tel:+38597123456'>+385 97 123 456</a><br> <a style='color: white; text-decoration: none;' href='tel:385958088189'>3385 95 808 8189</a> </td> </tr> <tr> <td style='text-align: center; padding-bottom: 50px'> <h1 style='color: white; text-align: center; font-size: 30px; font-weight: 600; color:#BB1C2E'>Email</h1> <a style='color: white; text-decoration: none;' href='mailto:>hub@franjinaekonomija.hr'>hub@franjinaekonomija.h</a> </td> </tr> <tr> <td style='text-align: center;'> <h1 style='color: white; text-align: center; font-size: 30px; font-weight: 600; color:#BB1C2E'>Pratite nas</h1> <a style='color: white; text-decoration: none;' href='https://www.instagram.com/franjinaekonomijahrvatska/'>Instagram</a><br> <a style='color: white; text-decoration: none;' href='https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/'>Facebook</a><br> <a style='color: white; text-decoration: none;' href='https://www.youtube.com/channel/UCkA1mEWmqGLxXfKrRbfqaFQ'>Youtube</a><br> <a style='color: white; text-decoration: none;' href='https://www.franjinaekonomija.hr'>www.franjinaekonomija.hr</a><br> </td> </tr> </table> </div>");
     $mail->AltBody = "Zdravo, " . $user['full_name'] . "\r\n\r\n" . "Dobili smo Vašu poruku i uskoro ćemo Vas kontaktirati. Srdačan pozdrav!";
     $mail->addAddress($user['email']);
+    $mail->setFrom(config('api.mail.hub.username'), 'franjinaekonomija.hr');
+    $mail->addReplyTo(config('api.mail.hub.username'), 'franjinaekonomija.hr');
     $mail->send(); 
 
   }
