@@ -36,7 +36,7 @@ class MailController extends Controller
 		//Password to use for SMTP authentication
 		$mail->Password = config('api.mail.hub.password');
 		//Set who the message is to be sent from
-		$mail->setFrom($user['email'], $user['full_name']);
+		$mail->setFrom(config('api.mail.hub.username'), 'franjinaekonomija.hr');
 		//Set an alternative reply-to address
 		$mail->addReplyTo($user['email'], $user['full_name']);
 		//Set who the message is to be sent to
