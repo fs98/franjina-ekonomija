@@ -47,23 +47,23 @@
                 <div class="form-group">
                   <label class="col-form-label" for="project_title">Naslov</label> 
                   <label class="label-required" for="project_title">(obavezno)</label>
-                  <input value="{{ $projectSingle->title }}" id="project_title" type="text" class="form-control" name="project_title" autocomplete="title" autofocus autocomplete="off">
+                  <input value="{{ $projectSingle->title }}" id="project_title" type="text" class="form-control" name="project_title" autocomplete="title" autofocus maxlength="70" autocomplete="off">
                 </div>
                 <div class="form-group">
                   <label for="project_title_slug" class="col-form-label">Naslov u URL-u</label>
                   <label for="project_title_slug" class="label-required">(automatski generisano)</label>
-                  <input value="{{ $projectSingle->title_slug }}" type="text" id="project_title_slug" class="form-control" name="project_title_slug" max-length="512" readonly="" tabindex="-1">
+                  <input value="{{ $projectSingle->title_slug }}" type="text" id="project_title_slug" class="form-control" name="project_title_slug" maxlength="512" readonly="" tabindex="-1">
                 </div>
                 <div class="form-group">
                   <label for="col-form-label" for="project_keywords">Ključne riječi</label>
                   <label for="project_keywords" class="label-required">(obavezno)</label>
-                  <input value="{{ $projectSingle->keywords }}" type="text" id="project_keywords" name="project_keywords" class="form-control" max-length="256">
+                  <input value="{{ $projectSingle->keywords }}" type="text" id="project_keywords" name="project_keywords" class="form-control" maxlength="255">
                   <label for="project_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
                 </div>
                 <div class="form-group">
                   <label for="col-form-label" for="project_short_description">Kratki opis</label>
                   <label for="project_short_description" class="label-required">(obavezno)</label>
-                  <input value="{{ $projectSingle->short_description }}" type="text" id="project_short_description" name="project_short_description" class="form-control" max-length="256">
+                  <input value="{{ $projectSingle->short_description }}" type="text" id="project_short_description" name="project_short_description" class="form-control" maxlength="255">
                   <label for="project_short_description" class="label-not-required">Napišite kratak opis koji će se nalazi na slajderu na početnoj stranici ispod naslova posta.</label>
                 </div>
                 <div class="form-group">

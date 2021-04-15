@@ -50,24 +50,24 @@
                 <div class="row px-3" id="errors-top" style="display: none;"></div>
                 <div class="form-group">
                   <label class="col-form-label" for="post_title">Naslov</label> 
-                  <label class="label-required" for="post_title">(obavezno)</label>
-                  <input id="post_title" type="text" class="form-control" name="post_title" autocomplete="title" autofocus autocomplete="off">
+                  <label class="label-required" for="post_title">(obavezno, max 70 karaktera)</label>
+                  <input id="post_title" maxlength="70" type="text" class="form-control" name="post_title" autocomplete="title" autofocus autocomplete="off">
                 </div>
                 <div class="form-group">
                   <label for="post_title_slug" class="col-form-label">Naslov u URL-u</label>
                   <label for="post_title_slug" class="label-required">(automatski generisano)</label>
-                  <input type="text" id="post_title_slug" class="form-control" name="post_title_slug" max-length="512" readonly="" tabindex="-1">
+                  <input type="text" id="post_title_slug" class="form-control" name="post_title_slug" maxlength="255" readonly="" tabindex="-1">
                 </div>
                 <div class="form-group">
                   <label for="col-form-label" for="post_keywords">Ključne riječi</label>
                   <label for="post_keywords" class="label-required">(obavezno)</label>
-                  <input type="text" id="post_keywords" name="post_keywords" class="form-control" max-length="256">
+                  <input type="text" id="post_keywords" name="post_keywords" class="form-control" maxlength="255">
                   <label for="post_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
                 </div>
                 <div class="form-group">
                   <label for="col-form-label" for="post_short_description">Kratki opis</label>
                   <label for="post_short_description" class="label-required">(obavezno)</label>
-                  <input type="text" id="post_short_description" name="post_short_description" class="form-control" max-length="256">
+                  <input type="text" id="post_short_description" name="post_short_description" class="form-control" maxlength="255">
                   <label for="post_short_description" class="label-not-required">Napišite kratak opis koji će se nalazi na slajderu na početnoj stranici ispod naslova posta.</label>
                 </div>
                 <div class="form-group">

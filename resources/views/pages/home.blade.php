@@ -100,10 +100,10 @@
 <section class="bg-light" data-aos-duration="4000">	
 
 	<!-- Container -->
-	<div class="container py-5">
+	<div class="container pt-5">
 		
 		<!-- Row -->
-		<div class="row mb-5" data-aos="zoom-in" data-aos-duration="1500">
+		<div class="row" data-aos="zoom-in" data-aos-duration="1500">
 
 		<div class="col-12 w-100 text-center mb-5">
 			<h1>
@@ -122,21 +122,21 @@
 								
 						<!-- Slide -->
 						<div class="swiper-slide">
-							<div class="card border-0">
+							<div class="card border-0 h-675">
 								@if (Helper::isset($postSingleRow->title)) 
 								<img src="{{ $postSingleRow->header_image_url }}" alt="...">
 								@else
 									<img src="{{ asset('images/home/400x450.png') }}" alt="...">
 								@endif
-								<div class="card-body px-0">
-									<h4 class="card-title font-weight-bold mt-4">
+								<div class="card-body px-0 h-415">
+									<h5 class="card-title font-weight-bold px-3 h-100-px"> 
 										@if (Helper::isset($postSingleRow->title)) 
 											{{ $postSingleRow->title }}
 										@else 
 											{{ 'Ime nije dostupno '}}
 										@endif
-									</h4>
-									<p class="card-text text-center mt-5 px-3">{{ $postSingleRow->short_description }}</p>
+									</h5>
+									<p class="card-text text-center px-3 truncate-overflow" title="{{ $postSingleRow->short_description }} style="font-size: 16px;">{{ $postSingleRow->short_description }}</p>
 									<a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 								</div>
 							</div>
@@ -166,7 +166,7 @@
 <section data-aos-duration="4000">
 
 	<!-- Container -->
-	<div class="container pb-4" data-aos="zoom-in" data-aos-duration="1500">
+	<div class="container pb-5" data-aos="zoom-in" data-aos-duration="1500">
 		
 		<!-- Row -->
 		<div class="row">
@@ -187,11 +187,11 @@
 								
 						<!-- Slide -->
 						<div class="swiper-slide">
-							<div class="card border-0">
+							<div class="card card border-0 h-675">
 								<img src="{{ $projectSingleRow->header_image_url }}" class="card-img-top rounded-0" alt="...">
-								<div class="card-body px-0">
-									<h4 class="card-title font-weight-bold mt-4">{{ $projectSingleRow->title }}</h4>
-									<p class="card-text text-center mt-5 px-3">{{ $projectSingleRow->short_description }}</p>
+								<div class="card-body px-0 h-415">
+									<h5 class="card-title font-weight-bold mt-4">{{ $projectSingleRow->title }}</h5>
+									<p class="card-text text-center mt-5 px-3 h-100-px truncate-overflow" title="{{ $projectSingleRow->short_description }}">{{ $projectSingleRow->short_description }}</p>
 									<a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
 								</div>
 							</div>

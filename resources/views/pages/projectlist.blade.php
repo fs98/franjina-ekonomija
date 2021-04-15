@@ -42,11 +42,11 @@
 							  <div class="card border-0 text-center">
 								  <img src="{{ $projectsActiveSignleRow->header_image_url }}" alt="...">
 								  <div class="card-body px-0">
-								  <h4 class="card-title font-weight-bold mt-2">{{ $projectsActiveSignleRow->title }}</h4>
-								  <p class="card-text text-center mt-2 px-3">{{ $projectsActiveSignleRow->short_description }}</p>
+								  <h5 class="card-title font-weight-bold mt-2">{{ $projectsActiveSignleRow->title }}</h5>
+								  <p class="card-text text-center mt-2 px-3 h-100-px truncate-overflow" title="{{ $projectsActiveSignleRow->short_description }}" >{{ $projectsActiveSignleRow->short_description }}</p>
 
 								  @if ($projectsActiveSignleRow->donations == true)
-                    <div class="border project-card-box p-2">
+                    <div class="border project-card-box p-2 mt-2">
                       <span class="d-flex flex-row justify-content-between px-2 mt-1">
                         <span class="d-flex justify-content-start">
                           <img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">

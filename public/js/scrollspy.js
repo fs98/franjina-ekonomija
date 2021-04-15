@@ -10,7 +10,7 @@ jQuery("#navbar a").on('click', function(event) {
     }
     
     jQuery('html, body').animate({
-      scrollTop: jQuery(hash).offset().top - 150
+      scrollTop: jQuery(hash).offset().top - 130
     }, 1500, function(){
       window.location.hash = hash - 130;
     });

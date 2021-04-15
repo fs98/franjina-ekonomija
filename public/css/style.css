@@ -674,7 +674,7 @@ footer .social-networks h3{
 } 
 
 .blog-section .card .col-sm-4 img{ 
-	max-height: 250px;
+	max-height: 300px;
 	object-position: center; 
 	object-fit: cover;  
 	height: 100%;
@@ -740,8 +740,7 @@ footer .social-networks h3{
 }
 
 .projects-section .card p{
-	font-size: 12px;
-	font-weight: 200
+	font-size: 16px; 
 }
 
 .project-card-box{
@@ -1002,4 +1001,26 @@ footer .social-networks h3{
 
 .get-unsubscribe-mail-btn:focus{
 	box-shadow: 0 0 0 3px rgba(187, 28, 46, 0.4);
+}
+
+/* Utility classes */
+
+.h-675{
+  height: 675px !important;
+}
+
+.h-415{
+  height: 415px !important;
+}
+
+.h-100-px{
+  height: 100px !important;
+}
+
+.truncate-overflow{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

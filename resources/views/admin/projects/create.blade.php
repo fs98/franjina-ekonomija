@@ -52,23 +52,23 @@
                 <div class="form-group">
                   <label class="col-form-label" for="project_title">Naslov</label> 
                   <label class="label-required" for="project_title">(obavezno)</label>
-                  <input id="project_title" type="text" class="form-control" name="project_title" autocomplete="title" autofocus autocomplete="off">
+                  <input id="project_title" type="text" class="form-control" name="project_title" autocomplete="title" autofocus autocomplete="off" maxlength="70">
                 </div>
                 <div class="form-group">
                   <label for="project_title_slug" class="col-form-label">Naslov u URL-u</label>
                   <label for="project_title_slug" class="label-required">(automatski generisano)</label>
-                  <input type="text" id="project_title_slug" class="form-control" name="project_title_slug" max-length="512" readonly="" tabindex="-1">
+                  <input type="text" id="project_title_slug" class="form-control" name="project_title_slug" maxlength="255" readonly="" tabindex="-1">
                 </div> 
                 <div class="form-group">
                   <label for="col-form-label" for="project_keywords">Ključne riječi</label>
                   <label for="project_keywords" class="label-required">(obavezno)</label>
-                  <input type="text" id="project_keywords" name="project_keywords" class="form-control" max-length="256">
+                  <input type="text" id="project_keywords" name="project_keywords" class="form-control" maxlength="255">
                   <label for="project_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
                 </div>
                 <div class="form-group">
                   <label for="col-form-label" for="project_short_description">Kratki opis</label>
                   <label for="project_short_description" class="label-required">(obavezno)</label>
-                  <input type="text" id="project_short_description" name="project_short_description" class="form-control" max-length="256">
+                  <input type="text" id="project_short_description" name="project_short_description" class="form-control" maxlength="255">
                   <label for="project_short_description" class="label-not-required">Napišite kratak opis koji će se nalazi na slajderu na početnoj stranici ispod naslova posta.</label>
                 </div>
                 <div class="form-group">
@@ -87,7 +87,7 @@
                 <div class="form-group mt-3">
                   <label for="project_header_image_alt" class="col-form-label">Opis slike (prikazuje se ako se slika nije učitala)</label>
                   <label for="project_header_image_alt" class="label-not-required">(neobavezno)</label>
-                  <input type="text" id="project_header_image_alt" class="form-control" name="project_header_image_alt" value="" maxlength="256">
+                  <input type="text" id="project_header_image_alt" class="form-control" name="project_header_image_alt" value="" maxlength="255">
                 </div>
 
                 <div class="form-row">
