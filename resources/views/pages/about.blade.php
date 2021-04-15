@@ -38,7 +38,7 @@
 			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000"> 
 
 			<div class="col-md-12 col-lg-7 pr-lg-5 d-flex align-items-center"> 
-				<img src="{{ asset('images/about/image-5.png') }}" class="img-fluid">
+				<img src="{{ asset('images/about/image-5.jpg') }}" class="img-fluid">
 			</div>
 
 			<div class="col-md-12 col-lg-5 mt-lg-0 mt-5 d-flex flex-row align-items-center justify-content-center position-relative">
@@ -152,7 +152,7 @@
 					<div class="row">
 					
 						<div class="col-md-12 col-lg-7 pr-lg-5 d-flex align-items-center"> 
-							<img src="{{ asset('images/about/image-7.png') }}" class="img-fluid">
+							<img src="{{ asset('images/about/image-7.jpg') }}" class="img-fluid">
 						</div>
 
 						<div class="col-md-12 col-lg-5 mt-lg-0 mt-5 d-flex align-items-center justify-content-start">

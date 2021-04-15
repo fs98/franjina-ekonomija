@@ -53,7 +53,7 @@
               <div class="form-group mt-3">
                 <label for="slider_image_alt" class="col-form-label">Opis slike (prikazuje se ako se slika nije učitala)</label>
                 <label for="slider_image_alt" class="label-not-required">(neobavezno)</label>
-                <input type="text" id="slider_image_alt" class="form-control" name="slider_image_alt" value="" maxlength="256">
+                <input type="text" id="slider_image_alt" class="form-control" name="slider_image_alt" value="{{ $sliderImage->image_description }}" maxlength="256">
               </div>
               <div class="form-group mt-3">
                 <label for="slider_image_order" class="col-form-label">Redoslijed</label>

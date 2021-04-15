@@ -61,7 +61,7 @@ class sliderController extends Controller
     public function edit($id)
     {
         $sliderName = Slider::select('title')->find($id);
-        $imagesAll = SliderImage::where('slider_id', $id)->get();
+        $imagesAll = SliderImage::where('slider_id', $id)->orderBy('order')->get();
         return view('admin.sliders.edit')->with(['imagesAll' => $imagesAll, 'id' => $id, 'title' => $sliderName->title]);
     }
 
