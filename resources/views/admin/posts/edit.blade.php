@@ -44,23 +44,23 @@
                 <div class="form-group">
                   <label class="col-form-label" for="post_title">Naslov</label> 
                   <label class="label-required" for="post_title">(obavezno)</label>
-                  <input id="post_title" type="text" class="form-control" name="post_title" autocomplete="title" autofocus autocomplete="off" value="{{ $postSingle->title }}">
+                  <input id="post_title" type="text" class="form-control" name="post_title" autocomplete="title" autofocus autocomplete="off" maxlength="70" value="{{ $postSingle->title }}">
                 </div>
                 <div class="form-group">
                   <label for="post_title_slug" class="col-form-label">Naslov u URL-u</label>
                   <label for="post_title_slug" class="label-required">(automatski generisano)</label>
-                  <input type="text" id="post_title_slug" class="form-control" name="post_title_slug" max-length="512" readonly="" tabindex="-1" value="{{ $postSingle->title_slug }}">
+                  <input type="text" id="post_title_slug" class="form-control" name="post_title_slug" maxlength="255" readonly="" tabindex="-1" value="{{ $postSingle->title_slug }}">
                 </div>
                 <div class="form-group">
                   <label for="col-form-label" for="post_short_description">Kratki opis</label>
                   <label for="post_short_description" class="label-required">(obavezno)</label>
-                  <input type="text" id="post_short_description" name="post_short_description" class="form-control" max-length="256" value="{{ $postSingle->short_description }}">
+                  <input type="text" id="post_short_description" name="post_short_description" class="form-control" maxlength="255" value="{{ $postSingle->short_description }}">
                   <label for="post_short_description" class="label-not-required">Napišite kratak opis koji će se nalazi na slajderu na početnoj stranici ispod naslova posta.</label>
                 </div>
                 <div class="form-group">
                   <label for="col-form-label" for="post_keywords">Ključne riječi</label>
                   <label for="post_keywords" class="label-required">(obavezno)</label>
-                  <input type="text" id="post_keywords" name="post_keywords" class="form-control" max-length="256" value="{{ $postSingle->keywords }}">
+                  <input type="text" id="post_keywords" name="post_keywords" class="form-control" maxlength="255" value="{{ $postSingle->keywords }}">
                   <label for="post_keywords" class="label-not-required">Ključne riječi odvojite zarezom</label>
                 </div>
                 <div class="form-group">
