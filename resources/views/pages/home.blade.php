@@ -100,7 +100,7 @@
 <section class="bg-light" data-aos-duration="4000">	
 
 	<!-- Container -->
-	<div class="container pt-5">
+	<div class="container py-5">
 		
 		<!-- Row -->
 		<div class="row" data-aos="zoom-in" data-aos-duration="1500">
