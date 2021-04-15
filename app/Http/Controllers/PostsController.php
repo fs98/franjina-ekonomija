@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Post;
 use App\Models\Swal;
@@ -196,7 +197,14 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        $postSingleDel = Post::where('id', $id)->delete();
+        $postSingle = Post::find($id);
+
+        $directory = FileStorageController::getDirectory($postSingle->base_storage_path, $postSingle->directory_id);
+        Storage::deleteDirectory($directory->getFullPath()); 
+
+        try {
+          $postSingle->delete();
+        } catch (Exception $e) {}
 
         $swal = new Swal("Success", 200, Route('admin.posts.index'), "success", "Gotovo!", "Post izbrisan.");
         return response()->json($swal->get());
