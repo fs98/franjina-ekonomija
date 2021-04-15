@@ -50,7 +50,7 @@
 						<strong>The Economy of Francesco</strong>  međunarodni je događaj koji na poziv i inicijativu Pape Franje okuplja mlade ekonomiste, poduzetnike i pokretače pozitivnih društvenih promjena, a sve u svrhu davanja doprinosa razvoju nove ekonomije kojoj je u središtu čovjek. 
 					</p>
 					<p>
-						Upravo je on u mladima vidio nadu za zaokret postojećeg ekonomskog sustava u smjeru pravednije, manje isključive i moralnije  ekonomije. Papa je uvjeren kako mladi posjeduju želju i gorljivost da svojom osobnošću, idejama, aktivnošću i voljom utječu na sadašnju i daju „dušu'' budućoj ekonomiji. Pismom poslanim u svibnju 2019. godine ukazao je na nedostatke trenutnog ekonomskog sustava te pozvao sve one koji žele kreirati društvo i ekonomiju temeljenu na višim vrijednostima i etičkim načelima da se priključe. Kompletan poziv pape Franje pročitajte na našem <a href="https://franjinaekonomija.hr/blog/poruka-sv-oca-pape-franje-mladim-ekonomistima-poduzetnicima-poduzetnicima-iz-cijeloga-svijeta">blogu</a>.
+						Upravo je on u mladima vidio nadu za zaokret postojećeg ekonomskog sustava u smjeru pravednije, manje isključive i moralnije  ekonomije. Papa je uvjeren kako mladi posjeduju želju i gorljivost da svojom osobnošću, idejama, aktivnošću i voljom utječu na sadašnju i daju „dušu'' budućoj ekonomiji. Pismom poslanim u svibnju 2019. godine ukazao je na nedostatke trenutnog ekonomskog sustava te pozvao sve one koji žele kreirati društvo i ekonomiju temeljenu na višim vrijednostima i etičkim načelima da se priključe. Kompletan poziv pape Franje pročitajte na našem <a href="https://franjinaekonomija.hr/blog/pismo-pape-franje-mladim-ekonomistima-i-poduzetnicima-cijeloga-svijeta">blogu</a>.
 					</p>
 				</span>
 			</div>
