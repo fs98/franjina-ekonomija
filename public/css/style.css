@@ -491,7 +491,7 @@ footer .social-networks h3{
 
   .swiper-container img{
   	height: 340px; 
-  	width: 290px; 
+  	/* width: 290px;  */
   	object-fit: cover; 
   	object-position: center;
   }
