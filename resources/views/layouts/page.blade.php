@@ -389,19 +389,19 @@
 <script>
 $(document).ready(function () {
     $('.dropdown-toggle').mouseover(function() {
-        $('.dropdown-menu').show();
+        $('.dropdown-menu').fadeIn(300);
     })
 
     $('.dropdown-toggle').mouseout(function() {
         t = setTimeout(function() {
-            $('.dropdown-menu').hide();
+            $('.dropdown-menu').fadeOut(300);
         }, 100);
 
         $('.dropdown-menu').on('mouseenter', function() {
-            $('.dropdown-menu').show();
+            $('.dropdown-menu').fadeIn(300);
             clearTimeout(t);
         }).on('mouseleave', function() {
-            $('.dropdown-menu').hide();
+            $('.dropdown-menu').fadeOut(300);
         })
     })
 })
