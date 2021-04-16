@@ -23,7 +23,7 @@
 			<!-- Row -->
 			<div class="row">
 				
-				<div class="col-12 w-100 text-center mb-4">
+				<div class="col-12 w-100 text-center mb-3">
 					
 					<h1>
 						<span class="yellow-border-heading pb-1">Uvodna riječ i poziv pape Franje</span>
@@ -35,21 +35,21 @@
 			<!-- /.Row -->
 
 			<!-- Row -->
-			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000"> 
+			<div class="row" data-aos="zoom-in" data-aos-duration="1000"> 
 
 			<div class="col-md-12 col-lg-7 pr-lg-5 d-flex align-items-center"> 
-				<img src="{{ asset('images/about/image-5.jpg') }}" class="img-fluid">
+				<img src="{{ asset('images/about/image-5.jpg') }}" alt="slika 5" class="img-fluid">
 			</div>
 
 			<div class="col-md-12 col-lg-5 mt-lg-0 mt-5 d-flex flex-row align-items-center justify-content-center position-relative">
 				<span>
-					<img src="{{ asset('icons/common/quote.svg') }}" class="about-section-image img-fluid">
+					<img src="{{ asset('icons/common/quote.svg') }}" alt="navodnici" class="about-section-image img-fluid">
 				</span>
 				<span class="ml-3 mt-5">
-					<p>
+					<p class="text-justify">
 						<strong>The Economy of Francesco</strong>  međunarodni je događaj koji na poziv i inicijativu Pape Franje okuplja mlade ekonomiste, poduzetnike i pokretače pozitivnih društvenih promjena, a sve u svrhu davanja doprinosa razvoju nove ekonomije kojoj je u središtu čovjek. 
 					</p>
-					<p>
+					<p class="text-justify">
 						Upravo je on u mladima vidio nadu za zaokret postojećeg ekonomskog sustava u smjeru pravednije, manje isključive i moralnije  ekonomije. Papa je uvjeren kako mladi posjeduju želju i gorljivost da svojom osobnošću, idejama, aktivnošću i voljom utječu na sadašnju i daju „dušu'' budućoj ekonomiji. Pismom poslanim u svibnju 2019. godine ukazao je na nedostatke trenutnog ekonomskog sustava te pozvao sve one koji žele kreirati društvo i ekonomiju temeljenu na višim vrijednostima i etičkim načelima da se priključe. Kompletan poziv pape Franje pročitajte na našem <a href="https://franjinaekonomija.hr/blog/pismo-pape-franje-mladim-ekonomistima-i-poduzetnicima-cijeloga-svijeta">blogu</a>.
 					</p>
 				</span>
@@ -61,14 +61,14 @@
 			<!-- Row -->
 			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 
-				<div class="col-12 w-100 text-center text-md-left mb-4">
-					<h2 class="mb-2 mb-md-4">
-						<span class="yellow-border-heading pb-1">Opis, tijek događaja</span>
+				<div class="col-12 w-100 text-center text-md-left">
+					<h2 class="mb-4">
+						<span class="yellow-border-heading pb-2">Opis, tijek događaja</span>
 					</h2>
 				</div>	
 
 				<div class="col-12">
-				<p>Događaj je u početku zamišljen kao trodnevan boravak u Asizu, mjestu usko vezanom za sv. Franju Asiškog, koji je ujedno i inspiracija 
+				<p class="text-justify">Događaj je u početku zamišljen kao trodnevan boravak u Asizu, mjestu usko vezanom za sv. Franju Asiškog, koji je ujedno i inspiracija 
 				samom pokretu. Na ovaj događaj prijavilo se preko 3000 mladih iz cijelog svijeta. Njih 2000 iz 115 zemalja svijeta prošlo je zahtjevan i 
 				precizan proces prijave i bili su pozvani na glavni događaj u Asiz. Prve pripreme krenule su početkom 2020.g. Mladi su imali priliku 
 				odabrati svoju grupu, tzv. selo, odnosno područje unutar ekonomije za koje smatraju da najbolje odgovara njihovom obrazovanju, 
@@ -76,13 +76,13 @@
 				mogu zajednički djelovati kako bi pronašli najbolje rješenje. Slijedom toga, svako selo obuhvaća jedno od ključnih područja i tema 
 				unutar ekonomije te je zamišljeno kao mjesto dijaloga i sučeljavanja misli, ideja, pitanja, različitih perspektiva i prijedloga. Riječ je o 
 				dvanaest „sela" koja spajaju naizgled nespojivo pa imaju često paradoksalne nazive. </p>
-				<p>
+				<p class="text-justify">
 				Zbog svjetske epidemiološke situacije događaj je s ožujka prebačen na studeni i time je cijeli koncept EoF-a promijenjen. Naime, 
 				mladi su se umrežili i krenuli s radom unutar svojih sela. Uz mlade sudionici sela su i koordinatori koji obavljaju poslove vođenja, 
 				upravljanja i organiziranja aktivnosti unutar sela, raspoređuju sudionike u podgrupe, obavljaju komunikaciju s gostima i govornicima 
 				te su ujedno članovi znanstvenog odbora EoF-a. Od travnja do listopada 2020.g. svako selo intenzivno je radilo na projektima i 
 				razvoju ideja koje su predstaviti javnosti na glavnom eventu od 19. - 21. studenog 2020.</p>				
-				<p>Uz intenzivan rad unutar grupa organizirano je i oko 30 webinara sa gostima predavačima, stručnim i iskusnim ekonomistima iz 
+				<p class="text-justify">Uz intenzivan rad unutar grupa organizirano je i oko 30 webinara sa gostima predavačima, stručnim i iskusnim ekonomistima iz 
 				raznih dijelova svijeta (dostupni na službenom YouTube kanalu).</p>
 				</div>
 
@@ -92,14 +92,14 @@
 			<!-- Row -->
 			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 
-				<div class="col-12 w-100 text-center text-md-left my-4">
-					<h2 class="mb-2 mb-md-4">
-						<span class="yellow-border-heading pb-1">Priprema za glavni event</span>
+				<div class="col-12 w-100 text-center text-md-left">
+					<h2 class="mb-4">
+						<span class="yellow-border-heading pb-2">Priprema za glavni event</span>
 					</h2>
 				</div>	
 
 				<div class="col-12">
-				<p>Donesena je konačna odluka da će se događaj u potpunosti pratiti online. Program događaja je zamišljen dijelom zajednički, na 
+				<p class="text-justify">Donesena je konačna odluka da će se događaj u potpunosti pratiti online. Program događaja je zamišljen dijelom zajednički, na 
 				globalnoj razini The Economy of Francesco, a dijelom je prepušten nacionalnoj razini. Kako bi programi na nacionalnim razinama bili 
 				što kvalitetniji, organizirali su se HUB-ovi, središta, diljem svijeta koji će preuzeti osmišljavanje dijela aktivnosti. U nastojanju da 
 				navedena tri dana budu u potpunosti posvećena događaju EoF te da svi sudionici bez obzira na vremensku zonu provedu što više 
@@ -112,16 +112,16 @@
 			<!-- /.Row -->			
 
 			<!-- Row -->
-			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 				
-				<div class="col-12 w-100 text-center text-md-left my-4">
-					<h2 class="mb-2 mb-md-4">
-						<span class="yellow-border-heading pb-1">Opis eventa</span>
+				<div class="col-12 w-100 text-center text-md-left">
+					<h2 class="mb-4">
+						<span class="yellow-border-heading pb-2">Opis eventa</span>
 					</h2>
 				</div>
 
 				<div class="col-12">
-					<p>Manifestacija je započela u četvrtak, 19. studenog u 14h filmom „Poslušaj vapaj najsiromašnijih da bi preobrazio Zemlju". Konferenciju 
+					<p class="text-justify">Manifestacija je započela u četvrtak, 19. studenog u 14h filmom „Poslušaj vapaj najsiromašnijih da bi preobrazio Zemlju". Konferenciju 
 					je otvorio američki harvardski ekonomist Jeffrey Sachs. Neki od sudionika su svjetski poznati ekonomisti: nobelovac Muhammad 
 					Yunus, Kate Raworth, Vandana Shiva, Stefano Zamagni, Mauro Magatti, Juan Camilo Cárdenas, Jennifer Nedelsky te brojni drugi. 
 					Program događaja obuhvaćao je predavanja i panel rasprave ekonomskih stručnjaka s mladim ekonomistima, iznošenje postignutih 
@@ -129,7 +129,7 @@
 					događaj, razna kulturna predstavljanja i dr. Online organizacija ovog eventa omogućilo je da preko 100 000 mladih iz cijelog svijeta 
 					može pratiti ovaj jedinstveni događaj. Kompletan program dostupan je na službenom EoF YouTube kanalu.</p>
 					
-					<p>
+					<p class="text-justify">
 						<span><span class="yellow-heading">Prvi dan</span> - <a href="https://www.youtube.com/watch?v=sSDky2r5eoE" class="text-decoration-none">https://www.youtube.com/watch?v=sSDky2r5eoE</a></span><br>
 						<span><span class="yellow-heading">Drugi dan</span> - <a href="https://www.youtube.com/watch?v=wq2r0uA8hJA&t=6885s" class="text-decoration-none">https://www.youtube.com/watch?v=wq2r0uA8hJA&t=6885s</a></span><br>
 						<span><span class="yellow-heading">Treći dan</span> - <a href="https://www.youtube.com/watch?v=4CbUfQ0k91Y&t=14397s" class="text-decoration-none">https://www.youtube.com/watch?v=4CbUfQ0k91Y&t=14397s</a></span>
@@ -140,11 +140,11 @@
 			<!-- /.Row -->
 
 			<!-- Row -->
-			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 				
-				<div class="col-12 w-100 text-center text-md-left my-4">
-					<h2 class="mb-2 mb-md-4">
-						<span class="yellow-border-heading pb-1">Poruka pape Franje</span>
+				<div class="col-12 w-100 text-center text-md-left mb-4">
+					<h2>
+						<span class="yellow-border-heading pb-2">Poruka pape Franje</span>
 					</h2>
 				</div>
 
@@ -152,11 +152,11 @@
 					<div class="row">
 					
 						<div class="col-md-12 col-lg-7 pr-lg-5 d-flex align-items-center"> 
-							<img src="{{ asset('images/about/image-7.jpg') }}" class="img-fluid">
+							<img src="{{ asset('images/about/image-7.jpg') }}" alt="slika 7" class="img-fluid">
 						</div>
 
 						<div class="col-md-12 col-lg-5 mt-lg-0 mt-5 d-flex align-items-center justify-content-start">
-							<p>
+							<p class="text-justify">
 								Pri kraju programa iz Asiza uključio se papa Franjo sa svojom porukom mladim ekonomistima u kojoj predlaže "pakt" za novi ekonomski model jer "Ne možemo naprijed ovako. Znate da je nužna drugačija ekonomska priča, da neodgodivo treba priznati činjenicu da je trenutni svjetski sustav neodrživ. Pozvani ste da konkretno utječete u vašim gradovima i na vašim sveučilištima, na poslu i u sindikatima, u poduzećima i pokretima, u javnim i privatnim uredima", dodao je, "dragi mladi ekonomisti, poduzetnici, radnici i menadžeri, vrijeme je da se odvažimo na rizik poticanja novih modela razvitka, napretka i održivosti u kojima su protagonisti ljudi, a osobito oni isključeni.'' 
 							</p>
 						</div>
@@ -175,18 +175,18 @@
 			<!-- Row -->
 			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 
-				<div class="col-12 w-100 text-center text-md-left my-4">
-					<h2 class="my-2 mb-md-4">
-						<span class="yellow-border-heading pb-1">Završna izjava i zajedničko opredjeljenje</span>
+				<div class="col-12 w-100 text-center text-md-left">
+					<h2 class="my-4">
+						<span class="yellow-border-heading pb-2">Završna izjava i zajedničko opredjeljenje</span>
 					</h2>
 				</div>	
 
 				<div class="col-12">
-				<p>Svako selo postalo je kao obitelj – u besplatnosti, velikodušnom davanju raslo se šest mjeseci u mudrosti, ljubavi i znanju. Plod  
+				<p class="text-justify">Svako selo postalo je kao obitelj – u besplatnosti, velikodušnom davanju raslo se šest mjeseci u mudrosti, ljubavi i znanju. Plod  
 				ovakvog truda brojni su projekti i ideje koji su ostvareni u skupinama. Na samom događaju mladi su uputili svjetskim ekonomistima,  
 				političarima i pojedincima 12 zahtjeva koje treba odmah implementirati u sustave da bi se mogla stvarati bolja ekonomija za bolji  
 				svijet.</p>
-				<p>Economy of  Francesco je odradio svoj početak. Uz svetog Oca preko 2 000 mladih uzvikuje ''idemo dalje'' te planira nove radne procese, a posebno se raduju planiranom susretu u Asizu na jesen 2021. Do tada i mi u HUB-u Hrvatska nastavljamo pratiti ovaj pokret te raditi na promicanju i razvijanju Franjine ekonomije. Papa nas je pozvao da EoF živimo kao ''poziv, kulturu i savez'' što iziskuje preobrazbu umova i srdaca. Upravo u prilikama za zajedničke susrete i radne skupine, komunikacije i razna izlaganja, razmjenu iskustva i ideja, davanju savjeta, podrške i molitve vidimo jasan put kako EoF može zaživjeti i u našem društvu.
+				<p class="text-justify">Economy of  Francesco je odradio svoj početak. Uz svetog Oca preko 2 000 mladih uzvikuje ''idemo dalje'' te planira nove radne procese, a posebno se raduju planiranom susretu u Asizu na jesen 2021. Do tada i mi u HUB-u Hrvatska nastavljamo pratiti ovaj pokret te raditi na promicanju i razvijanju Franjine ekonomije. Papa nas je pozvao da EoF živimo kao ''poziv, kulturu i savez'' što iziskuje preobrazbu umova i srdaca. Upravo u prilikama za zajedničke susrete i radne skupine, komunikacije i razna izlaganja, razmjenu iskustva i ideja, davanju savjeta, podrške i molitve vidimo jasan put kako EoF može zaživjeti i u našem društvu.
 				Cjelokupan članak pročitajte na našem blogu: (link)</p>
 				</div>
 
@@ -223,7 +223,7 @@
 	<section id="2" >
 		
 		<!-- Container -->
-		<div class="container mt-0 mt-md-5">
+		<div class="container">
 			
 			<!-- Row -->
 			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
@@ -235,7 +235,7 @@
 				</div>
 
 				<div class="col-12">
-					<p>U svom početku HUB je imao funkciju podrške na trodnevnom događaju Economy of Francesco u studenom 2020.g. 
+					<p class="text-justify">U svom početku HUB je imao funkciju podrške na trodnevnom događaju Economy of Francesco u studenom 2020.g. 
 					te kreiranje i realizaciju pratećeg nacionalnog programa u Križevcima u centru 'Faro'. Broj pratitelja, podupiratelja i 
 					simpatizera počeo je rasti već na samom događaju. Danas nas je oko stotinu u Hrvatskoj i Bosni i Hercegovini s čijim 
 					HUB-om surađujemo. Od tada odradili smo mnogo susreta zajedno kreirajući daljnji hod. Oformili smo radni tim, 
@@ -244,13 +244,13 @@
 					poput financijske etičke pismenosti... Uz ove aktivnosti pojedinih timova osmislili smo i mjesečni program na kojem 
 					mogu sudjelovati svi članovi, a to su webinari te susreti prvog i trećeg četvrtka u mjesecu koji se održavaju u već 
 					uvriježenom vremenu u 19:30 sati.</p>
-					<p>Ono što je važno istaknuti je naša povezanost s globalnim pokretom EoF-a. Neki od nas od početka sudjeluju u ovom 
+					<p class="text-justify">Ono što je važno istaknuti je naša povezanost s globalnim pokretom EoF-a. Neki od nas od početka sudjeluju u ovom 
 					pokretu i aktivni su u selima koja su odabrali te u njima razvijaju ideje i projekte u duhu EOF-a da bi doprinijeli 
 					ostvarenju konkretnetnih pothvata nužnih za ostvarenje nove, pravednije, čovječnije i inkluzivnije ekonomije. Cilj je 
 					ideju o 12 'sela' prenijeti i u naš HUB, educirati se u tom smjeru, što već činimo sudjelovanjem u projektu EoF school, i u 
 					konačnici stečene vrijednosti prenijeti kroz razne projekte u naše društvo, naše gradove, sela, naše zajednice i 
 					obitelji...</p>
-					<p>HUB Croatia umrežen je i s ostalim HUB-ovima kojih je ukupno 40 u cijelom svijetu. Sastajemo se i dijelimo informacije 
+					<p class="text-justify">HUB Croatia umrežen je i s ostalim HUB-ovima kojih je ukupno 40 u cijelom svijetu. Sastajemo se i dijelimo informacije 
 					i iskustva o razvoju EoF-a na regionalnim i lokalnim razinama. 
 					EoF je proces što znači da se timovi, ideje, projekti mijenjaju i rastu tako da se radujemo svakom tko želi unijeti sebe i 
 					novosti svoje jedinstvenosti u ovaj pokret.</p>
@@ -260,22 +260,22 @@
 			<!-- /.Row -->
 
 			<!-- Row -->
-			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 				
-				<div class="col-12 w-100 text-center text-md-left mt-3 mb-4">
-					<h2 class="mb-2 mb-md-4">
-						<span class="yellow-border-heading pb-1">No kako je sve počelo?</span>
+				<div class="col-12 w-100 text-center text-md-left">
+					<h2 class="mb-4">
+						<span class="yellow-border-heading pb-2">No kako je sve počelo?</span>
 					</h2>
 				</div>
 
 				<div class="col-12">
-					<p>Kada se u kolovozu 2020.g. odlučilo da glavni događaj Economy of Francesco bude održan online, organizatori su 
+					<p class="text-justify">Kada se u kolovozu 2020.g. odlučilo da glavni događaj Economy of Francesco bude održan online, organizatori su 
 					osmislili HUB-ove ili čvorišta diljem svijeta gdje su mladi u svojim zemljama imali priliku pratiti ovaj program u 
 					zajedništvu koje je temelj samog pokreta. Želja da EoF zaživi i u Hrvatskoj potaknula je dvije participantice EoF-a i 
 					predsjednika udruge Ekonomije Zajedništva da organiziraju HUB u Hrvatskoj. U rujnu je osnovan akreditirani HUB u 
 					Križevcima koji je do glavnog EoF događaja intenzivno radio na pripremi programa.</p>
 
-					<p>Osim praćenja trodnevnog poslijepodnevnog programa iz Asiza, HUB u Križevcima paralelno je organizirao jutarnji 
+					<p class="text-justify">Osim praćenja trodnevnog poslijepodnevnog programa iz Asiza, HUB u Križevcima paralelno je organizirao jutarnji 
 					nacionalni program za sva tri dana. 
 					Program prvog dana, 19. studenog, bio je posvećen duhovnosti tako da je započeo svetom misom koju je predslavio 
 					p. Mijo Nikić. Slijedio je okrugli stol na temu ''Može li se ostvariti preobrazba sustava bez duhovnosti?''. Gosti panela bili 
@@ -290,7 +290,7 @@
 					Domagoja Sajetera. 
 					</p>
 					
-					<p>
+					<p> 
 						<span><span class="yellow-heading">EOF Marathon Croatia</span> - <a href="https://www.youtube.com/watch?v=Ov9zXXYH7h4" class="text-decoration-none">https://www.youtube.com/watch?v=Ov9zXXYH7h4</a></span><br>
 						<span><span class="yellow-heading">Fra Mario Knezović</span> - poruka mladima povodom Franjine ekonomije - <a href="https://www.youtube.com/watch?v=YCFLXp1E0Xc&t=379s" class="text-decoration-none">https://www.youtube.com/watch?v=YCFLXp1E0Xc&t=379s</a></span><br>
 						<span><span class="yellow-heading">Prof. dr.sc. Domagoj Sajter</span> - poruka mladima povodom Franjine ekonomije - <a href="https://www.youtube.com/watch?v=jMGta145GxQ&t=7s" class="text-decoration-none">https://www.youtube.com/watch?v=jMGta145GxQ&t=7s</a></span>
@@ -311,9 +311,9 @@
 		<div class="container">
 			
 			<!-- Row -->
-			<div class="row" data-aos="zoom-in" data-aos-duration="1000">
+			<div class="row mt-3" data-aos="zoom-in" data-aos-duration="1000">
 				
-				<div class="col-12 w-100 text-center mb-5 mt-3 mt-md-5">
+				<div class="col-12 w-100 text-center mb-5">
 					
 					<h1>
 						<span class="yellow-border-heading pb-1">EoF budi i ti</span>
@@ -328,7 +328,7 @@
 				</div>
 				<div class="col-12 col-lg-6 d-flex align-items-center">
 					
-					<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid w-100 h-100">
+					<img src="{{ asset('images/about/image-4.jpg') }}" alt="slika 4" class="img-fluid w-100 h-100">
 
 				</div>
 
@@ -401,7 +401,7 @@
 <script src="{{ asset('js/scrollspy.js') }}" defer></script>
 
 <!-- Swiper -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"  defer></script>
 
 <script>
   var swiper = new Swiper('.swiper-container', { 

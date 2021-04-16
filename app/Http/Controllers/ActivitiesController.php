@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Activity;
 use App\Models\Swal;
@@ -165,7 +165,14 @@ class ActivitiesController extends Controller
      */
     public function destroy($id)
     {
-      $activityDel = Activity::where('id', $id)->delete();
+      $activityDel = Activity::find($id);
+
+      $directory = FileStorageController::getDirectory($activityDel->base_storage_path, $activityDel->directory_id);
+      Storage::deleteDirectory($directory->getFullPath()); 
+
+      try {
+        $activityDel = Activity::where('id', $id)->delete();
+      } catch (Exception $e) {}
 
       $swal = new Swal("Success", 200, Route('admin.activities.index'), "success", "Gotovo!", "Aktivnost izbrisana.");
       return response()->json($swal->get());

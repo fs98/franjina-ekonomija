@@ -40,7 +40,7 @@
 
 								<!-- Card -->
 							  <div class="card border-0 text-center">
-								  <img src="{{ $projectsActiveSignleRow->header_image_url }}" alt="...">
+								  <img src="{{ $projectsActiveSignleRow->header_image_url }}" alt="{{ $projectsActiveSignleRow->cover_image_description }}">
 								  <div class="card-body px-0">
 								  <h5 class="card-title font-weight-bold mt-2">{{ $projectsActiveSignleRow->title }}</h5>
 								  <p class="card-text text-center mt-2 px-3 h-100-px truncate-overflow" title="{{ $projectsActiveSignleRow->short_description }}" >{{ $projectsActiveSignleRow->short_description }}</p>
@@ -49,13 +49,9 @@
                     <div class="border project-card-box p-2 mt-2">
                       <span class="d-flex flex-row justify-content-between px-2 mt-1">
                         <span class="d-flex justify-content-start">
-                          <img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">
+                          <img src="{{ asset('icons/projects/user.svg') }}" alt="user icon" class="img-fluid projects-card-icon">
                           <p class="my-auto pl-1">{{ $projectsActiveSignleRow->investors }}</p>
-                        </span>
-                        {{-- <span class="d-flex justify-content-end px-0 mr-0">
-                          <img src="{{ asset('icons/projects/heart.svg') }}" class="img-fluid projects-card-icon">
-                          <p class="my-auto pl-1">{{ $projectsActiveSignleRow->likes }}</p>
-                        </span>  --}}
+                        </span> 
                       </span>
                       <span class="d-flex flex-column px-2 mt-2">
                         <p class="font-weight-bold text-left mt-2">Cilj</p>
@@ -132,7 +128,7 @@
 
 								<!-- Card -->
 								<div class="card border-0 text-center">
-									<img src="{{ $projectsPassedSingleRow->header_image_url }}" alt="...">
+									<img src="{{ $projectsPassedSingleRow->header_image_url }}" alt="{{ $projectsPassedSingleRow->cover_image_description }}">
 									<div class="card-body px-0">
 										<h4 class="card-title font-weight-bold mt-2">{{ $projectsPassedSingleRow->title }}</h4>
 										<p class="card-text text-center mt-2 px-3">{{ $projectsPassedSingleRow->short_description }}</p>

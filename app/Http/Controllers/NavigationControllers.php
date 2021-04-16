@@ -25,8 +25,8 @@ class NavigationControllers extends Controller
     //
 		public function index()
 		{ 
-			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
-			$projectAll = Project::select('title','title_slug','short_description','cover','directory_id')->limit(10)->get();
+			$postAll = Post::select('title','title_slug','short_description','cover','cover_image_description','directory_id')->limit(10)->get();
+			$projectAll = Project::select('title','title_slug','short_description','cover','cover_image_description','directory_id')->limit(10)->get();
       $heroSlider = SliderImage::where('slider_id', 1)->orderBy('order')->get();
       $calendarSlider = SliderImage::where('slider_id', 2)->orderBy('order')->get();
 
@@ -112,7 +112,7 @@ class NavigationControllers extends Controller
 		//
 		public function blog(){
       $bloggersAll = Blogger::select('name', 'directory_id', 'image', 'image_description')->get();
-			$postAll = Post::select('title','title_slug','short_description','cover','directory_id')->orderByDesc('created_at')->paginate(4);
+			$postAll = Post::select('title','title_slug','short_description','cover','directory_id','cover_image_description','keywords')->orderByDesc('created_at')->paginate(4);
 			return view('pages.blog')
         ->with(['postAll' => $postAll])
         ->with(['bloggersAll' => $bloggersAll]);

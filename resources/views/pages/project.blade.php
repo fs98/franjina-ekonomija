@@ -56,13 +56,9 @@
 				<div class="border project-card-box p-4 text-center">
 					<span class="d-flex flex-row justify-content-between px-2 mt-1">
 						<span class="d-flex justify-content-start">
-							<img src="{{ asset('icons/projects/user.svg') }}" class="img-fluid projects-card-icon">
+							<img src="{{ asset('icons/projects/user.svg') }}" alt="user icon" class="img-fluid projects-card-icon">
 							<p class="my-auto">{{ $projectSingle->investors }} ulagača</p>
 						</span>
-						{{-- <span class="d-flex justify-content-end px-0 mr-0">
-							<img src="{{ asset('icons/projects/heart.svg') }}" class="img-fluid projects-card-icon">
-							<p class="my-auto">{{ $projectSingle->likes }} Sviđa mi se</p>
-						</span>  --}}
 					</span>
 					<span class="d-flex flex-column px-2 mt-2">
 						<p class="font-weight-bold text-left mt-2">Cilj</p>
@@ -115,7 +111,7 @@
         @foreach($projectSingle->photos as $index => $photo)
           <div class="col mb-4">
             <a href="{{ $photo->header_image_url }}" data-fancybox="gallery">
-              <img src="{{ $photo->header_image_url }}" class="img-fluid"  alt="">
+              <img src="{{ $photo->header_image_url }}" alt="{{ $photo->cover_image_description }}" class="img-fluid"  alt="">
             </a>
           </div>
         @endforeach

@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web stranica o Franjinoj ekonomiji">
+    <meta name="keywords" content="Franjo, papa, ekonomija, poduzentici, poduzentistvo, mladi, ekonomisti, poduzetnici, changemakeri, hrvatska, jednakost, menadzment, financije, poslovanje, mir">
+    <meta name="author" content="Katriel Dev">
 
     <link rel="icon" type="image/svg" sizes="16x16" href="{{ asset('images/logo/main-logo.svg') }}">
 
@@ -352,10 +355,10 @@
 </script>
 
 {{-- Post request --}}
-<script src="{{ asset('back/post-request.js')}}"></script>
+<script src="{{ asset('back/post-request.js')}}"  defer></script>
 
 <!-- Sticky Navbar -->
-<script>
+<script defer>
   jQuery( document ).ready(function() {
     var navbar = document.getElementById("navbar");
     var sticky = navbar.offsetTop;

@@ -25,8 +25,8 @@ $("#submit-button, #submit-subscription, #submit-unsubscription").on("click", fu
 
     Swal.fire({
       toast: false,
-      title: 'Processing..',
-      text: 'One moment please..',
+      title: 'U obradi...',
+      text: 'Molimo da sačekate..',
       allowEscapeKey : false,
       allowOutsideClick: false,
       onOpen: function() {

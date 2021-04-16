@@ -31,7 +31,7 @@
 						<div class="card mb-5 w-100 border-0">
 							<div class="row no-gutters">
 								<div class="col-sm-4 col-12">
-									<img src="{{ $postSingle->header_image_url }}" class="img-fluid">
+									<img src="{{ $postSingle->header_image_url }}" alt="{{ $postSingle->cover_image_description }}" class="img-fluid">
 								</div>
 								<div class="col-sm-8 col-12">
 									<div class="card-body d-flex flex-column justify-content-between h-100">

@@ -54,7 +54,7 @@
             <h3>Možete donirati preko banke</h3>
           </div>
           <div class="col-3">
-            <img src="{{ asset('icons/support/bank.svg') }}" class="img-fluid mt-3 mt-lg-0 float-right">
+            <img src="{{ asset('icons/support/bank.svg') }}" alt="bank icon" class="img-fluid mt-3 mt-lg-0 float-right">
           </div>
         </div> 
 
@@ -93,7 +93,7 @@
             <h3 class="text-center">Očitajte ovaj QR kod Vašom bankovnom internet aplikacijom</h3>
           </div>
           <div class="col-3">
-            <img src="{{ asset('icons/support/creditcard.svg') }}" class="img-fluid mt-3 mt-lg-0 float-right">
+            <img src="{{ asset('icons/support/creditcard.svg') }}" alt="credit card icon" class="img-fluid mt-3 mt-lg-0 float-right">
           </div>
         </div> 
 
@@ -101,7 +101,7 @@
 
 				<div class="row">
           <div class="col-md-6 offset-md-3 col-10 offset-1">
-            <img src="{{ asset('images/QR/qr_kod_eof_donacija.svg') }}" class="img-fluid qr-code mt-5">
+            <img src="{{ asset('images/QR/qr_kod_eof_donacija.svg') }}" alt="qr kod" class="img-fluid qr-code mt-5">
           </div>
         </div>
 					

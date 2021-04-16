@@ -126,7 +126,7 @@ class UserController extends Controller
 
         $userEdit->save();
 
-        $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Success!", "User edited.");
+        $swal = new Swal("Success", 200, Route('admin.users.index'), "success", "Gotovo!", "Podaci o korisniku su ažurirani.");
         return response()->json($swal->get());
     }
 

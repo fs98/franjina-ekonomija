@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Models\Blogger;
@@ -160,7 +161,14 @@ class BloggersController extends Controller
      */
     public function destroy($id)
     {
-        $bloggerDel = Blogger::where('id', $id)->delete();
+        $bloggerDel = Blogger::find($id);
+
+        $directory = FileStorageController::getDirectory($bloggerDel->base_storage_path, $bloggerDel->directory_id);
+        Storage::deleteDirectory($directory->getFullPath()); 
+
+        try {
+          $bloggerDel = Blogger::where('id', $id)->delete();
+        } catch (Exception $e) {}
 
         $swal = new Swal("Success", 200, Route('admin.bloggers.index'), "success", "Gotovo!", "Bloger izbrisan.");
         return response()->json($swal->get());

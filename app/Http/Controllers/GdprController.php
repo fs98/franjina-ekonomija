@@ -84,7 +84,7 @@ class GdprController extends Controller
         $gdprEdit->save();
       } catch (Exception $e) {}
 
-      $swal = new Swal("Success", 200, Route('admin.gdpr.show', ['gdpr' => '1']), "success", "Gotovo!", "Projekat ažuriran.");
+      $swal = new Swal("Success", 200, Route('admin.gdpr.show', ['gdpr' => '1']), "success", "Gotovo!", "GDPR ažuriran.");
       return response()->json($swal->get());
     }
 

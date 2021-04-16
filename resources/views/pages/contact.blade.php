@@ -46,7 +46,7 @@
 
 			<div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
         <div>
-          <img src="{{ asset('icons/common/phone.svg') }}" class="contact-icon">
+          <img src="{{ asset('icons/common/phone.svg') }}" alt="phone-icon" class="contact-icon">
         </div>
 
         <div class="ml-4">
@@ -57,7 +57,7 @@
 
       <div class="d-flex align-items-center mt-3">
         <div>
-          <img src="{{ asset('icons/common/email.svg') }}" class="contact-icon">
+          <img src="{{ asset('icons/common/email.svg') }}" alt="email-icon" class="contact-icon">
         </div>
 
         <div class="ml-4">

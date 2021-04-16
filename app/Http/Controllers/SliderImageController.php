@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Swal;
 use App\Models\SliderImage;
@@ -153,7 +153,7 @@ class SliderImageController extends Controller
         $sliderImageEdit->save();
       } catch (Exception $e) {}
 
-      $swal = new Swal("Success", 200, Route('admin.sliders.edit', ['slider' => $sliderImageEdit->slider_id]), "success", "Gotovo!", "Slika dodana.");
+      $swal = new Swal("Success", 200, Route('admin.sliders.edit', ['slider' => $sliderImageEdit->slider_id]), "success", "Gotovo!", "Slika ažurirana.");
       return response()->json($swal->get());
     }
 
@@ -165,10 +165,16 @@ class SliderImageController extends Controller
      */
     public function destroy($id)
     {
-        $sliderId = SliderImage::select('slider_id')->find($id);
-        $sliderImageDel = SliderImage::where('id', $id)->delete();
+        $sliderImageDel = SliderImage::where('id', $id)->first();
+       
+        $directory = FileStorageController::getDirectory($sliderImageDel->base_storage_path, $sliderImageDel->directory_id);
+        Storage::deleteDirectory($directory->getFullPath()); 
 
-        $swal = new Swal("Success", 200, Route('admin.sliders.edit', ['slider' => $sliderId->slider_id]), "success", "Gotovo!", "Slika izbrisana.");
+        try {
+          $sliderImageDel->delete();
+        } catch (Exception $e) {}
+
+        $swal = new Swal("Success", 200, Route('admin.sliders.edit', ['slider' => $sliderImageDel->slider_id]), "success", "Gotovo!", "Slika izbrisana.");
         return response()->json($swal->get());
 
     }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 use App\Models\Partner;
 use App\Models\Swal;
 
@@ -159,7 +159,7 @@ class PartnersController extends Controller
             $partnerEdit->save();
         } catch (Exception $e) {}
 
-        $swal = new Swal("Success", 200, Route('admin.partners.index'), "success", "Gotovo!", "Partner dodan.");
+        $swal = new Swal("Success", 200, Route('admin.partners.index'), "success", "Gotovo!", "Partner ažuriran.");
         return response()->json($swal->get());
     }
 
@@ -171,7 +171,14 @@ class PartnersController extends Controller
      */
     public function destroy($id)
     {
-        $partnerSingleDel = Partner::where('id', $id)->delete();
+        $partnersSingleDel = Partner::find($id);
+
+        $directory = FileStorageController::getDirectory($pasrtnersSingleDel->base_storage_path, $pasrtnersSingleDel->directory_id);
+        Storage::deleteDirectory($directory->getFullPath()); 
+
+        try {
+          $partnerSingleDel = Partner::where('id', $id)->delete();
+        } catch (Exception $e) {}
         
         $swal = new Swal("Success", 200, Route('admin.partners.index'), "success", "Gotovo!", "Partner izbrisan.");
         return response()->json($swal->get());

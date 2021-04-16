@@ -24,8 +24,8 @@ $("#submit-button").on("click", function(event) {
 
     Swal.fire({
       toast: false,
-      title: 'Processing..',
-      text: 'One moment please..',
+      title: 'U obradi...',
+      text: 'Molimo da sačekate...',
       allowEscapeKey : false,
       allowOutsideClick: false,
       onOpen: function() {

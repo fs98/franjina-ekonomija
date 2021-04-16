@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 use App\Models\Project;
 use App\Models\ProjectImage;
 use App\Models\Swal;
@@ -295,9 +295,20 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        $projectEditDel = Project::where('id', $id)->delete();
+        $projectEditDel = Project::find($id);
 
-        $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Post izbrisan.");
+        $projectImagesDel = ProjectImage::where('project_id', $id)->get();
+        
+        foreach ($projectImagesDel as $key => $projectImage) {
+          $directory = FileStorageController::getDirectory($projectImage->base_storage_path, $projectImage->directory_id);
+          Storage::deleteDirectory($directory->getFullPath()); 
+        }
+
+        try {
+          $projectEditDel = Project::where('id', $id)->delete();
+        } catch (Exception $e) {}
+
+        $swal = new Swal("Success", 200, Route('admin.projects.index'), "success", "Gotovo!", "Projekat izbrisan.");
         return response()->json($swal->get());
     }
 }

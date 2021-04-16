@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Event;
 use App\Models\Swal;
@@ -217,7 +218,7 @@ class EventsController extends Controller
           $eventEdit->save();
       } catch (Exception $e) {}
 
-      $swal = new Swal("Success", 200, Route('admin.events.index'), "success", "Gotovo!", "Event dodan.");
+      $swal = new Swal("Success", 200, Route('admin.events.index'), "success", "Gotovo!", "Event ažuriran.");
       return response()->json($swal->get());
     }
 
@@ -229,9 +230,16 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-      $eventDel = Event::where('id', $id)->delete();
+      $eventDel = Event::find($id);
 
-      $swal = new Swal("Success", 200, Route('admin.events.index'), "success", "Gotovo!", "Event dodan.");
+      $directory = FileStorageController::getDirectory($eventDel->base_storage_path, $eventDel->directory_id);
+      Storage::deleteDirectory($directory->getFullPath()); 
+
+      try {
+        $eventDel = Event::where('id', $id)->delete();
+      } catch (Exception $e) {}
+
+      $swal = new Swal("Success", 200, Route('admin.events.index'), "success", "Gotovo!", "Event izbrisan.");
       return response()->json($swal->get());
     }
 }

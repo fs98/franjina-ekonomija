@@ -123,11 +123,7 @@
 						<!-- Slide -->
 						<div class="swiper-slide">
 							<div class="card border-0 h-675">
-								@if (Helper::isset($postSingleRow->title)) 
-								<img src="{{ $postSingleRow->header_image_url }}" alt="...">
-								@else
-									<img src="{{ asset('images/home/400x450.png') }}" alt="...">
-								@endif
+								<img src="{{ $postSingleRow->header_image_url }}" alt="{{ $postSingleRow->cover_image_description }}">
 								<div class="card-body px-0 h-415">
 									<h5 class="card-title font-weight-bold px-3 h-100-px"> 
 										@if (Helper::isset($postSingleRow->title)) 
@@ -188,7 +184,7 @@
 						<!-- Slide -->
 						<div class="swiper-slide">
 							<div class="card card border-0 h-675">
-								<img src="{{ $projectSingleRow->header_image_url }}" class="card-img-top rounded-0" alt="...">
+								<img src="{{ $projectSingleRow->header_image_url }}" alt="{{ $projectSingleRow->cover_image_description }}" class="card-img-top rounded-0" alt="...">
 								<div class="card-body px-0 h-415">
 									<h5 class="card-title font-weight-bold mt-4">{{ $projectSingleRow->title }}</h5>
 									<p class="card-text text-center mt-5 px-3 h-100-px truncate-overflow" title="{{ $projectSingleRow->short_description }}">{{ $projectSingleRow->short_description }}</p>
@@ -242,7 +238,7 @@
 			</div>
 			<div class="col-12 col-lg-6 d-flex align-items-center">
 				
-				<img src="{{ asset('images/about/image-4.jpg') }}" class="img-fluid w-100 h-100">
+				<img src="{{ asset('images/about/image-4.jpg') }}" alt="slika 4" class="img-fluid w-100 h-100">
 
 			</div>
 
@@ -320,7 +316,7 @@
 	          <span aria-hidden="true">&times;</span>
 	        </button>
         </span>
-	      <img id="event_header_image" class="img-fluid mb-5">
+	      <img id="event_header_image" alt="naslovna slika eventa" class="img-fluid mb-5">
 	      <div class="row">
 	      	<div class="col-12">
 	      		<h4 class="w-100">Naziv događaja: <span class="w-100 border-bottom text-muted ml-3" id="modal_event_title"></span> </h4>
@@ -390,8 +386,8 @@
 </script>
 
 <!-- Calendar -->
-<script type="text/javascript" src="{{ asset('js/calendar/main.min.js') }}"></script>
-<script>
+<script type="text/javascript" src="{{ asset('js/calendar/main.min.js') }}" defer></script>
+<script defer>
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 

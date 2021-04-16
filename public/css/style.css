@@ -298,6 +298,7 @@ footer .social-networks h3{
 
 .partners-section img{
 	max-height: 300px;
+  max-width: 300px;
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%); 
 	vertical-align: bottom;
@@ -822,14 +823,14 @@ footer .social-networks h3{
 
 .support-section .card-donate img,
 .support-section .bank-donate img{
-	height: 100px;
+	height: 50px;
 }
 
 	/* Medium devices (tablets, less than 992px) */
 	@media (max-width: 991.98px) {
 		.support-section .card-donate img,
 		.support-section .bank-donate img{
-			height: 60px;
+			height: 40px;
 		}
 		.support-section .card-donate h3,
 		.support-section .bank-donate h3{
@@ -841,7 +842,7 @@ footer .social-networks h3{
 	@media (max-width: 575.98px) {
 		.support-section .card-donate img,
 		.support-section .bank-donate img{
-			height: 30px;
+			height: 20px;
 		}
 		.support-section .card-donate h3,
 		.support-section .bank-donate h3{
@@ -903,6 +904,7 @@ footer .social-networks h3{
 	/* Slider */
 	.support-section .support-page-partners-slider img{
 		object-fit: contain;
+    max-width: 300px;
 	}
 
 /* GDPR Page  */
