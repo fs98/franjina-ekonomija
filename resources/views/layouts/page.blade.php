@@ -358,7 +358,7 @@
 <script src="{{ asset('back/post-request.js')}}"  defer></script>
 
 <!-- Sticky Navbar -->
-<script defer>
+<script>
   jQuery( document ).ready(function() {
     var navbar = document.getElementById("navbar");
     var sticky = navbar.offsetTop;
