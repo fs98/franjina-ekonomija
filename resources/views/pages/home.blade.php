@@ -326,11 +326,11 @@
 	      	</div>
 	      	<div class="col-lg-7 col-12">
 	      		<h4 class="mt-4 d-flex justify-content-lg-end justify-content-start">
-              <span id="modal_event_start_hour_parent">Od <span class="border-bottom text-muted" id="modal_event_start_hour"></span> h </span><span id="modal_event_end_hour_parent">&nbsp;do <span class="border-bottom text-muted" id="modal_event_end_hour"></span>h</span>
+              <span id="modal_event_start_hour_parent">Od <span class="border-bottom text-muted" id="modal_event_start_hour"></span> h </span><span id="modal_event_end_hour_parent">&nbsp;do <span class="border-bottom text-muted" id="modal_event_end_hour"></span>&nbsp;h</span>
             </h4>
 	      	</div>
 	      	<div class="col-12">
-	      		<h4 class="mt-4 w-100 border p-3" id="modal_event_zoom_link_parent">Zoom link: <a id="modal_event_zoom_link" href="" target="_blank" class="h5 font-weight-light text-wrap"></a></h4>
+	      		<h4 class="mt-4 w-100 border p-3" id="modal_event_zoom_link_parent">Zoom link: <a id="modal_event_zoom_link" href="/" target="_blank" class="h5 font-weight-light text-wrap"></a></h4>
 	      	</div>
 	      	<div class="col-lg-3 col-12" id="modal_event_basic_info_title">
 	      		<h4 class="mt-4">Osnovne informacije</h4>
@@ -409,7 +409,6 @@
 
 			events.push(element)  
 		}); 
-
 		if(768 >= w) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView: 'dayGridMonth',
@@ -418,8 +417,8 @@
         weekNumberCalculation: 'ISO',
         contentHeight: 'auto',
         headerToolbar: false,
-        displayEventTime : false,
-        eventLimit: true, // allow "more" link when too many events
+        displayEventTime : false, 
+        navLinks: false, 
         dayMaxEvents: 1, 
         moreLinkContent: (num) => {
           return "+još " + num.num;
@@ -483,15 +482,15 @@
         locale: 'hr',
         weekNumberCalculation: 'ISO',
         headerToolbar: false, 
-        displayEventTime : false,
-        eventLimit: true, // allow "more" link when too many events
+        displayEventTime : false, 
         dayMaxEvents: 1, 
         height: 445,
         contentHeight: 445,
         moreLinkContent: (num) => {
           return "+još " + num.num;
         },  
-        events: events, 
+        navLinks: false, 
+        events: events,   
 				eventClick: function(info) { 
           console.log(info.event)
 					$('.bd-example-modal-lg').modal('show'); 
@@ -544,9 +543,20 @@
 				}, 
 			});
 
-		}
+		} 
     calendar.render();
   });
-</script>
+  
+  setTimeout(function() {
+    $('a.fc-daygrid-day-number').each(function() {
+      $(this).attr('href', '/');
+      $(this).css('color', '#252525');
+    });
+    $('a.fc-col-header-cell-cushion').each(function() {
+      $(this).attr('href', '/');
+      $(this).css('color', 'white');
+    }); 
+  }, 500);
 
+</script>
 @endsection('scripts')
