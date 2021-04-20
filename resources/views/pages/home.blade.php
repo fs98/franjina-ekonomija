@@ -16,7 +16,7 @@
 
 @section('content')
 
-<section id="home">
+<section id="home-section">
 
 	<section id="sliderSection">
 
@@ -275,9 +275,9 @@
 			<small>* Obavezna polja</small>
 			<div class="form-group mt-2">
 				<div class="form-group">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" required>
-						<label class="form-check-label">
+					<div class="form-check"> 
+						<input class="form-check-input" id="privacyPolicy" type="checkbox" required>
+						<label class="form-check-label" for="privacyPolicy">
 							Prihvaćam <a href="{{ Route('gdpr') }}">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
 						</label> 
 					</div>
@@ -326,11 +326,11 @@
 	      	</div>
 	      	<div class="col-lg-7 col-12">
 	      		<h4 class="mt-4 d-flex justify-content-lg-end justify-content-start">
-              <span id="modal_event_start_hour_parent">Od <span class="border-bottom text-muted" id="modal_event_start_hour"></span> h </span><span id="modal_event_end_hour_parent">&nbsp;do <span class="border-bottom text-muted" id="modal_event_end_hour"></span>h</span>
+              <span id="modal_event_start_hour_parent">Od <span class="border-bottom text-muted" id="modal_event_start_hour"></span> h </span><span id="modal_event_end_hour_parent">&nbsp;do <span class="border-bottom text-muted" id="modal_event_end_hour"></span>&nbsp;h</span>
             </h4>
 	      	</div>
 	      	<div class="col-12">
-	      		<h4 class="mt-4 w-100 border p-3" id="modal_event_zoom_link_parent">Zoom link: <a id="modal_event_zoom_link" href="" target="_blank" class="h5 font-weight-light text-wrap"></a></h4>
+	      		<h4 class="mt-4 w-100 border p-3" id="modal_event_zoom_link_parent">Zoom link: <a id="modal_event_zoom_link" href="/" target="_blank" class="h5 font-weight-light text-wrap"></a></h4>
 	      	</div>
 	      	<div class="col-lg-3 col-12" id="modal_event_basic_info_title">
 	      		<h4 class="mt-4">Osnovne informacije</h4>
@@ -409,7 +409,6 @@
 
 			events.push(element)  
 		}); 
-
 		if(768 >= w) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView: 'dayGridMonth',
@@ -418,15 +417,17 @@
         weekNumberCalculation: 'ISO',
         contentHeight: 'auto',
         headerToolbar: false,
-        displayEventTime : false,
-        eventLimit: true, // allow "more" link when too many events
+        displayEventTime : false, 
+        navLinks: false, 
         dayMaxEvents: 1, 
         moreLinkContent: (num) => {
           return "+još " + num.num;
         },
         events: events,
 				eventClick: function(info) { 
-          console.log(info.event)
+
+          event.preventDefault() //So it doesn't follow href attribute
+
 					$('.bd-example-modal-lg').modal('show'); 
           $('#modal_event_title').text(info.event.title); 
 					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
@@ -483,17 +484,19 @@
         locale: 'hr',
         weekNumberCalculation: 'ISO',
         headerToolbar: false, 
-        displayEventTime : false,
-        eventLimit: true, // allow "more" link when too many events
+        displayEventTime : false, 
         dayMaxEvents: 1, 
         height: 445,
         contentHeight: 445,
         moreLinkContent: (num) => {
           return "+još " + num.num;
         },  
-        events: events, 
+        navLinks: false, 
+        events: events,   
 				eventClick: function(info) { 
-          console.log(info.event)
+
+          event.preventDefault() //So it doesn't follow href attribute
+
 					$('.bd-example-modal-lg').modal('show'); 
           $('#modal_event_title').text(info.event.title); 
 					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
@@ -540,13 +543,28 @@
           } else {
             $('#modal_event_basic_info').css("display", "none")
             $('#modal_event_basic_info_title').css("display", "none")
-          }            
+          }          
 				}, 
 			});
 
-		}
+		} 
     calendar.render();
   });
-</script>
+  
+  //Put href tags where they are not present (because of SEO)
+  setTimeout(function() {
+    $('a.fc-daygrid-day-number').each(function() {
+      $(this).attr('href', '/');
+      $(this).css('color', '#252525');
+    });
+    $('a.fc-col-header-cell-cushion').each(function() {
+      $(this).attr('href', '/');
+      $(this).css('color', 'white');
+    }); 
+    $('a.fc-daygrid-event').each(function() {
+      $(this).attr('href','/'); 
+    })
+  }, 500);
 
+</script>
 @endsection('scripts')

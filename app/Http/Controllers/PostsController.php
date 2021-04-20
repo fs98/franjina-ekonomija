@@ -85,11 +85,30 @@ class PostsController extends Controller
 
         $postSingle->directory_id = $directory->getDirectoryId();
 
-        if (Helper::isSet($httpRequest->post_content)) {
-            $postSingle->content = $httpRequest->post_content;
-        } else {
-            $postSingle->content = NULL;
+        $content = $httpRequest->post_content;
+        $dom = new \DomDocument();
+        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img) {
+            $data = $img->getAttribute('src');
+            list($type, $data) = explode(';', $data);
+            
+            list(, $data)      = explode(',', $data);
+
+            $data = base64_decode($data);
+
+            // Store the image
+            if(Helper::isSet($type)) {
+              $file_name = FileStorageController::storeBase64($data, $directory->getDirectoryId(), $type);
+            }
+            
+            $img->removeAttribute('src');
+            $img->setAttribute('src', $file_name);
         }
+
+        $content = $dom->saveHTML();
+        $postSingle->content = $content;
 
         try {
             $postSingle->save();
@@ -152,14 +171,42 @@ class PostsController extends Controller
         } else {
             $headerImageSet = false;
         }
+        
+        $directory = FileStorageController::getDirectory($postEdit->base_storage_path, $postEdit->directory_id);
+
+        $content = $httpRequest->post_content;
+        $dom = new \DomDocument();
+        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img) {
+            $data = $img->getAttribute('src');
+
+            // Works
+            if(strpos($data, 'data:image/jpeg') == false && strpos($data, 'data:image/jpeg') !== 0 && strpos($data, 'data:image/png') == false && strpos($data, 'data:image/png') !== 0) {
+              continue;
+            }
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+
+            $data = base64_decode($data);
+
+            // Store the image
+            if(Helper::isSet($type)) {
+              $file_name = FileStorageController::storeBase64($data, $directory->getDirectoryId(), $type);
+            }
+
+            $img->removeAttribute('src');
+            $img->setAttribute('src', $file_name);
+        }
+
+        $content = $dom->saveHTML(); 
  
         $postEdit->title = $httpRequest->post_title;
         $postEdit->title_slug = $httpRequest->post_title_slug;
         $postEdit->short_description = $httpRequest->post_short_description;
         $postEdit->keywords = $httpRequest->post_keywords;
-
-
-        $directory = FileStorageController::makeDirectory($postEdit->base_storage_path);
 
         if($headerImageSet) {
             $file = FileStorageController::store($httpRequest->file('post_header_image'), $directory->getFullPath());
@@ -173,12 +220,7 @@ class PostsController extends Controller
 
         $postEdit->cover_image_description = $httpRequest->post_header_image_alt;
 
-
-        if (Helper::isSet($httpRequest->post_content)) {
-            $postEdit->content = $httpRequest->post_content;
-        } else {
-            $postEdit->content = NULL;
-        }
+        $postEdit->content = $content;
 
         try {
             $postEdit->save();

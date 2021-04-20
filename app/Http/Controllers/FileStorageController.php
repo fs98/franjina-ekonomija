@@ -29,6 +29,22 @@ class FileStorageController extends Controller
         return $headerImageFilename;
     }
 
+    public static function storeBase64($file, $directory, $type) {
+      $currentDateTimeFileFormat = (new DateTime())->format('Y-m-d-H-i-s');
+
+      if($type == "data:image/jpeg" || $type == "image/jpeg") {
+        $filename = Str::random(64 - (strlen($currentDateTimeFileFormat) + 3 + 2)) . "-" . $currentDateTimeFileFormat .  ".jpg";
+      } else if($type == "data:image/png" || $type == "image/png") {
+        $filename = Str::random(64 - (strlen($currentDateTimeFileFormat) + 3 + 2)) . "-" . $currentDateTimeFileFormat .  ".png";
+      } else {
+        return 0;
+      }
+
+      Storage::put(config('api.storage_paths.posts') . $directory . "/" . $filename, $file);
+      
+      return asset(config('api.storage_paths_v2.posts') . "/" . $directory . "/" . $filename);
+    }
+
     public static function makeDirectory($base_path) {
     	$directory_id = Str::random(64);
 

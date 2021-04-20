@@ -129,7 +129,7 @@
 					događaj, razna kulturna predstavljanja i dr. Online organizacija ovog eventa omogućilo je da preko 100 000 mladih iz cijelog svijeta 
 					može pratiti ovaj jedinstveni događaj. Kompletan program dostupan je na službenom EoF YouTube kanalu.</p>
 					
-					<p class="text-justify">
+					<p>
 						<span><span class="yellow-heading">Prvi dan</span> - <a href="https://www.youtube.com/watch?v=sSDky2r5eoE" class="text-decoration-none">https://www.youtube.com/watch?v=sSDky2r5eoE</a></span><br>
 						<span><span class="yellow-heading">Drugi dan</span> - <a href="https://www.youtube.com/watch?v=wq2r0uA8hJA&t=6885s" class="text-decoration-none">https://www.youtube.com/watch?v=wq2r0uA8hJA&t=6885s</a></span><br>
 						<span><span class="yellow-heading">Treći dan</span> - <a href="https://www.youtube.com/watch?v=4CbUfQ0k91Y&t=14397s" class="text-decoration-none">https://www.youtube.com/watch?v=4CbUfQ0k91Y&t=14397s</a></span>

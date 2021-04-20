@@ -19,8 +19,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com"> 
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet">
 
     <!-- Styles -->
@@ -49,19 +48,19 @@
       <div class="row py-2">
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-2 align-self-center d-flex py-1">
-          <img src="{{ asset('icons/common/phone.svg') }}" class="img-fluid topbar-icons">
+          <img src="{{ asset('icons/common/phone.svg') }}" alt="phone-icon" class="img-fluid topbar-icons">
           <a class="text-white topbar-text ml-2 text-decoration-none" href="tel:+38548682847">+385 48 682 847</a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-5 align-self-center d-flex justify-content-start justify-content-md-end justify-content-xl-start py-1">
-          <img src="{{ asset('icons/common/email.svg') }}" class="img-fluid topbar-icons my-0 py-0">
+          <img src="{{ asset('icons/common/email.svg') }}" alt="phone-icon" class="img-fluid topbar-icons my-0 py-0">
           <span><a href="mailto:hub@franjinaekonomija.hr" class="text-white topbar-text ml-2 text-decoration-none">hub@franjinaekonomija.hr</a></span>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-2 align-self-center d-flex float-right py-1">
-          <a  href="https://www.instagram.com/franjinaekonomijahrvatska/" target="_blank" class="" ><img src="{{ asset('icons/header/instagram.svg') }}" class="img-fluid topbar-icons"></a>
-          <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" target="_blank" class="ml-3"><img src="{{ asset('icons/header/facebook.svg') }}" class="img-fluid topbar-icons"></a>
-          <a href="https://www.youtube.com/channel/UCkA1mEWmqGLxXfKrRbfqaFQ" class="ml-3"><img src="{{ asset('icons/header/youtube.svg') }}" class="img-fluid topbar-icons"></a>
+          <a  href="https://www.instagram.com/franjinaekonomijahrvatska/" target="_blank" rel="noopener" class="" ><img src="{{ asset('icons/header/instagram.svg') }}" alt="instagram" class="img-fluid topbar-icons"></a>
+          <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" target="_blank" rel="noopener" class="ml-3"><img src="{{ asset('icons/header/facebook.svg') }}" alt="facebook" class="img-fluid topbar-icons"></a>
+          <a href="https://www.youtube.com/channel/UCkA1mEWmqGLxXfKrRbfqaFQ" class="ml-3"><img src="{{ asset('icons/header/youtube.svg') }}" alt="youtube" class="img-fluid topbar-icons"></a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-3 align-self-center py-1">
@@ -72,7 +71,7 @@
                 <input id="search_text" name="search_text" type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon2">
                 <div class="input-group-append bg-danger"> 
                   <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon2">
-                    <span><img src="{{ asset('icons/header/search.svg') }}"></span>
+                    <span><img src="{{ asset('icons/header/search.svg') }}" alt="search"></span>
                   </button>
                 </div>
               </div>
@@ -93,7 +92,7 @@
 
   <nav class="navbar navbar-expand-xl navbar-light bg-white py-2" id="navbar">
     <div class="container">
-      <a class="navbar-brand bg-white" href="{{ __('/')}}"><img src="{{ asset('images/logo/header-logo.svg') }}" alt=""></a>
+      <a class="navbar-brand bg-white" href="{{ __('/')}}" aria-label="logo" ><img src="{{ asset('images/logo/header-logo.svg') }}" alt="Navbar logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -170,9 +169,9 @@
         </ul> 
         <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none" action="{{ Route('searchResults') }}" method="GET">
           <div class="input-group">
-            <input id="search_text" name="search_text" type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon2">
+            <input id="search_text" name="search_text" type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon3">
             <div class="input-group-append bg-danger"> 
-              <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon2">
+              <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon3">
                 <span><img src="{{ asset('icons/header/search.svg') }}"></span>
               </button>
             </div>
@@ -216,19 +215,19 @@
 
               <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
                 <div class="">
-                  <img src="{{ asset('icons/footer/location.svg') }}" class="footer-icon">
+                  <img src="{{ asset('icons/footer/location.svg') }}" alt="location" class="footer-icon">
                 </div>
 
                 <div class="ml-4">
                   <h4 class="text-white">Adresa</h4>
-                  <a class="mt-2 text-white h5 text-decoration-none" href="https://goo.gl/maps/U2tSoQBY9m2Kf7ibA" target="_blank">Udruga za ekonomiju zajedništva
+                  <a class="mt-2 text-white h5 text-decoration-none" href="https://goo.gl/maps/U2tSoQBY9m2Kf7ibA" rel="noopener" target="_blank">Udruga za ekonomiju zajedništva
                   <br>Franje Račkog 26, 48260 Križevci, Hrvatska</a>
                 </div>
               </div>
 
               <div class="d-flex align-items-center justify-content-start mt-3 mt-sm-5">
                 <div>
-                  <img src="{{ asset('icons/common/phone.svg') }}" class="footer-icon">
+                  <img src="{{ asset('icons/common/phone.svg') }}" alt="phone" class="footer-icon">
                 </div>
 
                 <div class="ml-4">
@@ -241,7 +240,7 @@
 
               <div class="d-flex align-items-center mt-3 mt-sm-5">
                 <div>
-                  <img src="{{ asset('icons/common/email.svg') }}" class="footer-icon">
+                  <img src="{{ asset('icons/common/email.svg') }}" alt="email" class="footer-icon">
                 </div>
 
                 <div class="ml-4">
@@ -252,7 +251,7 @@
             </div>
 
             <div class="col-12 col-sm-5 mt-5 d-flex align-items-center justify-content-center">
-              <img src="{{ asset('images/logo/main-logo.svg') }}" class="footer-logo mb-0 mb-sm-5">
+              <img src="{{ asset('images/logo/main-logo.svg') }}" alt="logo" class="footer-logo mb-0 mb-sm-5">
             </div>
 
           </div> 
@@ -282,9 +281,9 @@
         <div class="social-networks">
           <h5 class="mt-5 text-white">Pratite nas i na:</h5>
           <div class="mt-3">
-            <a href="https://www.instagram.com/franjinaekonomijahrvatska/" target="_blank"><img src="{{ asset('icons/footer/instagram.svg') }}" class="mx-1"></a>
-            <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" target="_blank"><img src="{{ asset('icons/footer/facebook.svg') }}" class="mx-1"></a>
-            <a href="https://www.youtube.com/channel/UCkA1mEWmqGLxXfKrRbfqaFQ"><img src="{{ asset('icons/footer/youtube.svg') }}" class="mx-1"></a>
+            <a href="https://www.instagram.com/franjinaekonomijahrvatska/" rel="noopener" target="_blank"><img src="{{ asset('icons/footer/instagram.svg') }}" alt="instagram" class="mx-1"></a>
+            <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" rel="noopener" target="_blank"><img src="{{ asset('icons/footer/facebook.svg') }}" alt="facebook" class="mx-1"></a>
+            <a href="https://www.youtube.com/channel/UCkA1mEWmqGLxXfKrRbfqaFQ"><img src="{{ asset('icons/footer/youtube.svg') }}" alt="youtube" class="mx-1"></a>
           </div>
         </div>
 
@@ -324,10 +323,10 @@
     {{-- Row --}}
     <div class="row my-2 no-gutters">
       <div class="col-6 d-flex align-items-center justify-content-center">
-        <a href="mailto:hub@franjinaekonomija.hr" class="text-decoration-none text-white mt-2 h5"><img src="{{ asset('icons/common/email.svg') }}" class="footer-icon"></a>
+        <a href="mailto:hub@franjinaekonomija.hr" class="text-decoration-none text-white mt-2 h5"><img src="{{ asset('icons/common/email.svg') }}" alt="email" class="footer-icon"></a>
       </div>
       <div class="col-6 d-flex align-items-center justify-content-center">
-        <span id="share" class="btn"><img src="{{ asset('icons/footer/share-2.svg') }}" class="footer-icon"></span>
+        <span id="share" class="btn"><img src="{{ asset('icons/footer/share-2.svg') }}" alt="share" class="footer-icon"></span>
         <p class="result"></p>
       </div>
     </div>
@@ -359,7 +358,7 @@
 
 <!-- Sticky Navbar -->
 <script>
-  jQuery( document ).ready(function() {
+    jQuery( document ).ready(function() {
     var navbar = document.getElementById("navbar");
     var sticky = navbar.offsetTop;
 
@@ -387,24 +386,27 @@
 </script>
 
 <script>
-$(document).ready(function () {
-    $('.dropdown-toggle').mouseover(function() {
-        $('.dropdown-menu').fadeIn(300);
-    })
+var screen_size = window.innerWidth 
+if (1200 <= screen_size) {
+  $(document).ready(function () {
+      $('.dropdown-toggle').mouseover(function() {
+          $('.dropdown-menu').fadeIn(300);
+      })
 
-    $('.dropdown-toggle').mouseout(function() {
-        t = setTimeout(function() {
-            $('.dropdown-menu').fadeOut(300);
-        }, 100);
+      $('.dropdown-toggle').mouseout(function() {
+          t = setTimeout(function() {
+              $('.dropdown-menu').fadeOut(300);
+          }, 100);
 
-        $('.dropdown-menu').on('mouseenter', function() {
-            $('.dropdown-menu').fadeIn(300);
-            clearTimeout(t);
-        }).on('mouseleave', function() {
-            $('.dropdown-menu').fadeOut(300);
-        })
-    })
-})
+          $('.dropdown-menu').on('mouseenter', function() {
+              $('.dropdown-menu').fadeIn(300);
+              clearTimeout(t);
+          }).on('mouseleave', function() {
+              $('.dropdown-menu').fadeOut(300);
+          })
+      })
+  })
+}
 </script>
 
 @yield('scripts')
