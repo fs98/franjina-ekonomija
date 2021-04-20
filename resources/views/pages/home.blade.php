@@ -556,11 +556,14 @@
     $('a.fc-daygrid-day-number').each(function() {
       $(this).attr('href', '/');
       $(this).css('color', '#252525');
+      $(this).css('pointer-events', 'none')
     });
     $('a.fc-col-header-cell-cushion').each(function() {
       $(this).attr('href', '/');
       $(this).css('color', 'white');
+      $(this).css('pointer-events', 'none')
     }); 
+    $('.fc-day-sat a, .fc-day-sun a').css('color','#000')
     $('a.fc-daygrid-event').each(function() {
       $(this).attr('href','/'); 
     })

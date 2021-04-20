@@ -49,7 +49,7 @@ class PostsController extends Controller
 
         $httpRequest->validate([
             'post_title' => 'required',
-            'post_title_slug' => 'required|max:512',
+            'post_title_slug' => 'unique:posts,title_slug|required|max:512',
             'post_short_description' => 'required|max:256',
             'post_keywords' => 'required|max:256',
             'post_header_image' => 'required|image|mimes:jpg,jpeg,png|max:16384',
@@ -87,7 +87,8 @@ class PostsController extends Controller
 
         $content = $httpRequest->post_content;
         $dom = new \DomDocument();
-        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);  
+        
         $images = $dom->getElementsByTagName('img');
 
         foreach($images as $k => $img) {
