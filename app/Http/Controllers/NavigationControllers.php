@@ -25,8 +25,8 @@ class NavigationControllers extends Controller
     //
 		public function index()
 		{ 
-			$postAll = Post::select('title','title_slug','short_description','cover','cover_image_description','directory_id')->limit(10)->get();
-			$projectAll = Project::select('title','title_slug','short_description','cover','cover_image_description','directory_id')->limit(10)->get();
+			$postAll = Post::select('title','title_slug','short_description','cover','cover_image_description','directory_id')->orderByDesc('created_at')->limit(10)->get();
+			$projectAll = Project::select('title','title_slug','short_description','cover','cover_image_description','directory_id')->orderByDesc('created_at')->limit(10)->get();
       $heroSlider = SliderImage::where('slider_id', 1)->orderBy('order')->get();
       $calendarSlider = SliderImage::where('slider_id', 2)->orderBy('order')->get();
 
