@@ -116,6 +116,7 @@
 
 {{-- Summernote --}}
 <script src="{{ asset('js/summernote.min.js') }}"></script> 
+<script src="{{ asset('js/summernote-cleaner.js') }}"></script> 
 
   <!-- Summernote Language -->
   <script src="{{ asset('js/summernote-hr-HR.js') }}"></script>
@@ -145,7 +146,19 @@
       ['table', ['table']],
       ['insert',['link','picture']],
       ['view', ['fullscreen']]
-    ]
+    ],
+    cleaner:{
+      action: 'both', 
+      newline: '<br>',  
+      keepHtml: true,
+      keepOnlyTags: ['<p>', '<br>', '<ul>', '<li>', '<b>', '<strong>','<i>', '<a>'], 
+      keepClasses: true,
+      badTags: ['style', 'script', 'applet', 'embed', 'noframes', 'noscript', 'html'],
+      badAttributes: ['style', 'start'],
+      limitChars: false, 
+      limitDisplay: false,
+      limitStop: false
+    }
     });  
   </script>
 

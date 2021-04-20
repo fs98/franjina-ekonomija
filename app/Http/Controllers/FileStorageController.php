@@ -36,12 +36,6 @@ class FileStorageController extends Controller
         $filename = Str::random(64 - (strlen($currentDateTimeFileFormat) + 3 + 2)) . "-" . $currentDateTimeFileFormat .  ".jpg";
       } else if($type == "data:image/png" || $type == "image/png") {
         $filename = Str::random(64 - (strlen($currentDateTimeFileFormat) + 3 + 2)) . "-" . $currentDateTimeFileFormat .  ".png";
-      } else if($type == "data:image/jfif" || $type == "image/jfif") {
-        $filename = Str::random(64 - (strlen($currentDateTimeFileFormat) + 4 + 2)) . "-" . $currentDateTimeFileFormat .  ".jfif";
-      } else if($type == "data:image/pjp" || $type == "image/pjp") {
-        $filename = Str::random(64 - (strlen($currentDateTimeFileFormat) + 3 + 2)) . "-" . $currentDateTimeFileFormat .  ".pjp";
-      } else if($type == "data:image/pjpeg" || $type == "image/pjpeg") {
-        $filename = Str::random(64 - (strlen($currentDateTimeFileFormat) + 5 + 2)) . "-" . $currentDateTimeFileFormat .  ".pjpeg";
       } else {
         return 0;
       }
