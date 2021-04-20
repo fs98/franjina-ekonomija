@@ -43,9 +43,9 @@
 
 			<div class="col-md-12 col-lg-5 mt-lg-0 mt-5 d-flex flex-row align-items-center justify-content-center position-relative">
 				<span>
-					<img src="{{ asset('icons/common/quote.svg') }}" alt="navodnici" class="about-section-image img-fluid">
+					<img src="{{ asset('icons/common/quote.svg') }}" alt="navodnici" class="about-section-image img-fluid mt-md-4">
 				</span>
-				<span class="ml-3 mt-5">
+				<span class="ml-lg-3 mr-lg-0 mx-md-3 mt-md-5">
 					<p class="text-justify">
 						<strong>The Economy of Francesco</strong>  međunarodni je događaj koji na poziv i inicijativu Pape Franje okuplja mlade ekonomiste, poduzetnike i pokretače pozitivnih društvenih promjena, a sve u svrhu davanja doprinosa razvoju nove ekonomije kojoj je u središtu čovjek. 
 					</p>
