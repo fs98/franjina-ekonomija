@@ -87,7 +87,7 @@ class PostsController extends Controller
 
         $content = $httpRequest->post_content;
         $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
         $images = $dom->getElementsByTagName('img');
 
         foreach($images as $k => $img) {
@@ -108,8 +108,6 @@ class PostsController extends Controller
         }
 
         $content = $dom->saveHTML();
-        echo $content;
-        die();
         $postSingle->content = $content;
 
         try {
@@ -178,7 +176,7 @@ class PostsController extends Controller
 
         $content = $httpRequest->post_content;
         $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
         $images = $dom->getElementsByTagName('img');
 
         foreach($images as $k => $img) {

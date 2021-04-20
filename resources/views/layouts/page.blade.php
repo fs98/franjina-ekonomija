@@ -19,8 +19,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com"> 
     <link href="{{ asset('css/fonts.css') }}" rel="stylesheet">
 
     <!-- Styles -->
@@ -59,8 +58,8 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 col-xl-2 align-self-center d-flex float-right py-1">
-          <a  href="https://www.instagram.com/franjinaekonomijahrvatska/" target="_blank" class="" ><img src="{{ asset('icons/header/instagram.svg') }}" alt="instagram" class="img-fluid topbar-icons"></a>
-          <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" target="_blank" class="ml-3"><img src="{{ asset('icons/header/facebook.svg') }}" alt="facebook" class="img-fluid topbar-icons"></a>
+          <a  href="https://www.instagram.com/franjinaekonomijahrvatska/" target="_blank" rel="noopener" class="" ><img src="{{ asset('icons/header/instagram.svg') }}" alt="instagram" class="img-fluid topbar-icons"></a>
+          <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" target="_blank" rel="noopener" class="ml-3"><img src="{{ asset('icons/header/facebook.svg') }}" alt="facebook" class="img-fluid topbar-icons"></a>
           <a href="https://www.youtube.com/channel/UCkA1mEWmqGLxXfKrRbfqaFQ" class="ml-3"><img src="{{ asset('icons/header/youtube.svg') }}" alt="youtube" class="img-fluid topbar-icons"></a>
         </div>
 
@@ -93,7 +92,7 @@
 
   <nav class="navbar navbar-expand-xl navbar-light bg-white py-2" id="navbar">
     <div class="container">
-      <a class="navbar-brand bg-white" href="{{ __('/')}}"><img src="{{ asset('images/logo/header-logo.svg') }}" alt=""></a>
+      <a class="navbar-brand bg-white" href="{{ __('/')}}" aria-label="logo" ><img src="{{ asset('images/logo/header-logo.svg') }}" alt="Navbar logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -170,9 +169,9 @@
         </ul> 
         <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none" action="{{ Route('searchResults') }}" method="GET">
           <div class="input-group">
-            <input id="search_text" name="search_text" type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon2">
+            <input id="search_text" name="search_text" type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon3">
             <div class="input-group-append bg-danger"> 
-              <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon2">
+              <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon3">
                 <span><img src="{{ asset('icons/header/search.svg') }}"></span>
               </button>
             </div>
@@ -221,7 +220,7 @@
 
                 <div class="ml-4">
                   <h4 class="text-white">Adresa</h4>
-                  <a class="mt-2 text-white h5 text-decoration-none" href="https://goo.gl/maps/U2tSoQBY9m2Kf7ibA" target="_blank">Udruga za ekonomiju zajedništva
+                  <a class="mt-2 text-white h5 text-decoration-none" href="https://goo.gl/maps/U2tSoQBY9m2Kf7ibA" rel="noopener" target="_blank">Udruga za ekonomiju zajedništva
                   <br>Franje Račkog 26, 48260 Križevci, Hrvatska</a>
                 </div>
               </div>
@@ -282,8 +281,8 @@
         <div class="social-networks">
           <h5 class="mt-5 text-white">Pratite nas i na:</h5>
           <div class="mt-3">
-            <a href="https://www.instagram.com/franjinaekonomijahrvatska/" target="_blank"><img src="{{ asset('icons/footer/instagram.svg') }}" alt="instagram" class="mx-1"></a>
-            <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" target="_blank"><img src="{{ asset('icons/footer/facebook.svg') }}" alt="facebook" class="mx-1"></a>
+            <a href="https://www.instagram.com/franjinaekonomijahrvatska/" rel="noopener" target="_blank"><img src="{{ asset('icons/footer/instagram.svg') }}" alt="instagram" class="mx-1"></a>
+            <a href="https://www.facebook.com/Franjina-Ekonomija-Hrvatska-114169500480550/" rel="noopener" target="_blank"><img src="{{ asset('icons/footer/facebook.svg') }}" alt="facebook" class="mx-1"></a>
             <a href="https://www.youtube.com/channel/UCkA1mEWmqGLxXfKrRbfqaFQ"><img src="{{ asset('icons/footer/youtube.svg') }}" alt="youtube" class="mx-1"></a>
           </div>
         </div>

@@ -16,7 +16,7 @@
 
 @section('content')
 
-<section id="home">
+<section id="home-section">
 
 	<section id="sliderSection">
 
@@ -275,9 +275,9 @@
 			<small>* Obavezna polja</small>
 			<div class="form-group mt-2">
 				<div class="form-group">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" required>
-						<label class="form-check-label">
+					<div class="form-check"> 
+						<input class="form-check-input" id="privacyPolicy" type="checkbox" required>
+						<label class="form-check-label" for="privacyPolicy">
 							Prihvaćam <a href="{{ Route('gdpr') }}">uvjete korištenja stranice</a> i <a href="{{ Route('gdpr') }}">politiku zaštite privatnosti</a>
 						</label> 
 					</div>
@@ -425,7 +425,9 @@
         },
         events: events,
 				eventClick: function(info) { 
-          console.log(info.event)
+
+          event.preventDefault() //So it doesn't follow href attribute
+
 					$('.bd-example-modal-lg').modal('show'); 
           $('#modal_event_title').text(info.event.title); 
 					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
@@ -492,7 +494,9 @@
         navLinks: false, 
         events: events,   
 				eventClick: function(info) { 
-          console.log(info.event)
+
+          event.preventDefault() //So it doesn't follow href attribute
+
 					$('.bd-example-modal-lg').modal('show'); 
           $('#modal_event_title').text(info.event.title); 
 					$('#modal_event_date').text(info.event.extendedProps.formatted_date);
@@ -539,7 +543,7 @@
           } else {
             $('#modal_event_basic_info').css("display", "none")
             $('#modal_event_basic_info_title').css("display", "none")
-          }            
+          }          
 				}, 
 			});
 
@@ -547,6 +551,7 @@
     calendar.render();
   });
   
+  //Put href tags where they are not present (because of SEO)
   setTimeout(function() {
     $('a.fc-daygrid-day-number').each(function() {
       $(this).attr('href', '/');
@@ -556,6 +561,9 @@
       $(this).attr('href', '/');
       $(this).css('color', 'white');
     }); 
+    $('a.fc-daygrid-event').each(function() {
+      $(this).attr('href','/'); 
+    })
   }, 500);
 
 </script>

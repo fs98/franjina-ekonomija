@@ -121,11 +121,30 @@ class ProjectsController extends Controller
 
         $projectSingle->directory_id = $directory->getDirectoryId();
 
-        if (Helper::isSet($httpRequest->project_content)) {
-            $projectSingle->content = $httpRequest->project_content;
-        } else {
-            $projectSingle->content = NULL;
+        $content = $httpRequest->project_content;
+        $dom = new \DomDocument();
+        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img) {
+          $data = $img->getAttribute('src');
+          list($type, $data) = explode(';', $data);
+          
+          list(, $data)      = explode(',', $data);
+
+          $data = base64_decode($data);
+
+          // Store the image
+          if(Helper::isSet($type)) {
+            $file_name = FileStorageController::storeBase64($data, $directory->getDirectoryId(), $type);
+          }
+          
+          $img->removeAttribute('src');
+          $img->setAttribute('src', $file_name);
         }
+
+        $content = $dom->saveHTML();
+        $projectSingle->content = $content;
 
         try {
             $projectSingle->save();
@@ -259,13 +278,37 @@ class ProjectsController extends Controller
             $projectEdit->directory_id = $projectEdit->directory_id;
         }
 
-        $projectEdit->cover_image_description = $httpRequest->project_header_image_alt;
+        $projectEdit->cover_image_description = $httpRequest->project_header_image_alt;   
 
-        if (Helper::isSet($httpRequest->project_content)) {
-            $projectEdit->content = $httpRequest->project_content;
-        } else {
-            $projectEdit->content = NULL;
-        }   
+        $content = $httpRequest->project_content;
+        $dom = new \DomDocument();
+        $dom->loadHtml('<?xml encoding="UTF-8">' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img) {
+            $data = $img->getAttribute('src');
+
+            // Works
+            if(strpos($data, 'data:image/jpeg') == false && strpos($data, 'data:image/jpeg') !== 0 && strpos($data, 'data:image/png') == false && strpos($data, 'data:image/png') !== 0) {
+              continue;
+            }
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+
+            $data = base64_decode($data);
+
+            // Store the image
+            if(Helper::isSet($type)) {
+              $file_name = FileStorageController::storeBase64($data, $directory->getDirectoryId(), $type);
+            }
+
+            $img->removeAttribute('src');
+            $img->setAttribute('src', $file_name);
+        }
+
+        $content = $dom->saveHTML();
+        $projectEdit->content = $content;
 
         try {
             $projectEdit->save();

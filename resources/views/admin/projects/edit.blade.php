@@ -153,11 +153,12 @@
               <div class="card-body" id="card-body">
                 <div class="row">
                   @foreach ($projectImages as $item => $projectImage)
-                  <div class="col-xl-2 col-md-4 col-12 mb-4 position-relative">
-                    <form action="{{ Route('admin.project-images.destroy', ['project_image' => $projectImage->id]) }}" method="POST">
+                  <div class="col-xl-2 col-md-4 col-12 mb-4">
+                    <form action="{{ Route('admin.project-images.destroy', ['project_image' => $projectImage->id]) }}" method="POST" style="width: fit-content; position: relative;">
                       @csrf
-                      <img src="{{ $projectImage->header_image_url }}" class="img-thumbnail" alt="...">
-                      <button class="btn btn-danger delete-image-btn rounded-circle btn-sm" type="button" onclick="deleteSingleItem(this)"><i class="fas fa-xs fa-trash-alt"></i></button>
+                        <img src="{{ $projectImage->header_image_url }}" class="img-thumbnail" alt="...">
+                        <button class="btn btn-secondary delete-image-btn rounded btn-sm mr-n5" type="button" onclick="deleteSingleItem(this)"><i class="fas fa-xs fa-trash-alt"></i></button>
+                      
                       @method('delete')
                     </form>
                   </div>
