@@ -127,6 +127,7 @@
         lang: 'hr-HR',
         tabsize: 2,
         height: 500,  
+        fontSizeUnits: ['px'],
         fontNames: [ 
           'Poppins'
         ],

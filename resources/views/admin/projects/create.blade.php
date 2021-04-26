@@ -173,6 +173,7 @@
         lang: 'hr-HR',
         tabsize: 2,
         height: 500, 
+        fontSizeUnits: ['px'],
         toolbar: [
       // [groupName, [list of button]]
       ['style', ['style']],

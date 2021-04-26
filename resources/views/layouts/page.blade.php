@@ -233,7 +233,7 @@
                 <div class="ml-4">
                   <h4 class="text-white">Broj telefona</h4>
                   <a href="tel:+38548682847" class="text-decoration-none h5 mt-2 text-white">Tel. +385 48 682 847</a><br>
-                  <a href="tel:+385976376409" class="text-decoration-none h5 mt-2 text-white">Mob. +385 97 123 456</a><br>
+                  <a href="tel:+385976376409" class="text-decoration-none h5 mt-2 text-white">Mob. +385 97 637 6409</a><br>
                   <a href="tel:+385958088189" class="text-decoration-none h5 mt-2 text-white">Mob. +385 95 808 8189</a>
                 </div>
               </div>
