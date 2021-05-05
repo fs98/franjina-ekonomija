@@ -52,20 +52,14 @@
                   @endif
                 </div>
                 <div class="form-group">
-                  <label class="col-form-label" for="email">Status</label>
-                  <select class="form-control" id="post_status" name="status" required="">
-                    <option disabled="">Status</option>
-                      @if(Helper::isSet($userSingle->status))
-                        @if($userSingle->status == 'active')
-                          <option value="{{ ('inactive') }}">{{ ucfirst('neaktivan') }}</option>
-                          <option selected="" value="{{ ('active') }}">{{ ucfirst('aktivan') }}</option>
-                        @else
-                          <option selected="" value="{{ ('inactive') }}">{{ ucfirst('neaktivan') }}</option>
-                          <option value="{{ ('active') }}">{{ ucfirst('aktivan') }}</option>
-                        @endif                        
-                      @endif
+                  <label for="exampleFormControlSelect1">Uloga</label>
+                  <select class="form-control" id="role" name="role">
+                    <option selected disabled>--Izaberite--</option>
+                    <option value="4" {{ $userSingle->role == 4 ? 'selected' : '' }}>Bloger</option>
+                    <option value="3" {{ $userSingle->role == 3 ? 'selected' : '' }}>Upravitelj sadržajem</option>
+                    <option value="2" {{ $userSingle->role == 2 ? 'selected' : '' }}>Administrator</option> 
                   </select>
-                </div>
+                </div> 
                 <div class="form-group">
                   <label class="col-form-label" for="password">Lozinka</label>
                   <input type="password" class="form-control" id="password" name="password" autocomplete="off" value="">

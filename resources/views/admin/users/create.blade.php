@@ -50,6 +50,15 @@
                   <input id="email" type="email" class="form-control" name="email" maxlength="512" tabindex="-1" autocomplete="off">
                 </div>
                 <div class="form-group">
+                  <label for="exampleFormControlSelect1">Uloga</label>
+                  <select class="form-control" id="role" name="role">
+                    <option selected disabled>--Izaberite--</option>
+                    <option value="4">Bloger</option>
+                    <option value="3">Upravitelj sadržajem</option>
+                    <option value="2">Administrator</option> 
+                  </select>
+                </div>
+                <div class="form-group">
                   <label class="col-form-label" for="password">Lozinka</label>
                   <label class="label-required" for="pssword">(obavezno)</label>
                   <input type="password" class="form-control" id="password" name="password" minlength="8" autocomplete="off">

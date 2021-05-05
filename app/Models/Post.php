@@ -48,4 +48,8 @@ class Post extends BaseModel
     public function getTitleAttribute($value) {
         return $this->checkIfEmpty($value, "N\A");
     }
+    
+    public function user() {
+      return $this->belongsTo(User::class);
+    }
 }

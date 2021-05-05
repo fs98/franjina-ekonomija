@@ -41,13 +41,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top"> 
                        <li class="nav-item dropdown notification">
-                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i>
-                              @if ($unread_questions>0)
-                                <span class="indicator"></span>
-                              @endif
-                            </a>
+                            @if (Auth::user()->role == 2)
+                              <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i>
+                                @if ($unread_questions>0)
+                                  <span class="indicator"></span>
+                                @endif
+                              </a>
+                            @endif
                             <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
-                                <li>
+                                @if (Auth::user()->role == 2)
+                                  <li>
                                     <div class="notification-title">Obavijesti</div>
                                     <div class="notification-list">
                                       <div class="list-group">
@@ -60,10 +63,11 @@
                                         </a> 
                                       </div>
                                     </div>  
-                                </li>
-                                <li>
+                                  </li>
+                                  <li>
                                     <div class="list-footer"> <a href="{{ Route('admin.questions.index') }}">Pogledaj</a></div>
-                                </li>
+                                  </li>
+                                  @endif
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
@@ -104,7 +108,8 @@
                             <li class="nav-divider">
                                 Menu
                             </li>
-                            <li class="nav-item ">
+                            @if (Auth::user()->role == 1 || Auth::user()->role == 2)
+                              <li class="nav-item ">
                                 <a class="nav-link {{ Route::currentRouteNamed('admin.users.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-plus"></i>Korisnici <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -113,8 +118,9 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li class="nav-item">
+                              </li>
+                            @endif
+                              <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteNamed('admin.posts.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-blogger-b"></i>Blog</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -139,8 +145,9 @@
                                       </li>
                                     </ul>
                                 </div>
-                            </li> 
-                            <li class="nav-item">
+                              </li> 
+                            @if (Auth::user()->role != 4)
+                              <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteNamed('admin.projects.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-hand-rock"></i>Projekti</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -152,8 +159,10 @@
                                         </li> 
                                     </ul>
                                 </div>
-                            </li> 
-                            <li class="nav-item">
+                              </li> 
+                            @endif
+                            @if (Auth::user()->role != 4)
+                              <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteNamed('admin.events.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-fw fa-calendar-alt"></i>Kalendar</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -165,8 +174,10 @@
                                         </li> 
                                     </ul>
                                 </div>
-                            </li> 
-                            <li class="nav-item">
+                              </li>
+                            @endif 
+                            @if (Auth::user()->role != 4)
+                              <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteNamed('admin.partners.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="far fa-fw fa-user"></i>Partneri</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -178,8 +189,10 @@
                                         </li> 
                                     </ul>
                                 </div>
-                            </li> 
-                            <li class="nav-item">
+                              </li>
+                            @endif 
+                            @if (Auth::user()->role != 4)
+                              <li class="nav-item">
                                 <a class="nav-link {{ Route::currentRouteNamed('admin.newsletter.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-envelope"></i>Newsletter</a>
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -191,26 +204,36 @@
                                         </li> 
                                     </ul>
                                 </div>
-                            </li>  
-                            <li class="nav-divider">
+                              </li>
+                            @endif  
+                            @if (Auth::user()->role !== 4)
+                              <li class="nav-divider">
                                 OSTALI SADRŽAJ
-                            </li>  
-                            <li class="nav-item">
+                              </li>  
+                              <li class="nav-item">
                                 <a class="nav-link  {{ Route::currentRouteNamed('admin.sliders.*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Ostalo</a>
                                 <div id="submenu-10" class="collapse submenu" style="">
                                     <ul class="nav flex-column"> 
-                                        <li class="nav-item">
+                                        @if (Auth::user()->role != 4)
+                                          <li class="nav-item">
                                             <a class="nav-link" href="{{ Route('admin.sliders.index') }}">Slajderi</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="{{ Route('admin.questions.index') }}">Pitanja</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="{{ Route('admin.activities.index') }}">Aktivnosti</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="{{ Route('admin.gdpr.show', ['gdpr' => '1']) }}">GDPR</a>
-                                        </li>
+                                          </li>
+                                        @endif
+                                        @if (Auth::user()->role === 1 || Auth::user()->role === 2)
+                                          <li class="nav-item">
+                                            <a class="nav-link" href="{{ Route('admin.questions.index') }}">Pitanja</a>
+                                          </li>
+                                        @endif
+                                        @if (Auth::user()->role != 4)
+                                          <li class="nav-item">
+                                            <a class="nav-link" href="{{ Route('admin.activities.index') }}">Aktivnosti</a>
+                                          </li>
+                                        @endif
+                                        @if (Auth::user()->role != 4)
+                                          <li class="nav-item">
+                                            <a class="nav-link" href="{{ Route('admin.gdpr.show', ['gdpr' => '1']) }}">GDPR</a>
+                                          </li>
+                                        @endif
                                         {{-- <li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-12" aria-controls="submenu-12">Aktivnosti</a>
                                             <div id="submenu-12" class="collapse submenu" style="">
@@ -226,7 +249,8 @@
                                         </li> --}}
                                     </ul>
                                 </div>
-                            </li>
+                              </li>
+                            @endif
                         </ul>
                     </div>
                 </nav>

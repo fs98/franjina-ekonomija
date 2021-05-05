@@ -20,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userAll = User::select('id','name','email','created_at','status', 'password')->where('id', '!=', '1')->get();
+        $userAll = User::select('id','name','role','email','created_at','status', 'password')->where('name', '!=', 'Superadministrator')->get();
 
         return view('admin.users.list')->with(['userAll' => $userAll]);
     }
@@ -49,6 +49,7 @@ class UserController extends Controller
         $httpRequest->validate([
             'name' => 'required',
             'email' => 'required|unique:users',
+            'role' => 'required',
             'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required'
         ]);
@@ -56,6 +57,7 @@ class UserController extends Controller
         $userSingle = new User();
         $userSingle->name = $httpRequest->name;
         $userSingle->email = $httpRequest->email;
+        $userSingle->role = $httpRequest->role;
         $userSingle->status = 'active';
         $rawPassword = $httpRequest->password;
         $userSingle->password = Hash::make($rawPassword);
@@ -112,7 +114,7 @@ class UserController extends Controller
         $userEdit = User::find($id);
 
         $userEdit->name = $httpRequest->name;
-        $userEdit->status = $httpRequest->status;
+        $userEdit->role = $httpRequest->role;
         $userEdit->email = $httpRequest->email;
 
         if (isset($httpRequest->password)) {
