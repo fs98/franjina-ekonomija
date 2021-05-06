@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MailController;
+use App\Http\Middleware\Blogger;
+use App\Http\Middleware\ContentManager;
 
 Route::get('/debug', function() {
 	MailController::sendMail();
@@ -34,49 +36,48 @@ Route::get('/rezultati-pretrazivanja/', 'NavigationControllers@search')->name('s
 // Auth routes
 Auth::routes(['register' => false]);
 
-// Admin panel
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
-	Route::get('/', function() {
-		return redirect(Route('admin.users.index'));
-	})->name('index');
+/**
+ * Admin Panel
+ */
+
+// Superadmin and admin
+Route::middleware(['auth', Blogger::class, ContentManager::class])->prefix('admin')->name('admin.')->group(function() {
 
 	Route::resource('users', 'UserController', [
     'except' => ['show']
-	]);
-
-	Route::resource('posts','PostsController', [
-		'except' => ['show']
-	]);
-
-	Route::resource('events','EventsController', [
-		'except' => ['show']
-	]);
-
-	Route::resource('projects','ProjectsController', [
-		'except' => ['show']
-	]);
+	]); 
 
 	Route::resource('questions', 'QuestionsController', [
 		// 'except' => ['update', 'edit']
-	]);
+	]); 
 
-	Route::resource('partners', 'PartnersController', [
+});
+
+// Content manager can see but blogger cannot
+
+Route::middleware(['auth', Blogger::class])->prefix('admin')->name('admin.')->group(function() {
+	
+  Route::resource('projects','ProjectsController', [
 		'except' => ['show']
 	]);
 
-	Route::resource('sliders', 'SliderController');
+  Route::resource('events','EventsController', [
+		'except' => ['show']
+	]);
+
+  Route::resource('partners', 'PartnersController', [
+		'except' => ['show']
+	]);
+
+  Route::resource('newsletter', 'NewsletterController', [
+		'except' => ['show', 'edit', 'update', 'destroy']
+	]);
+
+  Route::resource('sliders', 'SliderController');
 	Route::resource('slider-images', 'SliderImageController');
 
 	Route::resource('project-images', 'ProjectImagesController', [
     'only' => ['destroy']
-  ]);
-
-	Route::resource('newsletter', 'NewsletterController', [
-		'except' => ['show', 'edit', 'update', 'destroy']
-	]);
-
-  Route::resource('bloggers', 'BloggersController', [
-    'except' => ['show']
   ]);
 
   Route::resource('activities', 'ActivitiesController', [
@@ -85,6 +86,24 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 
   Route::resource('gdpr', 'GdprController', [
     'only' => ['show', 'update']
+  ]);
+
+});
+
+
+// Everybody including blogger
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
+  Route::get('/', function() {
+		return redirect(Route('admin.posts.index'));
+	})->name('index');
+  
+	Route::resource('posts','PostsController', [
+		'except' => ['show']
+	]);
+
+  Route::resource('bloggers', 'BloggersController', [
+    'except' => ['show']
   ]);
 });
 

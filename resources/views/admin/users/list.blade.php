@@ -45,7 +45,7 @@
                         <th>Ime</th>
                         <th>Email</th>
                         <th>Kreiran</th>
-                        <th>Status</th>
+                        <th>Uloga</th>
                         <th>Upravljanje</th> 
                       </tr>
                     </thead>  
@@ -74,8 +74,18 @@
                           @endif
                         </td>
                         <td>
-                          @if(Helper::isSet($userSingleRow->status))
-                            <span>{{ ucfirst($userSingleRow->status) }}</span>
+                          @if(Helper::isSet($userSingleRow->role))
+                            <span>
+                            @if ( $userSingleRow->role == 2 )
+                              Administrator
+                            @elseif ( $userSingleRow->role == 3 )
+                              Upravitelj sadržajem
+                            @elseif ( $userSingleRow->role == 4 )
+                              Bloger
+                            @else
+                              N/A
+                            @endif
+                            </span>
                           @else
                             <span>N/A</span>
                           @endif

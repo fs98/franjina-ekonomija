@@ -15,13 +15,4 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected $unread_questions;
-    protected $projects_sum;
-
-    public function __construct() {
-      $this->unread_questions = Question::where('seen', 0)->count();
-      $this->projects_sum = Project::count();
-      View::share('unread_questions', $this->unread_questions);
-      View::share('projects_sum', $this->projects_sum);
-    }
 }

@@ -19,7 +19,7 @@ class PostsController extends Controller
      */
     public function __construct()
     {
-        $this->authorizeResource(Post::class, 'post');
+        $this->authorizeResource(Post::class, 'posts');
     }
 
     /**
@@ -29,9 +29,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        
-      $postAll = Post::select('id','title','short_description','cover','directory_id','created_at')->where('user_id', auth()->user()->id)->orderByDesc('created_at')->get();
-        
+        $postAll = Post::select('id','title','short_description','cover','directory_id','created_at')->where('user_id', auth()->user()->id)->orderByDesc('created_at')->get();
 
         return view('admin.posts.list')->with(['postAll' => $postAll]);
     }
