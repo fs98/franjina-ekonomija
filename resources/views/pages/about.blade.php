@@ -401,7 +401,7 @@
 <script src="{{ asset('js/scrollspy.js') }}" defer></script>
 
 <!-- Swiper -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"  defer></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <script>
   var swiper = new Swiper('.swiper-container', { 
@@ -409,9 +409,7 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    autoplay: {
-      delay: 4000,
-    },
+    loop: true,   
     speed: 2000,
     slidesPerView: 1,
   });

@@ -22,10 +22,10 @@
 
 		<!-- Carousel -->
 
-			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" >
+			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000">
 			  <div class="carousel-inner">
           @foreach ($heroSlider as $index => $heroSliderImage)
-            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}" >
               <img src="{{ $heroSliderImage->header_image_url }}" class="d-block w-100" alt="{{ $heroSliderImage->image_description }}">
             </div>
           @endforeach
@@ -69,10 +69,10 @@
 
 				<div class="col-12 col-xl-5 align-items-end mb-5 d-flex">
 					
-					<div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+					<div id="carouselExampleControls" class="carousel slide carousel-fade w-100" data-ride="carousel" data-interval="false">
 					  <div class="carousel-inner">
               @foreach ($calendarSlider as $item => $calendarSliderImage)
-                <div class="carousel-item {{ $item === 0 ? 'active' : '' }}" data-interval="7000">
+                <div class="carousel-item {{ $item === 0 ? 'active' : '' }}">
                   <img src="{{ $calendarSliderImage->header_image_url }}" class="d-block w-100" alt="{{ $calendarSliderImage->image_description }}">
                 </div> 
               @endforeach  
@@ -416,7 +416,9 @@
         locale: 'hr',
         weekNumberCalculation: 'ISO',
         contentHeight: 'auto',
-        headerToolbar: false,
+        headerToolbar: { 
+          end: 'prev,next' // will normally be on the right. if RTL, will be on the left
+        },
         displayEventTime : false, 
         navLinks: false, 
         dayMaxEvents: 1, 
@@ -483,11 +485,13 @@
         themeSystem: 'bootstrap',
         locale: 'hr',
         weekNumberCalculation: 'ISO',
-        headerToolbar: false, 
+        headerToolbar: { 
+          end: 'prev,next' // will normally be on the right. if RTL, will be on the left
+        }, 
         displayEventTime : false, 
         dayMaxEvents: 1, 
-        height: 445,
-        contentHeight: 445,
+        height: 503,
+        contentHeight: 503, 
         moreLinkContent: (num) => {
           return "+još " + num.num;
         },  
@@ -569,5 +573,5 @@
     })
   }, 500);
 
-</script>
+</script> 
 @endsection('scripts')
