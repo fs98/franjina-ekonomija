@@ -164,10 +164,7 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },  
-    loop: true,  
-    autoplay: {
-      delay: 2000,
-    },
+    loop: true,   
     speed: 2000,
     breakpoints: {
       640: {
