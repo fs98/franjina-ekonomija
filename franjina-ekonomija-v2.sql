@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2021 at 12:09 PM
+-- Generation Time: May 10, 2021 at 10:46 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `franjina-ekonomija-v2`
+-- Database: `moja`
 --
 
 -- --------------------------------------------------------
@@ -416,7 +416,8 @@ INSERT INTO `slider_images` (`id`, `slider_id`, `directory_id`, `image`, `image_
 (33, 1, 'wpAwQBU9c2h01d54yfJcvZpLV2GBuckVZFCKEU7OWR1ND5UhRRUffMbXNNdmi49n', 'dztsZUcmB4aozAujm5iLYXUKRZGKvHukvDBTzb6v-2021-04-16-06-51-17.jpg', 'papa Franjo poziva i tebe', 8, '2021-04-07 07:27:31', '2021-04-16 04:51:17'),
 (34, 2, 'mgLKTEVAvtfNHoa7FT7Jk1EGyT9cnqh8ROdXSh7CwrwNlWh89UI6xrbUkLVcpn8o', 'JoeBa6TH1L8kWtBLsYQAUVFXaRP7BsA8q5mGSNqV-2021-04-16-06-47-18.jpg', 'nije rijec jednostavno o tomu da imamo vise nego da budemo vise', 1, '2021-04-07 07:42:23', '2021-04-16 04:47:47'),
 (35, 2, 'UBg9I8AFGjkD4Q5qIxTNo88AnjErIbkt6y0CWp12ShZzbiTsYjmmw3eUPHw4Iq7j', 'PJyKNRBhWtXzHzAzxyltg3UmCfM6ftPk6RlcRtkU-2021-04-16-06-48-04.jpg', 'ekonomija da, ali i puno ljubavi', 2, '2021-04-07 07:42:29', '2021-04-16 04:48:04'),
-(36, 2, 'ioEIjUyj9Z8M7WF7bmy5qIH4Z6nmIn8ytyIuHIxZuq1NaP7fjcnwc9XIKtQE5vrA', 'rez7t9xaQ8aXyRJwxhCHXyplJTR7s4xeo6HEiJI-2021-04-26-13-24-19.jpeg', 'Dragi mladi ekonomisti, poduzetnici, radnici i menadžeri, vrijeme je da se odvažimo na rizik poticanja novih modela razvitka, napretka i održivosti u kojima su protagonisti ljudi, a osobito oni isključeni. (Papa Franjo)', NULL, '2021-04-26 11:24:19', '2021-04-26 11:24:19');
+(36, 2, 'ioEIjUyj9Z8M7WF7bmy5qIH4Z6nmIn8ytyIuHIxZuq1NaP7fjcnwc9XIKtQE5vrA', 'rez7t9xaQ8aXyRJwxhCHXyplJTR7s4xeo6HEiJI-2021-04-26-13-24-19.jpeg', 'Dragi mladi ekonomisti, poduzetnici, radnici i menadžeri, vrijeme je da se odvažimo na rizik poticanja novih modela razvitka, napretka i održivosti u kojima su protagonisti ljudi, a osobito oni isključeni. (Papa Franjo)', NULL, '2021-04-26 11:24:19', '2021-04-26 11:24:19'),
+(37, 2, 'b3N4pLdU5RDQr7JmOx0H5UImI7pIok4tkVSSKSxxFLuNy4AlcMxYv2Pu6gIZJm7v', 'tX5YgfKl91tkCmjpRs749nvMrgCOschaC7xRhzA3-2021-05-09-13-34-53.jpg', 'Pravi vojnik se bori, ne zato što mrzi ono što je ispred njega, nego zato što voli ono što je iza njega.\' G.K.Chesterton', NULL, '2021-05-09 11:34:53', '2021-05-09 11:34:53');
 
 -- --------------------------------------------------------
 
@@ -638,7 +639,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `slider_images`
 --
 ALTER TABLE `slider_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `users`
