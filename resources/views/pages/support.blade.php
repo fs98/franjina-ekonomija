@@ -61,6 +61,24 @@
 				<!-- Donate -->
         <div class="row">
           <div class="col-12">
+            <h5 class="font-weight-normal">Ime</h5>					
+            <h5 class="ml-5 mt-3 font-weight-bold">Udruga za Ekonomiju zajedništva</h5>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <h5 class="font-weight-normal">Adresa</h5>					
+            <h5 class="ml-5 mt-3 font-weight-bold">Franje Račkog 26, 48260 Križevci - HR</h5>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <h5 class="font-weight-normal">Swift</h5>					
+            <h5 class="ml-5 mt-3 font-weight-bold">ZABAHR2x</h5>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
             <h5 class="font-weight-normal ">Banka</h5>
 				  	<h5 class="mt-3 ml-5 font-weight-bold">Zagrebačka banka d.d.</h5>
           </div>
