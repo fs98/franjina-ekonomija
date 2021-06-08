@@ -44,7 +44,7 @@
 
 	</section>	
 
-	<section class="calendar-section" style="margin-top: 50px;">
+	<section class="calendar-section pb-4" style="margin-top: 50px;">
 		
 		<!-- Container -->
 		<div class="container">
@@ -73,7 +73,7 @@
 					  <div class="carousel-inner">
               @foreach ($calendarSlider as $item => $calendarSliderImage)
                 <div class="carousel-item {{ $item === 0 ? 'active' : '' }}">
-                  <img src="{{ $calendarSliderImage->header_image_url }}" class="d-block w-100" alt="{{ $calendarSliderImage->image_description }}">
+                  <img src="{{ $calendarSliderImage->header_image_url }}" class="d-block rounded-15 w-100" alt="{{ $calendarSliderImage->image_description }}">
                 </div> 
               @endforeach  
 					  </div>
@@ -123,7 +123,7 @@
 						<!-- Slide -->
 						<div class="swiper-slide">
 							<div class="card border-0 h-675">
-								<img src="{{ $postSingleRow->header_image_url }}" alt="{{ $postSingleRow->cover_image_description }}">
+								<img src="{{ $postSingleRow->header_image_url }}" alt="{{ $postSingleRow->cover_image_description }}" class="rounded-15">
 								<div class="card-body px-0 h-415">
 									<h5 class="card-title font-weight-bold px-3 h-100-px"> 
 										@if (Helper::isset($postSingleRow->title)) 
@@ -132,8 +132,8 @@
 											{{ 'Ime nije dostupno '}}
 										@endif
 									</h5>
-									<p class="card-text text-center px-3 truncate-overflow" title="{{ $postSingleRow->short_description }} style="font-size: 16px;">{{ $postSingleRow->short_description }}</p>
-									<a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
+									<p class="card-text text-center px-3 truncate-overflow" title="{{ $postSingleRow->short_description }}" style="font-size: 16px;">{{ $postSingleRow->short_description }}</p>
+									<a href="{{ Route('blogPost', ['post' => $postSingleRow->title_slug]) }}" class="btn rounded-15 px-4 py-2 mt-3 text-white">Saznaj više</a>
 								</div>
 							</div>
 						</div>
@@ -184,11 +184,11 @@
 						<!-- Slide -->
 						<div class="swiper-slide">
 							<div class="card card border-0 h-675">
-								<img src="{{ $projectSingleRow->header_image_url }}" alt="{{ $projectSingleRow->cover_image_description }}" class="card-img-top rounded-0" alt="...">
+								<img src="{{ $projectSingleRow->header_image_url }}" alt="{{ $projectSingleRow->cover_image_description }}" class="card-img-top rounded-15" alt="...">
 								<div class="card-body px-0 h-415">
 									<h5 class="card-title font-weight-bold mt-4">{{ $projectSingleRow->title }}</h5>
 									<p class="card-text text-center mt-5 px-3 h-100-px truncate-overflow" title="{{ $projectSingleRow->short_description }}">{{ $projectSingleRow->short_description }}</p>
-									<a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-white">Saznaj više</a>
+									<a href="{{ Route('specificProject', ['project' => $projectSingleRow->title_slug]) }}" class="btn rounded-15 px-4 py-2 mt-3 text-white">Saznaj više</a>
 								</div>
 							</div>
 						</div>
@@ -238,7 +238,7 @@
 			</div>
 			<div class="col-12 col-lg-6 d-flex align-items-center">
 				
-				<img src="{{ asset('images/about/image-4.jpg') }}" alt="slika 4" class="img-fluid w-100 h-100">
+				<img src="{{ asset('images/about/image-4.jpg') }}" alt="slika 4" class="img-fluid rounded-15 w-100 h-100">
 
 			</div>
 
@@ -251,26 +251,26 @@
 			<div class="form-row">
 				<div class="form-group col-md-6 pr-md-3">
 					<label for="first_name" class="mb-1">Ime*</label>
-					<input type="text" class="form-control rounded-0" id="first_name" name="first_name" placeholder="Vaše ime">
+					<input type="text" class="form-control rounded-15" id="first_name" name="first_name" placeholder="Vaše ime">
 				</div>
 				<div class="form-group col-md-6 pl-md-3">
 					<label for="last_name" class="mb-1">Prezime*</label>
-					<input type="text" class="form-control rounded-0" name="last_name" id="last_name" placeholder="Vaše prezime">
+					<input type="text" class="form-control rounded-15" name="last_name" id="last_name" placeholder="Vaše prezime">
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6 pr-md-3">
 					<label for="phone_number" class="mb-1">Broj telefona</label>
-					<input type="text" class="form-control rounded-0" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
+					<input type="text" class="form-control rounded-15" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
 				</div>
 				<div class="form-group col-md-6 pl-md-3">
 					<label for="email" class="mb-1">Email adresa*</label>
-					<input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Vaša email adresa">
+					<input type="email" class="form-control rounded-15" id="email" name="email" placeholder="Vaša email adresa">
 				</div>
 			</div> 
 			<div class="form-group mt-2">
 				<label for="question">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
-				<textarea class="form-control rounded-0" id="question" name="question" rows="3" placeholder=""></textarea>
+				<textarea class="form-control rounded-15" id="question" name="question" rows="3" placeholder=""></textarea>
 			</div> 
 			<small>* Obavezna polja</small>
 			<div class="form-group mt-2">
@@ -292,7 +292,7 @@
     </div>
 			<input type="hidden" id="route" name="route" value="home">
 			<div class="text-center mt-3">
-				<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
+				<button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-15 text-uppercase">Pošalji</button>
 			</div>
 		</form>				
 		<!-- /.Form -->
@@ -310,7 +310,7 @@
 
 	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg"> 
-	    <div class="modal-content p-5 border-0 rounded-0">
+	    <div class="modal-content p-5 border-0 rounded-15">
 	    	<span>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>

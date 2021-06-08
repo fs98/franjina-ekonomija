@@ -68,9 +68,9 @@
           <div class="float-left float-md-right">
             <form class="form-inline" action="{{ Route('searchResults') }}" method="GET">
               <div class="input-group">
-                <input id="search_text" name="search_text" type="text" class="form-control rounded-0 border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon2">
-                <div class="input-group-append bg-danger"> 
-                  <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon2">
+                <input id="search_text" name="search_text" type="text" class="form-control rounded-l border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon2">
+                <div class="input-group-append"> 
+                  <button class="btn px-3 input-group-text bg-white rounded-r border-0" type="submit" id="basic-addon2">
                     <span><img src="{{ asset('icons/header/search.svg') }}" alt="search"></span>
                   </button>
                 </div>
@@ -270,11 +270,11 @@
           <form action="{{ Route('newsletter.subscribe') }}" method="POST" id="subscribe-form" autocomplete="off">
             @csrf
             <div class="form-group w-100">
-              <input type="text" class="form-control rounded-0 border-0 h-auto py-3" id="subscriber_email" name="subscriber_email" placeholder="Email" required>
+              <input type="text" class="form-control rounded-15 border-0 h-auto py-3 pl-3" id="subscriber_email" name="subscriber_email" placeholder="Email" required>
               <input type="hidden" value="{{ Route::currentRouteName() }}" name="route" id="route">
             </div>
             <button type="submit" disabled style="display: none" aria-hidden="true"></button>
-            <button class="btn text-uppercase w-auto px-5 py-2 rounded-0 text-white" type="button" id="submit-subscription" form="subscribe-form">Pošalji</button>
+            <button class="btn text-uppercase w-auto px-5 py-2 rounded-15 text-white" type="button" id="submit-subscription" form="subscribe-form">Pošalji</button>
           </form>
         </div>
 
