@@ -14,4 +14,14 @@ class Gdpr extends Model
     protected $fillable = [
       'content'
     ];
+
+    // Accessor
+ 
+    public function getContentAttribute($value) {
+      if ($value) {
+        return $value;
+      } else {
+        return 'Još uvijek nisu definisana pravila privatnosti.';
+      }
+    }
 }
