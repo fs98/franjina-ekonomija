@@ -167,14 +167,14 @@
           @endif
 
         </ul> 
-        <form class="form-inline float-right border mr-3 mt-2 d-block d-lg-none" action="{{ Route('searchResults') }}" method="GET">
+        <form class="form-inline float-right border mr-3 mt-2 d-block rounded-15 d-lg-none" action="{{ Route('searchResults') }}" method="GET">
           <div class="input-group">
-            <input id="search_text" name="search_text" type="text" class="form-control rounded-l border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon3">
-            <div class="input-group-append bg-danger"> 
-              <button class="btn px-3 input-group-text bg-white rounded-0 border-0" type="submit" id="basic-addon3">
-                <span><img src="{{ asset('icons/header/search.svg') }}"></span>
-              </button>
-            </div>
+            <input id="search_text" name="search_text" type="text" class="form-control rounded-l border-0" placeholder="Pretraži" aria-label="Recipient's username" required aria-describedby="basic-addon2">
+              <div class="input-group-append"> 
+                <button class="btn px-3 input-group-text bg-white rounded-r border-0" type="submit" id="basic-addon2">
+                  <span><img src="{{ asset('icons/header/search.svg') }}" alt="search"></span>
+                </button>
+              </div>
           </div>
         </form>
       </div>
