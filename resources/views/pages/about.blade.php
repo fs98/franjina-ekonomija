@@ -38,7 +38,7 @@
 			<div class="row" data-aos="zoom-in" data-aos-duration="1000"> 
 
 			<div class="col-md-12 col-lg-7 pr-lg-5 d-flex align-items-center"> 
-				<img src="{{ asset('images/about/image-5.jpg') }}" alt="slika 5" class="img-fluid">
+				<img src="{{ asset('images/about/image-5.jpg') }}" alt="slika 5" class="img-fluid rounded-15">
 			</div>
 
 			<div class="col-md-12 col-lg-5 mt-lg-0 mt-5 d-flex flex-row align-items-center justify-content-center position-relative">
@@ -152,7 +152,7 @@
 					<div class="row">
 					
 						<div class="col-md-12 col-lg-7 pr-lg-5 d-flex align-items-center"> 
-							<img src="{{ asset('images/about/image-7.jpg') }}" alt="slika 7" class="img-fluid">
+							<img src="{{ asset('images/about/image-7.jpg') }}" alt="slika 7" class="img-fluid rounded-15">
 						</div>
 
 						<div class="col-md-12 col-lg-5 mt-lg-0 mt-5 d-flex align-items-center justify-content-start">
@@ -202,7 +202,7 @@
             <!-- Slides -->
             @foreach ($sliderImages as $item => $sliderImage)
               <div class="swiper-slide">
-                <img src="{{ $sliderImage->header_image_url }}" alt="{{ $sliderImage->image_description }}" class="img-fluid w-75 h-100">
+                <img src="{{ $sliderImage->header_image_url }}" alt="{{ $sliderImage->image_description }}" class="img-fluid w-75 h-100 rounded-15">
               </div>
             @endforeach
           </div> 
@@ -328,7 +328,7 @@
 				</div>
 				<div class="col-12 col-lg-6 d-flex align-items-center">
 					
-					<img src="{{ asset('images/about/image-4.jpg') }}" alt="slika 4" class="img-fluid w-100 h-100">
+					<img src="{{ asset('images/about/image-4.jpg') }}" alt="slika 4" class="img-fluid w-100 h-100 rounded-15">
 
 				</div>
 
@@ -341,26 +341,26 @@
 				<div class="form-row">
 			    <div class="form-group col-md-6 pr-md-3">
 			      <label for="first_name" class="mb-1">Ime*</label>
-			      <input type="text" class="form-control rounded-0" id="first_name" name="first_name" placeholder="Vaše ime">
+			      <input type="text" class="form-control rounded-15" id="first_name" name="first_name" placeholder="Vaše ime">
 			    </div>
 			    <div class="form-group col-md-6 pl-md-3">
 			      <label for="last_name" class="mb-1">Prezime*</label>
-			      <input type="text" class="form-control rounded-0" name="last_name" id="last_name" placeholder="Vaše prezime">
+			      <input type="text" class="form-control rounded-15" name="last_name" id="last_name" placeholder="Vaše prezime">
 			    </div>
 			  </div>
 			  <div class="form-row">
 			  	<div class="form-group col-md-6 pr-md-3">
 				    <label for="phone_number" class="mb-1">Broj telefona</label>
-				    <input type="text" class="form-control rounded-0" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
+				    <input type="text" class="form-control rounded-15" id="phone_number" name="phone_number" placeholder="Vaš broj telefona">
 				  </div>
 				  <div class="form-group col-md-6 pl-md-3">
 				    <label for="email" class="mb-1">Email adresa*</label>
-				    <input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Vaša email adresa">
+				    <input type="email" class="form-control rounded-15" id="email" name="email" placeholder="Vaša email adresa">
 				  </div>
 			  </div> 
 			  <div class="form-group mt-2">
 			  	<label for="question">Vaše motivacije, zanimanja, aktivnosti i/ili poruka, upit nama..</label>
-   				<textarea class="form-control rounded-0" id="question" name="question" rows="3" placeholder=""></textarea>
+   				<textarea class="form-control rounded-15" id="question" name="question" rows="3" placeholder=""></textarea>
 			  </div> 
 			  <small>* Obavezna polja</small>
 				<div class="form-group mt-2">
@@ -381,7 +381,7 @@
           @enderror
         </div>
 			  <div class="text-center mt-3">
-				  <button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white rounded-0 text-uppercase">Pošalji</button>
+				  <button type="button" id="submit-button" form="create-form" class="btn py-2 px-5 text-white text-uppercase rounded-15">Pošalji</button>
 				</div>
 			</form>				
 			<!-- /.Form -->

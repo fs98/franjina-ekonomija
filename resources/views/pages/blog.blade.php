@@ -28,7 +28,7 @@
 					@foreach ($postAll as $index => $postSingle)
 						
 					<div class="col-12">
-						<div class="card mb-5 w-100 border-0">
+						<div class="card mb-5 w-100 border-0 rounded-15 overflow-hidden">
 							<div class="row no-gutters">
 								<div class="col-sm-4 col-12">
 									<img src="{{ $postSingle->header_image_url }}" alt="{{ $postSingle->cover_image_description }}" class="img-fluid">
@@ -40,7 +40,7 @@
 											<p class="card-text my-0">{{ $postSingle->short_description }}</p>
 										</div>
 										<div class="text-right mt-3 mt-md-0">
-											<a href="{{ Route('blogPost', ['post' => $postSingle->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-dark font-weight-bold bg-light">Saznaj više</a>
+											<a href="{{ Route('blogPost', ['post' => $postSingle->title_slug]) }}" class="btn rounded-15 px-4 py-2 mt-3 text-dark font-weight-bold bg-light">Saznaj više</a>
 										</div>
 									</div>
 								</div>
