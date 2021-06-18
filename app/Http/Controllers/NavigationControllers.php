@@ -31,7 +31,7 @@ class NavigationControllers extends Controller
       $calendarSlider = SliderImage::where('slider_id', 2)->orderBy('order')->get();
 
 			
-			$eventList = Event::select(['id','title','directory_id','cover','date as start','start as start_hour','end as end_hour','zoom_link','description'])->whereMonth('date', Carbon::now()->month)->get(); 
+			$eventList = Event::select(['id','title','directory_id','cover','date as start','start as start_hour','end as end_hour','zoom_link','description'])->get(); 
 		
 			$eventListArray = $eventList;
 			$eventListArray = $eventListArray->toArray();
