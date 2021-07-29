@@ -38,7 +38,7 @@
 
 	<div class="row mx-0 mx-lg-5"  data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
 		
-		<div class="col-12 col-xl-6 px-2 px-lg-5 contact-info">
+		<div class="col-12 col-xl-6 px-2 px-lg-5 contact-info rounded-15">
 			
 			<h2 class="my-5 text-white text-center">
 				<span class="yellow-border-heading pb-1">Kontakt</span>
@@ -67,7 +67,7 @@
       </div>
 
       <div class="my-5"> 
-      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.074185873584!2d16.542290615825472!3d46.02966837911176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47661658ac32c181%3A0x284666b99e25dd46!2sUEZ%20-%20udruga%20za%20ekonomiju%20zajedni%C5%A1tva!5e0!3m2!1sen!2sba!4v1616488642259!5m2!1sen!2sba" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.074185873584!2d16.542290615825472!3d46.02966837911176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47661658ac32c181%3A0x284666b99e25dd46!2sUEZ%20-%20udruga%20za%20ekonomiju%20zajedni%C5%A1tva!5e0!3m2!1sen!2sba!4v1616488642259!5m2!1sen!2sba" width="100%" height="300" class="rounded-15" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
 		</div>
@@ -78,19 +78,19 @@
 				@csrf
 			  <div class="form-group">
 			    <label>Ime i prezime*</label>
-			    <input type="text" name="full_name" id="full_name" class="form-control rounded-0 border-0 py-4" placeholder="Jane Doe" maxlength="128">
+			    <input type="text" name="full_name" id="full_name" class="form-control rounded-15 border-0 py-4" placeholder="Jane Doe" maxlength="128">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label>Email*</label>
-			    <input type="email" name="email" id="email" class="form-control rounded-0 border-0 py-4" placeholder="janedoe@gmail.com" maxlength="128">
+			    <input type="email" name="email" id="email" class="form-control rounded-15 border-0 py-4" placeholder="janedoe@gmail.com" maxlength="128">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label>Broj telefona</label>
-			    <input type="text" id="phone_number" name="phone_number" class="form-control rounded-0 border-0 py-4" placeholder="+xxx xxx xxx xx" maxlength="128">
+			    <input type="text" id="phone_number" name="phone_number" class="form-control rounded-15 border-0 py-4" placeholder="+xxx xxx xxx xx" maxlength="128">
 			  </div>
 			  <div class="form-group mt-4">
 			    <label for="question">Vaše pitanje, prijedlog ili ideja*</label> 
-			    <textarea class="form-control border-0 py-4 rounded-0" rows="3" id="question" name="question" placeholder="Vaše pitanje, prijedlog ili ideja" maxlength="4096"></textarea>
+			    <textarea class="form-control border-0 py-4 rounded-15" rows="3" id="question" name="question" placeholder="Vaše pitanje, prijedlog ili ideja" maxlength="4096"></textarea>
 					<small>* obavezna polja</small>
 			  </div>
 				<div class="form-group">
@@ -112,7 +112,7 @@
         </div>
 				<input type="hidden" id="route" name="route" value="contact">
 			  <div class="text-center">
-			  	<button type="button" id="submit-button" form="create-form" class="btn rounded-0 text-white px-5 py-2 text-uppercase mt-4">Pošalji</button>
+			  	<button type="button" id="submit-button" form="create-form" class="btn rounded-15 text-white px-5 py-2 text-uppercase mt-4">Pošalji</button>
 			  </div>
 			</form>
 

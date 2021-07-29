@@ -48,7 +48,7 @@
 		<!-- Row -->
 		<div class="row" data-aos="zoom-in" data-aos-duration="1000">
 			
-			<div class="col-12 col-lg-10 offset-lg-1 p-5 card-donate">
+			<div class="col-12 col-lg-10 offset-lg-1 p-5 card-donate rounded-15">
         <div class="row">
           <div class="col-9">
             <h3>Možete donirati preko banke</h3>
@@ -105,7 +105,7 @@
 		<!-- Row -->
 		<div class="row mt-5 text-center"  data-aos="zoom-in" data-aos-duration="1000">
 			
-			<div class="col-12 col-lg-10 offset-lg-1 p-5 bank-donate">
+			<div class="col-12 col-lg-10 offset-lg-1 p-5 bank-donate rounded-15">
         <div class="row">
           <div class="col-9">
             <h3 class="text-center">Očitajte ovaj QR kod Vašom bankovnom internet aplikacijom</h3>

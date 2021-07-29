@@ -20,8 +20,8 @@
           @csrf
           <div class="form-group row mb-2"> 
             <div class="col-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-              <input type="text" class="form-control rounded-0" id="unsubscriber_email" name="unsubscriber_email" placeholder="janedoe@gmail.com">
-              <button type="button" class="btn rounded-0 text-white get-unsubscribe-mail-btn mt-3 px-4" type="button" id="submit-unsubscription" form="unsubscribe-form">Pošalji mi link</button>
+              <input type="text" class="form-control rounded-15" id="unsubscriber_email" name="unsubscriber_email" placeholder="janedoe@gmail.com">
+              <button type="button" class="btn rounded-15 text-white get-unsubscribe-mail-btn mt-3 px-4" type="button" id="submit-unsubscription" form="unsubscribe-form">Pošalji mi link</button>
             </div>
           </div> 
         </form>

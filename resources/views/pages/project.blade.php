@@ -53,7 +53,7 @@
 		<!-- Row -->
 		<div class="row">
 			<div class="mb-5 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1 col-12 offset-0"> 
-				<div class="border project-card-box p-4 text-center">
+				<div class="border project-card-box p-4 text-center rounded-15">
 					<span class="d-flex flex-row justify-content-between px-2 mt-1">
 						<span class="d-flex justify-content-start">
 							<img src="{{ asset('icons/projects/user.svg') }}" alt="user icon" class="img-fluid projects-card-icon">
@@ -62,16 +62,16 @@
 					</span>
 					<span class="d-flex flex-column px-2 mt-2">
 						<p class="font-weight-bold text-left mt-2">Cilj</p>
-						<div class="progress mx-4 mt-n2">
-						  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{  $projectSingle->percentage . '%' }}" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
+						<div class="progress mx-4 mt-n2 rounded-15">
+						  <div class="progress-bar progress-bar-striped progress-bar-animated rounded-15" role="progressbar" style="width: {{  $projectSingle->percentage . '%' }}" aria-valuenow="300" aria-valuemin="0" aria-valuemax="10100"></div>
 						</div>	
 						<div class="mt-4 mx-4 d-flex justify-content-between align-items-start">
 							<span class="text-left">
-								<span class="p-2 money-amount"><span>{{ $projectSingle->money_collected }} €</span></span>
+								<span class="py-2 px-3 money-amount rounded-15"><span>{{ $projectSingle->money_collected }} €</span></span>
 							</span>
 							<span>&mdash;</span>
 							<span>
-								<span class="p-2 money-amount"><span>{{ $projectSingle->money_goal}} €</span></span>
+								<span class="py-2 px-3 money-amount rounded-15"><span>{{ $projectSingle->money_goal}} €</span></span>
 							</span>
 						</div>	 	    		
 					</span>
@@ -79,7 +79,7 @@
 							<small>{{ $projectSingle->days_left}} dana do završetka</small>
 							<small>{{ $projectSingle->percentage}} % prikupljeno</small>
 						</p>
-					<a class="btn rounded-0 mb-2 text-white px-4 button" href="{{ Route('support') }}">Podržite kampanju</a>
+					<a class="btn rounded-15 mb-2 text-white px-4 button" href="{{ Route('support') }}">Podržite kampanju</a>
 				</div>
 
 			</div>
@@ -111,7 +111,7 @@
         @foreach($projectSingle->photos as $index => $photo)
           <div class="col mb-4">
             <a href="{{ $photo->header_image_url }}" data-fancybox="gallery">
-              <img src="{{ $photo->header_image_url }}" alt="{{ $photo->cover_image_description }}" class="img-fluid"  alt="">
+              <img src="{{ $photo->header_image_url }}" alt="{{ $photo->cover_image_description }}" class="img-fluid rounded-15"  alt="">
             </a>
           </div>
         @endforeach

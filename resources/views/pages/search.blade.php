@@ -28,7 +28,7 @@
 					@if ($searchResults->isNotEmpty()) 
 
           <div class="col-12 text-center"> 
-            <div class="alert alert-warning rounded-0 text-dark" role="alert">
+            <div class="alert alert-warning rounded-15 text-dark" role="alert">
               Pronađeno <strong>{{ $searchResultsCount }}</strong> rezultata.
             </div>
           </div> 
@@ -36,7 +36,7 @@
 					@foreach ($searchResults as $index => $searchResultSingle)
 						
 					<div class="col-12">
-						<div class="card mb-5 w-100 border-0">
+						<div class="card mb-5 w-100 border-0 rounded-15 overflow-hidden">
 							<div class="row no-gutters">
 								<div class="col-sm-4 col-12">
 									<img src="{{ $searchResultSingle->header_image_url }}" alt="{{ $searchResultSingle->cover_image_description }}" class="img-fluid">
@@ -48,7 +48,7 @@
 											<p class="card-text my-0">{{ $searchResultSingle->short_description }}</p>
 										</div>
 										<div class="text-right mt-3 mt-md-0">
-											<a href="{{ Route('blogPost', ['post' => $searchResultSingle->title_slug]) }}" class="btn rounded-0 px-4 py-2 mt-3 text-dark font-weight-bold bg-light">Saznaj više</a>
+											<a href="{{ Route('blogPost', ['post' => $searchResultSingle->title_slug]) }}" class="btn rounded-15 px-4 py-2 mt-3 text-dark font-weight-bold bg-light">Saznaj više</a>
 										</div>
 									</div>
 								</div>

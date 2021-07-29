@@ -22,7 +22,7 @@
 
 				<h3 class="text-center">Žao nam je što idete!</h3>
 
-        <a href="{{ Route('index') }}" class="btn go-back-btn text-white rounded-0 mt-2 px-5">Početna</a>
+        <a href="{{ Route('index') }}" class="btn go-back-btn text-white rounded-15 mt-2 px-5">Početna</a>
 			
 			</div>
 
